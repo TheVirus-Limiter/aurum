@@ -31,18 +31,22 @@ git commit -m "Initial commit: Aurum Sleep website"
 git push origin main
 \`\`\`
 
-### 3. Enable GitHub Pages
+### 3. Enable GitHub Pages and Actions
 1. Go to your repository: https://github.com/thevirus-limiter/aurum
 2. Click "Settings" tab
 3. Scroll down to "Pages" in the left sidebar
 4. Under "Source", select "GitHub Actions"
-5. The workflow will automatically trigger on the next push
+5. **IMPORTANT**: Go to Settings → Actions → General
+6. Under "Workflow permissions", select "Read and write permissions"
+7. Check "Allow GitHub Actions to create and approve pull requests"
+8. Click "Save"
 
 ### 4. Configure Repository Settings
 1. In repository Settings → General
 2. Ensure the repository is public
 3. In Settings → Actions → General
 4. Ensure "Allow all actions and reusable workflows" is selected
+5. **CRITICAL**: Set workflow permissions to "Read and write permissions"
 
 ### 5. Deploy
 The GitHub Action will automatically:
@@ -69,8 +73,11 @@ npm run build
 - All internal links and assets are configured to work with this path
 - Changes to the main branch will automatically trigger redeployment
 - First deployment may take 5-10 minutes to become available
+- **Repository must have "Read and write permissions" for Actions**
 
 ## Troubleshooting
+- **Permission denied error**: Go to Settings → Actions → General → Workflow permissions → Select "Read and write permissions"
 - If deployment fails, check the Actions tab for error logs
 - Ensure all file paths use relative paths or the configured base path
 - Verify that the repository is public for free GitHub Pages
+- Make sure GitHub Actions is enabled in repository settings
