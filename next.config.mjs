@@ -2,8 +2,8 @@
 const nextConfig = {
   output: 'export',
   trailingSlash: true,
-  basePath: '/aurum',
-  assetPrefix: '/aurum/',
+    assetPrefix: isProd ? '' : '',
+  basePath: '',
   eslint: {
     ignoreDuringBuilds: true,
   },
