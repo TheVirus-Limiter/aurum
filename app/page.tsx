@@ -259,7 +259,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="https://thevirus-limiter.github.io/filestorage/aurumsleep.png" alt="Aurum Sleep" className="h-20 sm:h-24 w-auto" />
+              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-20 sm:h-24 w-auto" />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a
@@ -444,7 +444,7 @@ export default function AurumSleep() {
             <div className="order-2 lg:order-1">
               <div className="w-full h-64 sm:h-96 flex items-center justify-center">
                 <img
-                  src="https://thevirus-limiter.github.io/filestorage/eyemask.png"
+                  src="/images/sleep-mask-2.png"
                   alt="Aurum Sleep Mask Detail"
                   className="w-full max-w-md h-auto object-contain"
                   style={{
@@ -819,7 +819,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="https://thevirus-limiter.github.io/filestorage/aurumsleep.png" alt="Aurum Sleep" className="h-32 sm:h-40 w-auto opacity-80" />
+              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-32 sm:h-40 w-auto opacity-80" />
             </div>
 
             <div className="flex flex-wrap gap-6 sm:gap-8 text-slate-400 justify-center">
@@ -839,10 +839,10 @@ export default function AurumSleep() {
               >
                 Contact
               </a>
-              <a href="/aurum/team" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/team" className="hover:text-slate-300 transition-colors font-light">
                 Our Team
               </a>
-              <a href="/aurum/admin" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/admin" className="hover:text-slate-300 transition-colors font-light">
                 Admin
               </a>
             </div>

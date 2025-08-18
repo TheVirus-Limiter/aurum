@@ -13,17 +13,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Aurum Sleep - Redefine Rest",
   description: "The world's first luxury sleep mask that harmonizes temperature, sound, and light.",
-  generator: "v0.app", icons: {
-    icon: [
-      { url: "https://thevirus-limiter.github.io/filestorage/aurumsleep.png", type: "image/png", sizes: "32x32" },
-      { url: "https://thevirus-limiter.github.io/filestorage/aurumsleep.png", type: "image/png", sizes: "16x16" },
-    ],
-    apple: "https://thevirus-limiter.github.io/filestorage/aurumsleep.png",
-    shortcut: "https://thevirus-limiter.github.io/filestorage/aurumsleep.png",
-  },
+  generator: "v0.app",
 }
-
-
 
 export default function RootLayout({
   children,
