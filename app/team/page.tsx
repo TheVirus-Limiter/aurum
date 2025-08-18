@@ -4,13 +4,13 @@ export default function TeamPage() {
       name: "Rehan Raj",
       role: "Co-Founder & CEO",
       bio: "Junior at Lutheran High School with a passion for innovation and entrepreneurship. Member of varsity robotics team and varsity soccer. Currently fundraising $50,000 for the Leukemia & Lymphoma Society to support blood cancer research.",
-      image: "/images/rehan-raj.png",
+      image: "https://thevirus-limiter.github.io/filestorage/wasd.png",
     },
     {
       name: "Ben Storandt",
       role: "Co-Founder & COO",
       bio: "Senior at Lutheran High School with expertise in technology and product development. Member of varsity robotics team and varsity soccer. Currently fundraising $50,000 for the Leukemia & Lymphoma Society to support blood cancer research.",
-      image: "/images/ben-storandt.png",
+      image: "https://thevirus-limiter.github.io/filestorage/aswd.jpg",
     },
   ]
 
@@ -21,22 +21,22 @@ export default function TeamPage() {
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <a href="/">
-                <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-20 w-auto" />
+              <a href="/aurum/">
+                <img src="https://thevirus-limiter.github.io/filestorage/aurumsleep.png" alt="Aurum Sleep" className="h-20 w-auto" />
               </a>
             </div>
             <nav className="hidden md:flex items-center gap-8">
-              <a href="/#products" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/aurum/#products" className="text-slate-300 hover:text-white transition-colors font-light">
                 Products
               </a>
-              <a href="/#customize" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/aurum/#customize" className="text-slate-300 hover:text-white transition-colors font-light">
                 Find Your Aurum
               </a>
-              <a href="/#faq" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/aurum/#faq" className="text-slate-300 hover:text-white transition-colors font-light">
                 FAQ
               </a>
               <a
-                href="/#waitlist-form"
+                href="/aurum/#waitlist-form"
                 className="pill-button bg-transparent border border-slate-400 text-slate-400 hover:bg-slate-400 hover:text-slate-900 px-6 py-2 text-sm font-medium transition-all duration-300 rounded-full"
               >
                 Join Waitlist
@@ -98,7 +98,7 @@ export default function TeamPage() {
             Sleep launches.
           </p>
           <a
-            href="/#waitlist-form"
+            href="/aurum/#waitlist-form"
             className="inline-block pill-button bg-slate-400 text-slate-900 hover:bg-slate-300 px-12 py-4 text-lg font-medium transition-all duration-300 rounded-full"
           >
             Join the Waitlist
@@ -111,20 +111,20 @@ export default function TeamPage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-16 w-auto opacity-80" />
+              <img src="https://thevirus-limiter.github.io/filestorage/aurumsleep.png" alt="Aurum Sleep" className="h-16 w-auto opacity-80" />
             </div>
 
             <div className="flex gap-8 text-slate-400">
-              <a href="/" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/aurum/" className="hover:text-slate-300 transition-colors font-light">
                 Home
               </a>
-              <a href="/#faq" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/aurum/#faq" className="hover:text-slate-300 transition-colors font-light">
                 FAQ
               </a>
               <a href="mailto:hello@aurumsleep.co" className="hover:text-slate-300 transition-colors font-light">
                 Contact
               </a>
-              <a href="/team" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/aurum/team" className="hover:text-slate-300 transition-colors font-light">
                 Our Team
               </a>
             </div>
