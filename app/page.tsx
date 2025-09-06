@@ -787,32 +787,47 @@ export default function AurumSleep() {
           </div>
         </div>
       </section>
+{/* Final CTA Section */}
+<section className="py-16 sm:py-24 aurum-gradient" id="waitlist-form">
+  <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
+    <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-8 text-slate-50">
+      The Future of Sleep Starts Here.
+    </h2>
 
-      {/* Final CTA Section */}
-      <section className="py-16 sm:py-24 aurum-gradient" id="waitlist-form">
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-8 text-slate-50">
-            The Future of Sleep Starts Here.
-          </h2>
+    <div className="max-w-4xl mx-auto">
+      <div className="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-slate-600/30">
+        <iframe
+          data-tally-src="https://tally.so/embed/mO6OrM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+          loading="lazy"
+          width="100%"
+          height="529"
+          frameBorder="0"
+          marginHeight={0}
+          marginWidth={0}
+          title="Aurum Interest Form"
+          className="w-full rounded-2xl"
+          style={{ maxWidth: "640px", margin: "0 auto", display: "block" }}
+        ></iframe>
+      </div>
+    </div>
+  </div>
+</section>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-slate-600/30">
-              <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScC7Uj59QGb5pYD46J5pImHruPMI4xzMDY2-AvDH2Oc37xGXQ/viewform?embedded=true"
-                width="100%"
-                height="1109"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                className="w-full rounded-2xl"
-                style={{ maxWidth: "640px", margin: "0 auto", display: "block" }}
-              >
-                Loading…
-              </iframe>
-            </div>
-          </div>
-        </div>
-      </section>
+{/* Tally embed loader script */}
+<script
+  dangerouslySetInnerHTML={{
+    __html: `
+      var d=document,w="https://tally.so/widgets/embed.js",v=function(){
+        if(typeof Tally!="undefined"){Tally.loadEmbeds();}
+        else d.querySelectorAll("iframe[data-tally-src]:not([src])").forEach(function(e){e.src=e.dataset.tallySrc});
+      };
+      if(typeof Tally!="undefined")v();
+      else if(d.querySelector('script[src="'+w+'"]')==null){
+        var s=d.createElement("script");s.src=w;s.onload=v;s.onerror=v;d.body.appendChild(s);
+      }
+    `,
+  }}
+/>
 
       {/* Footer */}
       <footer className="py-12 bg-slate-900 border-t border-slate-800">
