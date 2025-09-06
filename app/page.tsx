@@ -797,7 +797,7 @@ export default function AurumSleep() {
     <div className="max-w-4xl mx-auto">
       <div className="bg-slate-800/30 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-slate-600/30">
         <iframe
-          data-tally-src="https://tally.so/embed/mO6OrM?alignLeft=1&transparentBackground=1&dynamicHeight=1"
+          data-tally-src="https://tally.so/embed/mO6OrM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
           loading="lazy"
           width="100%"
           height="529"
