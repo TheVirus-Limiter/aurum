@@ -560,8 +560,8 @@ export default function AurumSleep() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-900/50 to-yellow-900/40 p-8 border-2 border-amber-500/40 hover:border-yellow-400/60 transition-all duration-500 hover:transform hover:scale-105 ring-2 ring-amber-400/30">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-300/10 to-amber-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+            <div className="group relative overflow-hidden rounded-3xl bg-slate-900 p-8 border-2 border-amber-500/60 hover:border-yellow-400/80 transition-all duration-500 hover:transform hover:scale-105 ring-2 ring-amber-400/40">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-400/20 to-yellow-400/20 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute top-4 right-4">
                 <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 text-xs font-bold px-2 py-1 rounded-full">
                   PREMIUM
@@ -794,7 +794,7 @@ export default function AurumSleep() {
                     href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-slate-300 text-sm hover:text-white transition-colors"
+                    className="text-slate-300 text-sm hover:text-white transition-colors block"
                   >
                     @lumorasleep
                   </a>
