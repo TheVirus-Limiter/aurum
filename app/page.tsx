@@ -19,6 +19,7 @@ import {
   Plus,
   Minus,
   Mail,
+  Instagram,
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
@@ -62,29 +63,29 @@ export default function AurumSleep() {
 
   const faqData = [
     {
-      question: "When will Aurum Sleep masks be available?",
+      question: "When will Lumora Sleep masks be available?",
       answer:
         "We're currently in the final stages of development and testing. Join our waitlist to be the first to know when we launch. We expect to begin shipping in Q2 2026.",
     },
     {
       question: "How do I contact customer support?",
       answer:
-        "You can reach our team at hello@aurumsleep.co. We typically respond within 24 hours during business days.",
+        "You can reach our team at hello@uselumora.co. We typically respond within 24 hours during business days.",
     },
     {
       question: "What's the current status of your startup?",
       answer:
-        "We're currently looking for preseed funding to bring Aurum Sleep to market. If you're an investor interested in revolutionizing the sleep industry, reach out at funding@aurumsleep.co.",
+        "We're currently looking for preseed funding to bring Lumora Sleep to market. If you're an investor interested in revolutionizing the sleep industry, reach out at funding@uselumora.co.",
     },
     {
-      question: "What's included with each Aurum Sleep mask?",
+      question: "What's included with each Lumora Sleep mask?",
       answer:
         "Each mask includes the sleep mask, adjustable strap, USB-C charging cable, premium carrying case, and a detailed user guide. Higher-tier models include additional accessories like aromatherapy inserts or travel cases.",
     },
     {
       question: "How long does the battery last?",
       answer:
-        "Battery life varies by model: Core (N/A - no electronics), Natural (3-5 nights), Travel (7-10 nights), and Max (5-7 nights with all features active). All models charge fully in under 2 hours.",
+        "Battery life varies by model: Essence (N/A - no electronics), Pure (3-5 nights), Voyage (7-10 nights), and Max (5-7 nights with all features active). All models charge fully in under 2 hours.",
     },
     {
       question: "Is there a warranty or return policy?",
@@ -92,7 +93,7 @@ export default function AurumSleep() {
         "Yes! We offer a 30-day satisfaction guarantee and 1-year warranty on all electronic components. If you're not completely satisfied, return your mask for a full refund.",
     },
     {
-      question: "Can I wash my Aurum Sleep mask?",
+      question: "Can I wash my Lumora Sleep mask?",
       answer:
         "The fabric components are machine washable on gentle cycle. Electronic models have removable tech modules - simply detach before washing. Detailed care instructions are included with each mask.",
     },
@@ -104,7 +105,7 @@ export default function AurumSleep() {
     {
       question: "How is this different from regular sleep masks?",
       answer:
-        "Aurum Sleep masks combine premium materials with smart technology. Features like adaptive temperature control, bone-conduction audio, and sunrise wake lights create a complete sleep ritual, not just light blocking.",
+        "Lumora Sleep masks combine premium materials with smart technology. Features like adaptive temperature control, bone-conduction audio, and sunrise wake lights create a complete sleep ritual, not just light blocking.",
     },
   ]
 
@@ -161,7 +162,7 @@ export default function AurumSleep() {
 
   const products = {
     core: {
-      name: "Aurum Core",
+      name: "Lumora Essence",
       tagline: "Better Sleep for Everyone",
       price: "$89",
       icon: Zap,
@@ -170,7 +171,7 @@ export default function AurumSleep() {
       features: ["Premium light-blocking", "Soft, breathable materials", "Adjustable strap", "Essential comfort"],
     },
     natural: {
-      name: "Aurum Natural",
+      name: "Lumora Pure",
       tagline: "Nature Meets Rest",
       price: "$129",
       icon: Leaf,
@@ -179,7 +180,7 @@ export default function AurumSleep() {
       features: ["Organic cotton exterior", "Biodegradable packaging", "Aromatherapy infusion", "Eco-friendly design"],
     },
     travel: {
-      name: "Aurum Travel",
+      name: "Lumora Voyage",
       tagline: "Rest, Anywhere",
       price: "$159",
       icon: Plane,
@@ -188,8 +189,8 @@ export default function AurumSleep() {
       features: ["Ultra-compact design", "Noise-dampening technology", "Portable charging case", "Travel-optimized"],
     },
     max: {
-      name: "Aurum Max",
-      tagline: "Rest, Elevated",
+      name: "Lumora Max",
+      tagline: "Luxury Without Limits",
       price: "$299",
       icon: Crown,
       description:
@@ -259,7 +260,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-20 sm:h-24 w-auto" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-36 w-auto" />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a
@@ -280,7 +281,7 @@ export default function AurumSleep() {
                   document.getElementById("customize")?.scrollIntoView({ behavior: "smooth" })
                 }}
               >
-                Find Your Aurum
+                Discover Lumora
               </a>
               <a
                 href="#faq"
@@ -321,7 +322,7 @@ export default function AurumSleep() {
                 className="pill-button bg-transparent border-2 border-slate-400 text-slate-400 hover:bg-slate-400 hover:text-slate-900 hover:shadow-xl hover:shadow-slate-400/30 px-8 sm:px-12 py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-105 hover:-translate-y-1 w-full sm:w-auto"
                 onClick={() => document.getElementById("customize")?.scrollIntoView({ behavior: "smooth" })}
               >
-                Find Your Aurum
+                Discover Lumora
               </Button>
               <Button
                 size="lg"
@@ -516,7 +517,7 @@ export default function AurumSleep() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-slate-400 to-slate-600 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Zap className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Aurum Core</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">Lumora Essence</h3>
                 <p className="text-sm text-slate-400 mb-4 font-medium italic">"Better Sleep for Everyone."</p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Entry-level comfort with light-blocking and soft materials. Essential functions for quality rest.
@@ -534,7 +535,7 @@ export default function AurumSleep() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-green-600 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Leaf className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Aurum Natural</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">Lumora Pure</h3>
                 <p className="text-sm text-green-300 mb-4 font-medium italic">"Nature Meets Rest."</p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Organic fabrics, biodegradable packaging, and aromatherapy infusion for eco-conscious rest.
@@ -552,7 +553,7 @@ export default function AurumSleep() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-blue-600 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Plane className="w-7 h-7 text-white" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Aurum Travel</h3>
+                <h3 className="text-xl font-bold mb-2 text-white">Lumora Voyage</h3>
                 <p className="text-sm text-blue-300 mb-4 font-medium italic">"Rest, Anywhere."</p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Compact foldable design with noise-dampening and portable charging case for travelers.
@@ -575,8 +576,8 @@ export default function AurumSleep() {
                 <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-amber-400 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Crown className="w-7 h-7 text-slate-900" />
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Aurum Max</h3>
-                <p className="text-sm text-purple-300 mb-4 font-medium italic">"Rest, Elevated."</p>
+                <h3 className="text-xl font-bold mb-2 text-white">Lumora Max</h3>
+                <p className="text-sm text-purple-300 mb-4 font-medium italic">"Luxury Without Limits"</p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Premium silk exterior with customizable hardware and app-based personalization.
                 </p>
@@ -602,9 +603,9 @@ export default function AurumSleep() {
               <Sparkles className="w-6 h-6 text-slate-400" />
               <span className="text-slate-400 font-medium">PERSONALIZED RECOMMENDATION</span>
             </div>
-            <h2 className="text-4xl md:text-6xl font-bold mb-6 sage-gradient">Find Your Perfect Aurum</h2>
+            <h2 className="text-4xl md:text-6xl font-bold mb-6 sage-gradient">Discover Your Lumora</h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Take our quick quiz to discover which Aurum Sleep mask matches your unique sleep needs and lifestyle.
+              Take our quick quiz to find the Lumora Sleep mask designed for your unique rest and lifestyle.
             </p>
           </div>
 
@@ -773,14 +774,30 @@ export default function AurumSleep() {
                 <p className="text-slate-300">Our team is here to help you find the perfect sleep solution.</p>
               </div>
 
-              <div className="flex justify-center">
+              <div className="flex flex-col sm:flex-row justify-center gap-8">
                 <div className="text-center">
                   <div className="w-12 h-12 bg-slate-600/50 rounded-full flex items-center justify-center mx-auto mb-3">
                     <Mail className="w-6 h-6 text-slate-300" />
                   </div>
                   <h4 className="font-semibold text-white mb-1">Email Us</h4>
-                  <p className="text-slate-300 text-sm">hello@aurumsleep.co</p>
+                  <p className="text-slate-300 text-sm">hello@uselumora.co</p>
                   <p className="text-slate-400 text-xs mt-1">Response within 24 hours</p>
+                </div>
+                
+                <div className="text-center">
+                  <div className="w-12 h-12 bg-slate-600/50 rounded-full flex items-center justify-center mx-auto mb-3">
+                    <Instagram className="w-6 h-6 text-slate-300" />
+                  </div>
+                  <h4 className="font-semibold text-white mb-1">Follow Us</h4>
+                  <a 
+                    href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-slate-300 text-sm hover:text-white transition-colors"
+                  >
+                    @lumorasleep
+                  </a>
+                  <p className="text-slate-400 text-xs mt-1">Latest updates & behind-the-scenes</p>
                 </div>
               </div>
             </div>
@@ -804,7 +821,7 @@ export default function AurumSleep() {
           frameBorder="0"
           marginHeight={0}
           marginWidth={0}
-          title="Aurum Interest Form"
+          title="Lumora Interest Form"
           className="w-full rounded-2xl"
           style={{ maxWidth: "640px", margin: "0 auto", display: "block" }}
         ></iframe>
@@ -834,7 +851,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-32 sm:h-40 w-auto opacity-80" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-40 w-auto opacity-80" />
             </div>
 
             <div className="flex flex-wrap gap-6 sm:gap-8 text-slate-400 justify-center">
@@ -859,6 +876,9 @@ export default function AurumSleep() {
               </a>
               <a href="/admin" className="hover:text-slate-300 transition-colors font-light">
                 Admin
+              </a>
+              <a href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors font-light">
+                Instagram
               </a>
             </div>
           </div>

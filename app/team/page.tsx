@@ -22,7 +22,7 @@ export default function TeamPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <a href="/">
-                <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-20 w-auto" />
+                <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-36 w-auto" />
               </a>
             </div>
             <nav className="hidden md:flex items-center gap-8">
@@ -30,7 +30,7 @@ export default function TeamPage() {
                 Products
               </a>
               <a href="/#customize" className="text-slate-300 hover:text-white transition-colors font-light">
-                Find Your Aurum
+                Discover Lumora
               </a>
               <a href="/#faq" className="text-slate-300 hover:text-white transition-colors font-light">
                 FAQ
@@ -94,7 +94,7 @@ export default function TeamPage() {
             Join Our Mission
           </h2>
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Ready to experience the future of sleep? Join thousands on our waitlist and be the first to know when Aurum
+            Ready to experience the future of sleep? Join thousands on our waitlist and be the first to know when Lumora
             Sleep launches.
           </p>
           <a
@@ -111,7 +111,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/images/aurum-logo.png" alt="Aurum Sleep" className="h-16 w-auto opacity-80" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-16 w-auto opacity-80" />
             </div>
 
             <div className="flex gap-8 text-slate-400">
@@ -121,8 +121,11 @@ export default function TeamPage() {
               <a href="/#faq" className="hover:text-slate-300 transition-colors font-light">
                 FAQ
               </a>
-              <a href="mailto:hello@aurumsleep.co" className="hover:text-slate-300 transition-colors font-light">
+              <a href="mailto:hello@uselumora.co" className="hover:text-slate-300 transition-colors font-light">
                 Contact
+              </a>
+              <a href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors font-light">
+                Instagram
               </a>
               <a href="/team" className="hover:text-slate-300 transition-colors font-light">
                 Our Team

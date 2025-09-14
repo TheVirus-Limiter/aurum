@@ -34,9 +34,9 @@ export async function POST(request: NextRequest) {
     try {
       const emailData = {
         to: "rehanraj102928390@gmail.com",
-        subject: "New Aurum Sleep Waitlist Signup",
+        subject: "New Lumora Sleep Waitlist Signup",
         html: `
-          <h2>New Aurum Sleep Waitlist Signup</h2>
+          <h2>New Lumora Sleep Waitlist Signup</h2>
           <p><strong>Email:</strong> ${email}</p>
           <p><strong>Who are you:</strong> ${whoAreYou || "Not specified"}</p>
           <p><strong>Age range:</strong> ${ageRange || "Not specified"}</p>
@@ -56,17 +56,17 @@ export async function POST(request: NextRequest) {
       })
 
       if (emailResponse.ok) {
-        console.log("[Aurum Sleep] Email notification sent successfully")
+        console.log("[Lumora Sleep] Email notification sent successfully")
       } else {
-        console.log("[Aurum Sleep] Email service response:", await emailResponse.text())
+        console.log("[Lumora Sleep] Email service response:", await emailResponse.text())
       }
     } catch (emailError) {
-      console.log("[Aurum Sleep] Email notification failed:", emailError)
+      console.log("[Lumora Sleep] Email notification failed:", emailError)
     }
 
     // Log for demo purposes
-    console.log(`[Aurum Sleep Waitlist] New signup: ${email} at ${newEntry.timestamp}`)
-    console.log(`[Aurum Sleep Waitlist] Total signups: ${getWaitlistStats().totalSignups}`)
+    console.log(`[Lumora Sleep Waitlist] New signup: ${email} at ${newEntry.timestamp}`)
+    console.log(`[Lumora Sleep Waitlist] Total signups: ${getWaitlistStats().totalSignups}`)
 
     return NextResponse.json(
       {
@@ -76,7 +76,7 @@ export async function POST(request: NextRequest) {
       { status: 201 },
     )
   } catch (error) {
-    console.error("[Aurum Sleep Waitlist] Error:", error)
+    console.error("[Lumora Sleep Waitlist] Error:", error)
     return NextResponse.json({ error: "Something went wrong. Please try again." }, { status: 500 })
   }
 }

@@ -23,7 +23,7 @@ export default function AdminPage() {
   const [waitlistData, setWaitlistData] = useState<WaitlistEntry[]>([])
   const [isLoading, setIsLoading] = useState(false)
 
-  const correctPassword = "aurum1234%"
+  const correctPassword = "lumora2024!"
 
   const handleLogin = (e: React.FormEvent) => {
     e.preventDefault()
@@ -99,7 +99,7 @@ export default function AdminPage() {
       <div className="container mx-auto max-w-6xl">
         <div className="flex items-center justify-between mb-8">
           <div>
-            <h1 className="text-3xl font-bold mb-2">Aurum Sleep Admin</h1>
+            <h1 className="text-3xl font-bold mb-2">Lumora Sleep Admin</h1>
             <p className="text-slate-400">Waitlist Management Dashboard</p>
           </div>
           <Button
