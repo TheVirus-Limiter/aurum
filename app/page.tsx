@@ -23,180 +23,216 @@ import {
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
-// Interactive Mask Diagram Component
+// Interactive Product Hero Component
 const InteractiveMaskDiagram = () => {
-  const [activeHotspot, setActiveHotspot] = useState<string | null>(null)
-  const [selectedComponent, setSelectedComponent] = useState<string | null>(null)
+  const [selectedFeature, setSelectedFeature] = useState<string | null>(null)
+  const [isZoomed, setIsZoomed] = useState(false)
+  const [revealMode, setRevealMode] = useState(false)
 
-  const components = {
-    thermal: {
-      title: "Thermal Control System",
-      description: "PCM (Phase Change Materials) and TEC (Thermoelectric Cooler) for adaptive temperature regulation",
-      details: "Paraffin-based PCM (28-32°C) provides passive temperature buffering, while TEC elements offer active heating/cooling with precise NTC thermistor feedback",
-      position: { x: 25, y: 30 }
+  const features = [
+    {
+      id: "thermal",
+      title: "Adaptive Thermal Control",
+      description: "Advanced PCM and TEC technology maintains perfect temperature",
+      details: "Paraffin-based Phase Change Materials (28-32°C) provide passive temperature buffering, while thermoelectric coolers offer active heating/cooling with precision NTC thermistor feedback.",
+      position: { x: 20, y: 45 },
+      icon: "🌡️"
     },
-    audio: {
+    {
+      id: "audio", 
       title: "Bone-Conduction Audio",
-      description: "Temple-mounted transducers deliver ambient soundscapes without blocking ears",
-      details: "ABS housing with TPE over-mold provides impact resistance while delivering vibrations through bone conduction for spatial awareness",
-      position: { x: 15, y: 15 }
+      description: "Immersive soundscapes without blocking ambient awareness",
+      details: "Temple-mounted transducers in impact-resistant ABS housing deliver crystal-clear audio through bone conduction, maintaining spatial awareness for safety.",
+      position: { x: 15, y: 25 },
+      icon: "🎵"
     },
-    leds: {
-      title: "LED Wake Light System",
-      description: "Circadian-aligned LED arrays simulate natural sunrise patterns",
-      details: "PMMA light guide ensures even distribution across 20-minute sunrise simulation using circadian rhythm optimization",
-      position: { x: 50, y: 25 }
+    {
+      id: "lights",
+      title: "Circadian Wake Light",
+      description: "Gentle sunrise simulation using LED arrays",
+      details: "PMMA light guides ensure even distribution across a 20-minute sunrise simulation, perfectly aligned with your circadian rhythm for natural awakening.",
+      position: { x: 50, y: 35 },
+      icon: "☀️"
     },
-    padding: {
-      title: "Memory Foam Padding",
-      description: "Medical-grade memory foam provides pressure distribution and light blocking",
-      details: "Biocompatible memory foam maintains shape while providing effective light blockage and comfort during extended wear",
-      position: { x: 40, y: 45 }
+    {
+      id: "comfort",
+      title: "Memory Foam Comfort",
+      description: "Medical-grade materials for pressure-free wear",
+      details: "Biocompatible memory foam maintains its shape while providing effective light blockage and supreme comfort during extended wear periods.",
+      position: { x: 45, y: 60 },
+      icon: "☁️"
     },
-    exterior: {
-      title: "Luxury Materials",
+    {
+      id: "materials",
+      title: "Luxury Materials", 
       description: "Mulberry silk exterior with moisture-wicking properties",
-      details: "Hypoallergenic mulberry silk or bamboo fiber provides temperature regulation, luxury feel, and effective moisture management",
-      position: { x: 35, y: 65 }
+      details: "Hypoallergenic mulberry silk and bamboo fiber provide temperature regulation, luxury feel, and effective moisture management for all-night comfort.",
+      position: { x: 70, y: 65 },
+      icon: "✨"
     },
-    battery: {
-      title: "Power & Charging",
-      description: "Rechargeable battery with gold-plated charging contacts",
-      details: "Polycarbonate flame-retardant housing with gold-plated copper contacts for corrosion resistance and low contact resistance",
-      position: { x: 70, y: 40 }
-    },
-    strap: {
-      title: "Adjustment System",
-      description: "Neoprene strap with Velcro closure for comfort",
-      details: "Flexible neoprene maintains elasticity for extended wear while providing secure, adjustable fit for all head sizes",
-      position: { x: 85, y: 50 }
+    {
+      id: "power",
+      title: "Wireless Charging",
+      description: "Long-lasting battery with gold-plated contacts",
+      details: "Polycarbonate flame-retardant housing protects the battery system, while gold-plated copper contacts ensure corrosion resistance and reliable charging.",
+      position: { x: 80, y: 45 },
+      icon: "🔋"
     }
-  }
+  ]
 
   return (
-    <div className="relative w-full max-w-2xl mx-auto">
-      {/* Main SVG Diagram */}
-      <svg
-        viewBox="0 0 400 200"
-        className="w-full h-auto"
-        style={{ filter: "drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3))" }}
-      >
-        {/* Background gradient */}
-        <defs>
-          <linearGradient id="maskGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-            <stop offset="0%" stopColor="#1e293b" />
-            <stop offset="50%" stopColor="#334155" />
-            <stop offset="100%" stopColor="#475569" />
-          </linearGradient>
-        </defs>
+    <div className="relative w-full max-w-4xl mx-auto">
+      {/* Main Product Image Container */}
+      <div className="relative group">
+        {/* Background Glow Effect */}
+        <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-amber-500/20 rounded-3xl blur-3xl transform scale-110 opacity-50"></div>
+        
+        {/* Product Image */}
+        <div className={`relative overflow-hidden rounded-2xl transition-all duration-700 ${isZoomed ? 'scale-110' : 'scale-100'}`}>
+          <img
+            src="/images/sleep-mask-2.png"
+            alt="Lumora Sleep Mask - Interactive View"
+            className="w-full h-auto object-contain transition-all duration-500"
+            style={{
+              filter: `${revealMode ? 'brightness(0.7) contrast(1.2)' : 'brightness(1) contrast(1)'} drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3))`
+            }}
+          />
+          
+          {/* Internal Components Overlay (Reveal Mode) */}
+          {revealMode && (
+            <div className="absolute inset-0 transition-opacity duration-700 opacity-90">
+              {/* Thermal zones */}
+              <div className="absolute" style={{left: '18%', top: '40%', width: '12%', height: '15%'}}>
+                <div className="w-full h-full bg-blue-400/30 rounded-lg border-2 border-blue-400/60 animate-pulse"></div>
+                <div className="text-xs text-blue-300 mt-1 font-medium">Thermal</div>
+              </div>
+              <div className="absolute" style={{left: '70%', top: '40%', width: '12%', height: '15%'}}>
+                <div className="w-full h-full bg-blue-400/30 rounded-lg border-2 border-blue-400/60 animate-pulse"></div>
+              </div>
+              
+              {/* Audio transducers */}
+              <div className="absolute" style={{left: '12%', top: '25%', width: '8%', height: '8%'}}>
+                <div className="w-full h-full bg-purple-400/40 rounded-full border-2 border-purple-400/70 animate-pulse"></div>
+                <div className="text-xs text-purple-300 mt-1 font-medium">Audio</div>
+              </div>
+              <div className="absolute" style={{left: '80%', top: '25%', width: '8%', height: '8%'}}>
+                <div className="w-full h-full bg-purple-400/40 rounded-full border-2 border-purple-400/70 animate-pulse"></div>
+              </div>
+              
+              {/* LED arrays */}
+              <div className="absolute" style={{left: '45%', top: '30%', width: '10%', height: '4%'}}>
+                <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
+                <div className="text-xs text-amber-300 mt-1 font-medium">LEDs</div>
+              </div>
+              
+              {/* Battery */}
+              <div className="absolute" style={{left: '75%', top: '55%', width: '8%', height: '6%'}}>
+                <div className="w-full h-full bg-green-400/40 rounded border-2 border-green-400/70 animate-pulse"></div>
+                <div className="text-xs text-green-300 mt-1 font-medium">Battery</div>
+              </div>
+            </div>
+          )}
 
-        {/* Main Mask Shape - Cutaway View */}
-        <ellipse 
-          cx="200" 
-          cy="100" 
-          rx="160" 
-          ry="70" 
-          fill="url(#maskGradient)" 
-          stroke="#64748b" 
-          strokeWidth="2"
-        />
-        
-        {/* Internal Components Layer */}
-        {/* Thermal Elements */}
-        <rect x="60" y="70" width="40" height="15" rx="3" fill="#3b82f6" opacity="0.8" />
-        <rect x="300" y="70" width="40" height="15" rx="3" fill="#3b82f6" opacity="0.8" />
-        
-        {/* Audio Transducers */}
-        <circle cx="80" cy="50" r="12" fill="#8b5cf6" opacity="0.8" />
-        <circle cx="320" cy="50" r="12" fill="#8b5cf6" opacity="0.8" />
-        
-        {/* LED Arrays */}
-        <rect x="180" y="60" width="40" height="8" rx="4" fill="#eab308" opacity="0.8" />
-        <rect x="160" y="75" width="15" height="4" rx="2" fill="#eab308" opacity="0.6" />
-        <rect x="225" y="75" width="15" height="4" rx="2" fill="#eab308" opacity="0.6" />
-        
-        {/* Memory Foam Padding */}
-        <ellipse cx="200" cy="100" rx="140" ry="50" fill="#64748b" opacity="0.4" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3,3" />
-        
-        {/* Battery Housing */}
-        <rect x="260" y="120" width="30" height="20" rx="5" fill="#10b981" opacity="0.8" />
-        
-        {/* Strap System */}
-        <rect x="340" y="95" width="50" height="10" rx="5" fill="#6366f1" opacity="0.8" />
-        <rect x="10" y="95" width="50" height="10" rx="5" fill="#6366f1" opacity="0.8" />
-
-        {/* Interactive Hotspots */}
-        {Object.entries(components).map(([key, component]) => (
-          <g key={key}>
-            <circle
-              cx={component.position.x * 4}
-              cy={component.position.y * 2}
-              r="8"
-              fill={activeHotspot === key ? "#f59e0b" : "#ef4444"}
-              opacity={activeHotspot === key ? 1 : 0.7}
-              stroke="#ffffff"
-              strokeWidth="2"
-              className="cursor-pointer transition-all duration-300 hover:scale-110"
-              onMouseEnter={() => setActiveHotspot(key)}
-              onMouseLeave={() => setActiveHotspot(null)}
-              onClick={() => setSelectedComponent(selectedComponent === key ? null : key)}
-            />
-            <text
-              x={component.position.x * 4}
-              y={component.position.y * 2}
-              textAnchor="middle"
-              dy="0.3em"
-              fill="white"
-              fontSize="10"
-              fontWeight="bold"
-              className="pointer-events-none"
-            >
-              {Object.keys(components).indexOf(key) + 1}
-            </text>
-          </g>
-        ))}
-      </svg>
-
-      {/* Component Details Panel */}
-      {selectedComponent && (
-        <div className="mt-6 bg-slate-800/90 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 transition-all duration-500 ease-out">
-          <div className="flex justify-between items-start mb-4">
-            <h3 className="text-xl font-semibold text-white">
-              {components[selectedComponent as keyof typeof components].title}
-            </h3>
+          {/* Interactive Hotspots */}
+          {features.map((feature) => (
             <button
-              onClick={() => setSelectedComponent(null)}
-              className="text-slate-400 hover:text-white transition-colors"
+              key={feature.id}
+              className={`absolute w-8 h-8 rounded-full transition-all duration-300 transform hover:scale-125 focus:scale-125 focus:outline-none ${
+                selectedFeature === feature.id 
+                  ? 'bg-amber-400 shadow-lg shadow-amber-400/50 scale-125' 
+                  : 'bg-white/20 backdrop-blur-sm hover:bg-white/30'
+              }`}
+              style={{
+                left: `${feature.position.x}%`,
+                top: `${feature.position.y}%`,
+                transform: 'translate(-50%, -50%)'
+              }}
+              onClick={() => setSelectedFeature(selectedFeature === feature.id ? null : feature.id)}
+              onDoubleClick={() => setIsZoomed(!isZoomed)}
+            >
+              <div className="flex items-center justify-center w-full h-full">
+                <span className="text-xs">{feature.icon}</span>
+              </div>
+              
+              {/* Pulsing ring animation */}
+              <div className={`absolute inset-0 rounded-full border-2 border-white/50 animate-ping ${
+                selectedFeature === feature.id ? 'opacity-100' : 'opacity-0'
+              }`}></div>
+            </button>
+          ))}
+        </div>
+
+        {/* Control Buttons */}
+        <div className="absolute top-4 right-4 flex gap-2">
+          <button
+            onClick={() => setRevealMode(!revealMode)}
+            className={`px-3 py-2 rounded-lg text-sm font-medium transition-all duration-300 ${
+              revealMode 
+                ? 'bg-amber-500 text-slate-900 shadow-lg' 
+                : 'bg-white/10 text-white hover:bg-white/20'
+            }`}
+          >
+            {revealMode ? 'Hide Internals' : 'Show Internals'}
+          </button>
+          <button
+            onClick={() => setIsZoomed(!isZoomed)}
+            className="px-3 py-2 rounded-lg text-sm font-medium bg-white/10 text-white hover:bg-white/20 transition-all duration-300"
+          >
+            {isZoomed ? 'Zoom Out' : 'Zoom In'}
+          </button>
+        </div>
+      </div>
+
+      {/* Feature Detail Panel */}
+      {selectedFeature && (
+        <div className="mt-8 bg-gradient-to-br from-slate-800/90 to-slate-900/90 backdrop-blur-xl rounded-2xl p-6 border border-slate-600/30 transition-all duration-500 ease-out transform animate-in slide-in-from-bottom-4">
+          <div className="flex items-start justify-between mb-4">
+            <div className="flex items-center gap-3">
+              <div className="text-2xl">
+                {features.find(f => f.id === selectedFeature)?.icon}
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-white">
+                  {features.find(f => f.id === selectedFeature)?.title}
+                </h3>
+                <p className="text-slate-400 text-sm">
+                  {features.find(f => f.id === selectedFeature)?.description}
+                </p>
+              </div>
+            </div>
+            <button
+              onClick={() => setSelectedFeature(null)}
+              className="text-slate-400 hover:text-white transition-colors p-1"
             >
               ✕
             </button>
           </div>
-          <p className="text-slate-300 mb-3">
-            {components[selectedComponent as keyof typeof components].description}
-          </p>
-          <p className="text-slate-400 text-sm leading-relaxed">
-            {components[selectedComponent as keyof typeof components].details}
+          <p className="text-slate-300 leading-relaxed">
+            {features.find(f => f.id === selectedFeature)?.details}
           </p>
         </div>
       )}
 
-      {/* Legend */}
-      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
-        {Object.entries(components).map(([key, component], index) => (
-          <div
-            key={key}
-            className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-all duration-200 ${
-              selectedComponent === key 
-                ? 'bg-amber-500/20 border border-amber-500/40' 
-                : 'bg-slate-800/50 hover:bg-slate-700/50'
+      {/* Feature Grid */}
+      <div className="mt-6 grid grid-cols-2 sm:grid-cols-3 gap-3">
+        {features.map((feature) => (
+          <button
+            key={feature.id}
+            className={`p-3 rounded-xl text-left transition-all duration-200 ${
+              selectedFeature === feature.id
+                ? 'bg-amber-500/20 border border-amber-500/40 shadow-lg'
+                : 'bg-slate-800/50 hover:bg-slate-700/50 border border-transparent'
             }`}
-            onClick={() => setSelectedComponent(selectedComponent === key ? null : key)}
+            onClick={() => setSelectedFeature(selectedFeature === feature.id ? null : feature.id)}
           >
-            <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold">
-              {index + 1}
+            <div className="flex items-center gap-2 mb-1">
+              <span className="text-lg">{feature.icon}</span>
+              <span className="text-sm font-medium text-white">{feature.title}</span>
             </div>
-            <span className="text-slate-300 text-xs">{component.title}</span>
-          </div>
+            <p className="text-xs text-slate-400 leading-relaxed">
+              {feature.description}
+            </p>
+          </button>
         ))}
       </div>
     </div>
