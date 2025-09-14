@@ -23,7 +23,7 @@ const InteractiveProductHero = () => {
       title: "Music Audio",
       description: "Immersive soundscapes without blocking ambient awareness",
       details: "Temple-mounted transducers in impact-resistant ABS housing deliver crystal-clear audio through bone conduction, maintaining spatial awareness for safety.",
-      position: { x: 85, y: 50 },
+      position: { x: 84, y: 48 },
       icon: "🎵"
     },
     {
@@ -31,7 +31,7 @@ const InteractiveProductHero = () => {
       title: "LED Wake Light",
       description: "Gentle sunrise simulation using LED arrays",
       details: "PMMA light guides ensure even distribution across a 20-minute sunrise simulation, perfectly aligned with your circadian rhythm for natural awakening.",
-      position: { x: 31, y: 45 },
+      position: { x: 28, y: 41 },
       icon: "☀️"
     },
     {
@@ -55,7 +55,7 @@ const InteractiveProductHero = () => {
       title: "Battery & Charging",
       description: "Long-lasting battery with gold-plated contacts",
       details: "Polycarbonate flame-retardant housing protects the battery system, while gold-plated copper contacts ensure corrosion resistance and reliable charging.",
-      position: { x: 22, y: 61 },
+      position: { x: 19, y: 58 },
       icon: "🔋"
     }
   ]
@@ -90,23 +90,23 @@ const InteractiveProductHero = () => {
                 </div>
               </div>
               
-              {/* Music - positioned on actual elastic band */}
-              <div className="absolute" style={{left: '82%', top: '48%', width: '8%', height: '8%'}}>
+              {/* Music - positioned per red arrow */}
+              <div className="absolute" style={{left: '80%', top: '45%', width: '8%', height: '8%'}}>
                 <div className="w-full h-full bg-purple-400/40 rounded-full border-2 border-purple-400/70 animate-pulse"></div>
                 <div className="text-xs text-purple-300 mt-1 font-medium">Music</div>
               </div>
               
-              {/* LED arrays - moved to the left */}
-              <div className="absolute" style={{left: '28%', top: '42%', width: '6%', height: '6%'}}>
+              {/* LED arrays - positioned per red arrows */}
+              <div className="absolute" style={{left: '25%', top: '38%', width: '6%', height: '6%'}}>
                 <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
                 <div className="text-xs text-amber-300 mt-1 font-medium">LED</div>
               </div>
-              <div className="absolute" style={{left: '58%', top: '42%', width: '6%', height: '6%'}}>
+              <div className="absolute" style={{left: '55%', top: '38%', width: '6%', height: '6%'}}>
                 <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
               </div>
               
-              {/* Battery/Charge Port - moved up and to the left */}
-              <div className="absolute" style={{left: '18%', top: '58%', width: '8%', height: '6%'}}>
+              {/* Battery/Charge Port - positioned per red arrow */}
+              <div className="absolute" style={{left: '15%', top: '55%', width: '8%', height: '6%'}}>
                 <div className="w-full h-full bg-green-400/40 rounded border-2 border-green-400/70 animate-pulse"></div>
                 <div className="text-xs text-green-300 mt-1 font-medium">Battery</div>
               </div>
