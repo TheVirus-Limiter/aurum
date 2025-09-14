@@ -42,9 +42,9 @@ const InteractiveProductHero = () => {
     },
     {
       id: "battery",
-      title: "Wireless Charging",
-      description: "Long-lasting battery with magnetic charging",
-      details: "Advanced lithium battery provides 8+ hours of use with convenient wireless charging via gold-plated magnetic contacts.",
+      title: "Battery & Charging",
+      description: "Long-lasting battery with wired charging",
+      details: "Advanced lithium battery provides 8+ hours of use with convenient wired charging via gold-plated contacts.",
       position: { x: 22, y: 61 },
       side: "left",
       color: "green",
@@ -121,20 +121,6 @@ const InteractiveProductHero = () => {
                 </p>
               </div>
               
-              {/* Connector Line */}
-              <svg 
-                className="absolute top-1/2 -right-2 w-32 h-1 text-slate-400"
-                style={{ transform: 'translateY(-50%)' }}
-              >
-                <line 
-                  x1="0" y1="50%" 
-                  x2="100%" y2="50%" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
-                  strokeDasharray="4,4"
-                  className={hoveredComponent === component.id ? 'text-amber-400' : 'text-slate-400'}
-                />
-              </svg>
             </div>
           ))}
         </div>
@@ -151,28 +137,50 @@ const InteractiveProductHero = () => {
           />
           
           {/* Component Markers on Image */}
-          {showCallouts && components.map((component) => (
-            <div
-              key={`marker-${component.id}`}
-              className={`absolute w-4 h-4 rounded-full border-2 border-white transition-all duration-300 cursor-pointer ${
-                hoveredComponent === component.id 
-                  ? 'bg-amber-400 scale-150 shadow-lg shadow-amber-400/50' 
-                  : 'bg-slate-600 hover:bg-slate-400'
-              }`}
-              style={{
-                left: `${component.position.x}%`,
-                top: `${component.position.y}%`,
-                transform: 'translate(-50%, -50%)'
-              }}
-              onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
-              onMouseEnter={() => setHoveredComponent(component.id)}
-              onMouseLeave={() => setHoveredComponent(null)}
-            >
-              <div className={`absolute inset-0 rounded-full animate-ping ${
-                hoveredComponent === component.id ? 'bg-amber-400' : 'bg-slate-400'
-              }`}></div>
-            </div>
-          ))}
+          {showCallouts && components.map((component) => {
+            const getMarkerColor = (color: string) => {
+              switch (color) {
+                case 'blue': return hoveredComponent === component.id ? 'bg-blue-400 shadow-blue-400/50' : 'bg-blue-500'
+                case 'amber': return hoveredComponent === component.id ? 'bg-amber-400 shadow-amber-400/50' : 'bg-amber-500'
+                case 'purple': return hoveredComponent === component.id ? 'bg-purple-400 shadow-purple-400/50' : 'bg-purple-500'
+                case 'green': return hoveredComponent === component.id ? 'bg-green-400 shadow-green-400/50' : 'bg-green-500'
+                case 'gray': return hoveredComponent === component.id ? 'bg-gray-400 shadow-gray-400/50' : 'bg-gray-500'
+                case 'slate': return hoveredComponent === component.id ? 'bg-slate-400 shadow-slate-400/50' : 'bg-slate-500'
+                default: return hoveredComponent === component.id ? 'bg-white shadow-white/50' : 'bg-slate-500'
+              }
+            }
+            
+            const getPingColor = (color: string) => {
+              switch (color) {
+                case 'blue': return 'bg-blue-400'
+                case 'amber': return 'bg-amber-400'
+                case 'purple': return 'bg-purple-400'
+                case 'green': return 'bg-green-400'
+                case 'gray': return 'bg-gray-400'
+                case 'slate': return 'bg-slate-400'
+                default: return 'bg-slate-400'
+              }
+            }
+
+            return (
+              <div
+                key={`marker-${component.id}`}
+                className={`absolute w-4 h-4 rounded-full border-2 border-white transition-all duration-300 cursor-pointer ${
+                  getMarkerColor(component.color)
+                } ${hoveredComponent === component.id ? 'scale-150 shadow-lg' : 'hover:scale-125'}`}
+                style={{
+                  left: `${component.position.x}%`,
+                  top: `${component.position.y}%`,
+                  transform: 'translate(-50%, -50%)'
+                }}
+                onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
+                onMouseEnter={() => setHoveredComponent(component.id)}
+                onMouseLeave={() => setHoveredComponent(null)}
+              >
+                <div className={`absolute inset-0 rounded-full animate-ping ${getPingColor(component.color)}`}></div>
+              </div>
+            )
+          })}
         </div>
 
         {/* Right Side Callouts */}
@@ -185,20 +193,6 @@ const InteractiveProductHero = () => {
               }`}
               style={{ transitionDelay: `${(index + leftComponents.length) * 150}ms` }}
             >
-              {/* Connector Line */}
-              <svg 
-                className="absolute top-1/2 -left-2 w-32 h-1 text-slate-400"
-                style={{ transform: 'translateY(-50%)' }}
-              >
-                <line 
-                  x1="0" y1="50%" 
-                  x2="100%" y2="50%" 
-                  stroke="currentColor" 
-                  strokeWidth="2"
-                  strokeDasharray="4,4"
-                  className={hoveredComponent === component.id ? 'text-amber-400' : 'text-slate-400'}
-                />
-              </svg>
               
               <div
                 className={`p-4 rounded-xl border-2 ${getColorClasses(component.color)} backdrop-blur-sm shadow-lg cursor-pointer transition-all duration-300 hover:scale-105 ${
@@ -314,7 +308,7 @@ export default function ExplorePage() {
                 Back to Home
               </a>
               <div className="w-px h-6 bg-slate-600"></div>
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-10 w-auto" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-16 w-auto" />
             </div>
           </div>
         </div>
