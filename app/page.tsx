@@ -23,10 +23,10 @@ import {
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
-// Simple Product Image with Discover Button
+// Simple Product Image with Discover Link
 const InteractiveMaskDiagram = () => {
   return (
-    <div className="relative w-full max-w-md mx-auto">
+    <div className="relative w-full max-w-md mx-auto text-center">
       <div className="relative group">
         <img
           src="/images/sleep-mask-2.png"
@@ -36,16 +36,16 @@ const InteractiveMaskDiagram = () => {
             filter: "drop-shadow(0 0 30px rgba(156, 163, 175, 0.3))",
           }}
         />
-        
-        {/* Discover Further Button */}
-        <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2">
-          <a
-            href="/explore"
-            className="px-6 py-3 bg-amber-500 hover:bg-amber-400 text-slate-900 font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
-          >
-            Discover Further
-          </a>
-        </div>
+      </div>
+      
+      {/* Subtle Discover Further Link */}
+      <div className="mt-4">
+        <a
+          href="/explore"
+          className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-300"
+        >
+          discover further
+        </a>
       </div>
     </div>
   )
@@ -283,7 +283,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-28 sm:h-32 w-auto" />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a
@@ -873,7 +873,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto opacity-80" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-28 sm:h-32 w-auto opacity-80" />
             </div>
 
             <div className="flex flex-wrap gap-6 sm:gap-8 text-slate-400 justify-center">
