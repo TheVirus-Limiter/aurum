@@ -15,7 +15,7 @@ const InteractiveProductHero = () => {
       title: "Adaptive Thermal Control",
       description: "Advanced PCM and TEC technology maintains perfect temperature",
       details: "Paraffin-based Phase Change Materials (28-32°C) provide passive temperature buffering, while thermoelectric coolers offer active heating/cooling with precision NTC thermistor feedback.",
-      position: { x: 20, y: 45 },
+      position: { x: 50, y: 75 },
       icon: "🌡️"
     },
     {
@@ -23,7 +23,7 @@ const InteractiveProductHero = () => {
       title: "Bone-Conduction Audio",
       description: "Immersive soundscapes without blocking ambient awareness",
       details: "Temple-mounted transducers in impact-resistant ABS housing deliver crystal-clear audio through bone conduction, maintaining spatial awareness for safety.",
-      position: { x: 15, y: 25 },
+      position: { x: 85, y: 50 },
       icon: "🎵"
     },
     {
@@ -31,7 +31,7 @@ const InteractiveProductHero = () => {
       title: "Circadian Wake Light",
       description: "Gentle sunrise simulation using LED arrays",
       details: "PMMA light guides ensure even distribution across a 20-minute sunrise simulation, perfectly aligned with your circadian rhythm for natural awakening.",
-      position: { x: 50, y: 35 },
+      position: { x: 35, y: 40 },
       icon: "☀️"
     },
     {
@@ -55,7 +55,7 @@ const InteractiveProductHero = () => {
       title: "Wireless Charging",
       description: "Long-lasting battery with gold-plated contacts",
       details: "Polycarbonate flame-retardant housing protects the battery system, while gold-plated copper contacts ensure corrosion resistance and reliable charging.",
-      position: { x: 80, y: 45 },
+      position: { x: 65, y: 65 },
       icon: "🔋"
     }
   ]
@@ -81,32 +81,32 @@ const InteractiveProductHero = () => {
           {/* Internal Components Overlay (Reveal Mode) */}
           {revealMode && (
             <div className="absolute inset-0 transition-opacity duration-700 opacity-90">
-              {/* Thermal zones */}
-              <div className="absolute" style={{left: '18%', top: '40%', width: '12%', height: '15%'}}>
+              {/* Thermal zones - gel pad along bottom edge */}
+              <div className="absolute" style={{left: '15%', top: '70%', width: '70%', height: '8%'}}>
                 <div className="w-full h-full bg-blue-400/30 rounded-lg border-2 border-blue-400/60 animate-pulse"></div>
                 <div className="text-xs text-blue-300 mt-1 font-medium">Thermal</div>
               </div>
-              <div className="absolute" style={{left: '70%', top: '40%', width: '12%', height: '15%'}}>
-                <div className="w-full h-full bg-blue-400/30 rounded-lg border-2 border-blue-400/60 animate-pulse"></div>
-              </div>
               
-              {/* Audio transducers */}
-              <div className="absolute" style={{left: '12%', top: '25%', width: '8%', height: '8%'}}>
+              {/* Audio transducers - on elastic band */}
+              <div className="absolute" style={{left: '85%', top: '45%', width: '10%', height: '10%'}}>
                 <div className="w-full h-full bg-purple-400/40 rounded-full border-2 border-purple-400/70 animate-pulse"></div>
                 <div className="text-xs text-purple-300 mt-1 font-medium">Audio</div>
               </div>
-              <div className="absolute" style={{left: '80%', top: '25%', width: '8%', height: '8%'}}>
+              <div className="absolute" style={{left: '5%', top: '45%', width: '10%', height: '10%'}}>
                 <div className="w-full h-full bg-purple-400/40 rounded-full border-2 border-purple-400/70 animate-pulse"></div>
               </div>
               
-              {/* LED arrays */}
-              <div className="absolute" style={{left: '45%', top: '30%', width: '10%', height: '4%'}}>
+              {/* LED arrays - near eyes */}
+              <div className="absolute" style={{left: '25%', top: '35%', width: '12%', height: '6%'}}>
                 <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
                 <div className="text-xs text-amber-300 mt-1 font-medium">LEDs</div>
               </div>
+              <div className="absolute" style={{left: '63%', top: '35%', width: '12%', height: '6%'}}>
+                <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
+              </div>
               
-              {/* Battery */}
-              <div className="absolute" style={{left: '75%', top: '55%', width: '8%', height: '6%'}}>
+              {/* Battery - bottom front */}
+              <div className="absolute" style={{left: '60%', top: '60%', width: '10%', height: '8%'}}>
                 <div className="w-full h-full bg-green-400/40 rounded border-2 border-green-400/70 animate-pulse"></div>
                 <div className="text-xs text-green-300 mt-1 font-medium">Battery</div>
               </div>
@@ -235,7 +235,7 @@ export default function ExplorePage() {
                 Back to Home
               </a>
               <div className="w-px h-6 bg-slate-600"></div>
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-8 w-auto" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-10 w-auto" />
             </div>
           </div>
         </div>

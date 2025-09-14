@@ -44,7 +44,7 @@ const InteractiveMaskDiagram = () => {
           href="/explore"
           className="text-slate-500 hover:text-slate-300 text-sm transition-colors duration-300"
         >
-          discover further
+          View our interactive demo
         </a>
       </div>
     </div>
