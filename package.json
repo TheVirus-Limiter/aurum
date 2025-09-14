@@ -6,7 +6,8 @@
     "build": "next build",
     "dev": "next dev --hostname 0.0.0.0 --port 5000",
     "lint": "next lint",
-    "start": "next start"
+    "start": "next start",
+    "export": "rm -rf .next && rm -rf out && next build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
