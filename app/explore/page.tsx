@@ -3,10 +3,10 @@
 import React, { useState } from "react"
 import { ArrowLeft } from "lucide-react"
 
-// Interactive 3D Product Showcase Component
+// Interactive Product Showcase with Callouts
 const InteractiveProductHero = () => {
   const [selectedComponent, setSelectedComponent] = useState<string | null>(null)
-  const [isExploded, setIsExploded] = useState(false)
+  const [showCallouts, setShowCallouts] = useState(false)
   const [hoveredComponent, setHoveredComponent] = useState<string | null>(null)
 
   const components = [
@@ -15,153 +15,229 @@ const InteractiveProductHero = () => {
       title: "Temperature Control",
       description: "Advanced PCM gel pad maintains perfect skin temperature",
       details: "Phase Change Materials adapt to your body temperature, providing cooling relief when you're warm and gentle warmth when needed.",
-      explodedPosition: { x: -150, y: 100 },
+      position: { x: 50, y: 55 }, // Position on mask image
+      side: "left",
       color: "blue",
-      icon: "🌡️",
-      size: { width: 180, height: 80 }
+      icon: "🌡️"
     },
     {
       id: "leds", 
       title: "Wake Light System",
       description: "Gentle sunrise simulation for natural awakening",
       details: "Precisely positioned LED arrays simulate a natural sunrise over 20 minutes, gradually preparing your body for a refreshed awakening.",
-      explodedPosition: { x: -100, y: -80 },
+      position: { x: 35, y: 42 },
+      side: "left",
       color: "amber",
-      icon: "☀️",
-      size: { width: 60, height: 60 }
+      icon: "☀️"
     },
     {
       id: "audio",
       title: "Bone-Conduction Audio",
       description: "Immersive soundscapes via bone conduction",
       details: "High-quality bone conduction transducers deliver crystal-clear audio while maintaining awareness of your surroundings.",
-      explodedPosition: { x: 200, y: -50 },
+      position: { x: 85, y: 48 },
+      side: "right",
       color: "purple",
-      icon: "🎵",
-      size: { width: 50, height: 50 }
+      icon: "🎵"
     },
     {
       id: "battery",
       title: "Wireless Charging",
       description: "Long-lasting battery with magnetic charging",
       details: "Advanced lithium battery provides 8+ hours of use with convenient wireless charging via gold-plated magnetic contacts.",
-      explodedPosition: { x: -120, y: 180 },
+      position: { x: 22, y: 61 },
+      side: "left",
       color: "green",
-      icon: "🔋",
-      size: { width: 40, height: 30 }
+      icon: "🔋"
     },
     {
       id: "comfort",
       title: "Memory Foam Padding",
       description: "Medical-grade comfort layer",
       details: "Biocompatible memory foam provides perfect pressure distribution while maintaining effective light blocking.",
-      explodedPosition: { x: 0, y: 150 },
+      position: { x: 50, y: 65 },
+      side: "right",
       color: "gray",
-      icon: "☁️",
-      size: { width: 200, height: 100 }
+      icon: "☁️"
     },
     {
       id: "exterior",
       title: "Mulberry Silk Cover",
       description: "Luxury temperature-regulating exterior",
       details: "Premium mulberry silk exterior provides natural temperature regulation and moisture-wicking properties for all-night comfort.",
-      explodedPosition: { x: 150, y: 120 },
+      position: { x: 70, y: 70 },
+      side: "right",
       color: "slate",
-      icon: "✨",
-      size: { width: 220, height: 120 }
+      icon: "✨"
     }
   ]
 
   const getColorClasses = (color: string) => {
     switch (color) {
-      case 'blue': return 'bg-blue-500/80 border-blue-400 shadow-blue-500/50'
-      case 'amber': return 'bg-amber-500/80 border-amber-400 shadow-amber-500/50'
-      case 'purple': return 'bg-purple-500/80 border-purple-400 shadow-purple-500/50'
-      case 'green': return 'bg-green-500/80 border-green-400 shadow-green-500/50'
-      case 'gray': return 'bg-gray-500/80 border-gray-400 shadow-gray-500/50'
-      case 'slate': return 'bg-slate-500/80 border-slate-400 shadow-slate-500/50'
-      default: return 'bg-white/80 border-white shadow-white/50'
+      case 'blue': return 'bg-blue-500/90 border-blue-400 shadow-blue-500/50'
+      case 'amber': return 'bg-amber-500/90 border-amber-400 shadow-amber-500/50'
+      case 'purple': return 'bg-purple-500/90 border-purple-400 shadow-purple-500/50'
+      case 'green': return 'bg-green-500/90 border-green-400 shadow-green-500/50'
+      case 'gray': return 'bg-gray-500/90 border-gray-400 shadow-gray-500/50'
+      case 'slate': return 'bg-slate-500/90 border-slate-400 shadow-slate-500/50'
+      default: return 'bg-white/90 border-white shadow-white/50'
     }
   }
 
+  const leftComponents = components.filter(c => c.side === "left")
+  const rightComponents = components.filter(c => c.side === "right")
+
   return (
-    <div className="relative w-full max-w-5xl mx-auto" style={{ minHeight: '600px' }}>
-      {/* 3D Scene Container */}
-      <div className="relative h-96 md:h-[500px]" style={{ perspective: '1000px' }}>
+    <div className="relative w-full max-w-7xl mx-auto" style={{ minHeight: '700px' }}>
+      {/* Main Interactive Scene */}
+      <div className="relative h-[600px] flex items-center justify-center">
         {/* Background Glow Effect */}
         <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-amber-500/20 rounded-3xl blur-3xl transform scale-110 opacity-50"></div>
         
-        {/* Main Product Image */}
-        <div className="absolute inset-0 flex items-center justify-center">
-          <div className={`relative transition-all duration-1000 transform-gpu ${isExploded ? 'scale-75 opacity-40' : 'scale-100 opacity-100'}`}>
-            <img
-              src="/images/sleep-mask-2.png"
-              alt="Lumora Sleep Mask"
-              className="w-80 h-auto object-contain"
-              style={{
-                filter: "drop-shadow(0 8px 32px rgba(0, 0, 0, 0.3))"
-              }}
-            />
-          </div>
-        </div>
-
-        {/* Exploded Components */}
-        {isExploded && components.map((component, index) => (
-          <div
-            key={component.id}
-            className={`absolute transition-all duration-1000 transform-gpu cursor-pointer ${
-              hoveredComponent === component.id ? 'scale-110 z-20' : 'scale-100 z-10'
-            }`}
-            style={{
-              left: '50%',
-              top: '50%',
-              transform: `translate(-50%, -50%) translate(${component.explodedPosition.x}px, ${component.explodedPosition.y}px) rotateX(${isExploded ? 15 : 0}deg) rotateY(${isExploded ? index * 5 - 15 : 0}deg)`,
-              transitionDelay: `${index * 100}ms`,
-              width: `${component.size.width}px`,
-              height: `${component.size.height}px`
-            }}
-            onMouseEnter={() => setHoveredComponent(component.id)}
-            onMouseLeave={() => setHoveredComponent(null)}
-            onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
-          >
-            <div className={`w-full h-full rounded-xl border-2 ${getColorClasses(component.color)} backdrop-blur-sm shadow-2xl flex items-center justify-center relative overflow-hidden`}>
-              <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent"></div>
-              <div className="relative z-10 text-center">
-                <div className="text-2xl mb-1">{component.icon}</div>
-                <div className="text-xs font-medium text-white">{component.title}</div>
+        {/* Left Side Callouts */}
+        <div className="absolute left-0 top-0 h-full w-80 flex flex-col justify-center space-y-6">
+          {showCallouts && leftComponents.map((component, index) => (
+            <div
+              key={component.id}
+              className={`relative transition-all duration-500 transform ${
+                showCallouts ? 'translate-x-0 opacity-100' : '-translate-x-full opacity-0'
+              }`}
+              style={{ transitionDelay: `${index * 150}ms` }}
+            >
+              <div
+                className={`p-4 rounded-xl border-2 ${getColorClasses(component.color)} backdrop-blur-sm shadow-lg cursor-pointer transition-all duration-300 hover:scale-105 ${
+                  selectedComponent === component.id ? 'ring-2 ring-amber-400' : ''
+                }`}
+                onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
+                onMouseEnter={() => setHoveredComponent(component.id)}
+                onMouseLeave={() => setHoveredComponent(null)}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-xl">{component.icon}</span>
+                  <span className="text-sm font-medium text-white">{component.title}</span>
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed">
+                  {component.description}
+                </p>
               </div>
               
-              {/* Hover Effect */}
-              {hoveredComponent === component.id && (
-                <div className="absolute inset-0 bg-white/10 rounded-xl animate-pulse"></div>
-              )}
+              {/* Connector Line */}
+              <svg 
+                className="absolute top-1/2 -right-2 w-32 h-1 text-slate-400"
+                style={{ transform: 'translateY(-50%)' }}
+              >
+                <line 
+                  x1="0" y1="50%" 
+                  x2="100%" y2="50%" 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                  strokeDasharray="4,4"
+                  className={hoveredComponent === component.id ? 'text-amber-400' : 'text-slate-400'}
+                />
+              </svg>
             </div>
-            
-            {/* Component Label Line */}
-            <div className="absolute -bottom-8 left-1/2 transform -translate-x-1/2 text-xs text-slate-300 whitespace-nowrap bg-slate-800/80 px-2 py-1 rounded">
-              {component.title}
+          ))}
+        </div>
+
+        {/* Center Product Image */}
+        <div className="relative">
+          <img
+            src="/images/sleep-mask-2.png"
+            alt="Lumora Sleep Mask"
+            className="w-96 md:w-[500px] h-auto object-contain transition-all duration-500"
+            style={{
+              filter: "drop-shadow(0 12px 40px rgba(0, 0, 0, 0.4))"
+            }}
+          />
+          
+          {/* Component Markers on Image */}
+          {showCallouts && components.map((component) => (
+            <div
+              key={`marker-${component.id}`}
+              className={`absolute w-4 h-4 rounded-full border-2 border-white transition-all duration-300 cursor-pointer ${
+                hoveredComponent === component.id 
+                  ? 'bg-amber-400 scale-150 shadow-lg shadow-amber-400/50' 
+                  : 'bg-slate-600 hover:bg-slate-400'
+              }`}
+              style={{
+                left: `${component.position.x}%`,
+                top: `${component.position.y}%`,
+                transform: 'translate(-50%, -50%)'
+              }}
+              onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
+              onMouseEnter={() => setHoveredComponent(component.id)}
+              onMouseLeave={() => setHoveredComponent(null)}
+            >
+              <div className={`absolute inset-0 rounded-full animate-ping ${
+                hoveredComponent === component.id ? 'bg-amber-400' : 'bg-slate-400'
+              }`}></div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
+
+        {/* Right Side Callouts */}
+        <div className="absolute right-0 top-0 h-full w-80 flex flex-col justify-center space-y-6">
+          {showCallouts && rightComponents.map((component, index) => (
+            <div
+              key={component.id}
+              className={`relative transition-all duration-500 transform ${
+                showCallouts ? 'translate-x-0 opacity-100' : 'translate-x-full opacity-0'
+              }`}
+              style={{ transitionDelay: `${(index + leftComponents.length) * 150}ms` }}
+            >
+              {/* Connector Line */}
+              <svg 
+                className="absolute top-1/2 -left-2 w-32 h-1 text-slate-400"
+                style={{ transform: 'translateY(-50%)' }}
+              >
+                <line 
+                  x1="0" y1="50%" 
+                  x2="100%" y2="50%" 
+                  stroke="currentColor" 
+                  strokeWidth="2"
+                  strokeDasharray="4,4"
+                  className={hoveredComponent === component.id ? 'text-amber-400' : 'text-slate-400'}
+                />
+              </svg>
+              
+              <div
+                className={`p-4 rounded-xl border-2 ${getColorClasses(component.color)} backdrop-blur-sm shadow-lg cursor-pointer transition-all duration-300 hover:scale-105 ${
+                  selectedComponent === component.id ? 'ring-2 ring-amber-400' : ''
+                }`}
+                onClick={() => setSelectedComponent(selectedComponent === component.id ? null : component.id)}
+                onMouseEnter={() => setHoveredComponent(component.id)}
+                onMouseLeave={() => setHoveredComponent(null)}
+              >
+                <div className="flex items-center gap-3 mb-2">
+                  <span className="text-xl">{component.icon}</span>
+                  <span className="text-sm font-medium text-white">{component.title}</span>
+                </div>
+                <p className="text-xs text-slate-200 leading-relaxed">
+                  {component.description}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
 
         {/* Control Button */}
         <div className="absolute top-4 right-4">
           <button
-            onClick={() => setIsExploded(!isExploded)}
+            onClick={() => setShowCallouts(!showCallouts)}
             className={`px-6 py-3 rounded-xl text-sm font-medium transition-all duration-500 transform hover:scale-105 ${
-              isExploded 
+              showCallouts 
                 ? 'bg-amber-500 text-slate-900 shadow-lg shadow-amber-500/30' 
                 : 'bg-white/10 text-white hover:bg-white/20'
             }`}
           >
-            {isExploded ? 'Assemble View' : 'Exploded View'}
+            {showCallouts ? 'Hide Details' : 'Explore Components'}
           </button>
         </div>
 
-        {/* Rotation Instructions */}
-        {!isExploded && (
+        {/* Instructions */}
+        {!showCallouts && (
           <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 text-sm text-slate-400 bg-slate-800/80 px-4 py-2 rounded-lg">
-            Click "Exploded View" to explore the technology
+            Click "Explore Components" to see the technology breakdown
           </div>
         )}
       </div>
