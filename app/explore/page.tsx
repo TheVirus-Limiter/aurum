@@ -15,7 +15,7 @@ const InteractiveProductHero = () => {
       title: "Temperature Control",
       description: "Advanced PCM and TEC technology maintains perfect temperature",
       details: "Paraffin-based Phase Change Materials (28-32°C) provide passive temperature buffering, while thermoelectric coolers offer active heating/cooling with precision NTC thermistor feedback.",
-      position: { x: 50, y: 50 },
+      position: { x: 45, y: 55 },
       icon: "🌡️"
     },
     {
@@ -31,7 +31,7 @@ const InteractiveProductHero = () => {
       title: "LED Wake Light",
       description: "Gentle sunrise simulation using LED arrays",
       details: "PMMA light guides ensure even distribution across a 20-minute sunrise simulation, perfectly aligned with your circadian rhythm for natural awakening.",
-      position: { x: 35, y: 45 },
+      position: { x: 31, y: 45 },
       icon: "☀️"
     },
     {
@@ -55,7 +55,7 @@ const InteractiveProductHero = () => {
       title: "Battery & Charging",
       description: "Long-lasting battery with gold-plated contacts",
       details: "Polycarbonate flame-retardant housing protects the battery system, while gold-plated copper contacts ensure corrosion resistance and reliable charging.",
-      position: { x: 26, y: 65 },
+      position: { x: 22, y: 61 },
       icon: "🔋"
     }
   ]
@@ -81,10 +81,13 @@ const InteractiveProductHero = () => {
           {/* Internal Components Overlay (Reveal Mode) */}
           {revealMode && (
             <div className="absolute inset-0 transition-opacity duration-700 opacity-90">
-              {/* Temperature - matches actual mask eye pad area */}
-              <div className="absolute" style={{left: '25%', top: '35%', width: '50%', height: '30%'}}>
-                <div className="w-full h-full bg-blue-400/30 rounded-full border-2 border-blue-400/60 animate-pulse"></div>
-                <div className="text-xs text-blue-300 mt-1 font-medium">Temperature</div>
+              {/* Temperature - rotated down and left */}
+              <div className="absolute" style={{left: '20%', top: '40%', width: '50%', height: '30%', transform: 'rotate(-15deg)'}}>
+                <div className="w-full h-full bg-blue-400/30 rounded-full border-2 border-blue-400/60 animate-pulse relative">
+                  <div className="absolute inset-0 flex items-center justify-center">
+                    <div className="text-xs text-blue-300 font-medium">Temperature</div>
+                  </div>
+                </div>
               </div>
               
               {/* Music - positioned on actual elastic band */}
@@ -93,17 +96,17 @@ const InteractiveProductHero = () => {
                 <div className="text-xs text-purple-300 mt-1 font-medium">Music</div>
               </div>
               
-              {/* LED arrays - positioned over actual eye areas on mask */}
-              <div className="absolute" style={{left: '32%', top: '42%', width: '6%', height: '6%'}}>
+              {/* LED arrays - moved to the left */}
+              <div className="absolute" style={{left: '28%', top: '42%', width: '6%', height: '6%'}}>
                 <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
                 <div className="text-xs text-amber-300 mt-1 font-medium">LED</div>
               </div>
-              <div className="absolute" style={{left: '62%', top: '42%', width: '6%', height: '6%'}}>
+              <div className="absolute" style={{left: '58%', top: '42%', width: '6%', height: '6%'}}>
                 <div className="w-full h-full bg-amber-400/40 rounded-full border-2 border-amber-400/70 animate-pulse"></div>
               </div>
               
-              {/* Battery/Charge Port - positioned on actual charge area */}
-              <div className="absolute" style={{left: '22%', top: '62%', width: '8%', height: '6%'}}>
+              {/* Battery/Charge Port - moved up and to the left */}
+              <div className="absolute" style={{left: '18%', top: '58%', width: '8%', height: '6%'}}>
                 <div className="w-full h-full bg-green-400/40 rounded border-2 border-green-400/70 animate-pulse"></div>
                 <div className="text-xs text-green-300 mt-1 font-medium">Battery</div>
               </div>
