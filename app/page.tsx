@@ -93,11 +93,6 @@ export default function AurumSleep() {
         "Yes! We offer a 30-day satisfaction guarantee and 1-year warranty on all electronic components. If you're not completely satisfied, return your mask for a full refund.",
     },
     {
-      question: "Can I wash my Lumora Sleep mask?",
-      answer:
-        "The fabric components are machine washable on gentle cycle. Electronic models have removable tech modules - simply detach before washing. Detailed care instructions are included with each mask.",
-    },
-    {
       question: "Do you ship internationally?",
       answer:
         "We currently ship to the US, Canada, UK, and EU. International shipping rates and delivery times vary by location. More regions coming soon!",
@@ -260,7 +255,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6 py-2">
           <div className="flex items-center justify-between">
             <div className="flex items-center">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-36 w-auto" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto" />
             </div>
             <nav className="hidden md:flex items-center gap-8">
               <a
@@ -565,23 +560,23 @@ export default function AurumSleep() {
               </div>
             </div>
 
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-purple-900/40 to-amber-900/40 p-8 border-2 border-purple-500/30 hover:border-amber-400/50 transition-all duration-500 hover:transform hover:scale-105 ring-2 ring-purple-400/20">
-              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-amber-300/10 to-purple-500/10 rounded-full -translate-y-16 translate-x-16"></div>
+            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-br from-amber-900/50 to-yellow-900/40 p-8 border-2 border-amber-500/40 hover:border-yellow-400/60 transition-all duration-500 hover:transform hover:scale-105 ring-2 ring-amber-400/30">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-yellow-300/10 to-amber-500/10 rounded-full -translate-y-16 translate-x-16"></div>
               <div className="absolute top-4 right-4">
-                <span className="bg-gradient-to-r from-purple-400 to-amber-400 text-slate-900 text-xs font-bold px-2 py-1 rounded-full">
+                <span className="bg-gradient-to-r from-yellow-400 to-amber-500 text-slate-900 text-xs font-bold px-2 py-1 rounded-full">
                   PREMIUM
                 </span>
               </div>
               <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-amber-400 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
+                <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-amber-500 flex items-center justify-center mb-6 group-hover:rotate-12 transition-transform duration-300">
                   <Crown className="w-7 h-7 text-slate-900" />
                 </div>
                 <h3 className="text-xl font-bold mb-2 text-white">Lumora Max</h3>
-                <p className="text-sm text-purple-300 mb-4 font-medium italic">"Luxury Without Limits"</p>
+                <p className="text-sm text-amber-300 mb-4 font-medium italic">"Luxury Without Limits"</p>
                 <p className="text-slate-300 text-sm leading-relaxed">
                   Premium silk exterior with customizable hardware and app-based personalization.
                 </p>
-                <div className="mt-6 pt-4 border-t border-purple-400/30">
+                <div className="mt-6 pt-4 border-t border-amber-400/30">
                   <span className="text-slate-400 text-xs font-medium">STARTING AT</span>
                   <div className="text-white text-lg font-semibold">$299</div>
                 </div>
@@ -676,7 +671,13 @@ export default function AurumSleep() {
                 {quizState.recommendedProduct && (
                   <div className="bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-2xl p-8 border border-slate-600/30 mb-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div className="w-16 h-16 bg-gradient-to-br from-slate-400 to-slate-600 rounded-2xl flex items-center justify-center">
+                      <div className={`w-16 h-16 rounded-2xl flex items-center justify-center ${
+                        quizState.recommendedProduct === 'core' ? 'bg-gradient-to-br from-slate-400 to-slate-600' :
+                        quizState.recommendedProduct === 'natural' ? 'bg-gradient-to-br from-green-400 to-green-600' :
+                        quizState.recommendedProduct === 'travel' ? 'bg-gradient-to-br from-blue-400 to-blue-600' :
+                        quizState.recommendedProduct === 'max' ? 'bg-gradient-to-br from-yellow-400 to-amber-500' :
+                        'bg-gradient-to-br from-slate-400 to-slate-600'
+                      }`}>
                         {React.createElement(products[quizState.recommendedProduct as keyof typeof products].icon, {
                           className: "w-8 h-8 text-white",
                         })}
@@ -734,7 +735,7 @@ export default function AurumSleep() {
           <div className="text-center mb-16">
             <h2 className="text-4xl md:text-5xl font-semibold mb-6 sage-gradient">Frequently Asked Questions</h2>
             <p className="text-xl text-slate-300 max-w-2xl mx-auto">
-              Everything you need to know about Aurum Sleep. Can't find what you're looking for? Contact us directly.
+              Everything you need to know about Lumora Sleep. Can't find what you're looking for? Contact us directly.
             </p>
           </div>
 
@@ -851,7 +852,7 @@ export default function AurumSleep() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center">
             <div className="mb-4 md:mb-0">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-40 w-auto opacity-80" />
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto opacity-80" />
             </div>
 
             <div className="flex flex-wrap gap-6 sm:gap-8 text-slate-400 justify-center">

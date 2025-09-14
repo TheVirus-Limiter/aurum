@@ -22,7 +22,7 @@ export default function TeamPage() {
           <div className="flex items-center justify-between">
             <div className="flex items-center">
               <a href="/">
-                <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-32 sm:h-36 w-auto" />
+                <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto" />
               </a>
             </div>
             <nav className="hidden md:flex items-center gap-8">
