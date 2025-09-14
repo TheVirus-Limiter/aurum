@@ -23,6 +23,186 @@ import {
 } from "lucide-react"
 import { useState, useEffect } from "react"
 
+// Interactive Mask Diagram Component
+const InteractiveMaskDiagram = () => {
+  const [activeHotspot, setActiveHotspot] = useState<string | null>(null)
+  const [selectedComponent, setSelectedComponent] = useState<string | null>(null)
+
+  const components = {
+    thermal: {
+      title: "Thermal Control System",
+      description: "PCM (Phase Change Materials) and TEC (Thermoelectric Cooler) for adaptive temperature regulation",
+      details: "Paraffin-based PCM (28-32°C) provides passive temperature buffering, while TEC elements offer active heating/cooling with precise NTC thermistor feedback",
+      position: { x: 25, y: 30 }
+    },
+    audio: {
+      title: "Bone-Conduction Audio",
+      description: "Temple-mounted transducers deliver ambient soundscapes without blocking ears",
+      details: "ABS housing with TPE over-mold provides impact resistance while delivering vibrations through bone conduction for spatial awareness",
+      position: { x: 15, y: 15 }
+    },
+    leds: {
+      title: "LED Wake Light System",
+      description: "Circadian-aligned LED arrays simulate natural sunrise patterns",
+      details: "PMMA light guide ensures even distribution across 20-minute sunrise simulation using circadian rhythm optimization",
+      position: { x: 50, y: 25 }
+    },
+    padding: {
+      title: "Memory Foam Padding",
+      description: "Medical-grade memory foam provides pressure distribution and light blocking",
+      details: "Biocompatible memory foam maintains shape while providing effective light blockage and comfort during extended wear",
+      position: { x: 40, y: 45 }
+    },
+    exterior: {
+      title: "Luxury Materials",
+      description: "Mulberry silk exterior with moisture-wicking properties",
+      details: "Hypoallergenic mulberry silk or bamboo fiber provides temperature regulation, luxury feel, and effective moisture management",
+      position: { x: 35, y: 65 }
+    },
+    battery: {
+      title: "Power & Charging",
+      description: "Rechargeable battery with gold-plated charging contacts",
+      details: "Polycarbonate flame-retardant housing with gold-plated copper contacts for corrosion resistance and low contact resistance",
+      position: { x: 70, y: 40 }
+    },
+    strap: {
+      title: "Adjustment System",
+      description: "Neoprene strap with Velcro closure for comfort",
+      details: "Flexible neoprene maintains elasticity for extended wear while providing secure, adjustable fit for all head sizes",
+      position: { x: 85, y: 50 }
+    }
+  }
+
+  return (
+    <div className="relative w-full max-w-2xl mx-auto">
+      {/* Main SVG Diagram */}
+      <svg
+        viewBox="0 0 400 200"
+        className="w-full h-auto"
+        style={{ filter: "drop-shadow(0 4px 20px rgba(0, 0, 0, 0.3))" }}
+      >
+        {/* Background gradient */}
+        <defs>
+          <linearGradient id="maskGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#1e293b" />
+            <stop offset="50%" stopColor="#334155" />
+            <stop offset="100%" stopColor="#475569" />
+          </linearGradient>
+        </defs>
+
+        {/* Main Mask Shape - Cutaway View */}
+        <ellipse 
+          cx="200" 
+          cy="100" 
+          rx="160" 
+          ry="70" 
+          fill="url(#maskGradient)" 
+          stroke="#64748b" 
+          strokeWidth="2"
+        />
+        
+        {/* Internal Components Layer */}
+        {/* Thermal Elements */}
+        <rect x="60" y="70" width="40" height="15" rx="3" fill="#3b82f6" opacity="0.8" />
+        <rect x="300" y="70" width="40" height="15" rx="3" fill="#3b82f6" opacity="0.8" />
+        
+        {/* Audio Transducers */}
+        <circle cx="80" cy="50" r="12" fill="#8b5cf6" opacity="0.8" />
+        <circle cx="320" cy="50" r="12" fill="#8b5cf6" opacity="0.8" />
+        
+        {/* LED Arrays */}
+        <rect x="180" y="60" width="40" height="8" rx="4" fill="#eab308" opacity="0.8" />
+        <rect x="160" y="75" width="15" height="4" rx="2" fill="#eab308" opacity="0.6" />
+        <rect x="225" y="75" width="15" height="4" rx="2" fill="#eab308" opacity="0.6" />
+        
+        {/* Memory Foam Padding */}
+        <ellipse cx="200" cy="100" rx="140" ry="50" fill="#64748b" opacity="0.4" stroke="#94a3b8" strokeWidth="1" strokeDasharray="3,3" />
+        
+        {/* Battery Housing */}
+        <rect x="260" y="120" width="30" height="20" rx="5" fill="#10b981" opacity="0.8" />
+        
+        {/* Strap System */}
+        <rect x="340" y="95" width="50" height="10" rx="5" fill="#6366f1" opacity="0.8" />
+        <rect x="10" y="95" width="50" height="10" rx="5" fill="#6366f1" opacity="0.8" />
+
+        {/* Interactive Hotspots */}
+        {Object.entries(components).map(([key, component]) => (
+          <g key={key}>
+            <circle
+              cx={component.position.x * 4}
+              cy={component.position.y * 2}
+              r="8"
+              fill={activeHotspot === key ? "#f59e0b" : "#ef4444"}
+              opacity={activeHotspot === key ? 1 : 0.7}
+              stroke="#ffffff"
+              strokeWidth="2"
+              className="cursor-pointer transition-all duration-300 hover:scale-110"
+              onMouseEnter={() => setActiveHotspot(key)}
+              onMouseLeave={() => setActiveHotspot(null)}
+              onClick={() => setSelectedComponent(selectedComponent === key ? null : key)}
+            />
+            <text
+              x={component.position.x * 4}
+              y={component.position.y * 2}
+              textAnchor="middle"
+              dy="0.3em"
+              fill="white"
+              fontSize="10"
+              fontWeight="bold"
+              className="pointer-events-none"
+            >
+              {Object.keys(components).indexOf(key) + 1}
+            </text>
+          </g>
+        ))}
+      </svg>
+
+      {/* Component Details Panel */}
+      {selectedComponent && (
+        <div className="mt-6 bg-slate-800/90 backdrop-blur-sm rounded-xl p-6 border border-slate-600/30 transition-all duration-500 ease-out">
+          <div className="flex justify-between items-start mb-4">
+            <h3 className="text-xl font-semibold text-white">
+              {components[selectedComponent as keyof typeof components].title}
+            </h3>
+            <button
+              onClick={() => setSelectedComponent(null)}
+              className="text-slate-400 hover:text-white transition-colors"
+            >
+              ✕
+            </button>
+          </div>
+          <p className="text-slate-300 mb-3">
+            {components[selectedComponent as keyof typeof components].description}
+          </p>
+          <p className="text-slate-400 text-sm leading-relaxed">
+            {components[selectedComponent as keyof typeof components].details}
+          </p>
+        </div>
+      )}
+
+      {/* Legend */}
+      <div className="mt-4 grid grid-cols-2 sm:grid-cols-4 gap-2 text-sm">
+        {Object.entries(components).map(([key, component], index) => (
+          <div
+            key={key}
+            className={`flex items-center gap-2 p-2 rounded-lg cursor-pointer transition-all duration-200 ${
+              selectedComponent === key 
+                ? 'bg-amber-500/20 border border-amber-500/40' 
+                : 'bg-slate-800/50 hover:bg-slate-700/50'
+            }`}
+            onClick={() => setSelectedComponent(selectedComponent === key ? null : key)}
+          >
+            <div className="w-6 h-6 rounded-full bg-red-500 flex items-center justify-center text-white text-xs font-bold">
+              {index + 1}
+            </div>
+            <span className="text-slate-300 text-xs">{component.title}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  )
+}
+
 interface QuizAnswer {
   questionId: string
   answer: string
@@ -439,14 +619,7 @@ export default function AurumSleep() {
           <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center max-w-6xl mx-auto">
             <div className="order-2 lg:order-1">
               <div className="w-full h-64 sm:h-96 flex items-center justify-center">
-                <img
-                  src="/images/sleep-mask-2.png"
-                  alt="Aurum Sleep Mask Detail"
-                  className="w-full max-w-md h-auto object-contain"
-                  style={{
-                    filter: "drop-shadow(0 0 30px rgba(156, 163, 175, 0.3))",
-                  }}
-                />
+                <InteractiveMaskDiagram />
               </div>
             </div>
 
