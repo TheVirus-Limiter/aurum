@@ -896,8 +896,8 @@ export default function AurumSleep() {
               <a href="/team" className="hover:text-slate-300 transition-colors font-light">
                 Our Team
               </a>
-              <a href="/admin" className="hover:text-slate-300 transition-colors font-light">
-                Admin
+              <a href="/merch" className="hover:text-slate-300 transition-colors font-light">
+                Merch
               </a>
               <a href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors font-light">
                 Instagram
