@@ -394,7 +394,7 @@ export default function AurumSleep() {
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 mb-6 text-slate-300/90 text-xs tracking-[0.22em] uppercase">
               <span className="w-10 h-px bg-slate-500/70" />
-              A new standard for sleep
+              Lumora Sleep
               <span className="w-10 h-px bg-slate-500/70" />
             </div>
 
@@ -403,7 +403,7 @@ export default function AurumSleep() {
             </h1>
 
             <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
-              Luxury sleep, reimagined—through comfort, technology, and ritual.
+              Luxury sleep, reimagined through comfort, technology, and ritual.
             </p>
 
             <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
@@ -426,7 +426,7 @@ export default function AurumSleep() {
             </div>
 
             <div className="mt-10 text-slate-400 text-sm font-light">
-              Prototype in development • Expected shipping Q2 2026
+              A limited first release.
             </div>
           </div>
         </div>
@@ -492,7 +492,7 @@ export default function AurumSleep() {
             <div className="order-1 lg:order-2">
               <div className="inline-flex items-center gap-2 text-slate-300/90 text-xs tracking-[0.22em] uppercase mb-4">
                 <span className="w-10 h-px bg-slate-500/70" />
-                The ritual
+                The Approach
               </div>
 
               <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 sm:mb-8 ${sageGradientText}`}>
@@ -531,17 +531,30 @@ export default function AurumSleep() {
                 </div>
               </div>
 
-              <Button
-                size="lg"
-                className="rounded-full mt-8 bg-slate-100 text-slate-950 hover:bg-white px-8 sm:px-12 py-4 text-base sm:text-lg font-medium transition-all duration-300 w-full sm:w-auto"
-                onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Join the Waitlist
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+           <Button
+  size="lg"
+  className="
+    relative rounded-full mt-8
+    bg-slate-100 text-slate-950
+    px-8 sm:px-12 py-4 text-base sm:text-lg font-medium
+    transition-all duration-300 ease-out
+    w-full sm:w-auto
+    hover:bg-white
+    hover:-translate-y-0.5
+    hover:shadow-[0_12px_35px_rgba(255,255,255,0.18)]
+    before:absolute before:inset-0 before:rounded-full
+    before:border before:border-slate-300/40
+    before:opacity-0 hover:before:opacity-100
+    before:transition-opacity
+    focus:outline-none focus:ring-2 focus:ring-slate-300/40
+  "
+  onClick={() =>
+    document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })
+  }
+>
+  Join the Waitlist
+</Button>
+
 
       {/* Products */}
       <section className="py-24 bg-slate-900" id="products">
