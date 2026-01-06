@@ -1,7 +1,6 @@
 "use client"
 
 import React, { useEffect, useMemo, useState } from "react"
-
 import { Button } from "@/components/ui/button"
 import {
   ChevronDown,
@@ -21,6 +20,8 @@ import {
   Instagram,
 } from "lucide-react"
 
+type ProductKey = "core" | "natural" | "travel" | "max"
+
 type QuizAnswer = {
   questionId: string
   answer: string
@@ -31,7 +32,7 @@ type QuizState = {
   currentStep: number
   answers: QuizAnswer[]
   showResults: boolean
-  recommendedProduct: keyof typeof products | null
+  recommendedProduct: ProductKey | null
 }
 
 // Simple Product Image with Discover Link
@@ -43,9 +44,7 @@ const InteractiveMaskDiagram = () => {
           src="/images/sleep-mask-2.png"
           alt="Lumora Sleep Mask Detail"
           className="w-full h-auto object-contain"
-          style={{
-            filter: "drop-shadow(0 18px 55px rgba(15, 23, 42, 0.55))",
-          }}
+          style={{ filter: "drop-shadow(0 18px 55px rgba(15, 23, 42, 0.55))" }}
         />
       </div>
 
@@ -70,8 +69,7 @@ const faqData = [
   },
   {
     question: "How do I contact customer support?",
-    answer:
-      "Email us at hello@uselumora.co. We typically respond within 24 hours on business days.",
+    answer: "Email us at hello@uselumora.co. We typically respond within 24 hours on business days.",
   },
   {
     question: "What's the current status of your startup?",
@@ -110,26 +108,10 @@ const quizQuestions = [
     id: "sleep-priority",
     question: "What most often disrupts your sleep?",
     options: [
-      {
-        text: "I run warm at night",
-        value: "temperature",
-        score: { travel: 1, natural: 2, core: 2, max: 3 },
-      },
-      {
-        text: "Noise pulls me out of rest",
-        value: "noise",
-        score: { travel: 3, natural: 1, core: 1, max: 3 },
-      },
-      {
-        text: "I wake up feeling heavy and groggy",
-        value: "wakeup",
-        score: { travel: 1, natural: 2, core: 1, max: 3 },
-      },
-      {
-        text: "Light is the problem (streetlights, screens, early sun)",
-        value: "light",
-        score: { travel: 2, natural: 2, core: 3, max: 2 },
-      },
+      { text: "I run warm at night", value: "temperature", score: { travel: 1, natural: 2, core: 2, max: 3 } },
+      { text: "Noise pulls me out of rest", value: "noise", score: { travel: 3, natural: 1, core: 1, max: 3 } },
+      { text: "I wake up feeling heavy and groggy", value: "wakeup", score: { travel: 1, natural: 2, core: 1, max: 3 } },
+      { text: "Light is the problem (streetlights, screens, early sun)", value: "light", score: { travel: 2, natural: 2, core: 3, max: 2 } },
     ],
   },
   {
@@ -137,11 +119,7 @@ const quizQuestions = [
     question: "Which best fits your lifestyle?",
     options: [
       { text: "I travel often", value: "traveler", score: { travel: 4, natural: 1, core: 2, max: 2 } },
-      {
-        text: "Wellness-minded and eco-conscious",
-        value: "wellness",
-        score: { travel: 1, natural: 4, core: 1, max: 2 },
-      },
+      { text: "Wellness-minded and eco-conscious", value: "wellness", score: { travel: 1, natural: 4, core: 1, max: 2 } },
       { text: "I like smart tools and optimization", value: "tech", score: { travel: 2, natural: 1, core: 1, max: 4 } },
       { text: "Simple, practical, and consistent", value: "simple", score: { travel: 2, natural: 2, core: 4, max: 1 } },
     ],
@@ -211,7 +189,6 @@ export default function AurumSleep() {
   const [openFAQ, setOpenFAQ] = useState<number | null>(null)
   const [showNavbar, setShowNavbar] = useState(false)
 
-  // Lux vibe helpers: subtle grain + softer glow
   const aurumGradient =
     "bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(148,163,184,0.14),transparent_55%),radial-gradient(900px_600px_at_85%_20%,rgba(245,158,11,0.10),transparent_55%),linear-gradient(180deg,rgba(15,23,42,1),rgba(2,6,23,1))]"
   const sageGradientText =
@@ -220,10 +197,9 @@ export default function AurumSleep() {
   useEffect(() => {
     const handleScroll = () => {
       const redefineSection = document.querySelector("h1")
-      if (redefineSection) {
-        const rect = redefineSection.getBoundingClientRect()
-        setShowNavbar(rect.bottom < 0)
-      }
+      if (!redefineSection) return
+      const rect = redefineSection.getBoundingClientRect()
+      setShowNavbar(rect.bottom < 0)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
@@ -231,39 +207,34 @@ export default function AurumSleep() {
 
   // Tally embed loader (avoid <script> tag in JSX)
   useEffect(() => {
-    const w = "https://tally.so/widgets/embed.js"
+    const src = "https://tally.so/widgets/embed.js"
 
     const load = () => {
       // @ts-ignore
-      if (typeof window !== "undefined" && typeof (window as any).Tally !== "undefined") {
+      if (typeof (window as any)?.Tally !== "undefined") {
         // @ts-ignore
         ;(window as any).Tally.loadEmbeds()
         return
       }
       document
         .querySelectorAll('iframe[data-tally-src]:not([src])')
-        .forEach((e) => ((e as HTMLIFrameElement).src = (e as HTMLIFrameElement).dataset.tallySrc || ""))
+        .forEach((el) => ((el as HTMLIFrameElement).src = (el as HTMLIFrameElement).dataset.tallySrc || ""))
     }
 
-    const existing = document.querySelector(`script[src="${w}"]`) as HTMLScriptElement | null
+    const existing = document.querySelector(`script[src="${src}"]`) as HTMLScriptElement | null
     if (existing) {
       load()
       return
     }
 
     const s = document.createElement("script")
-    s.src = w
+    s.src = src
     s.async = true
     s.onload = load
     s.onerror = load
     document.body.appendChild(s)
-
-    return () => {
-      // keep script cached (no removal) to prevent flicker on route transitions
-    }
   }, [])
 
-  // Quiz state
   const [quizState, setQuizState] = useState<QuizState>({
     currentStep: 0,
     answers: [],
@@ -277,15 +248,10 @@ export default function AurumSleep() {
     const newAnswers = [...quizState.answers.filter((a) => a.questionId !== questionId), { questionId, answer, score }]
 
     if (quizState.currentStep < quizQuestions.length - 1) {
-      setQuizState({
-        ...quizState,
-        answers: newAnswers,
-        currentStep: quizState.currentStep + 1,
-      })
+      setQuizState({ ...quizState, answers: newAnswers, currentStep: quizState.currentStep + 1 })
       return
     }
 
-    // Calculate recommendation
     const scores = { core: 0, natural: 0, travel: 0, max: 0 }
     newAnswers.forEach((a) => {
       Object.entries(a.score).forEach(([product, points]) => {
@@ -293,34 +259,18 @@ export default function AurumSleep() {
       })
     })
 
-    const recommendedProduct = (Object.entries(scores).reduce((a, b) =>
+    const recommendedProduct = Object.entries(scores).reduce((a, b) =>
       scores[a[0] as keyof typeof scores] > scores[b[0] as keyof typeof scores] ? a : b,
-    )[0] as keyof typeof products)
+    )[0] as ProductKey
 
-    setQuizState({
-      ...quizState,
-      answers: newAnswers,
-      showResults: true,
-      recommendedProduct,
-    })
+    setQuizState({ ...quizState, answers: newAnswers, showResults: true, recommendedProduct })
   }
 
-  const resetQuiz = () => {
-    setQuizState({
-      currentStep: 0,
-      answers: [],
-      showResults: false,
-      recommendedProduct: null,
-    })
-  }
+  const resetQuiz = () =>
+    setQuizState({ currentStep: 0, answers: [], showResults: false, recommendedProduct: null })
 
   const goToPreviousStep = () => {
-    if (quizState.currentStep > 0) {
-      setQuizState({
-        ...quizState,
-        currentStep: quizState.currentStep - 1,
-      })
-    }
+    if (quizState.currentStep > 0) setQuizState({ ...quizState, currentStep: quizState.currentStep - 1 })
   }
 
   const recommended = useMemo(() => {
@@ -388,8 +338,8 @@ export default function AurumSleep() {
 
       {/* Hero */}
       <section className={`relative min-h-screen flex items-center justify-center pt-20 ${aurumGradient}`}>
-        {/* subtle grain */}
         <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-soft-light [background-image:url('/images/noise.png')] [background-size:300px_300px]" />
+
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center gap-2 mb-6 text-slate-300/90 text-xs tracking-[0.22em] uppercase">
@@ -425,9 +375,7 @@ export default function AurumSleep() {
               </Button>
             </div>
 
-            <div className="mt-10 text-slate-400 text-sm font-light">
-              A limited first release.
-            </div>
+            <div className="mt-10 text-slate-400 text-sm font-light">A limited first release.</div>
           </div>
         </div>
 
@@ -445,21 +393,9 @@ export default function AurumSleep() {
 
           <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
             {[
-              {
-                title: "Overheating",
-                icon: Thermometer,
-                body: "Temperature spikes disrupt deep sleep cycles and limit recovery—leaving you restless.",
-              },
-              {
-                title: "Noise & Distraction",
-                icon: Volume2,
-                body: "Environmental noise and stress cues keep the mind alert when it should be powering down.",
-              },
-              {
-                title: "Harsh Alarms",
-                icon: Sun,
-                body: "Jolting wake-ups can trigger cortisol spikes and the kind of grogginess that lingers.",
-              },
+              { title: "Overheating", icon: Thermometer, body: "Temperature spikes disrupt deep sleep cycles and limit recovery—leaving you restless." },
+              { title: "Noise & Distraction", icon: Volume2, body: "Environmental noise and stress cues keep the mind alert when it should be powering down." },
+              { title: "Harsh Alarms", icon: Sun, body: "Jolting wake-ups can trigger cortisol spikes and the kind of grogginess that lingers." },
             ].map((card, idx) => (
               <div
                 key={idx}
@@ -531,30 +467,31 @@ export default function AurumSleep() {
                 </div>
               </div>
 
-           <Button
-  size="lg"
-  className="
-    relative rounded-full mt-8
-    bg-slate-100 text-slate-950
-    px-8 sm:px-12 py-4 text-base sm:text-lg font-medium
-    transition-all duration-300 ease-out
-    w-full sm:w-auto
-    hover:bg-white
-    hover:-translate-y-0.5
-    hover:shadow-[0_12px_35px_rgba(255,255,255,0.18)]
-    before:absolute before:inset-0 before:rounded-full
-    before:border before:border-slate-300/40
-    before:opacity-0 hover:before:opacity-100
-    before:transition-opacity
-    focus:outline-none focus:ring-2 focus:ring-slate-300/40
-  "
-  onClick={() =>
-    document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })
-  }
->
-  Join the Waitlist
-</Button>
-
+              <Button
+                size="lg"
+                className="
+                  relative rounded-full mt-8
+                  bg-slate-100 text-slate-950
+                  px-8 sm:px-12 py-4 text-base sm:text-lg font-medium
+                  transition-all duration-300 ease-out
+                  w-full sm:w-auto
+                  hover:bg-white
+                  hover:-translate-y-0.5
+                  hover:shadow-[0_12px_35px_rgba(255,255,255,0.18)]
+                  before:absolute before:inset-0 before:rounded-full
+                  before:border before:border-slate-300/40
+                  before:opacity-0 hover:before:opacity-100
+                  before:transition-opacity
+                  focus:outline-none focus:ring-2 focus:ring-slate-300/40
+                "
+                onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
+              >
+                Join the Waitlist
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
 
       {/* Products */}
       <section className="py-24 bg-slate-900" id="products">
@@ -569,7 +506,6 @@ export default function AurumSleep() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
             {/* Essence */}
             <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-800/60 to-slate-950/40 p-8 border border-slate-700/60 hover:border-slate-600/70 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_15%,rgba(148,163,184,0.14),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-slate-100/10 border border-slate-600/40 flex items-center justify-center mb-6">
                   <Zap className="w-7 h-7 text-slate-200" />
@@ -588,7 +524,6 @@ export default function AurumSleep() {
 
             {/* Pure */}
             <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-emerald-950/30 to-slate-950/40 p-8 border border-emerald-800/40 hover:border-emerald-600/50 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_15%,rgba(16,185,129,0.12),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-700/40 flex items-center justify-center mb-6">
                   <Leaf className="w-7 h-7 text-emerald-200" />
@@ -607,7 +542,6 @@ export default function AurumSleep() {
 
             {/* Voyage */}
             <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-indigo-950/30 to-slate-950/40 p-8 border border-indigo-800/40 hover:border-indigo-600/50 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_15%,rgba(99,102,241,0.14),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="relative z-10">
                 <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-700/40 flex items-center justify-center mb-6">
                   <Plane className="w-7 h-7 text-indigo-200" />
@@ -626,7 +560,6 @@ export default function AurumSleep() {
 
             {/* Max */}
             <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 p-8 border border-amber-400/40 hover:border-amber-300/60 transition-all duration-500 hover:transform hover:scale-[1.02] ring-1 ring-amber-300/20">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_35%_15%,rgba(245,158,11,0.18),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
               <div className="absolute top-4 right-4">
                 <span className="bg-amber-200 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full tracking-wide">
                   PREMIUM
@@ -652,10 +585,7 @@ export default function AurumSleep() {
       </section>
 
       {/* Quiz */}
-      <section
-        className="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden"
-        id="customize"
-      >
+      <section className="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden" id="customize">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(148,163,184,0.10)_0%,transparent_55%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -674,7 +604,6 @@ export default function AurumSleep() {
           <div className="max-w-2xl mx-auto">
             {!quizState.showResults ? (
               <div className="bg-slate-900/40 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/60">
-                {/* Progress */}
                 <div className="mb-8">
                   <div className="flex justify-between text-sm text-slate-400 mb-2">
                     <span>
@@ -690,7 +619,6 @@ export default function AurumSleep() {
                   </div>
                 </div>
 
-                {/* Question */}
                 <div className="mb-8">
                   <h3 className="text-2xl font-semibold text-white mb-6">
                     {quizQuestions[quizState.currentStep].question}
@@ -712,7 +640,6 @@ export default function AurumSleep() {
                   </div>
                 </div>
 
-                {/* Navigation */}
                 {quizState.currentStep > 0 && (
                   <div className="flex justify-start">
                     <Button
@@ -739,17 +666,7 @@ export default function AurumSleep() {
                 {recommended && quizState.recommendedProduct && (
                   <div className="bg-slate-900/40 rounded-2xl p-8 border border-slate-700/60 mb-8">
                     <div className="flex items-center gap-4 mb-6">
-                      <div
-                        className={`w-16 h-16 rounded-2xl flex items-center justify-center border ${
-                          quizState.recommendedProduct === "core"
-                            ? "bg-slate-100/10 border-slate-700/50"
-                            : quizState.recommendedProduct === "natural"
-                              ? "bg-emerald-500/10 border-emerald-800/40"
-                              : quizState.recommendedProduct === "travel"
-                                ? "bg-indigo-500/10 border-indigo-800/40"
-                                : "bg-amber-200/15 border-amber-300/30"
-                        }`}
-                      >
+                      <div className="w-16 h-16 rounded-2xl flex items-center justify-center border bg-slate-100/10 border-slate-700/50">
                         {React.createElement(recommended.icon, { className: "w-8 h-8 text-slate-200" })}
                       </div>
                       <div>
@@ -806,21 +723,14 @@ export default function AurumSleep() {
           <div className="max-w-4xl mx-auto">
             <div className="space-y-4">
               {faqData.map((faq, index) => (
-                <div
-                  key={index}
-                  className="bg-slate-950/30 backdrop-blur-sm rounded-2xl border border-slate-700/60 overflow-hidden"
-                >
+                <div key={index} className="bg-slate-950/30 backdrop-blur-sm rounded-2xl border border-slate-700/60 overflow-hidden">
                   <button
                     onClick={() => toggleFAQ(index)}
                     className="w-full text-left p-6 flex items-center justify-between hover:bg-slate-950/50 transition-colors duration-300"
                   >
                     <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
                     <div className="flex-shrink-0">
-                      {openFAQ === index ? (
-                        <Minus className="w-5 h-5 text-slate-400" />
-                      ) : (
-                        <Plus className="w-5 h-5 text-slate-400" />
-                      )}
+                      {openFAQ === index ? <Minus className="w-5 h-5 text-slate-400" /> : <Plus className="w-5 h-5 text-slate-400" />}
                     </div>
                   </button>
                   {openFAQ === index && (
@@ -832,11 +742,10 @@ export default function AurumSleep() {
               ))}
             </div>
 
-            {/* Contact */}
             <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-semibold text-white mb-2">Still have questions?</h3>
-                <p className="text-slate-300 font-light">We’ll point you to the right option—or help you decide.</p>
+                <p className="text-slate-300 font-light">We’ll point you to the right option or help you decide.</p>
               </div>
 
               <div className="flex flex-col sm:flex-row justify-center gap-8">
