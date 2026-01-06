@@ -342,11 +342,7 @@ export default function AurumSleep() {
 
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <div className="inline-flex items-center gap-2 mb-6 text-slate-300/90 text-xs tracking-[0.22em] uppercase">
-              <span className="w-10 h-px bg-slate-500/70" />
-              Lumora Sleep
-              <span className="w-10 h-px bg-slate-500/70" />
-            </div>
+            
 
             <h1 className="text-4xl sm:text-6xl md:text-8xl font-light mb-6 leading-[0.95]">
               <span className={`${sageGradientText} font-semibold`}>Redefine</span> Rest.
