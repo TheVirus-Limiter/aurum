@@ -1,7 +1,7 @@
 "use client"
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
-import { ArrowLeft, ChevronLeft, ChevronRight, X } from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight} from "lucide-react"
 
 /**
  * Lumora Sleep, Explore Page
@@ -235,7 +235,7 @@ function MobileChapterCarousel({
   components,
   activeId,
   onPrev,
-n  onNext,
+  onNext,
   onSelect,
 }: {
   components: MaskComponent[]
