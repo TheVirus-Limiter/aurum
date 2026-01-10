@@ -179,58 +179,40 @@ export default function TeamPage() {
     []
   )
 
-  return (
-    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden font-sans">
+return (
+    <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden">
       <SpotlightBackground enabled={!reducedMotion} />
 
       {/* Header */}
       <header className="sticky top-0 z-50 backdrop-blur-md border-b border-slate-800/50 bg-slate-950/70">
-        <div className="container mx-auto px-4 sm:px-6 py-3">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center gap-4">
-              <a
-                href="/"
-                className="flex items-center gap-2 text-slate-300 hover:text-white transition-colors font-light tracking-wide"
-              >
-                <ArrowLeft className="w-4 h-4" />
-                Home
-              </a>
-              <div className="hidden sm:block w-px h-6 bg-slate-700/60" />
-              <a href="/" className="flex items-center">
-                <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-20 sm:h-24 w-auto" />
-              </a>
-            </div>
-
-            <nav className="hidden md:flex items-center gap-8">
-              <a href="/#products" className="text-slate-300 hover:text-white transition-colors font-light tracking-wide">
-                Products
-              </a>
-              <a href="/#customize" className="text-slate-300 hover:text-white transition-colors font-light tracking-wide">
-                Discover Lumora
-              </a>
-              <a href="/#faq" className="text-slate-300 hover:text-white transition-colors font-light tracking-wide">
-                FAQ
-              </a>
-
-              <Button
-                size="sm"
-                className="rounded-full bg-transparent border border-slate-400/80 text-slate-200 hover:bg-slate-100 hover:text-slate-950 px-6 py-2 text-sm font-medium transition-all duration-300"
-                onClick={() => document.getElementById("team-cta")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Join Waitlist
-              </Button>
-            </nav>
-          </div>
+        <div className="container mx-auto px-6 py-3 flex items-center justify-between">
+          <a href="/" className="flex items-center gap-2 text-slate-300 hover:text-white">
+            <ArrowLeft className="w-4 h-4" />
+            Home
+          </a>
+          <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-20 w-auto" />
         </div>
       </header>
 
       {/* Hero */}
-      <section className={`relative min-h-[72vh] flex items-center justify-center pt-16 ${aurumGradient}`}>
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            <h1 className="text-4xl sm:text-6xl md:text-7xl font-light mb-6 leading-[0.95]">
-              Built with <span className={`${sageGradientText} font-semibold`}>discipline</span>.
-            </h1>
+      <section className="relative min-h-[72vh] flex items-center justify-center pt-20">
+        <div className="container mx-auto px-6 text-center">
+          {/* LOGO LOCKUP */}
+          <div className="flex flex-col items-center mb-10">
+            <img
+              src="/images/lumora-logo.png"
+              alt="Lumora Sleep"
+              className="h-16 sm:h-20 md:h-24 w-auto opacity-95"
+            />
+            <div className="mt-4 text-[11px] tracking-[0.28em] uppercase text-slate-300/70">
+              Lumora Sleep
+            </div>
+            <div className="mt-5 h-px w-28 bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+          </div>
+
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-light mb-6">
+            Built with <span className={`${sageGradientText} font-semibold`}>discipline</span>.
+          </h1>
 
             <p className="text-lg sm:text-xl text-slate-300 mb-10 leading-relaxed max-w-2xl mx-auto font-light">
               Lumora is shaped by iteration, craft, and service. We build like engineers and care like humans.
