@@ -234,10 +234,9 @@ export default function TeamPage() {
               <img
                 src="/images/lumora-logo.png"
                 alt="Lumora Sleep"
-                className="h-16 sm:h-20 md:h-24 w-auto opacity-95"
+                className="h-30 sm:h-30 md:h-30 w-auto opacity-95"
               />
               <div className="mt-4 text-[11px] tracking-[0.28em] uppercase text-slate-300/70">
-                Lumora Sleep
               </div>
 
               {/* subtle divider line */}
