@@ -738,7 +738,7 @@ export default function AurumSleep() {
               ))}
             </div>
 
-            <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60">
+            <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60" id="contact-form">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-semibold text-white mb-2">Still have questions?</h3>
                 <p className="text-slate-300 font-light">We’ll point you to the right option or help you decide.</p>
@@ -823,7 +823,7 @@ export default function AurumSleep() {
                 FAQ
               </a>
               <a
-                href="#waitlist-form"
+                href="#contact-form"
                 className="hover:text-slate-200 transition-colors font-light tracking-wide"
                 onClick={(e) => {
                   e.preventDefault()
