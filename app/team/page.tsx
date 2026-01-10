@@ -230,14 +230,12 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             {/* Logo lockup above headline (premium) */}
-            <div className="flex flex-col items-center mb-10">
-              <img
-                src="/images/lumora-logo.png"
-                alt="Lumora Sleep"
-                className="h-30 sm:h-30 md:h-30 w-auto opacity-95"
-              />
-              <div className="mt-4 text-[11px] tracking-[0.28em] uppercase text-slate-300/70">
-              </div>
+            <img
+  src="/images/lumora-logo.png"
+  alt="Lumora Sleep"
+  className="h-24 sm:h-28 md:h-32 w-auto opacity-95 transform scale-150 origin-center"
+  draggable={false}
+/>
 
               {/* subtle divider line */}
               <div className="mt-5 h-px w-28 bg-gradient-to-r from-transparent via-white/18 to-transparent" />
