@@ -229,17 +229,22 @@ export default function TeamPage() {
       <section className={`relative min-h-[72vh] flex items-center justify-center pt-16 ${aurumGradient}`}>
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            {/* Logo lockup above headline (premium) */}
-            <img
-  src="/images/lumora-logo.png"
-  alt="Lumora Sleep"
-  className="h-24 sm:h-28 md:h-32 w-auto opacity-95 transform scale-150 origin-center"
-  draggable={false}
-/>
+            {/* Logo lockup above headline (premium + perfectly centered) */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-[260px] sm:max-w-[300px] md:max-w-[340px] flex justify-center">
+                <img
+                  src="/images/lumora-logo.png"
+                  alt="Lumora Sleep"
+                  className="block w-auto h-24 sm:h-28 md:h-32 opacity-95 origin-center transform-gpu scale-150"
+                  draggable={false}
+                />
+              </div>
+            </div>
 
-              {/* subtle divider line */}
-              <div className="mt-5 h-px w-28 bg-gradient-to-r from-transparent via-white/18 to-transparent" />
-            
+            {/* subtle divider line (centered) */}
+            <div className="mt-5 flex justify-center">
+              <div className="h-px w-28 bg-gradient-to-r from-transparent via-white/18 to-transparent" />
+            </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-light mb-6 leading-[0.95]">
               Built with <span className={`${sageGradientText} font-semibold`}>discipline</span>.
