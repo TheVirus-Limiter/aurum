@@ -2,7 +2,8 @@
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
-import { ArrowLeft, ChevronDown, Mail, Instagram, Sparkles } from "lucide-react"
+import { ArrowLeft, ChevronDown, Mail, Sparkles } from "lucide-react"
+import { Instagram as InstagramIcon } from "lucide-react"
 
 
 type TeamMember = {
@@ -109,7 +110,7 @@ function TeamCard({ member }: { member: TeamMember }) {
           {/* Name / role */}
           <div className="min-w-0">
             <div className={`inline-flex items-center rounded-full border px-3 py-1 text-[11px] tracking-[0.22em] uppercase ${accent.badge}`}>
-              Lumora Sleep
+              Founder
             </div>
             <h3 className="mt-3 text-2xl font-semibold text-white truncate">{member.name}</h3>
             <p className="mt-1 text-slate-300/80 font-light">{member.role}</p>
@@ -147,14 +148,14 @@ export default function TeamPage() {
     () => [
       {
         name: "Rehan Raj",
-        role: "Co-Founder & CEO",
+        role: "Chief Executive Officer",
         bio: "Junior at Lutheran High School focused on innovation and entrepreneurship. Active in varsity robotics and varsity soccer, and currently leading a $50,000 Leukemia & Lymphoma Society campaign to support families impacted by blood cancer.",
         image: "/images/rehan-raj.png",
-        accent: "amber",
+        accent: "slate",
       },
       {
         name: "Ben Storandt",
-        role: "Co-Founder & COO",
+        role: "Chief Operations Officer",
         bio: "Senior at Lutheran High School with a strong product and technology mindset. Competes in varsity robotics and varsity soccer, and is raising $50,000 with the Leukemia & Lymphoma Society to advance blood cancer research and strengthen patient support.",
         image: "/images/ben-storandt.png",
         accent: "slate",
@@ -210,9 +211,7 @@ export default function TeamPage() {
         <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="inline-flex items-center justify-center gap-2 mb-5 text-slate-300/90 text-xs tracking-[0.22em] uppercase">
-              <span className="w-10 h-px bg-slate-500/70" />
-              The Team
-              <span className="w-10 h-px bg-slate-500/70" />
+
             </div>
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-light mb-6 leading-[0.95]">
@@ -273,8 +272,7 @@ export default function TeamPage() {
               <div className="relative z-10 flex flex-col md:flex-row items-start md:items-center justify-between gap-8">
                 <div className="max-w-2xl">
                   <div className="inline-flex items-center gap-2 text-slate-300/90 text-xs tracking-[0.22em] uppercase">
-                    <span className="w-10 h-px bg-slate-500/70" />
-                    A note on craft
+                   
                   </div>
                   <h3 className="mt-4 text-2xl sm:text-3xl font-semibold text-white">
                     We obsess over the details you’ll never see.
@@ -285,13 +283,7 @@ export default function TeamPage() {
                   </p>
                 </div>
 
-                <div className="flex items-center gap-3">
-                  <div className="w-12 h-12 rounded-2xl bg-slate-100/10 border border-slate-700/50 flex items-center justify-center">
-                    <Sparkles className="w-6 h-6 text-slate-200" />
-                  </div>
-                  <div className="text-sm text-slate-300/80 font-light">
-                    Built for the ritual of deep rest.
-                  </div>
+                
                 </div>
               </div>
 
@@ -308,7 +300,7 @@ export default function TeamPage() {
                   </div>
                 </div>
 
-                <div className="flex items-center gap-4">
+    <div className="flex items-center gap-4">
                   <div className="w-12 h-12 rounded-full bg-slate-100/10 border border-slate-700/50 flex items-center justify-center">
                     <Instagram className="w-6 h-6 text-slate-200" />
                   </div>
