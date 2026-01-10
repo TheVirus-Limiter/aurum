@@ -1,43 +1,54 @@
+"use client"
+
+import React from "react"
+
 export default function TeamPage() {
   const teamMembers = [
     {
       name: "Rehan Raj",
       role: "Co-Founder & CEO",
-      bio: "Junior at Lutheran High School with a passion for innovation and entrepreneurship. Member of varsity robotics team and varsity soccer. Currently fundraising $50,000 for the Leukemia & Lymphoma Society to support blood cancer research.",
+      bio: "Junior at Lutheran High School focused on innovation and entrepreneurship. Active in varsity robotics and varsity soccer, and currently leading a $50,000 Leukemia & Lymphoma Society fundraiser supporting families impacted by blood cancer.",
       image: "/images/rehan-raj.png",
     },
     {
       name: "Ben Storandt",
       role: "Co-Founder & COO",
-      bio: "Senior at Lutheran High School with expertise in technology and product development. Member of varsity robotics team and varsity soccer. Currently fundraising $50,000 for the Leukemia & Lymphoma Society to support blood cancer research.",
+      bio: "Senior at Lutheran High School with a strong product and technology mindset. Competes in varsity robotics and varsity soccer, and is fundraising $50,000 with the Leukemia & Lymphoma Society to advance blood cancer research and support patients.",
       image: "/images/ben-storandt.png",
     },
   ]
 
   return (
-    <div className="min-h-screen bg-slate-900 text-slate-100">
+    <div className="min-h-screen bg-[#070A12] text-slate-100">
+      {/* Subtle luxury background */}
+      <div className="pointer-events-none fixed inset-0 -z-10">
+        <div className="absolute inset-0 bg-[radial-gradient(60%_40%_at_50%_0%,rgba(255,255,255,0.08),transparent_55%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(45%_35%_at_18%_55%,rgba(56,189,248,0.07),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(45%_35%_at_82%_55%,rgba(167,139,250,0.07),transparent_60%)]" />
+        <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,6,23,0),rgba(2,6,23,0.85))]" />
+      </div>
+
       {/* Header */}
-      <header className="bg-slate-900/80 backdrop-blur-md border-b border-slate-800/50">
+      <header className="sticky top-0 z-50 border-b border-white/10 bg-[#070A12]/65 backdrop-blur-xl">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <a href="/">
-                <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-28 sm:h-32 w-auto" />
-              </a>
-            </div>
+            <a href="/" className="flex items-center">
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-20 sm:h-24 w-auto" />
+            </a>
+
             <nav className="hidden md:flex items-center gap-8">
-              <a href="/#products" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/#products" className="text-slate-200/70 hover:text-white transition-colors font-light">
                 Products
               </a>
-              <a href="/#customize" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/#customize" className="text-slate-200/70 hover:text-white transition-colors font-light">
                 Discover Lumora
               </a>
-              <a href="/#faq" className="text-slate-300 hover:text-white transition-colors font-light">
+              <a href="/#faq" className="text-slate-200/70 hover:text-white transition-colors font-light">
                 FAQ
               </a>
               <a
                 href="/#waitlist-form"
-                className="pill-button bg-transparent border border-slate-400 text-slate-400 hover:bg-slate-400 hover:text-slate-900 px-6 py-2 text-sm font-medium transition-all duration-300 rounded-full"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-6 py-2 text-sm font-medium text-slate-100/90 hover:bg-white/10 hover:border-white/30 transition"
               >
                 Join Waitlist
               </a>
@@ -46,91 +57,139 @@ export default function TeamPage() {
         </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900">
+      {/* Hero */}
+      <section className="py-20 md:py-24">
         <div className="container mx-auto px-6 text-center">
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 bg-clip-text text-transparent">
-            Meet Our Team
+          <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-3 py-1 text-[11px] tracking-[0.26em] uppercase text-slate-200/70">
+            About
+          </div>
+
+          <h1 className="mt-6 text-4xl md:text-6xl font-semibold bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 bg-clip-text text-transparent">
+            Meet the Team
           </h1>
-          <p className="text-xl text-slate-300 max-w-3xl mx-auto leading-relaxed">
-            We're passionate high schoolers with a vision to build something that could change the lives of so many.
-            Through our shared experiences in robotics, athletics, and community service, we've learned that innovation
-            comes from dedication, teamwork, and the drive to make a real difference in the world.
+
+          <p className="mt-5 text-base md:text-lg text-slate-200/70 max-w-3xl mx-auto leading-relaxed">
+            We’re building Lumora with the same discipline we’ve learned in robotics, athletics, and service.
+            Thoughtful design, relentless iteration, and a mission bigger than ourselves.
           </p>
         </div>
       </section>
 
-      {/* Team Members */}
-      <section className="py-24 bg-slate-800">
+      {/* Team */}
+      <section className="pb-20 md:pb-24">
         <div className="container mx-auto px-6">
-          <div className="grid md:grid-cols-2 gap-12 max-w-4xl mx-auto">
-            {teamMembers.map((member, index) => (
-              <div
-                key={index}
-                className="group bg-gradient-to-br from-slate-700/50 to-slate-800/50 rounded-3xl p-8 border border-slate-600/30 hover:border-slate-500/50 transition-all duration-500"
+          <div className="grid lg:grid-cols-2 gap-8 md:gap-10 max-w-5xl mx-auto">
+            {teamMembers.map((member) => (
+              <article
+                key={member.name}
+                className="group relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-2xl shadow-black/30"
               >
-                <div className="flex flex-col items-center text-center">
-                  <div className="w-32 h-32 rounded-full overflow-hidden mb-6 ring-4 ring-slate-600/30 group-hover:ring-slate-500/50 transition-all duration-300">
-                    <img
-                      src={member.image || "/placeholder.svg"}
-                      alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                    />
-                  </div>
-                  <h3 className="text-2xl font-bold text-white mb-2">{member.name}</h3>
-                  <p className="text-slate-400 font-medium mb-4">{member.role}</p>
-                  <p className="text-slate-300 leading-relaxed">{member.bio}</p>
+                {/* Card sheen */}
+                <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+                  <div className="absolute inset-0 bg-[radial-gradient(60%_45%_at_50%_0%,rgba(255,255,255,0.12),transparent_55%)]" />
                 </div>
-              </div>
+
+                <div className="relative p-8 md:p-10">
+                  <div className="flex items-center gap-5">
+                    <div className="relative">
+                      <div className="absolute inset-0 rounded-full blur-xl bg-white/10 opacity-60" />
+                      <div className="relative w-20 h-20 md:w-24 md:h-24 rounded-full overflow-hidden ring-1 ring-white/15 bg-white/5">
+                        <img
+                          src={member.image || "/placeholder.svg"}
+                          alt={member.name}
+                          className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-[1.04]"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="min-w-0">
+                      <h3 className="text-xl md:text-2xl font-semibold text-white truncate">
+                        {member.name}
+                      </h3>
+                      <p className="mt-1 text-sm md:text-base text-slate-200/65">
+                        {member.role}
+                      </p>
+
+                      <div className="mt-3 inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/65">
+                        Lumora Sleep
+                      </div>
+                    </div>
+                  </div>
+
+                  <p className="mt-6 text-sm md:text-base text-slate-200/75 leading-relaxed">
+                    {member.bio}
+                  </p>
+                </div>
+
+                {/* Bottom accent line */}
+                <div className="h-px w-full bg-gradient-to-r from-transparent via-white/15 to-transparent" />
+              </article>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-br from-slate-800 to-slate-900">
+      {/* CTA */}
+      <section className="py-18 md:py-20">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="text-4xl md:text-5xl font-semibold mb-6 bg-gradient-to-r from-slate-200 via-slate-300 to-slate-400 bg-clip-text text-transparent">
-            Join Our Mission
-          </h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Ready to experience the future of sleep? Join thousands on our waitlist and be the first to know when Lumora
-            Sleep launches.
-          </p>
-          <a
-            href="/#waitlist-form"
-            className="inline-block pill-button bg-slate-400 text-slate-900 hover:bg-slate-300 px-12 py-4 text-lg font-medium transition-all duration-300 rounded-full"
-          >
-            Join the Waitlist
-          </a>
+          <div className="max-w-4xl mx-auto rounded-3xl border border-white/10 bg-white/[0.04] backdrop-blur-xl p-10 md:p-12 shadow-2xl shadow-black/30">
+            <h2 className="text-3xl md:text-5xl font-semibold bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 bg-clip-text text-transparent">
+              Join Our Mission
+            </h2>
+            <p className="mt-5 text-base md:text-lg text-slate-200/70 max-w-2xl mx-auto leading-relaxed">
+              Join the waitlist to be first in line when Lumora launches and to receive early updates as we refine the mask.
+            </p>
+
+            <div className="mt-8 flex items-center justify-center gap-3">
+              <a
+                href="/#waitlist-form"
+                className="inline-flex items-center justify-center rounded-full bg-white text-[#070A12] px-10 py-3 text-base font-semibold hover:bg-slate-100 transition"
+              >
+                Join the Waitlist
+              </a>
+              <a
+                href="/#products"
+                className="inline-flex items-center justify-center rounded-full border border-white/20 bg-white/5 px-10 py-3 text-base font-medium text-slate-100/90 hover:bg-white/10 hover:border-white/30 transition"
+              >
+                View Products
+              </a>
+            </div>
+          </div>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 bg-slate-900 border-t border-slate-800">
+      <footer className="py-12 border-t border-white/10 bg-[#070A12]/70 backdrop-blur-xl">
         <div className="container mx-auto px-6">
-          <div className="flex flex-col md:flex-row justify-between items-center">
-            <div className="mb-4 md:mb-0">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-20 w-auto opacity-80" />
-            </div>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+            <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-16 w-auto opacity-80" />
 
-            <div className="flex gap-8 text-slate-400">
-              <a href="/" className="hover:text-slate-300 transition-colors font-light">
+            <div className="flex flex-wrap justify-center gap-x-8 gap-y-3 text-slate-200/60">
+              <a href="/" className="hover:text-slate-100 transition-colors font-light">
                 Home
               </a>
-              <a href="/#faq" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/#faq" className="hover:text-slate-100 transition-colors font-light">
                 FAQ
               </a>
-              <a href="mailto:hello@uselumora.co" className="hover:text-slate-300 transition-colors font-light">
+              <a href="mailto:hello@uselumora.co" className="hover:text-slate-100 transition-colors font-light">
                 Contact
               </a>
-              <a href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==" target="_blank" rel="noopener noreferrer" className="hover:text-slate-300 transition-colors font-light">
+              <a
+                href="https://www.instagram.com/lumorasleep"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-slate-100 transition-colors font-light"
+              >
                 Instagram
               </a>
-              <a href="/team" className="hover:text-slate-300 transition-colors font-light">
+              <a href="/team" className="hover:text-slate-100 transition-colors font-light">
                 Our Team
               </a>
             </div>
+          </div>
+
+          <div className="mt-8 text-center text-xs text-slate-200/45 tracking-wide">
+            © {new Date().getFullYear()} Lumora Sleep. All rights reserved.
           </div>
         </div>
       </footer>
