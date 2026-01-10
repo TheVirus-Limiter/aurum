@@ -827,7 +827,7 @@ export default function AurumSleep() {
                 className="hover:text-slate-200 transition-colors font-light tracking-wide"
                 onClick={(e) => {
                   e.preventDefault()
-                  document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })
+                  document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })
                 }}
               >
                 Contact
