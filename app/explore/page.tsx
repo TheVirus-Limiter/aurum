@@ -171,6 +171,153 @@ function FocusCrosshair({
   )
 }
 
+function ChapterNav({
+  components,
+  activeId,
+  onSelect,
+}: {
+  components: MaskComponent[]
+  activeId: ComponentId
+  onSelect: (id: ComponentId) => void
+}) {
+  const activeIndex = components.findIndex((c) => c.id === activeId)
+
+  return (
+    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
+      <div className="p-5 border-b border-white/10">
+        <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Chapters</div>
+        <div className="mt-1 text-sm text-slate-200/85">Jump to any feature.</div>
+      </div>
+
+      <div className="p-4">
+        <div className="grid grid-cols-2 gap-2">
+          {components.map((c, i) => {
+            const active = c.id === activeId
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => onSelect(c.id)}
+                className={`rounded-2xl border px-4 py-3 text-left transition ${
+                  active
+                    ? "bg-white/10 border-white/20"
+                    : "bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/15"
+                }`}
+                aria-pressed={active}
+              >
+                <div className="flex items-center justify-between gap-3">
+                  <div className="min-w-0">
+                    <div className="text-[11px] tracking-[0.20em] uppercase text-slate-200/70">
+                      {String(i + 1).padStart(2, "0")}
+                    </div>
+                    <div className="mt-1 text-sm font-medium text-slate-100 truncate">{c.title}</div>
+                    <div className="mt-1 text-[11px] text-slate-300/65 truncate">{c.tag}</div>
+                  </div>
+                  <div
+                    className={`h-2 w-2 rounded-full ${active ? "bg-white/65" : "bg-white/25"}`}
+                    aria-hidden
+                  />
+                </div>
+              </button>
+            )
+          })}
+        </div>
+
+        <div className="mt-4 text-xs text-slate-300/60 tracking-wide">
+          {activeIndex + 1} / {components.length}
+        </div>
+      </div>
+    </div>
+  )
+}
+
+function MobileChapterCarousel({
+  components,
+  activeId,
+  onPrev,
+n  onNext,
+  onSelect,
+}: {
+  components: MaskComponent[]
+  activeId: ComponentId
+  onPrev: () => void
+  onNext: () => void
+  onSelect: (id: ComponentId) => void
+}) {
+  const active = components.find((c) => c.id === activeId) ?? components[0]
+  const idx = components.findIndex((c) => c.id === activeId)
+
+  return (
+    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
+      <div className="p-5 border-b border-white/10 flex items-center justify-between">
+        <div>
+          <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Feature</div>
+          <div className="mt-1 text-sm text-slate-200/85">Swipe or tap to explore.</div>
+        </div>
+        <div className="text-xs text-slate-300/60 tracking-wide">{idx + 1} / {components.length}</div>
+      </div>
+
+      <div className="p-5">
+        <div className="flex items-start justify-between gap-4">
+          <div className="min-w-0">
+            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
+              {active.tag}
+            </div>
+            <div className="mt-3 text-xl font-semibold text-slate-100">{active.title}</div>
+            <div className="mt-2 text-sm text-slate-300/75 leading-relaxed">{active.short}</div>
+          </div>
+          <div className="shrink-0 flex items-center gap-2">
+            <button
+              type="button"
+              onClick={onPrev}
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+              aria-label="Previous feature"
+            >
+              <ChevronLeft className="w-4 h-4" />
+            </button>
+            <button
+              type="button"
+              onClick={onNext}
+              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+              aria-label="Next feature"
+            >
+              <ChevronRight className="w-4 h-4" />
+            </button>
+          </div>
+        </div>
+
+        <div className="mt-4 text-sm text-slate-200/80 leading-relaxed">
+          {active.details}
+        </div>
+
+        <div className="mt-5 flex flex-wrap gap-2">
+          {components.map((c, i) => {
+            const isActive = c.id === activeId
+            return (
+              <button
+                key={c.id}
+                type="button"
+                onClick={() => onSelect(c.id)}
+                className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm border transition ${
+                  isActive
+                    ? "bg-white/10 border-white/20 text-slate-100"
+                    : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
+                }`}
+                aria-pressed={isActive}
+              >
+                <span className="text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
+                  {String(i + 1).padStart(2, "0")}
+                </span>
+                <span className="font-medium">{c.title}</span>
+              </button>
+            )
+          })}
+        </div>
+      </div>
+    </div>
+  )
+}
+
 function InteractiveProductHero() {
   const reducedMotion = usePrefersReducedMotion()
   const components = useMemo(() => COMPONENTS, [])
@@ -178,9 +325,10 @@ function InteractiveProductHero() {
   const [activeId, setActiveId] = useState<ComponentId>(components[0]?.id ?? "thermal")
   const [autoPlay, setAutoPlay] = useState(false)
 
-  const stageRef = useRef<HTMLDivElement | null>(null)
   const maskWrapRef = useRef<HTMLDivElement | null>(null)
-  const storyRefs = useRef<Record<string, HTMLDivElement | null>>({})
+  const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
+  const isProgrammaticScroll = useRef(false)
+  const scrollEndTimer = useRef<number | null>(null)
 
   const activeIndex = useMemo(
     () => components.findIndex((c) => c.id === activeId),
@@ -196,20 +344,25 @@ function InteractiveProductHero() {
     setActiveId(next.id)
   }
 
-  const next = () => setActiveByIndex(activeIndex + 1)
-  const prev = () => setActiveByIndex(activeIndex - 1)
+  const next = () => {
+    setAutoPlay(false)
+    jumpTo(components[clampIndex(activeIndex + 1, components.length)].id)
+  }
+
+  const prev = () => {
+    setAutoPlay(false)
+    jumpTo(components[clampIndex(activeIndex - 1, components.length)].id)
+  }
 
   // Keyboard support
   useEffect(() => {
     const onKeyDown = (e: KeyboardEvent) => {
       if (e.key === "ArrowRight") {
         e.preventDefault()
-        setAutoPlay(false)
         next()
       }
       if (e.key === "ArrowLeft") {
         e.preventDefault()
-        setAutoPlay(false)
         prev()
       }
       if (e.key === "Escape") {
@@ -222,44 +375,16 @@ function InteractiveProductHero() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex])
 
-  // Auto play (cinematic tour)
+  // Auto play (tour)
   useEffect(() => {
     if (!autoPlay) return
     if (reducedMotion) return
     const id = window.setInterval(() => {
-      setActiveByIndex(activeIndex + 1)
+      const idNext = components[clampIndex(activeIndex + 1, components.length)].id
+      jumpTo(idNext)
     }, 5200)
     return () => window.clearInterval(id)
-  }, [autoPlay, activeIndex, reducedMotion])
-
-  // Scroll driven story (IntersectionObserver)
-  useEffect(() => {
-    const root = stageRef.current
-    if (!root) return
-
-    const cards = components
-      .map((c) => storyRefs.current[c.id])
-      .filter(Boolean) as HTMLDivElement[]
-
-    if (cards.length === 0) return
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        const best = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0]
-
-        if (best?.target) {
-          const id = (best.target as HTMLElement).dataset.id as ComponentId
-          if (id) setActiveId(id)
-        }
-      },
-      { root, threshold: [0.35, 0.5, 0.65] }
-    )
-
-    cards.forEach((c) => io.observe(c))
-    return () => io.disconnect()
-  }, [components])
+  }, [autoPlay, activeIndex, reducedMotion, components])
 
   // Cinematic tilt and sheen
   useEffect(() => {
@@ -296,12 +421,58 @@ function InteractiveProductHero() {
     }
   }, [reducedMotion])
 
-  const scrollToCard = (id: ComponentId) => {
-    setAutoPlay(false)
-    const card = storyRefs.current[id]
-    if (!card) return
-    card.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "center" })
+  const jumpTo = (id: ComponentId) => {
+    const el = sectionRefs.current[id]
+    if (!el) {
+      setActiveId(id)
+      return
+    }
+
+    isProgrammaticScroll.current = true
+    setActiveId(id)
+
+    if (scrollEndTimer.current) window.clearTimeout(scrollEndTimer.current)
+
+    el.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" })
+
+    // Release the programmatic lock after the scroll has likely finished
+    scrollEndTimer.current = window.setTimeout(() => {
+      isProgrammaticScroll.current = false
+    }, reducedMotion ? 0 : 650)
   }
+
+  // Chapter activation based on page scroll
+  useEffect(() => {
+    const sections = components
+      .map((c) => sectionRefs.current[c.id])
+      .filter(Boolean) as HTMLElement[]
+
+    if (sections.length === 0) return
+
+    const io = new IntersectionObserver(
+      (entries) => {
+        if (isProgrammaticScroll.current) return
+
+        // Choose the most visible section
+        const best = entries
+          .filter((e) => e.isIntersecting)
+          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0]
+
+        if (best?.target) {
+          const id = (best.target as HTMLElement).dataset.id as ComponentId
+          if (id) setActiveId(id)
+        }
+      },
+      {
+        root: null,
+        threshold: [0.25, 0.35, 0.5, 0.65],
+        rootMargin: "-20% 0px -60% 0px",
+      }
+    )
+
+    sections.forEach((s) => io.observe(s))
+    return () => io.disconnect()
+  }, [components])
 
   return (
     <div className="relative w-full max-w-7xl mx-auto">
@@ -317,12 +488,8 @@ function InteractiveProductHero() {
             {/* Controls */}
             <div className="relative z-10 flex items-center justify-between gap-4 p-5 border-b border-white/10">
               <div className="min-w-0">
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">
-                  Explore
-                </div>
-                <div className="mt-1 text-sm text-slate-200/85">
-                  Scroll the story to reveal details.
-                </div>
+                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Explore</div>
+                <div className="mt-1 text-sm text-slate-200/85">Scroll the page through chapters.</div>
               </div>
 
               <div className="flex items-center gap-2">
@@ -343,7 +510,7 @@ function InteractiveProductHero() {
                   type="button"
                   onClick={() => {
                     setAutoPlay(false)
-                    scrollToCard(components[0].id)
+                    jumpTo(components[0].id)
                   }}
                   className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium bg-white/5 border border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15 transition"
                 >
@@ -385,7 +552,7 @@ function InteractiveProductHero() {
                   style={{ filter: "drop-shadow(0 18px 60px rgba(0,0,0,0.50))" }}
                 />
 
-                {/* Focus crosshair (only one, no dots) */}
+                {/* Focus crosshair */}
                 <FocusCrosshair
                   x={activeComponent.position.x}
                   y={activeComponent.position.y}
@@ -402,7 +569,7 @@ function InteractiveProductHero() {
                     <button
                       key={c.id}
                       type="button"
-                      onClick={() => scrollToCard(c.id)}
+                      onClick={() => jumpTo(c.id)}
                       className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm border transition ${
                         active
                           ? "bg-white/10 border-white/20 text-slate-100"
@@ -419,9 +586,7 @@ function InteractiveProductHero() {
                 })}
               </div>
 
-              <div className="mt-4 text-[11px] text-slate-300/55">
-                Tip: Use left and right arrow keys to move through features.
-              </div>
+              <div className="mt-4 text-[11px] text-slate-300/55">Tip: Use arrow keys to change chapters.</div>
             </div>
           </div>
 
@@ -435,157 +600,103 @@ function InteractiveProductHero() {
           </div>
         </div>
 
-        {/* Right: Scroll Story */}
-        <div>
-          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
-            <div className="p-5 border-b border-white/10 flex items-center justify-between">
-              <div>
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Story</div>
-                <div className="mt-1 text-sm text-slate-200/85">Scroll to reveal what is inside.</div>
-              </div>
+        {/* Right: Desktop chapter navigation (sticky) */}
+        <div className="space-y-4">
+          <div className="hidden lg:block lg:sticky lg:top-8">
+            <ChapterNav components={components} activeId={activeId} onSelect={jumpTo} />
 
-              <button
-                type="button"
-                onClick={() => setAutoPlay(false)}
-                className="rounded-full p-2 text-slate-300/70 hover:text-slate-100 hover:bg-white/5 transition"
-                aria-label="Stop autoplay"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-
-            <div
-              ref={stageRef}
-              className="max-h-[640px] lg:max-h-[720px] overflow-y-auto scroll-smooth"
-            >
-              <div className="p-5 space-y-4">
-                {components.map((c, i) => {
-                  const active = c.id === activeId
-                  return (
-                    <div
-                      key={c.id}
-                      ref={(el) => {
-                        storyRefs.current[c.id] = el
-                      }}
-                      data-id={c.id}
-                      className={`rounded-2xl border transition ${
-                        active
-                          ? "border-white/18 bg-white/8"
-                          : "border-white/10 bg-white/4 hover:bg-white/6"
-                      }`}
-                    >
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setAutoPlay(false)
-                          setActiveId(c.id)
-                          if (!reducedMotion) {
-                            // subtle nudge for feel
-                            window.setTimeout(() => scrollToCard(c.id), 50)
-                          }
-                        }}
-                        className="w-full text-left p-5"
-                      >
-                        <div className="flex items-start justify-between gap-4">
-                          <div className="min-w-0">
-                            <div className="flex items-center gap-3">
-                              <div className="text-[11px] tracking-[0.20em] uppercase text-slate-200/70">
-                                {String(i + 1).padStart(2, "0")}
-                              </div>
-                              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
-                                {c.tag}
-                              </div>
-                            </div>
-                            <div className="mt-3 text-xl font-semibold text-slate-100">
-                              {c.title}
-                            </div>
-                            <div className="mt-2 text-sm text-slate-300/75 leading-relaxed">
-                              {c.short}
-                            </div>
-                          </div>
-                          <div className="shrink-0 flex items-center gap-2">
-                            <span
-                              className={`h-2 w-2 rounded-full ${
-                                active ? "bg-white/65" : "bg-white/25"
-                              }`}
-                              aria-hidden
-                            />
-                          </div>
-                        </div>
-
-                        <div
-                          className={`mt-4 text-sm text-slate-200/80 leading-relaxed transition-all ${
-                            active ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
-                          } overflow-hidden`}
-                        >
-                          {c.details}
-
-                          <div className="mt-5 flex items-center justify-between">
-                            <div className="text-xs text-slate-300/60 tracking-wide">
-                              {i + 1} / {components.length}
-                            </div>
-                            <div className="flex items-center gap-2">
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  setAutoPlay(false)
-                                  prev()
-                                  scrollToCard(components[clampIndex(activeIndex - 1, components.length)].id)
-                                }}
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-                                aria-label="Previous feature"
-                              >
-                                <ChevronLeft className="w-4 h-4" />
-                                Prev
-                              </button>
-                              <button
-                                type="button"
-                                onClick={(e) => {
-                                  e.stopPropagation()
-                                  setAutoPlay(false)
-                                  next()
-                                  scrollToCard(components[clampIndex(activeIndex + 1, components.length)].id)
-                                }}
-                                className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-                                aria-label="Next feature"
-                              >
-                                Next
-                                <ChevronRight className="w-4 h-4" />
-                              </button>
-                            </div>
-                          </div>
-
-                          <div className="mt-3 text-[11px] text-slate-300/55">
-                            Keyboard: left and right arrows.
-                          </div>
-                        </div>
-                      </button>
-                    </div>
-                  )
-                })}
+            <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
+              <div className="grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Focus</div>
+                  <div className="mt-1 text-sm text-slate-100/90">{activeComponent.title}</div>
+                </div>
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Mode</div>
+                  <div className="mt-1 text-sm text-slate-100/90">{autoPlay ? "Auto" : "Scroll"}</div>
+                </div>
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Control</div>
+                  <div className="mt-1 text-sm text-slate-100/90">Chapters</div>
+                </div>
               </div>
             </div>
           </div>
 
-          {/* Small spec strip */}
-          <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
-            <div className="grid grid-cols-3 gap-4">
-              <div>
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Focus</div>
-                <div className="mt-1 text-sm text-slate-100/90">{activeComponent.title}</div>
-              </div>
-              <div>
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Mode</div>
-                <div className="mt-1 text-sm text-slate-100/90">{autoPlay ? "Auto" : "Scroll"}</div>
-              </div>
-              <div>
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Control</div>
-                <div className="mt-1 text-sm text-slate-100/90">Story, keys</div>
-              </div>
-            </div>
+          {/* Mobile: no inner scroll, no visible scrollbars */}
+          <div className="lg:hidden">
+            <MobileChapterCarousel
+              components={components}
+              activeId={activeId}
+              onPrev={() => jumpTo(components[clampIndex(activeIndex - 1, components.length)].id)}
+              onNext={() => jumpTo(components[clampIndex(activeIndex + 1, components.length)].id)}
+              onSelect={jumpTo}
+            />
           </div>
         </div>
+      </div>
+
+      {/* Page chapters (these drive the active feature via scroll) */}
+      <div className="mt-10 space-y-6">
+        {components.map((c, i) => {
+          const active = c.id === activeId
+          return (
+            <section
+              key={c.id}
+              ref={(el) => {
+                sectionRefs.current[c.id] = el
+              }}
+              data-id={c.id}
+              className="scroll-mt-28"
+            >
+              <div
+                className={`rounded-3xl border backdrop-blur-xl p-8 md:p-10 transition ${
+                  active
+                    ? "border-white/18 bg-white/8"
+                    : "border-white/10 bg-white/5 hover:bg-white/6"
+                }`}
+              >
+                <div className="flex items-start justify-between gap-4">
+                  <div className="min-w-0">
+                    <div className="flex items-center gap-3">
+                      <div className="text-[11px] tracking-[0.20em] uppercase text-slate-200/70">
+                        {String(i + 1).padStart(2, "0")}
+                      </div>
+                      <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
+                        {c.tag}
+                      </div>
+                    </div>
+
+                    <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-slate-100">{c.title}</h3>
+                    <p className="mt-3 text-base text-slate-300/75 leading-relaxed max-w-3xl">{c.short}</p>
+                    <p className="mt-4 text-sm text-slate-200/80 leading-relaxed max-w-3xl">{c.details}</p>
+                  </div>
+
+                  <div className="shrink-0 flex items-center gap-2">
+                    <button
+                      type="button"
+                      onClick={() => prev()}
+                      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+                      aria-label="Previous chapter"
+                    >
+                      <ChevronLeft className="w-4 h-4" />
+                      Prev
+                    </button>
+                    <button
+                      type="button"
+                      onClick={() => next()}
+                      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+                      aria-label="Next chapter"
+                    >
+                      Next
+                      <ChevronRight className="w-4 h-4" />
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </section>
+          )
+        })}
       </div>
     </div>
   )
