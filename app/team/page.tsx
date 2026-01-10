@@ -239,7 +239,7 @@ export default function TeamPage() {
 
               {/* subtle divider line */}
               <div className="mt-5 h-px w-28 bg-gradient-to-r from-transparent via-white/18 to-transparent" />
-            </div>
+            
 
             <h1 className="text-4xl sm:text-6xl md:text-7xl font-light mb-6 leading-[0.95]">
               Built with <span className={`${sageGradientText} font-semibold`}>discipline</span>.
