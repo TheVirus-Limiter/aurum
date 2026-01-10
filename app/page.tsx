@@ -716,7 +716,7 @@ export default function AurumSleep() {
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto" id="contact-form">
             <div className="space-y-4">
               {faqData.map((faq, index) => (
                 <div key={index} className="bg-slate-950/30 backdrop-blur-sm rounded-2xl border border-slate-700/60 overflow-hidden">
@@ -738,7 +738,7 @@ export default function AurumSleep() {
               ))}
             </div>
 
-            <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60" id="contact-form">
+            <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60">
               <div className="text-center mb-8">
                 <h3 className="text-2xl font-semibold text-white mb-2">Still have questions?</h3>
                 <p className="text-slate-300 font-light">We’ll point you to the right option or help you decide.</p>
