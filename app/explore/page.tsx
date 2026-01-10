@@ -1,17 +1,9 @@
 "use client"
 
 import React, { useEffect, useMemo, useRef, useState } from "react"
-import { ArrowLeft, ChevronLeft, ChevronRight} from "lucide-react"
+import { ArrowLeft, ChevronLeft, ChevronRight } from "lucide-react"
 
-/**
- * Lumora Sleep, Explore Page
- * Apple-like, cinematic interaction:
- * - No visible "dots" or emojis
- * - Scroll-driven storytelling on the right, sticky product stage on the left
- * - Subtle 3D tilt + specular sheen on pointer movement
- * - Animated focus crosshair that glides to the active component
- * - Keyboard controls (←/→, Esc)
- */
+
 
 type ComponentId = "thermal" | "leds" | "audio" | "battery" | "comfort" | "exterior"
 
@@ -30,7 +22,7 @@ const COMPONENTS: MaskComponent[] = [
     title: "Adaptive Thermal Control",
     short: "Phase change regulation to stabilize skin temperature.",
     details:
-      "Phase Change Materials (PCM) absorb and release heat to reduce temperature swings that interrupt deeper sleep. The goal is a steadier microclimate against the skin, cool when you run warm, balanced when you do not.",
+      "Phase Change Materials (PCM) absorb and release heat to reduce temperature swings that interrupt deeper sleep. The result is a steadier microclimate against the skin, cool when you run warm, balanced when you do not.",
     position: { x: 52, y: 56 },
     tag: "PCM Layer",
   },
@@ -48,7 +40,7 @@ const COMPONENTS: MaskComponent[] = [
     title: "Bone Conduction Audio",
     short: "Immersive soundscapes without sealed ears.",
     details:
-      "Bone conduction transducers deliver audio through gentle vibration while leaving your ears unobstructed. This supports a more natural sleep environment while preserving situational awareness.",
+      "Bone conduction transducers deliver audio through gentle vibration while leaving your ears unobstructed. This supports a natural sleep environment while preserving situational awareness.",
     position: { x: 84, y: 48 },
     tag: "Transducers",
   },
@@ -118,7 +110,7 @@ function SectionShell({
         <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,6,23,0),rgba(2,6,23,0.78))]" />
       </div>
 
-      <div className="text-center mb-12">
+      <div className="text-center mb-10 md:mb-12">
         <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[11px] tracking-[0.24em] uppercase text-slate-200/75">
           Lumora Mask
         </div>
@@ -146,7 +138,6 @@ function FocusCrosshair({
   visible: boolean
   reducedMotion: boolean
 }) {
-  // Premium crosshair: thin ring + subtle cross lines.
   return (
     <div
       aria-hidden
@@ -171,7 +162,7 @@ function FocusCrosshair({
   )
 }
 
-function ChapterNav({
+function ChapterList({
   components,
   activeId,
   onSelect,
@@ -180,142 +171,81 @@ function ChapterNav({
   activeId: ComponentId
   onSelect: (id: ComponentId) => void
 }) {
-  const activeIndex = components.findIndex((c) => c.id === activeId)
-
   return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
-      <div className="p-5 border-b border-white/10">
-        <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Chapters</div>
-        <div className="mt-1 text-sm text-slate-200/85">Jump to any feature.</div>
-      </div>
-
-      <div className="p-4">
-        <div className="grid grid-cols-2 gap-2">
-          {components.map((c, i) => {
-            const active = c.id === activeId
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => onSelect(c.id)}
-                className={`rounded-2xl border px-4 py-3 text-left transition ${
-                  active
-                    ? "bg-white/10 border-white/20"
-                    : "bg-white/5 border-white/10 hover:bg-white/8 hover:border-white/15"
-                }`}
-                aria-pressed={active}
-              >
-                <div className="flex items-center justify-between gap-3">
-                  <div className="min-w-0">
-                    <div className="text-[11px] tracking-[0.20em] uppercase text-slate-200/70">
-                      {String(i + 1).padStart(2, "0")}
-                    </div>
-                    <div className="mt-1 text-sm font-medium text-slate-100 truncate">{c.title}</div>
-                    <div className="mt-1 text-[11px] text-slate-300/65 truncate">{c.tag}</div>
-                  </div>
-                  <div
-                    className={`h-2 w-2 rounded-full ${active ? "bg-white/65" : "bg-white/25"}`}
-                    aria-hidden
-                  />
-                </div>
-              </button>
-            )
-          })}
-        </div>
-
-        <div className="mt-4 text-xs text-slate-300/60 tracking-wide">
-          {activeIndex + 1} / {components.length}
-        </div>
-      </div>
+    <div className="flex flex-wrap gap-2">
+      {components.map((c, i) => {
+        const active = c.id === activeId
+        return (
+          <button
+            key={c.id}
+            type="button"
+            onClick={() => onSelect(c.id)}
+            className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm border transition ${
+              active
+                ? "bg-white/10 border-white/20 text-slate-100"
+                : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
+            }`}
+            aria-pressed={active}
+          >
+            <span className="text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
+              {String(i + 1).padStart(2, "0")}
+            </span>
+            <span className="font-medium">{c.title}</span>
+          </button>
+        )
+      })}
     </div>
   )
 }
 
-function MobileChapterCarousel({
-  components,
-  activeId,
-  onPrev,
-  onNext,
-  onSelect,
+function useSwipe({
+  onSwipeLeft,
+  onSwipeRight,
+  disabled,
 }: {
-  components: MaskComponent[]
-  activeId: ComponentId
-  onPrev: () => void
-  onNext: () => void
-  onSelect: (id: ComponentId) => void
+  onSwipeLeft: () => void
+  onSwipeRight: () => void
+  disabled?: boolean
 }) {
-  const active = components.find((c) => c.id === activeId) ?? components[0]
-  const idx = components.findIndex((c) => c.id === activeId)
+  const startX = useRef<number | null>(null)
+  const startY = useRef<number | null>(null)
+  const active = useRef(false)
 
-  return (
-    <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
-      <div className="p-5 border-b border-white/10 flex items-center justify-between">
-        <div>
-          <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Feature</div>
-          <div className="mt-1 text-sm text-slate-200/85">Swipe or tap to explore.</div>
-        </div>
-        <div className="text-xs text-slate-300/60 tracking-wide">{idx + 1} / {components.length}</div>
-      </div>
+  const onTouchStart = (e: React.TouchEvent) => {
+    if (disabled) return
+    const t = e.touches[0]
+    startX.current = t.clientX
+    startY.current = t.clientY
+    active.current = true
+  }
 
-      <div className="p-5">
-        <div className="flex items-start justify-between gap-4">
-          <div className="min-w-0">
-            <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
-              {active.tag}
-            </div>
-            <div className="mt-3 text-xl font-semibold text-slate-100">{active.title}</div>
-            <div className="mt-2 text-sm text-slate-300/75 leading-relaxed">{active.short}</div>
-          </div>
-          <div className="shrink-0 flex items-center gap-2">
-            <button
-              type="button"
-              onClick={onPrev}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-              aria-label="Previous feature"
-            >
-              <ChevronLeft className="w-4 h-4" />
-            </button>
-            <button
-              type="button"
-              onClick={onNext}
-              className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-              aria-label="Next feature"
-            >
-              <ChevronRight className="w-4 h-4" />
-            </button>
-          </div>
-        </div>
+  const onTouchMove = (e: React.TouchEvent) => {
+    if (!active.current || disabled) return
+    // prevent accidental vertical scroll blocking; we only decide on end
+  }
 
-        <div className="mt-4 text-sm text-slate-200/80 leading-relaxed">
-          {active.details}
-        </div>
+  const onTouchEnd = (e: React.TouchEvent) => {
+    if (!active.current || disabled) return
+    const x0 = startX.current
+    const y0 = startY.current
+    if (x0 == null || y0 == null) return
 
-        <div className="mt-5 flex flex-wrap gap-2">
-          {components.map((c, i) => {
-            const isActive = c.id === activeId
-            return (
-              <button
-                key={c.id}
-                type="button"
-                onClick={() => onSelect(c.id)}
-                className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm border transition ${
-                  isActive
-                    ? "bg-white/10 border-white/20 text-slate-100"
-                    : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
-                }`}
-                aria-pressed={isActive}
-              >
-                <span className="text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
-                  {String(i + 1).padStart(2, "0")}
-                </span>
-                <span className="font-medium">{c.title}</span>
-              </button>
-            )
-          })}
-        </div>
-      </div>
-    </div>
-  )
+    const t = e.changedTouches[0]
+    const dx = t.clientX - x0
+    const dy = t.clientY - y0
+
+    // require mostly horizontal intent
+    if (Math.abs(dx) > 42 && Math.abs(dx) > Math.abs(dy) * 1.4) {
+      if (dx < 0) onSwipeLeft()
+      else onSwipeRight()
+    }
+
+    active.current = false
+    startX.current = null
+    startY.current = null
+  }
+
+  return { onTouchStart, onTouchMove, onTouchEnd }
 }
 
 function InteractiveProductHero() {
@@ -326,14 +256,12 @@ function InteractiveProductHero() {
   const [autoPlay, setAutoPlay] = useState(false)
 
   const maskWrapRef = useRef<HTMLDivElement | null>(null)
-  const sectionRefs = useRef<Record<string, HTMLElement | null>>({})
-  const isProgrammaticScroll = useRef(false)
-  const scrollEndTimer = useRef<number | null>(null)
 
   const activeIndex = useMemo(
     () => components.findIndex((c) => c.id === activeId),
     [components, activeId]
   )
+
   const activeComponent = useMemo(
     () => components.find((c) => c.id === activeId) ?? components[0],
     [components, activeId]
@@ -346,12 +274,12 @@ function InteractiveProductHero() {
 
   const next = () => {
     setAutoPlay(false)
-    jumpTo(components[clampIndex(activeIndex + 1, components.length)].id)
+    setActiveByIndex(activeIndex + 1)
   }
 
   const prev = () => {
     setAutoPlay(false)
-    jumpTo(components[clampIndex(activeIndex - 1, components.length)].id)
+    setActiveByIndex(activeIndex - 1)
   }
 
   // Keyboard support
@@ -375,18 +303,17 @@ function InteractiveProductHero() {
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [activeIndex])
 
-  // Auto play (tour)
+  // Autoplay
   useEffect(() => {
     if (!autoPlay) return
     if (reducedMotion) return
     const id = window.setInterval(() => {
-      const idNext = components[clampIndex(activeIndex + 1, components.length)].id
-      jumpTo(idNext)
+      setActiveByIndex(activeIndex + 1)
     }, 5200)
     return () => window.clearInterval(id)
-  }, [autoPlay, activeIndex, reducedMotion, components])
+  }, [autoPlay, activeIndex, reducedMotion])
 
-  // Cinematic tilt and sheen
+  // Cinematic tilt + sheen
   useEffect(() => {
     if (reducedMotion) return
     const el = maskWrapRef.current
@@ -421,282 +348,212 @@ function InteractiveProductHero() {
     }
   }, [reducedMotion])
 
-  const jumpTo = (id: ComponentId) => {
-    const el = sectionRefs.current[id]
-    if (!el) {
-      setActiveId(id)
-      return
-    }
-
-    isProgrammaticScroll.current = true
-    setActiveId(id)
-
-    if (scrollEndTimer.current) window.clearTimeout(scrollEndTimer.current)
-
-    el.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" })
-
-    // Release the programmatic lock after the scroll has likely finished
-    scrollEndTimer.current = window.setTimeout(() => {
-      isProgrammaticScroll.current = false
-    }, reducedMotion ? 0 : 650)
-  }
-
-  // Chapter activation based on page scroll
-  useEffect(() => {
-    const sections = components
-      .map((c) => sectionRefs.current[c.id])
-      .filter(Boolean) as HTMLElement[]
-
-    if (sections.length === 0) return
-
-    const io = new IntersectionObserver(
-      (entries) => {
-        if (isProgrammaticScroll.current) return
-
-        // Choose the most visible section
-        const best = entries
-          .filter((e) => e.isIntersecting)
-          .sort((a, b) => (b.intersectionRatio ?? 0) - (a.intersectionRatio ?? 0))[0]
-
-        if (best?.target) {
-          const id = (best.target as HTMLElement).dataset.id as ComponentId
-          if (id) setActiveId(id)
-        }
-      },
-      {
-        root: null,
-        threshold: [0.25, 0.35, 0.5, 0.65],
-        rootMargin: "-20% 0px -60% 0px",
-      }
-    )
-
-    sections.forEach((s) => io.observe(s))
-    return () => io.disconnect()
-  }, [components])
+  const swipeHandlers = useSwipe({
+    onSwipeLeft: () => next(),
+    onSwipeRight: () => prev(),
+    disabled: reducedMotion,
+  })
 
   return (
     <div className="relative w-full max-w-7xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-[1fr_460px] gap-6 lg:gap-10 items-start">
-        {/* Left: Product Stage (sticky) */}
-        <div className="lg:sticky lg:top-8">
-          <div className="relative rounded-3xl border border-white/10 bg-white/5 overflow-hidden">
-            <div className="absolute inset-0">
-              <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_15%,rgba(255,255,255,0.06),transparent_55%)]" />
-              <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,6,23,0),rgba(2,6,23,0.8))]" />
+        {/* Left: Mask Stage */}
+        <div
+          className="rounded-3xl border border-white/10 bg-white/5 overflow-hidden"
+          {...swipeHandlers}
+        >
+          <div className="absolute inset-0 pointer-events-none">
+            <div className="absolute inset-0 bg-[radial-gradient(70%_70%_at_50%_15%,rgba(255,255,255,0.06),transparent_55%)]" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_bottom,rgba(2,6,23,0),rgba(2,6,23,0.8))]" />
+          </div>
+
+          {/* Controls */}
+          <div className="relative z-10 flex items-center justify-between gap-4 p-5 border-b border-white/10">
+            <div className="min-w-0">
+              <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">
+                Explore
+              </div>
+              <div className="mt-1 text-sm text-slate-200/85">
+                Tap a chapter. Use arrows. Swipe on mobile.
+              </div>
             </div>
 
-            {/* Controls */}
-            <div className="relative z-10 flex items-center justify-between gap-4 p-5 border-b border-white/10">
-              <div className="min-w-0">
-                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">Explore</div>
-                <div className="mt-1 text-sm text-slate-200/85">Scroll the page through chapters.</div>
+            <div className="flex items-center gap-2">
+              <button
+                type="button"
+                onClick={() => setAutoPlay((v) => !v)}
+                className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition border ${
+                  autoPlay
+                    ? "bg-white/12 border-white/20 text-slate-100"
+                    : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
+                }`}
+                aria-pressed={autoPlay}
+              >
+                {autoPlay ? "Auto" : "Play"}
+              </button>
+
+              <button
+                type="button"
+                onClick={() => {
+                  setAutoPlay(false)
+                  setActiveId(components[0].id)
+                }}
+                className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium bg-white/5 border border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15 transition"
+              >
+                Reset
+              </button>
+            </div>
+          </div>
+
+          {/* Cinematic stage */}
+          <div className="relative p-6 md:p-10">
+            <div
+              ref={maskWrapRef}
+              className="relative mx-auto w-[320px] sm:w-[420px] md:w-[540px]"
+              style={{
+                transformStyle: "preserve-3d",
+                transform: reducedMotion
+                  ? undefined
+                  : "perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
+                transition: reducedMotion ? undefined : "transform 250ms ease",
+              }}
+            >
+              {!reducedMotion && (
+                <div
+                  aria-hidden
+                  className="pointer-events-none absolute inset-0 rounded-[28px]"
+                  style={{
+                    background:
+                      "radial-gradient(520px 280px at var(--sx, 50%) var(--sy, 35%), rgba(255,255,255,0.10), transparent 55%)",
+                    mixBlendMode: "screen",
+                  }}
+                />
+              )}
+
+              <img
+                src="/images/sleep-mask-2.png"
+                alt="Lumora Sleep Mask"
+                className="w-full h-auto object-contain"
+                style={{ filter: "drop-shadow(0 18px 60px rgba(0,0,0,0.50))" }}
+              />
+
+              <FocusCrosshair
+                x={activeComponent.position.x}
+                y={activeComponent.position.y}
+                visible={!!activeComponent}
+                reducedMotion={reducedMotion}
+              />
+            </div>
+
+            <div className="mt-8">
+              <ChapterList
+                components={components}
+                activeId={activeId}
+                onSelect={(id) => {
+                  setAutoPlay(false)
+                  setActiveId(id)
+                }}
+              />
+            </div>
+
+            <div className="mt-4 text-[11px] text-slate-300/55">
+              Tip: Left and right arrows work on desktop.
+            </div>
+          </div>
+        </div>
+
+        {/* Right: Chapter Detail (sticky on desktop) */}
+        <div className="lg:sticky lg:top-8 space-y-4">
+          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl shadow-2xl shadow-black/30 overflow-hidden">
+            <div className="p-5 border-b border-white/10 flex items-center justify-between">
+              <div>
+                <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/65">
+                  Chapter
+                </div>
+                <div className="mt-1 text-sm text-slate-200/85">
+                  {activeIndex + 1} / {components.length}
+                </div>
               </div>
 
               <div className="flex items-center gap-2">
                 <button
                   type="button"
-                  onClick={() => setAutoPlay((v) => !v)}
-                  className={`inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium transition border ${
-                    autoPlay
-                      ? "bg-white/12 border-white/20 text-slate-100"
-                      : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
-                  }`}
-                  aria-pressed={autoPlay}
+                  onClick={prev}
+                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+                  aria-label="Previous chapter"
                 >
-                  {autoPlay ? "Auto" : "Play"}
+                  <ChevronLeft className="w-4 h-4" />
+                  Prev
                 </button>
-
                 <button
                   type="button"
-                  onClick={() => {
-                    setAutoPlay(false)
-                    jumpTo(components[0].id)
-                  }}
-                  className="inline-flex items-center gap-2 rounded-xl px-4 py-2 text-sm font-medium bg-white/5 border border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15 transition"
+                  onClick={next}
+                  className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
+                  aria-label="Next chapter"
                 >
-                  Reset
+                  Next
+                  <ChevronRight className="w-4 h-4" />
                 </button>
               </div>
             </div>
 
-            {/* Cinematic stage */}
-            <div className="relative p-6 md:p-10">
-              <div
-                ref={maskWrapRef}
-                className="relative mx-auto w-[320px] sm:w-[420px] md:w-[540px]"
-                style={{
-                  transformStyle: "preserve-3d",
-                  transform: reducedMotion
-                    ? undefined
-                    : "perspective(900px) rotateX(var(--rx, 0deg)) rotateY(var(--ry, 0deg))",
-                  transition: reducedMotion ? undefined : "transform 250ms ease",
-                }}
-              >
-                {/* Sheen */}
-                {!reducedMotion && (
-                  <div
-                    aria-hidden
-                    className="pointer-events-none absolute inset-0 rounded-[28px]"
-                    style={{
-                      background:
-                        "radial-gradient(520px 280px at var(--sx, 50%) var(--sy, 35%), rgba(255,255,255,0.10), transparent 55%)",
-                      mixBlendMode: "screen",
-                    }}
-                  />
-                )}
-
-                <img
-                  src="/images/sleep-mask-2.png"
-                  alt="Lumora Sleep Mask"
-                  className="w-full h-auto object-contain"
-                  style={{ filter: "drop-shadow(0 18px 60px rgba(0,0,0,0.50))" }}
-                />
-
-                {/* Focus crosshair */}
-                <FocusCrosshair
-                  x={activeComponent.position.x}
-                  y={activeComponent.position.y}
-                  visible={!!activeComponent}
-                  reducedMotion={reducedMotion}
-                />
+            <div className="p-6 md:p-7">
+              <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
+                {activeComponent.tag}
               </div>
 
-              {/* Minimal quick nav */}
-              <div className="mt-8 flex flex-wrap gap-2">
-                {components.map((c, i) => {
-                  const active = c.id === activeId
-                  return (
-                    <button
-                      key={c.id}
-                      type="button"
-                      onClick={() => jumpTo(c.id)}
-                      className={`inline-flex items-center gap-2 rounded-full px-3 py-2 text-sm border transition ${
-                        active
-                          ? "bg-white/10 border-white/20 text-slate-100"
-                          : "bg-white/5 border-white/10 text-slate-200/80 hover:bg-white/8 hover:border-white/15"
-                      }`}
-                      aria-pressed={active}
-                    >
-                      <span className="text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
-                        {String(i + 1).padStart(2, "0")}
-                      </span>
-                      <span className="font-medium">{c.title}</span>
-                    </button>
-                  )
-                })}
+              <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-slate-100">
+                {activeComponent.title}
+              </h3>
+
+              <p className="mt-3 text-base text-slate-300/75 leading-relaxed">
+                {activeComponent.short}
+              </p>
+
+              <p className="mt-5 text-sm text-slate-200/80 leading-relaxed">
+                {activeComponent.details}
+              </p>
+
+              <div className="mt-6 grid grid-cols-3 gap-4">
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">
+                    Focus
+                  </div>
+                  <div className="mt-1 text-sm text-slate-100/90">
+                    {activeComponent.title}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">
+                    Mode
+                  </div>
+                  <div className="mt-1 text-sm text-slate-100/90">
+                    {autoPlay ? "Auto" : "Manual"}
+                  </div>
+                </div>
+                <div>
+                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">
+                    Control
+                  </div>
+                  <div className="mt-1 text-sm text-slate-100/90">Chapters</div>
+                </div>
               </div>
 
-              <div className="mt-4 text-[11px] text-slate-300/55">Tip: Use arrow keys to change chapters.</div>
+              <div className="mt-6 text-[11px] text-slate-300/55">
+                On mobile: swipe the mask left or right to change chapters.
+              </div>
             </div>
           </div>
 
-          {/* Bottom copy */}
-          <div className="mt-6 rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-8 md:p-10">
-            <h3 className="text-2xl font-semibold text-slate-100">Engineered as a system</h3>
-            <p className="mt-3 text-slate-300/75 leading-relaxed max-w-3xl">
+          {/* Optional: keep this small system statement (not bottom chapters) */}
+          <div className="rounded-3xl border border-white/10 bg-white/5 backdrop-blur-xl p-7">
+            <h4 className="text-lg font-semibold text-slate-100">Engineered as a system</h4>
+            <p className="mt-2 text-sm text-slate-300/75 leading-relaxed">
               Each element is designed to work together. Thermal stability supports deeper sleep, gentle light reduces harsh awakenings,
               and refined materials keep comfort consistent throughout the night.
             </p>
           </div>
         </div>
-
-        {/* Right: Desktop chapter navigation (sticky) */}
-        <div className="space-y-4">
-          <div className="hidden lg:block lg:sticky lg:top-8">
-            <ChapterNav components={components} activeId={activeId} onSelect={jumpTo} />
-
-            <div className="mt-4 rounded-2xl border border-white/10 bg-white/5 backdrop-blur-xl p-5">
-              <div className="grid grid-cols-3 gap-4">
-                <div>
-                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Focus</div>
-                  <div className="mt-1 text-sm text-slate-100/90">{activeComponent.title}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Mode</div>
-                  <div className="mt-1 text-sm text-slate-100/90">{autoPlay ? "Auto" : "Scroll"}</div>
-                </div>
-                <div>
-                  <div className="text-[11px] tracking-[0.22em] uppercase text-slate-200/60">Control</div>
-                  <div className="mt-1 text-sm text-slate-100/90">Chapters</div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Mobile: no inner scroll, no visible scrollbars */}
-          <div className="lg:hidden">
-            <MobileChapterCarousel
-              components={components}
-              activeId={activeId}
-              onPrev={() => jumpTo(components[clampIndex(activeIndex - 1, components.length)].id)}
-              onNext={() => jumpTo(components[clampIndex(activeIndex + 1, components.length)].id)}
-              onSelect={jumpTo}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Page chapters (these drive the active feature via scroll) */}
-      <div className="mt-10 space-y-6">
-        {components.map((c, i) => {
-          const active = c.id === activeId
-          return (
-            <section
-              key={c.id}
-              ref={(el) => {
-                sectionRefs.current[c.id] = el
-              }}
-              data-id={c.id}
-              className="scroll-mt-28"
-            >
-              <div
-                className={`rounded-3xl border backdrop-blur-xl p-8 md:p-10 transition ${
-                  active
-                    ? "border-white/18 bg-white/8"
-                    : "border-white/10 bg-white/5 hover:bg-white/6"
-                }`}
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="min-w-0">
-                    <div className="flex items-center gap-3">
-                      <div className="text-[11px] tracking-[0.20em] uppercase text-slate-200/70">
-                        {String(i + 1).padStart(2, "0")}
-                      </div>
-                      <div className="inline-flex items-center rounded-full border border-white/10 bg-white/5 px-2.5 py-1 text-[11px] tracking-[0.18em] uppercase text-slate-200/70">
-                        {c.tag}
-                      </div>
-                    </div>
-
-                    <h3 className="mt-4 text-2xl md:text-3xl font-semibold text-slate-100">{c.title}</h3>
-                    <p className="mt-3 text-base text-slate-300/75 leading-relaxed max-w-3xl">{c.short}</p>
-                    <p className="mt-4 text-sm text-slate-200/80 leading-relaxed max-w-3xl">{c.details}</p>
-                  </div>
-
-                  <div className="shrink-0 flex items-center gap-2">
-                    <button
-                      type="button"
-                      onClick={() => prev()}
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-                      aria-label="Previous chapter"
-                    >
-                      <ChevronLeft className="w-4 h-4" />
-                      Prev
-                    </button>
-                    <button
-                      type="button"
-                      onClick={() => next()}
-                      className="inline-flex items-center gap-2 rounded-xl border border-white/10 bg-white/5 px-3 py-2 text-sm text-slate-200/85 hover:bg-white/10 transition"
-                      aria-label="Next chapter"
-                    >
-                      Next
-                      <ChevronRight className="w-4 h-4" />
-                    </button>
-                  </div>
-                </div>
-              </div>
-            </section>
-          )
-        })}
       </div>
     </div>
   )
@@ -727,7 +584,7 @@ export default function ExplorePage() {
         <div className="container mx-auto px-6">
           <SectionShell
             title="Explore the Mask"
-            subtitle="A cinematic, interactive walkthrough of the components behind Lumora Sleep. Scroll the story to watch the mask come alive."
+            subtitle="A cinematic, interactive walkthrough of the components behind Lumora Sleep. Tap chapters to see each system come to life."
           >
             <InteractiveProductHero />
           </SectionShell>
