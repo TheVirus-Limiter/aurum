@@ -4,13 +4,6 @@ import React, { useEffect, useMemo, useRef, useState } from "react"
 import { Button } from "@/components/ui/button"
 import { ArrowLeft, ChevronDown, Mail, Instagram, Sparkles } from "lucide-react"
 
-/**
- * Team Page — matched to Home Page vibe
- * - Uses same aurumGradient + sageGradientText system
- * - Circular avatars kept, upgraded with specular ring + hover sheen
- * - Adds one “eyedropping” element: a subtle, Apple-like “Spotlight” cursor glow
- * - Mobile-first and consistent nav/CTA styling
- */
 
 type TeamMember = {
   name: string
