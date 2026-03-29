@@ -7,8 +7,6 @@ import {
   Thermometer,
   Volume2,
   Sun,
-  Leaf,
-  Plane,
   Crown,
   Zap,
   CheckCircle,
@@ -18,9 +16,16 @@ import {
   Minus,
   Mail,
   Instagram,
+  MoonStar,
+  Sparkles,
+  ShieldCheck,
+  Waves,
+  Briefcase,
+  Plane,
+  Gem,
 } from "lucide-react"
 
-type ProductKey = "core" | "natural" | "travel" | "max"
+type ProductKey = "essence" | "caelum" | "sonus" | "aurora" | "voyage" | "max"
 
 type QuizAnswer = {
   questionId: string
@@ -35,20 +40,179 @@ type QuizState = {
   recommendedProduct: ProductKey | null
 }
 
-// Simple Product Image with Discover Link
-const InteractiveMaskDiagram = () => {
+const faqData = [
+  {
+    question: "What is Lumora?",
+    answer:
+      "Lumora is a modular sleep system built around the real moments that shape rest: falling asleep, staying comfortable through the night, and waking naturally in the morning. Instead of asking people to rely on supplements, more screen time, or bulky bedside hardware alone, Lumora combines a premium sleep mask with optional ecosystem pieces designed to create a more complete ritual of rest.",
+  },
+  {
+    question: "Why did Lumora pivot to a modular system?",
+    answer:
+      "As we studied how people actually sleep, we realized the best experience was not about packing heavy technology directly onto the face. We redesigned Lumora to be lighter, more intuitive, and more comfortable long term. The result is a system where each product works beautifully on its own, but together creates a more complete sleep experience.",
+  },
+  {
+    question: "What makes the Lumora Essence mask different from a normal sleep mask?",
+    answer:
+      "Lumora Essence is designed as a premium blackout sleep mask with mulberry silk, structured comfort, reduced pressure on the eyes, and compatibility with the broader Lumora system. It is not just a light blocker. It is the foundation of a better sleep environment. It is also designed with subtle morning light permeability, allowing natural wake cues to register more gently over time instead of feeling completely disconnected from daylight rhythms.",
+  },
+  {
+    question: "What does partial light leakage mean?",
+    answer:
+      "Lumora uses a refined version of full blackout. At night, the goal is deep darkness and comfort. In the morning, the design allows subtle natural light cues to begin registering more gently. This helps the system feel more aligned with circadian rhythms while still functioning as a true sleep mask. It is an intentional design choice, not a flaw.",
+  },
+  {
+    question: "How does Lumora Caelum work?",
+    answer:
+      "Lumora Caelum is our premium PCM insert system. PCM stands for phase change material, which helps regulate temperature by absorbing and releasing heat as conditions change. In simple terms, it helps reduce overheating and keeps the mask environment more stable and comfortable across the night.",
+  },
+  {
+    question: "Is the audio built into the mask?",
+    answer:
+      "No. That is intentional. Lumora Sonus is designed as a separate, low intrusion audio band so users can experience calming soundscapes without forcing heavy electronics directly onto the face. This keeps the mask lighter, more comfortable, and more adaptable.",
+  },
+  {
+    question: "How does Lumora Aurora fit into the system if the mask blocks light?",
+    answer:
+      "Lumora Aurora is not meant to replace the mask. It completes the experience. Essence helps create darkness for sleep onset, while Aurora is designed to support a gentler wake up in the morning. Together, they help cover both ends of the sleep cycle.",
+  },
+  {
+    question: "Who is Lumora for?",
+    answer:
+      "Our earliest traction came from high school and college students, athletes, and performance minded young adults who care about focus, recovery, and consistent energy. Over time, we see major opportunity with working professionals, travelers, corporate wellness programs, and performance-driven environments where better sleep has direct value.",
+  },
+]
+
+const quizQuestions = [
+  {
+    id: "sleep-priority",
+    question: "What feels like the biggest barrier between you and better sleep?",
+    options: [
+      { text: "I get too warm and uncomfortable during the night", value: "temperature", score: { essence: 2, caelum: 4, sonus: 1, aurora: 1, voyage: 2, max: 3 } },
+      { text: "My mind stays active and sound keeps me alert", value: "sound", score: { essence: 1, caelum: 1, sonus: 4, aurora: 1, voyage: 2, max: 3 } },
+      { text: "Mornings feel harsh, abrupt, and groggy", value: "wake", score: { essence: 1, caelum: 1, sonus: 1, aurora: 4, voyage: 1, max: 3 } },
+      { text: "I want a complete premium setup, not a single product", value: "system", score: { essence: 2, caelum: 2, sonus: 2, aurora: 2, voyage: 2, max: 5 } },
+    ],
+  },
+  {
+    id: "lifestyle",
+    question: "Which best describes your lifestyle?",
+    options: [
+      { text: "Performance focused and recovery minded", value: "performance", score: { essence: 3, caelum: 3, sonus: 2, aurora: 2, voyage: 1, max: 4 } },
+      { text: "I travel often and need consistency anywhere", value: "travel", score: { essence: 2, caelum: 2, sonus: 2, aurora: 1, voyage: 5, max: 2 } },
+      { text: "I love clean design and premium routines", value: "luxury", score: { essence: 3, caelum: 2, sonus: 2, aurora: 2, voyage: 2, max: 4 } },
+      { text: "I want the simplest high impact improvement", value: "simple", score: { essence: 5, caelum: 3, sonus: 1, aurora: 1, voyage: 1, max: 1 } },
+    ],
+  },
+  {
+    id: "feature",
+    question: "Which feature feels most valuable to you right now?",
+    options: [
+      { text: "A premium mask that feels incredible every night", value: "mask", score: { essence: 5, caelum: 1, sonus: 1, aurora: 1, voyage: 1, max: 3 } },
+      { text: "Cooling comfort that reduces overheating", value: "cooling", score: { essence: 2, caelum: 5, sonus: 1, aurora: 1, voyage: 1, max: 3 } },
+      { text: "Calming sound without earbuds", value: "audio", score: { essence: 1, caelum: 1, sonus: 5, aurora: 1, voyage: 1, max: 3 } },
+      { text: "A softer, more natural wake up", value: "light", score: { essence: 1, caelum: 1, sonus: 1, aurora: 5, voyage: 1, max: 3 } },
+    ],
+  },
+]
+
+const products = {
+  essence: {
+    name: "Lumora Essence",
+    tagline: "Redefine rest at its foundation.",
+    price: "$119",
+    icon: MoonStar,
+    description:
+      "Our signature mask. Crafted for darkness, comfort, and nightly consistency with a luxury feel that belongs in a modern ritual, not a medicine cabinet.",
+    features: ["Mulberry silk exterior", "Structured low-pressure design", "Premium blackout comfort", "Subtle morning light permeability"],
+  },
+  caelum: {
+    name: "Lumora Caelum",
+    tagline: "Thermal balance, refined.",
+    price: "$24",
+    icon: Thermometer,
+    description:
+      "Interchangeable PCM inserts designed to regulate heat and reduce the restless discomfort caused by overheating.",
+    features: ["PCM temperature regulation", "Cooling support through the night", "Designed for the Essence platform", "Easy insert-and-swap format"],
+  },
+  sonus: {
+    name: "Lumora Sonus",
+    tagline: "Sound without intrusion.",
+    price: "$69",
+    icon: Volume2,
+    description:
+      "A soft audio band designed to deliver calming soundscapes and guided wind down experiences without the feel of earbuds or heavy facial hardware.",
+    features: ["Near-ear or bone-conduction audio", "Soft band construction", "No earbuds required", "Works beautifully with Essence"],
+  },
+  aurora: {
+    name: "Lumora Aurora",
+    tagline: "Wake with light, not shock.",
+    price: "$89",
+    icon: Sun,
+    description:
+      "A sunrise-inspired bedside wake light designed to help complete the Lumora system with a calmer, more elegant morning experience.",
+    features: ["Gradual dawn-inspired wake sequence", "Complements partial light permeability concept", "Minimal bedside design", "Gentler morning transition"],
+  },
+  voyage: {
+    name: "Lumora Voyage",
+    tagline: "Take your rest anywhere.",
+    price: "$39",
+    icon: Plane,
+    description:
+      "A premium travel case built to protect, organize, and transport your Lumora system with the same level of detail as the products it holds.",
+    features: ["Structured premium case", "Designed for system organization", "Travel friendly profile", "Luxury storage feel"],
+  },
+  max: {
+    name: "Lumora Max",
+    tagline: "The full expression of comfort.",
+    price: "$249",
+    icon: Crown,
+    description:
+      "Our premium future-facing experience, designed to explore deeper relaxation through elevated materials, advanced comfort systems, and integrated massage-inspired restoration.",
+    features: ["Advanced comfort system", "Massage-inspired relaxation", "Luxury construction", "Flagship Lumora expression"],
+  },
+} as const
+
+const systemCards = [
+  {
+    title: "Darkness",
+    icon: MoonStar,
+    body:
+      "A refined sleep mask experience designed to help the body settle. Essence creates the sense of escape people seek at night while still allowing subtle morning light cues to register more gently over time.",
+  },
+  {
+    title: "Temperature",
+    icon: Thermometer,
+    body:
+      "Caelum inserts help regulate heat using phase change materials. Instead of waking up warm and frustrated, users stay closer to a more stable sleep environment.",
+  },
+  {
+    title: "Sound",
+    icon: Waves,
+    body:
+      "Sonus adds subtle sound without demanding earbuds or heavy technology directly on the face. It is designed to support calm, not create friction.",
+  },
+  {
+    title: "Wake",
+    icon: Sun,
+    body:
+      "Aurora replaces the violence of alarms with a more natural progression into morning. It does not compete with the mask. It completes the cycle.",
+  },
+]
+
+function InteractiveMaskDiagram() {
   return (
-    <div className="relative w-full max-w-md mx-auto text-center">
+    <div className="relative w-full max-w-xl mx-auto text-center">
+      <div className="absolute -inset-8 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.08),transparent_60%)] blur-2xl" />
       <div className="relative">
         <img
           src="/images/sleep-mask-2.png"
-          alt="Lumora Sleep Mask Detail"
+          alt="Lumora Essence mask"
           className="w-full h-auto object-contain"
-          style={{ filter: "drop-shadow(0 18px 55px rgba(15, 23, 42, 0.55))" }}
+          style={{ filter: "drop-shadow(0 24px 70px rgba(15, 23, 42, 0.7))" }}
         />
       </div>
-
-      <div className="mt-5">
+      <div className="mt-6">
         <a
           href="/explore"
           className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-200 text-sm tracking-wide transition-colors duration-300"
@@ -61,154 +225,28 @@ const InteractiveMaskDiagram = () => {
   )
 }
 
-const faqData = [
-  {
-    question: "When will Lumora Sleep masks be available?",
-    answer:
-      "We’re in the final stages of development and testing. Join the waitlist to be first in line at launch. We expect to begin shipping in Q2 2026.",
-  },
-  {
-    question: "How do I contact customer support?",
-    answer: "Email us at hello@uselumora.co. We typically respond within 24 hours on business days.",
-  },
-  {
-    question: "What's the current status of your startup?",
-    answer:
-      "We’re currently raising pre-seed funding to bring Lumora Sleep to market. If you’re an investor interested in the future of rest, reach out at funding@uselumora.co.",
-  },
-  {
-    question: "What's included with each Lumora Sleep mask?",
-    answer:
-      "Each mask includes the sleep mask, adjustable strap, USB-C charging cable, premium carrying case, and a detailed user guide. Higher-tier models include additional accessories like aromatherapy inserts or travel cases.",
-  },
-  {
-    question: "How long does the battery last?",
-    answer:
-      "Battery life varies by model: Essence (N/A - no electronics), Pure (3–5 nights), Voyage (7–10 nights), and Max (5–7 nights with all features active). All models charge fully in under 2 hours.",
-  },
-  {
-    question: "Is there a warranty or return policy?",
-    answer:
-      "Yes. We offer a 30-day satisfaction guarantee and a 1-year warranty on electronic components. If you’re not satisfied, return your mask for a full refund.",
-  },
-  {
-    question: "Do you ship internationally?",
-    answer:
-      "We currently ship to the US, Canada, UK, and EU. International rates and delivery times vary by location. More regions coming soon.",
-  },
-  {
-    question: "How is this different from regular sleep masks?",
-    answer:
-      "Lumora Sleep combines premium materials with smart technology. Adaptive temperature control, bone-conduction audio, and a sunrise wake light create a complete sleep ritual—not just a light blocker.",
-  },
-]
-
-const quizQuestions = [
-  {
-    id: "sleep-priority",
-    question: "What most often disrupts your sleep?",
-    options: [
-      { text: "I run warm at night", value: "temperature", score: { travel: 1, natural: 2, core: 2, max: 3 } },
-      { text: "Noise pulls me out of rest", value: "noise", score: { travel: 3, natural: 1, core: 1, max: 3 } },
-      { text: "I wake up feeling heavy and groggy", value: "wakeup", score: { travel: 1, natural: 2, core: 1, max: 3 } },
-      { text: "Light is the problem (streetlights, screens, early sun)", value: "light", score: { travel: 2, natural: 2, core: 3, max: 2 } },
-    ],
-  },
-  {
-    id: "lifestyle",
-    question: "Which best fits your lifestyle?",
-    options: [
-      { text: "I travel often", value: "traveler", score: { travel: 4, natural: 1, core: 2, max: 2 } },
-      { text: "Wellness-minded and eco-conscious", value: "wellness", score: { travel: 1, natural: 4, core: 1, max: 2 } },
-      { text: "I like smart tools and optimization", value: "tech", score: { travel: 2, natural: 1, core: 1, max: 4 } },
-      { text: "Simple, practical, and consistent", value: "simple", score: { travel: 2, natural: 2, core: 4, max: 1 } },
-    ],
-  },
-  {
-    id: "budget",
-    question: "Where do you want to land on investment?",
-    options: [
-      { text: "Under $100 — essential quality", value: "budget", score: { travel: 1, natural: 1, core: 4, max: 0 } },
-      { text: "$100–150 — strong value", value: "mid", score: { travel: 3, natural: 3, core: 2, max: 1 } },
-      { text: "$150–200 — premium comfort", value: "premium", score: { travel: 2, natural: 2, core: 1, max: 2 } },
-      { text: "$200+ — best-in-class experience", value: "luxury", score: { travel: 1, natural: 1, core: 0, max: 4 } },
-    ],
-  },
-  {
-    id: "features",
-    question: "What feature feels most “worth it” to you?",
-    options: [
-      { text: "Travel-ready design", value: "portable", score: { travel: 4, natural: 1, core: 2, max: 2 } },
-      { text: "Organic, natural materials", value: "organic", score: { travel: 1, natural: 4, core: 2, max: 2 } },
-      { text: "A smarter wake-up routine", value: "smart", score: { travel: 2, natural: 1, core: 1, max: 4 } },
-      { text: "Simple and effective design", value: "simple", score: { travel: 2, natural: 2, core: 4, max: 1 } },
-    ],
-  },
-]
-
-const products = {
-  core: {
-    name: "Lumora Essence",
-    tagline: "Better Sleep for Everyone",
-    price: "$89",
-    icon: Zap,
-    description:
-      "A refined essential: premium light-blocking, soft materials, and a fit designed for comfort night after night.",
-    features: ["Premium light-blocking", "Soft, breathable materials", "Adjustable strap", "Essential comfort"],
-  },
-  natural: {
-    name: "Lumora Pure",
-    tagline: "Nature Meets Rest",
-    price: "$129",
-    icon: Leaf,
-    description:
-      "For the eco-conscious sleeper. Organic materials and aromatherapy support a calmer routine, without overcomplicating your night.",
-    features: ["Organic cotton exterior", "Biodegradable packaging", "Aromatherapy infusion", "Eco-friendly design"],
-  },
-  travel: {
-    name: "Lumora Voyage",
-    tagline: "Rest, Anywhere",
-    price: "$159",
-    icon: Plane,
-    description:
-      "Built for movement. Compact, quieting, and designed to keep your routine consistent across time zones and environments.",
-    features: ["Ultra-compact design", "Noise-dampening technology", "Portable charging case", "Travel-optimized"],
-  },
-  max: {
-    name: "Lumora Max",
-    tagline: "Luxury Without Limits",
-    price: "$299",
-    icon: Crown,
-    description:
-      "Our most advanced experience: smart temperature control, bone-conduction audio, and a gentle sunrise wake light—fine-tuned to you.",
-    features: ["Smart temperature control", "Bone-conduction audio", "Sunrise wake light", "App connectivity"],
-  },
-} as const
-
-export default function AurumSleep() {
-  const [openFAQ, setOpenFAQ] = useState<number | null>(null)
+export default function LumoraSiteV4() {
+  const [openFAQ, setOpenFAQ] = useState<number | null>(0)
   const [showNavbar, setShowNavbar] = useState(false)
 
   const aurumGradient =
-    "bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(148,163,184,0.14),transparent_55%),radial-gradient(900px_600px_at_85%_20%,rgba(245,158,11,0.10),transparent_55%),linear-gradient(180deg,rgba(15,23,42,1),rgba(2,6,23,1))]"
+    "bg-[radial-gradient(1200px_700px_at_50%_-10%,rgba(148,163,184,0.16),transparent_55%),radial-gradient(900px_600px_at_85%_20%,rgba(245,158,11,0.08),transparent_55%),linear-gradient(180deg,rgba(15,23,42,1),rgba(2,6,23,1))]"
   const sageGradientText =
-    "bg-gradient-to-r from-slate-100 via-slate-200 to-slate-300 bg-clip-text text-transparent"
+    "bg-gradient-to-r from-slate-50 via-slate-200 to-slate-400 bg-clip-text text-transparent"
 
   useEffect(() => {
     const handleScroll = () => {
-      const redefineSection = document.querySelector("h1")
-      if (!redefineSection) return
-      const rect = redefineSection.getBoundingClientRect()
+      const heroTitle = document.querySelector("h1")
+      if (!heroTitle) return
+      const rect = heroTitle.getBoundingClientRect()
       setShowNavbar(rect.bottom < 0)
     }
     window.addEventListener("scroll", handleScroll)
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
 
-  // Tally embed loader (avoid <script> tag in JSX)
   useEffect(() => {
     const src = "https://tally.so/widgets/embed.js"
-
     const load = () => {
       // @ts-ignore
       if (typeof (window as any)?.Tally !== "undefined") {
@@ -252,7 +290,7 @@ export default function AurumSleep() {
       return
     }
 
-    const scores = { core: 0, natural: 0, travel: 0, max: 0 }
+    const scores = { essence: 0, caelum: 0, sonus: 0, aurora: 0, voyage: 0, max: 0 }
     newAnswers.forEach((a) => {
       Object.entries(a.score).forEach(([product, points]) => {
         scores[product as keyof typeof scores] += points
@@ -280,53 +318,27 @@ export default function AurumSleep() {
 
   return (
     <div className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden font-sans">
-      {/* Top nav */}
       <header
-        className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-md border-b border-slate-800/50 transition-transform duration-300 ${
+        className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-slate-800/60 transition-transform duration-300 ${
           showNavbar ? "translate-y-0" : "-translate-y-full"
         } bg-slate-950/70`}
       >
-        <div className="container mx-auto px-4 sm:px-6 py-2">
-          <div className="flex items-center justify-between">
-            <div className="flex items-center">
-              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-24 sm:h-28 w-auto" />
-            </div>
+        <div className="container mx-auto px-4 sm:px-6 py-3">
+          <div className="flex items-center justify-between gap-4">
+            <a href="#top" className="flex items-center">
+              <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-20 sm:h-24 w-auto" />
+            </a>
 
-            <nav className="hidden md:flex items-center gap-8">
-              <a
-                href="#products"
-                className="text-slate-300 hover:text-white transition-colors font-light tracking-wide"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("products")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
-                Products
-              </a>
-              <a
-                href="#customize"
-                className="text-slate-300 hover:text-white transition-colors font-light tracking-wide"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("customize")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
-                Discover Lumora
-              </a>
-              <a
-                href="#faq"
-                className="text-slate-300 hover:text-white transition-colors font-light tracking-wide"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("faq")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
-                FAQ
-              </a>
-
+            <nav className="hidden lg:flex items-center gap-8 text-sm">
+              <a href="#story" className="text-slate-300 hover:text-white transition-colors">Story</a>
+              <a href="#system" className="text-slate-300 hover:text-white transition-colors">System</a>
+              <a href="#traction" className="text-slate-300 hover:text-white transition-colors">Traction</a>
+              <a href="#products" className="text-slate-300 hover:text-white transition-colors">Products</a>
+              <a href="#customize" className="text-slate-300 hover:text-white transition-colors">Discover</a>
+              <a href="/team" className="text-slate-300 hover:text-white transition-colors">Our Team</a>
               <Button
                 size="sm"
-                className="rounded-full bg-transparent border border-slate-400/80 text-slate-200 hover:bg-slate-100 hover:text-slate-950 px-6 py-2 text-sm font-medium transition-all duration-300"
+                className="rounded-full bg-slate-100 text-slate-950 hover:bg-white px-6 py-2 text-sm font-medium"
                 onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
               >
                 Join Waitlist
@@ -336,74 +348,104 @@ export default function AurumSleep() {
         </div>
       </header>
 
-      {/* Hero */}
-      <section className={`relative min-h-screen flex items-center justify-center pt-20 ${aurumGradient}`}>
+      <section id="top" className={`relative min-h-screen flex items-center justify-center pt-24 ${aurumGradient}`}>
         <div className="pointer-events-none absolute inset-0 opacity-[0.08] mix-blend-soft-light [background-image:url('/images/noise.png')] [background-size:300px_300px]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(255,255,255,0.04),transparent_60%)]" />
 
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <div className="max-w-4xl mx-auto">
-            
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
+          <div className="grid lg:grid-cols-2 gap-14 items-center max-w-7xl mx-auto">
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 rounded-full border border-slate-700/60 bg-slate-900/40 px-4 py-2 text-xs uppercase tracking-[0.22em] text-slate-300 mb-6">
+                <Sparkles className="w-4 h-4" />
+                A new chapter for Lumora
+              </div>
 
-            <h1 className="text-4xl sm:text-6xl md:text-8xl font-light mb-6 leading-[0.95]">
-              <span className={`${sageGradientText} font-semibold`}>Redefine</span> Rest.
-            </h1>
+              <h1 className="text-5xl sm:text-7xl md:text-8xl font-light leading-[0.92] mb-6">
+                <span className={`${sageGradientText} font-semibold`}>Redefine</span> Rest.
+              </h1>
 
-            <p className="text-lg sm:text-xl md:text-2xl text-slate-300 mb-12 leading-relaxed max-w-2xl mx-auto font-light">
-              Luxury sleep, reimagined through comfort, technology, and ritual.
-            </p>
+              <p className="text-lg sm:text-xl md:text-2xl text-slate-300 max-w-2xl leading-relaxed font-light">
+                A luxury sleep system designed around the real moments that shape rest: falling asleep, staying comfortable through the night, and waking up more naturally.
+              </p>
 
-            <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-              <Button
-                size="lg"
-                className="rounded-full bg-slate-100 text-slate-950 hover:bg-white px-8 sm:px-12 py-4 text-base sm:text-lg font-medium transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto"
-                onClick={() => document.getElementById("customize")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Discover Lumora
-              </Button>
+              <p className="mt-6 text-slate-400 max-w-2xl leading-relaxed">
+                After studying how people actually sleep, we refined Lumora into a lighter, more intuitive, more enduring system. Less heavy technology on the face. More comfort, more ritual, and a clearer path to better sleep.
+              </p>
 
-              <Button
-                size="lg"
-                variant="ghost"
-                className="rounded-full text-slate-200 hover:text-white hover:bg-slate-800/50 px-6 sm:px-8 py-4 text-base sm:text-lg font-light transition-all duration-300 transform hover:scale-[1.02] w-full sm:w-auto border border-slate-700/60"
-                onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Join the Waitlist
-              </Button>
+              <div className="flex flex-col sm:flex-row gap-4 mt-10 justify-center lg:justify-start">
+                <Button
+                  size="lg"
+                  className="rounded-full bg-slate-100 text-slate-950 hover:bg-white px-8 sm:px-12 py-4 text-base sm:text-lg font-medium transition-all duration-300 w-full sm:w-auto"
+                  onClick={() => document.getElementById("system")?.scrollIntoView({ behavior: "smooth" })}
+                >
+                  Explore the system
+                </Button>
+                <Button
+                  size="lg"
+                  variant="ghost"
+                  className="rounded-full text-slate-200 hover:text-white hover:bg-slate-800/50 px-8 py-4 text-base sm:text-lg font-light border border-slate-700/60 w-full sm:w-auto"
+                  onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
+                >
+                  Join the waitlist
+                </Button>
+              </div>
+
+              <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-slate-400">
+                <span className="inline-flex items-center gap-2"><ShieldCheck className="w-4 h-4" />Designed for comfort first</span>
+                <span className="inline-flex items-center gap-2"><Gem className="w-4 h-4" />Luxury materials and finish</span>
+                <span className="inline-flex items-center gap-2"><MoonStar className="w-4 h-4" />A limited first release</span>
+              </div>
             </div>
 
-            <div className="mt-10 text-slate-400 text-sm font-light">A limited first release.</div>
+            <div className="relative">
+              <InteractiveMaskDiagram />
+            </div>
           </div>
         </div>
 
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 opacity-80">
+        <div className="absolute bottom-8 left-1/2 -translate-x-1/2 opacity-80">
           <ChevronDown className="w-6 h-6 text-slate-400" />
         </div>
       </section>
 
-      {/* Why */}
-      <section className="py-16 sm:py-24 bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6">
-          <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold text-center mb-12 sm:mb-16 ${sageGradientText}`}>
-            Why We Can’t Sleep.
-          </h2>
+      <section id="story" className="py-20 sm:py-28 bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className={`text-3xl sm:text-5xl font-semibold mb-6 ${sageGradientText}`}>Why sleep still feels broken</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Most sleep products solve one slice of the problem. A supplement. A sound app. A wake light. A tracker. But real sleep is shaped by a combination of darkness, temperature, sound, stress, and rhythm. We built Lumora around that fuller reality.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-3 gap-6 sm:gap-8 max-w-6xl mx-auto">
+          <div className="grid md:grid-cols-3 gap-6 sm:gap-8">
             {[
-              { title: "Overheating", icon: Thermometer, body: "Temperature spikes disrupt deep sleep cycles and limit recovery—leaving you restless." },
-              { title: "Noise & Distraction", icon: Volume2, body: "Environmental noise and stress cues keep the mind alert when it should be powering down." },
-              { title: "Harsh Alarms", icon: Sun, body: "Jolting wake-ups can trigger cortisol spikes and the kind of grogginess that lingers." },
+              {
+                title: "Overheating",
+                icon: Thermometer,
+                body: "Temperature spikes quietly pull people out of deeper rest and make comfort harder to maintain. The result is a night that feels longer, lighter, and less restorative.",
+              },
+              {
+                title: "Noise and mental activity",
+                icon: Volume2,
+                body: "Even when the room looks quiet, the mind often is not. Small sounds, phone habits, stress, and unfinished thought loops keep people alert when they should be easing into sleep.",
+              },
+              {
+                title: "Harsh wake ups",
+                icon: Sun,
+                body: "Mornings often start with abrupt alarms that feel more like interruption than recovery. That first moment shapes the emotional tone of the day more than people realize.",
+              },
             ].map((card, idx) => (
               <div
                 key={idx}
-                className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-800/50 to-slate-900/50 p-6 sm:p-8 border border-slate-700/50 hover:border-slate-600/70 transition-all duration-500 hover:transform hover:scale-[1.02]"
+                className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-800/60 to-slate-900/50 p-8 border border-slate-700/50 hover:border-slate-600/70 transition-all duration-500 hover:scale-[1.02]"
               >
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(148,163,184,0.12),transparent_55%)] opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
                 <div className="relative z-10">
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-2xl bg-slate-100/10 border border-slate-600/40 flex items-center justify-center mb-6">
-                    <card.icon className="w-6 h-6 sm:w-8 sm:h-8 text-slate-200" />
+                  <div className="w-16 h-16 rounded-2xl bg-slate-100/10 border border-slate-600/40 flex items-center justify-center mb-6">
+                    <card.icon className="w-7 h-7 text-slate-200" />
                   </div>
-                  <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-white">{card.title}</h3>
-                  <p className="text-slate-300 leading-relaxed text-sm sm:text-base">{card.body}</p>
+                  <h3 className="text-2xl font-semibold mb-4 text-white">{card.title}</h3>
+                  <p className="text-slate-300 leading-relaxed">{card.body}</p>
                 </div>
               </div>
             ))}
@@ -411,177 +453,206 @@ export default function AurumSleep() {
         </div>
       </section>
 
-      {/* Solution */}
-      <section className={`py-16 sm:py-24 ${aurumGradient}`}>
-        <div className="container mx-auto px-4 sm:px-6 relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 sm:gap-16 items-center max-w-6xl mx-auto">
-            <div className="order-2 lg:order-1">
-              <div className="w-full h-64 sm:h-96 flex items-center justify-center">
-                <InteractiveMaskDiagram />
-              </div>
+      <section id="system" className={`py-20 sm:py-28 ${aurumGradient}`}>
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <div className="inline-flex items-center gap-2 text-slate-300/90 text-xs tracking-[0.22em] uppercase mb-4">
+              <span className="w-10 h-px bg-slate-500/70" />
+              The Lumora system
+              <span className="w-10 h-px bg-slate-500/70" />
             </div>
+            <h2 className={`text-4xl sm:text-5xl md:text-6xl font-semibold mb-6 ${sageGradientText}`}>One system. Three phases of rest.</h2>
+            <p className="text-slate-300 text-lg leading-relaxed max-w-3xl mx-auto">
+              Lumora is not a random collection of products. It is a layered sleep ecosystem designed to support what happens before sleep, during sleep, and as you wake. Each part works on its own. Together, they feel like a complete ritual.
+            </p>
+          </div>
 
-            <div className="order-1 lg:order-2">
-              <div className="inline-flex items-center gap-2 text-slate-300/90 text-xs tracking-[0.22em] uppercase mb-4">
-                <span className="w-10 h-px bg-slate-500/70" />
-                The Approach
+          <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-6">
+            {systemCards.map((card, idx) => (
+              <div key={idx} className="rounded-3xl border border-slate-700/60 bg-slate-950/30 backdrop-blur-sm p-8">
+                <div className="w-14 h-14 rounded-2xl bg-slate-100/10 border border-slate-700/50 flex items-center justify-center mb-6">
+                  <card.icon className="w-6 h-6 text-slate-200" />
+                </div>
+                <h3 className="text-xl font-semibold text-white mb-3">{card.title}</h3>
+                <p className="text-slate-300 leading-relaxed">{card.body}</p>
               </div>
-
-              <h2 className={`text-3xl sm:text-4xl md:text-5xl font-semibold mb-6 sm:mb-8 ${sageGradientText}`}>
-                The Ritual of Deep Rest.
-              </h2>
-
-              <div className="space-y-6">
-                <div className="flex items-start gap-4">
-                  <Thermometer className="w-6 h-6 sm:w-8 sm:h-8 text-slate-200 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-slate-100">Adaptive Thermal Control</h3>
-                    <p className="text-slate-300/90 font-light text-sm sm:text-base">
-                      Actively regulates temperature to reduce overheating and maintain comfort.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Volume2 className="w-6 h-6 sm:w-8 sm:h-8 text-slate-200 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-slate-100">Bone-Conduction Audio</h3>
-                    <p className="text-slate-300/90 font-light text-sm sm:text-base">
-                      Subtle soundscapes or meditations—without blocking your ear canal.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="flex items-start gap-4">
-                  <Sun className="w-6 h-6 sm:w-8 sm:h-8 text-slate-200 flex-shrink-0 mt-0.5" />
-                  <div>
-                    <h3 className="text-lg sm:text-xl font-semibold text-slate-100">Gentle Sunrise Wake Light</h3>
-                    <p className="text-slate-300/90 font-light text-sm sm:text-base">
-                      A gradual dawn effect that helps you wake without the shock.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <Button
-                size="lg"
-                className="
-                  relative rounded-full mt-8
-                  bg-slate-100 text-slate-950
-                  px-8 sm:px-12 py-4 text-base sm:text-lg font-medium
-                  transition-all duration-300 ease-out
-                  w-full sm:w-auto
-                  hover:bg-white
-                  hover:-translate-y-0.5
-                  hover:shadow-[0_12px_35px_rgba(255,255,255,0.18)]
-                  before:absolute before:inset-0 before:rounded-full
-                  before:border before:border-slate-300/40
-                  before:opacity-0 hover:before:opacity-100
-                  before:transition-opacity
-                  focus:outline-none focus:ring-2 focus:ring-slate-300/40
-                "
-                onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
-              >
-                Join the Waitlist
-              </Button>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Products */}
-      <section className="py-24 bg-slate-900" id="products">
-        <div className="container mx-auto px-6">
-          <h2 className={`text-4xl md:text-5xl font-semibold text-center mb-4 ${sageGradientText}`}>
-            Choose Your Sleep Journey.
-          </h2>
-          <p className="text-slate-300/90 text-center max-w-3xl mx-auto mb-16 font-light">
-            Four tiers, one philosophy: elevate the hours that shape your days.
-          </p>
+      <section id="traction" className="py-20 sm:py-28 bg-black">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center max-w-4xl mx-auto mb-14">
+            <h2 className={`text-4xl sm:text-5xl font-semibold mb-6 ${sageGradientText}`}>Signals we could not ignore</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              Before refining the product, we talked to people directly. Students, athletes, young adults, and professionals. The message was consistent. Sleep is not a niche issue. It is a daily performance problem people are already trying and failing to solve.
+            </p>
+          </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-7xl mx-auto">
-            {/* Essence */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-800/60 to-slate-950/40 p-8 border border-slate-700/60 hover:border-slate-600/70 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-slate-100/10 border border-slate-600/40 flex items-center justify-center mb-6">
-                  <Zap className="w-7 h-7 text-slate-200" />
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+            {[
+              { number: "83%", label: "reported sleep difficulty", detail: "From our interview pool, the majority said sleep was a real and recurring issue." },
+              { number: "6/10", label: "average sleep score", detail: "People were not describing ideal rest. They were describing acceptable but frustrating sleep." },
+              { number: "$950B", label: "projected sleep market by 2032", detail: "The category is growing because people increasingly invest in recovery, wellness, and better daily performance." },
+            ].map((stat, idx) => (
+              <div key={idx} className="rounded-3xl border border-slate-800 bg-slate-950/40 p-8 text-center">
+                <div className="text-4xl sm:text-5xl font-semibold text-white mb-3">{stat.number}</div>
+                <div className="text-slate-200 font-medium mb-2">{stat.label}</div>
+                <p className="text-slate-400 text-sm leading-relaxed">{stat.detail}</p>
+              </div>
+            ))}
+          </div>
+
+          <div className="text-center">
+            <a
+              href="https://thevirus-limiter.github.io/filestorage/lumoracustomerdiscovery.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm tracking-wide transition-colors duration-300"
+            >
+              Download our traction study
+              <ArrowRight className="w-4 h-4" />
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            <div>
+              <h2 className={`text-4xl sm:text-5xl font-semibold mb-6 ${sageGradientText}`}>Designed around the body, not just the pitch deck</h2>
+              <p className="text-slate-300 text-lg leading-relaxed mb-6">
+                One of the clearest lessons from building Lumora was that comfort has to win. That is why the new direction is more intentional. The mask remains premium and deeply functional, but the ecosystem no longer depends on forcing every form of technology directly onto the face.
+              </p>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                That change gave us something better. Essence can stay elegant and lightweight. Sonus can handle audio without earbud discomfort. Aurora can support the morning without making the mask contradictory. Caelum can solve heat as an insert rather than as a bulky system. The result is a sleep experience that feels more intuitive, more premium, and more believable long term.
+              </p>
+              <div className="grid sm:grid-cols-2 gap-4">
+                <div className="rounded-2xl border border-slate-700/60 bg-slate-950/30 p-5">
+                  <div className="flex items-center gap-3 mb-2"><ShieldCheck className="w-5 h-5 text-slate-200" /><span className="font-medium text-white">No heavy facial hardware</span></div>
+                  <p className="text-sm text-slate-400 leading-relaxed">More comfort, less liability, and better nightly wearability.</p>
                 </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Lumora Essence</h3>
-                <p className="text-sm text-slate-300/90 mb-4 font-medium italic">“Better Sleep for Everyone.”</p>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Entry-level comfort with light-blocking and soft materials. Essential functions for quality rest.
-                </p>
-                <div className="mt-6 pt-4 border-t border-slate-700/60">
-                  <span className="text-slate-400 text-xs font-medium tracking-wide">STARTING AT</span>
-                  <div className="text-white text-lg font-semibold">$89</div>
+                <div className="rounded-2xl border border-slate-700/60 bg-slate-950/30 p-5">
+                  <div className="flex items-center gap-3 mb-2"><Sparkles className="w-5 h-5 text-slate-200" /><span className="font-medium text-white">Built as a ritual</span></div>
+                  <p className="text-sm text-slate-400 leading-relaxed">A system that feels deliberate, elegant, and easy to return to every night.</p>
                 </div>
               </div>
             </div>
 
-            {/* Pure */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-emerald-950/30 to-slate-950/40 p-8 border border-emerald-800/40 hover:border-emerald-600/50 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-emerald-500/10 border border-emerald-700/40 flex items-center justify-center mb-6">
-                  <Leaf className="w-7 h-7 text-emerald-200" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Lumora Pure</h3>
-                <p className="text-sm text-emerald-200/90 mb-4 font-medium italic">“Nature Meets Rest.”</p>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Organic fabrics, biodegradable packaging, and aromatherapy infusion for eco-conscious rest.
-                </p>
-                <div className="mt-6 pt-4 border-t border-emerald-800/40">
-                  <span className="text-slate-400 text-xs font-medium tracking-wide">STARTING AT</span>
-                  <div className="text-white text-lg font-semibold">$129</div>
-                </div>
+            <div className="rounded-[2rem] border border-slate-700/60 bg-gradient-to-b from-slate-900/70 to-slate-950/50 p-8 sm:p-10">
+              <div className="inline-flex items-center gap-2 text-xs uppercase tracking-[0.22em] text-slate-400 mb-5">
+                <span className="w-8 h-px bg-slate-600" />
+                Essence design detail
               </div>
-            </div>
-
-            {/* Voyage */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-indigo-950/30 to-slate-950/40 p-8 border border-indigo-800/40 hover:border-indigo-600/50 transition-all duration-500 hover:transform hover:scale-[1.02]">
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-indigo-500/10 border border-indigo-700/40 flex items-center justify-center mb-6">
-                  <Plane className="w-7 h-7 text-indigo-200" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Lumora Voyage</h3>
-                <p className="text-sm text-indigo-200/90 mb-4 font-medium italic">“Rest, Anywhere.”</p>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Compact foldable design with noise-dampening and portable charging case for travelers.
-                </p>
-                <div className="mt-6 pt-4 border-t border-indigo-800/40">
-                  <span className="text-slate-400 text-xs font-medium tracking-wide">STARTING AT</span>
-                  <div className="text-white text-lg font-semibold">$159</div>
-                </div>
-              </div>
-            </div>
-
-            {/* Max */}
-            <div className="group relative overflow-hidden rounded-3xl bg-gradient-to-b from-slate-900 to-slate-950 p-8 border border-amber-400/40 hover:border-amber-300/60 transition-all duration-500 hover:transform hover:scale-[1.02] ring-1 ring-amber-300/20">
-              <div className="absolute top-4 right-4">
-                <span className="bg-amber-200 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full tracking-wide">
-                  PREMIUM
-                </span>
-              </div>
-              <div className="relative z-10">
-                <div className="w-14 h-14 rounded-2xl bg-amber-200/20 border border-amber-300/30 flex items-center justify-center mb-6">
-                  <Crown className="w-7 h-7 text-amber-100" />
-                </div>
-                <h3 className="text-xl font-bold mb-2 text-white">Lumora Max</h3>
-                <p className="text-sm text-amber-200/90 mb-4 font-medium italic">“Luxury Without Limits”</p>
-                <p className="text-slate-300 text-sm leading-relaxed">
-                  Premium silk exterior with customizable hardware and app-based personalization.
-                </p>
-                <div className="mt-6 pt-4 border-t border-amber-400/30">
-                  <span className="text-slate-400 text-xs font-medium tracking-wide">STARTING AT</span>
-                  <div className="text-white text-lg font-semibold">$299</div>
-                </div>
+              <h3 className="text-3xl font-semibold text-white mb-5">A more intelligent kind of blackout</h3>
+              <p className="text-slate-300 leading-relaxed mb-5">
+                Lumora Essence is designed for deep nighttime darkness, but with a subtle long-term consideration: partial light permeability in the morning. The goal is not to flood the eyes with light. The goal is to allow soft natural cues to begin registering more gently as the day begins.
+              </p>
+              <p className="text-slate-400 leading-relaxed mb-5">
+                This helps the mask feel less like a total disconnection from morning and more like an intelligent extension of the sleep cycle. It is one of the details that makes Lumora feel considered rather than generic.
+              </p>
+              <div className="flex items-center gap-3 text-slate-300">
+                <Sun className="w-5 h-5" />
+                <span>Dark enough for night. Responsive enough for morning.</span>
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Quiz */}
-      <section className="py-24 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden" id="customize">
+      <section id="products" className="py-20 sm:py-28 bg-slate-950">
+        <div className="container mx-auto px-4 sm:px-6 max-w-7xl">
+          <div className="text-center mb-16 max-w-4xl mx-auto">
+            <h2 className={`text-4xl md:text-6xl font-semibold mb-5 ${sageGradientText}`}>The Lumora collection</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              A modular ecosystem with a clear center of gravity. Start with Essence. Build the system around the parts that matter most to your sleep, your routine, and your environment.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">
+            {Object.values(products).map((product, idx) => {
+              const Icon = product.icon
+              return (
+                <div
+                  key={idx}
+                  className={`group relative overflow-hidden rounded-3xl p-8 border transition-all duration-500 hover:scale-[1.015] ${
+                    product.name === "Lumora Max"
+                      ? "bg-gradient-to-b from-slate-900 to-slate-950 border-amber-400/40 ring-1 ring-amber-300/20"
+                      : "bg-gradient-to-b from-slate-800/60 to-slate-950/40 border-slate-700/60 hover:border-slate-600/70"
+                  }`}
+                >
+                  {product.name === "Lumora Max" && (
+                    <div className="absolute top-4 right-4">
+                      <span className="bg-amber-200 text-slate-950 text-xs font-bold px-2.5 py-1 rounded-full tracking-wide">FLAGSHIP</span>
+                    </div>
+                  )}
+                  <div className="relative z-10">
+                    <div className={`w-14 h-14 rounded-2xl flex items-center justify-center mb-6 border ${product.name === "Lumora Max" ? "bg-amber-200/20 border-amber-300/30" : "bg-slate-100/10 border-slate-600/40"}`}>
+                      <Icon className={`w-7 h-7 ${product.name === "Lumora Max" ? "text-amber-100" : "text-slate-200"}`} />
+                    </div>
+                    <h3 className="text-2xl font-semibold mb-2 text-white">{product.name}</h3>
+                    <p className={`text-sm mb-4 font-medium italic ${product.name === "Lumora Max" ? "text-amber-200/90" : "text-slate-300/90"}`}>{product.tagline}</p>
+                    <p className="text-slate-300 text-sm leading-relaxed mb-6">{product.description}</p>
+                    <div className="grid grid-cols-1 gap-3 mb-6">
+                      {product.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center gap-2">
+                          <CheckCircle className="w-4 h-4 text-emerald-300 flex-shrink-0" />
+                          <span className="text-slate-300 text-sm">{feature}</span>
+                        </div>
+                      ))}
+                    </div>
+                    <div className={`pt-5 border-t ${product.name === "Lumora Max" ? "border-amber-400/30" : "border-slate-700/60"}`}>
+                      <span className="text-slate-400 text-xs font-medium tracking-wide">STARTING AT</span>
+                      <div className="text-white text-xl font-semibold">{product.price}</div>
+                    </div>
+                  </div>
+                </div>
+              )
+            })}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-slate-900">
+        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
+          <div className="text-center max-w-4xl mx-auto mb-16">
+            <h2 className={`text-4xl sm:text-5xl font-semibold mb-6 ${sageGradientText}`}>What makes Lumora feel different</h2>
+            <p className="text-slate-300 text-lg leading-relaxed">
+              It is not only the materials. It is not only the features. It is the way the system has been thought through from night to morning. Each component has a job. Each detail reduces friction. Each interaction is designed to feel natural.
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            {[
+              {
+                title: "Luxury without shouting",
+                body: "Mulberry silk, structured comfort, softened gradients, and restrained design language give Lumora the feel of a premium ritual product instead of a novelty gadget.",
+              },
+              {
+                title: "Modular by design",
+                body: "Users can begin with Essence and expand only where the experience becomes more valuable. That makes the system more intuitive, more accessible, and more believable.",
+              },
+              {
+                title: "Designed for real use",
+                body: "No need to commit to a complicated app flow every night. No need to strap bulky hardware to the face. The experience is designed to invite repeat use through comfort.",
+              },
+              {
+                title: "A broader future",
+                body: "While the system begins with premium personal sleep, the long-term vision can expand into travel, performance recovery, corporate wellness, and environments where better sleep has measurable value.",
+              },
+            ].map((item, idx) => (
+              <div key={idx} className="rounded-3xl border border-slate-700/60 bg-slate-950/30 p-8">
+                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
+                <p className="text-slate-300 leading-relaxed">{item.body}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="py-20 sm:py-28 bg-gradient-to-br from-slate-950 via-slate-900 to-slate-950 relative overflow-hidden" id="customize">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(148,163,184,0.10)_0%,transparent_55%)]" />
         <div className="container mx-auto px-6 relative z-10">
           <div className="text-center mb-16">
@@ -591,9 +662,9 @@ export default function AurumSleep() {
               <span className="w-10 h-px bg-slate-500/70" />
             </div>
 
-            <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${sageGradientText}`}>Discover Your Lumora</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light">
-              A quick quiz to help match you with the Lumora mask that fits your rest and your routine.
+            <h2 className={`text-4xl md:text-6xl font-bold mb-6 ${sageGradientText}`}>Discover your Lumora</h2>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+              A quick way to understand which part of the Lumora system aligns best with the way you actually sleep.
             </p>
           </div>
 
@@ -653,10 +724,10 @@ export default function AurumSleep() {
               <div className="bg-gradient-to-br from-slate-900/60 to-slate-950/60 backdrop-blur-sm rounded-3xl p-8 border border-slate-700/60">
                 <div className="text-center mb-8">
                   <div className="w-16 h-16 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <Crown className="w-8 h-8 text-slate-200" />
+                    <Sparkles className="w-8 h-8 text-slate-200" />
                   </div>
-                  <h3 className="text-3xl font-bold text-white mb-2">Your match is ready.</h3>
-                  <p className="text-slate-300 font-light">Based on your answers, we recommend:</p>
+                  <h3 className="text-3xl font-bold text-white mb-2">Your Lumora match</h3>
+                  <p className="text-slate-300 font-light">Based on your answers, this is where we would begin.</p>
                 </div>
 
                 {recommended && quizState.recommendedProduct && (
@@ -672,9 +743,9 @@ export default function AurumSleep() {
                       </div>
                     </div>
 
-                    <p className="text-slate-300 mb-6 font-light">{recommended.description}</p>
+                    <p className="text-slate-300 mb-6 font-light leading-relaxed">{recommended.description}</p>
 
-                    <div className="grid grid-cols-2 gap-3 mb-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-6">
                       {recommended.features.map((feature, index) => (
                         <div key={index} className="flex items-center gap-2">
                           <CheckCircle className="w-4 h-4 text-emerald-300 flex-shrink-0" />
@@ -688,14 +759,14 @@ export default function AurumSleep() {
                         className="rounded-full bg-slate-100 text-slate-950 hover:bg-white px-8 py-3 font-medium flex-1"
                         onClick={() => document.getElementById("waitlist-form")?.scrollIntoView({ behavior: "smooth" })}
                       >
-                        Join Waitlist for {recommended.name}
+                        Join waitlist for {recommended.name}
                       </Button>
                       <Button
                         variant="ghost"
                         onClick={resetQuiz}
                         className="rounded-full text-slate-300 hover:text-white hover:bg-slate-800/40 border border-slate-700/60"
                       >
-                        Retake Quiz
+                        Retake quiz
                       </Button>
                     </div>
                   </div>
@@ -706,108 +777,103 @@ export default function AurumSleep() {
         </div>
       </section>
 
-      {/* FAQ */}
-      <section className="py-24 bg-slate-900" id="faq">
-        <div className="container mx-auto px-6">
+      <section className="py-20 sm:py-28 bg-slate-900" id="faq">
+        <div className="container mx-auto px-6 max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className={`text-4xl md:text-5xl font-semibold mb-6 ${sageGradientText}`}>Frequently Asked Questions</h2>
-            <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light">
-              Everything you need to know about Lumora Sleep. If you want a direct answer, reach out anytime.
+            <h2 className={`text-4xl md:text-5xl font-semibold mb-6 ${sageGradientText}`}>Frequently asked questions</h2>
+            <p className="text-xl text-slate-300 max-w-2xl mx-auto font-light leading-relaxed">
+              The details matter. If you want a direct answer, reach out anytime.
             </p>
           </div>
 
-          <div className="max-w-4xl mx-auto" id="contact-form">
-            <div className="space-y-4">
-              {faqData.map((faq, index) => (
-                <div key={index} className="bg-slate-950/30 backdrop-blur-sm rounded-2xl border border-slate-700/60 overflow-hidden">
-                  <button
-                    onClick={() => toggleFAQ(index)}
-                    className="w-full text-left p-6 flex items-center justify-between hover:bg-slate-950/50 transition-colors duration-300"
-                  >
-                    <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
-                    <div className="flex-shrink-0">
-                      {openFAQ === index ? <Minus className="w-5 h-5 text-slate-400" /> : <Plus className="w-5 h-5 text-slate-400" />}
-                    </div>
-                  </button>
-                  {openFAQ === index && (
-                    <div className="px-6 pb-6">
-                      <p className="text-slate-300 leading-relaxed font-light">{faq.answer}</p>
-                    </div>
-                  )}
-                </div>
-              ))}
+          <div id="contact-form" className="space-y-4">
+            {faqData.map((faq, index) => (
+              <div key={index} className="bg-slate-950/30 backdrop-blur-sm rounded-2xl border border-slate-700/60 overflow-hidden">
+                <button
+                  onClick={() => toggleFAQ(index)}
+                  className="w-full text-left p-6 flex items-center justify-between hover:bg-slate-950/50 transition-colors duration-300"
+                >
+                  <h3 className="text-lg font-semibold text-white pr-4">{faq.question}</h3>
+                  <div className="flex-shrink-0">
+                    {openFAQ === index ? <Minus className="w-5 h-5 text-slate-400" /> : <Plus className="w-5 h-5 text-slate-400" />}
+                  </div>
+                </button>
+                {openFAQ === index && (
+                  <div className="px-6 pb-6">
+                    <p className="text-slate-300 leading-relaxed font-light">{faq.answer}</p>
+                  </div>
+                )}
+              </div>
+            ))}
+          </div>
+
+          <div className="mt-16 grid md:grid-cols-3 gap-6">
+            <div className="rounded-3xl border border-slate-700/60 bg-slate-950/30 p-8 text-center">
+              <div className="w-12 h-12 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Mail className="w-6 h-6 text-slate-200" />
+              </div>
+              <h4 className="font-semibold text-white mb-2">Email us</h4>
+              <p className="text-slate-300 text-sm font-light">hello@uselumora.co</p>
+              <p className="text-slate-400 text-xs mt-2 font-light">Typical response within 24 hours</p>
             </div>
-
-            <div className="mt-16 bg-slate-950/30 rounded-3xl p-8 border border-slate-700/60">
-              <div className="text-center mb-8">
-                <h3 className="text-2xl font-semibold text-white mb-2">Still have questions?</h3>
-                <p className="text-slate-300 font-light">We’ll point you to the right option or help you decide.</p>
+            <div className="rounded-3xl border border-slate-700/60 bg-slate-950/30 p-8 text-center">
+              <div className="w-12 h-12 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Instagram className="w-6 h-6 text-slate-200" />
               </div>
-
-              <div className="flex flex-col sm:flex-row justify-center gap-8">
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Mail className="w-6 h-6 text-slate-200" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">Email Us</h4>
-                  <p className="text-slate-300 text-sm font-light">hello@uselumora.co</p>
-                  <p className="text-slate-400 text-xs mt-1 font-light">Response within 24 hours</p>
-                </div>
-
-                <div className="text-center">
-                  <div className="w-12 h-12 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Instagram className="w-6 h-6 text-slate-200" />
-                  </div>
-                  <h4 className="font-semibold text-white mb-1">Follow Us</h4>
-                  <a
-                    href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="text-slate-300 text-sm hover:text-white transition-colors block font-light"
-                  >
-                    @lumorasleep
-                  </a>
-                  <p className="text-slate-400 text-xs mt-1 font-light">Product updates and behind-the-scenes</p>
-                </div>
+              <h4 className="font-semibold text-white mb-2">Follow Lumora</h4>
+              <a
+                href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-slate-300 text-sm hover:text-white transition-colors block font-light"
+              >
+                @lumorasleep
+              </a>
+              <p className="text-slate-400 text-xs mt-2 font-light">Product updates and behind the scenes</p>
+            </div>
+            <div className="rounded-3xl border border-slate-700/60 bg-slate-950/30 p-8 text-center">
+              <div className="w-12 h-12 bg-slate-100/10 border border-slate-700/50 rounded-full flex items-center justify-center mx-auto mb-4">
+                <Briefcase className="w-6 h-6 text-slate-200" />
               </div>
+              <h4 className="font-semibold text-white mb-2">Meet the founders</h4>
+              <a href="/team" className="text-slate-300 text-sm hover:text-white transition-colors block font-light">
+                Visit our team page
+              </a>
+              <p className="text-slate-400 text-xs mt-2 font-light">The people building Lumora</p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Final CTA */}
-      <section className={`py-16 sm:py-24 ${aurumGradient}`} id="waitlist-form">
-        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10">
-          <h2 className="text-3xl sm:text-4xl md:text-6xl font-semibold mb-4 text-slate-50">
-            The Future of Sleep Starts Here.
+      <section className={`py-20 sm:py-28 ${aurumGradient}`} id="waitlist-form">
+        <div className="container mx-auto px-4 sm:px-6 text-center relative z-10 max-w-5xl">
+          <h2 className="text-4xl sm:text-5xl md:text-6xl font-semibold mb-5 text-slate-50">
+            The future of sleep starts here.
           </h2>
-          <p className="text-slate-300/90 max-w-2xl mx-auto mb-10 font-light">
-            Join the waitlist to get launch timing, early access, and product updates as we finalize the first run.
+          <p className="text-slate-300/90 max-w-2xl mx-auto mb-10 font-light text-lg leading-relaxed">
+            Join the waitlist to get launch timing, early access, product updates, and a first look at how Lumora continues to evolve.
           </p>
 
-          <div className="max-w-4xl mx-auto">
-            <div className="bg-slate-950/25 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-slate-700/60">
-              <iframe
-                data-tally-src="https://tally.so/embed/mO6OrM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
-                loading="lazy"
-                width="100%"
-                height="529"
-                frameBorder="0"
-                marginHeight={0}
-                marginWidth={0}
-                title="Lumora Interest Form"
-                className="w-full rounded-2xl"
-                style={{ maxWidth: "640px", margin: "0 auto", display: "block" }}
-              />
-              <div className="mt-6 text-slate-400 text-xs font-light">
-                By joining, you’ll receive updates from Lumora Sleep. You can unsubscribe at any time.
-              </div>
+          <div className="bg-slate-950/25 backdrop-blur-sm rounded-3xl p-4 sm:p-8 border border-slate-700/60">
+            <iframe
+              data-tally-src="https://tally.so/embed/mO6OrM?alignLeft=1&hideTitle=1&transparentBackground=1&dynamicHeight=1"
+              loading="lazy"
+              width="100%"
+              height="529"
+              frameBorder="0"
+              marginHeight={0}
+              marginWidth={0}
+              title="Lumora Interest Form"
+              className="w-full rounded-2xl"
+              style={{ maxWidth: "640px", margin: "0 auto", display: "block" }}
+            />
+            <div className="mt-6 text-slate-400 text-xs font-light">
+              By joining, you’ll receive updates from Lumora Sleep. You can unsubscribe at any time.
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
       <footer className="py-12 bg-slate-950 border-t border-slate-800/70">
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col md:flex-row justify-between items-center gap-6">
@@ -816,25 +882,11 @@ export default function AurumSleep() {
             </div>
 
             <div className="flex flex-wrap gap-6 sm:gap-8 text-slate-400 justify-center text-sm">
-              <a href="#" className="hover:text-slate-200 transition-colors font-light tracking-wide">
-                About
-              </a>
-              <a href="#faq" className="hover:text-slate-200 transition-colors font-light tracking-wide">
-                FAQ
-              </a>
-              <a
-                href="#contact-form"
-                className="hover:text-slate-200 transition-colors font-light tracking-wide"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("contact-form")?.scrollIntoView({ behavior: "smooth" })
-                }}
-              >
-                Contact
-              </a>
-              <a href="/team" className="hover:text-slate-200 transition-colors font-light tracking-wide">
-                Our Team
-              </a>
+              <a href="#story" className="hover:text-slate-200 transition-colors font-light tracking-wide">Story</a>
+              <a href="#system" className="hover:text-slate-200 transition-colors font-light tracking-wide">System</a>
+              <a href="#traction" className="hover:text-slate-200 transition-colors font-light tracking-wide">Traction</a>
+              <a href="#faq" className="hover:text-slate-200 transition-colors font-light tracking-wide">FAQ</a>
+              <a href="/team" className="hover:text-slate-200 transition-colors font-light tracking-wide">Our Team</a>
               <a
                 href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
                 target="_blank"
