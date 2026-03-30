@@ -494,6 +494,7 @@ export default function LumoraSiteV4() {
             {[
               { number: "83%", label: "reported sleep difficulty", detail: "From our interview pool, the majority said sleep was a real and recurring issue." },
               { number: "6/10", label: "average sleep score", detail: "People were not describing ideal rest. They were describing acceptable but frustrating sleep." },
+              { number: "17+", label: "customer discovery interviews", detail: "Enough to reveal patterns, pain points, and consistent demand across multiple backgrounds." },
               { number: "$950B", label: "projected sleep market by 2032", detail: "The category is growing because people increasingly invest in recovery, wellness, and better daily performance." },
             ].map((stat, idx) => (
               <div key={idx} className="rounded-3xl border border-slate-800 bg-slate-950/40 p-8 text-center">
@@ -506,7 +507,7 @@ export default function LumoraSiteV4() {
 
           <div className="text-center">
             <a
-              href="https://thevirus-limiter.github.io/filestorage/lumoracustomerdiscovery.pdf"
+              href="https://google.com"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-slate-300 hover:text-white text-sm tracking-wide transition-colors duration-300"
@@ -822,7 +823,7 @@ export default function LumoraSiteV4() {
               </div>
               <h4 className="font-semibold text-white mb-2">Follow Lumora</h4>
               <a
-                href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
+                href="https://www.instagram.com/lumorasleep"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="text-slate-300 text-sm hover:text-white transition-colors block font-light"
@@ -888,7 +889,7 @@ export default function LumoraSiteV4() {
               <a href="#faq" className="hover:text-slate-200 transition-colors font-light tracking-wide">FAQ</a>
               <a href="/team" className="hover:text-slate-200 transition-colors font-light tracking-wide">Our Team</a>
               <a
-                href="https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg=="
+                href="https://www.instagram.com/lumorasleep"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="hover:text-slate-200 transition-colors font-light tracking-wide"
