@@ -444,9 +444,6 @@ export default function LumoraSiteV4() {
         <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-2 gap-14 items-center max-w-7xl mx-auto">
             <div className="text-center lg:text-left">
-              <div className="mb-6 flex items-center justify-center lg:justify-start">
-                <img src="/images/lumora-logo.png" alt="Lumora Sleep logo" className="h-28 sm:h-32 md:h-36 w-auto opacity-95" />
-              </div>
 
               <h1 className="text-5xl sm:text-7xl md:text-8xl font-light leading-[0.92] mb-6">
                 <span className={`${sageGradientText} font-semibold`}>Redefine</span> Rest.
@@ -478,11 +475,7 @@ export default function LumoraSiteV4() {
                 </Button>
               </div>
 
-              <div className="mt-8 flex flex-wrap gap-6 justify-center lg:justify-start text-sm text-slate-400">
-                <span className="inline-flex items-center gap-2"><ShieldCheck className="w-4 h-4" />Designed for comfort first</span>
-                <span className="inline-flex items-center gap-2"><Gem className="w-4 h-4" />Luxury materials and finish</span>
-                <span className="inline-flex items-center gap-2"><MoonStar className="w-4 h-4" />A limited first release</span>
-              </div>
+            
             </div>
 
             <div className="relative">
