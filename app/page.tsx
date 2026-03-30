@@ -347,7 +347,6 @@ export default function LumoraSiteV4() {
   return (
   <div
     className="min-h-screen bg-slate-950 text-slate-100 overflow-x-hidden font-sans"
-    style={{ transform: "scale(0.92)", transformOrigin: "top center" }}
   >
       <header
         className={`fixed top-0 left-0 right-0 z-50 backdrop-blur-xl border-b border-slate-800/60 transition-transform duration-300 ${
@@ -764,42 +763,7 @@ export default function LumoraSiteV4() {
 
 
       
-      <section className="py-20 sm:py-28 bg-slate-900">
-        <div className="container mx-auto px-4 sm:px-6 max-w-6xl">
-          <div className="text-center max-w-4xl mx-auto mb-16">
-            <h2 className={`text-4xl sm:text-5xl font-semibold mb-6 ${sageGradientText}`}>What makes Lumora feel different</h2>
-            <p className="text-slate-300 text-lg leading-relaxed">
-              It is not only the materials. It is not only the features. It is the way the system has been thought through from night to morning. Each component has a job. Each detail reduces friction. Each interaction is designed to feel natural.
-            </p>
-          </div>
-
-          <div className="grid md:grid-cols-2 gap-6">
-            {[
-              {
-                title: "Luxury without shouting",
-                body: "Mulberry silk, structured comfort, softened gradients, and restrained design language give Lumora the feel of a premium ritual product instead of a novelty gadget.",
-              },
-              {
-                title: "Modular by design",
-                body: "Users can begin with Essence and expand only where the experience becomes more valuable. That makes the system more intuitive, more accessible, and more believable.",
-              },
-              {
-                title: "Designed for real use",
-                body: "No need to commit to a complicated app flow every night. No need to strap bulky hardware to the face. The experience is designed to invite repeat use through comfort.",
-              },
-              {
-                title: "A broader future",
-                body: "While the system begins with premium personal sleep, the long-term vision can expand into travel, performance recovery, corporate wellness, and environments where better sleep has measurable value.",
-              },
-            ].map((item, idx) => (
-              <div key={idx} className="rounded-3xl border border-slate-700/60 bg-slate-950/30 p-8">
-                <h3 className="text-xl font-semibold text-white mb-3">{item.title}</h3>
-                <p className="text-slate-300 leading-relaxed">{item.body}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+  
 
 
       
