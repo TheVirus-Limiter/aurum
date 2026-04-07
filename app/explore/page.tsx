@@ -3,6 +3,10 @@
 import { ArrowLeft } from "lucide-react"
 import { useEffect, useRef, useState } from "react"
 
+/* =========================
+   HOOKS
+========================= */
+
 function useInView() {
   const ref = useRef<HTMLDivElement | null>(null)
   const [visible, setVisible] = useState(false)
@@ -14,7 +18,7 @@ function useInView() {
       ([entry]) => {
         if (entry.isIntersecting) setVisible(true)
       },
-      { threshold: 0.15 }
+      { threshold: 0.2 }
     )
     observer.observe(el)
     return () => observer.disconnect()
@@ -23,13 +27,42 @@ function useInView() {
   return { ref, visible }
 }
 
-function FadeIn({ children }: { children: React.ReactNode }) {
+/* =========================
+   WORD REVEAL
+========================= */
+
+function WordReveal({ text }: { text: string }) {
+  const words = text.split(" ")
+  const { ref, visible } = useInView()
+
+  return (
+    <p ref={ref} className="leading-relaxed text-lg">
+      {words.map((word, i) => (
+        <span
+          key={i}
+          className={`inline-block mr-2 transition-all duration-700 ${
+            visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-3"
+          }`}
+          style={{ transitionDelay: `${i * 40}ms` }}
+        >
+          {word}
+        </span>
+      ))}
+    </p>
+  )
+}
+
+/* =========================
+   FADE SECTION
+========================= */
+
+function Fade({ children }: { children: React.ReactNode }) {
   const { ref, visible } = useInView()
   return (
     <div
       ref={ref}
       className={`transition-all duration-700 ${
-        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
+        visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
       }`}
     >
       {children}
@@ -37,28 +70,42 @@ function FadeIn({ children }: { children: React.ReactNode }) {
   )
 }
 
-function Divider() {
-  return (
-    <div className="relative my-16">
-      <div className="h-px bg-white/10" />
-      <div className="absolute inset-0 flex justify-center">
-        <div className="w-32 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent blur-sm" />
-      </div>
-    </div>
-  )
-}
+/* =========================
+   MAIN PAGE
+========================= */
 
 export default function ExplorePage() {
-  return (
-    <div className="min-h-screen bg-slate-950 text-white relative overflow-hidden">
+  const [scrollY, setScrollY] = useState(0)
 
-      {/* Ambient glow */}
+  useEffect(() => {
+    const onScroll = () => setScrollY(window.scrollY)
+    window.addEventListener("scroll", onScroll)
+    return () => window.removeEventListener("scroll", onScroll)
+  }, [])
+
+  const sunriseOpacity = Math.min(scrollY / 800, 1)
+
+  return (
+    <div className="min-h-screen text-white relative overflow-hidden">
+
+      {/* 🌌 NIGHT BACKGROUND */}
+      <div className="absolute inset-0 -z-20 bg-slate-950" />
+
+      {/* 🌅 SUNRISE GRADIENT */}
+      <div
+        className="absolute inset-0 -z-10 bg-gradient-to-b from-indigo-900 via-purple-800 to-orange-300 transition-opacity duration-700"
+        style={{ opacity: sunriseOpacity }}
+      />
+
+      {/* ✨ STARS */}
       <div className="absolute inset-0 -z-10">
-        <div className="absolute w-[600px] h-[600px] bg-purple-500/10 rounded-full blur-[120px] top-[-100px] left-[-100px]" />
-        <div className="absolute w-[500px] h-[500px] bg-blue-400/10 rounded-full blur-[120px] bottom-[-100px] right-[-100px]" />
+        <div className="absolute w-1 h-1 bg-white/40 top-20 left-20 animate-pulse" />
+        <div className="absolute w-1 h-1 bg-white/30 top-40 right-40 animate-pulse" />
+        <div className="absolute w-1 h-1 bg-white/20 bottom-20 left-1/2 animate-pulse" />
       </div>
 
-      <header className="py-8 border-b border-white/10 bg-slate-950/60 backdrop-blur-xl">
+      {/* HEADER */}
+      <header className="py-8 border-b border-white/10 backdrop-blur-xl">
         <div className="container mx-auto px-6 flex items-center gap-4">
           <a href="/" className="flex items-center gap-2 text-slate-300 hover:text-white">
             <ArrowLeft className="w-5 h-5" />
@@ -69,138 +116,92 @@ export default function ExplorePage() {
         </div>
       </header>
 
-      <main className="py-16">
-        <div className="container mx-auto px-6 max-w-3xl">
+      <main className="py-24">
+        <div className="container mx-auto px-6 grid lg:grid-cols-2 gap-20 max-w-6xl">
 
-          {/* Title */}
-          <FadeIn>
-            <h1 className="text-5xl font-semibold text-center bg-gradient-to-r from-slate-100 to-slate-300 bg-clip-text text-transparent">
-              The Pivot
-            </h1>
-            <p className="mt-6 text-center text-slate-300/70">
-              Why Lumora changed direction and what we are building instead
-            </p>
-          </FadeIn>
+          {/* LEFT TEXT */}
+          <div className="space-y-10">
 
-          <Divider />
+            <Fade>
+              <h1 className="text-5xl font-semibold">The Pivot</h1>
+              <p className="text-slate-300/70">
+                Why Lumora changed direction and what we are building instead
+              </p>
+            </Fade>
 
-          {/* SECTION 1 */}
-          <FadeIn>
-            <p>When we first started Lumora, the idea was simple.</p>
-            <p className="mt-3">We wanted to build a better sleep mask.</p>
-            <p className="mt-3">
-              Not just something more comfortable, but something that actually improved how people slept. We designed around features like audio, temperature, and light.
-            </p>
-            <p className="mt-3">On paper, it made sense.</p>
-          </FadeIn>
+            <WordReveal text="When we first started Lumora, the idea was simple." />
+            <WordReveal text="We wanted to build a better sleep mask." />
 
-          <Divider />
+            <Fade>
+              <p className="text-slate-300">
+                But we realized something deeper.
+              </p>
+            </Fade>
 
-          {/* SECTION 2 */}
-          <FadeIn>
-            <p>But once we started talking to people, something became obvious.</p>
-            <p className="mt-4 text-white text-lg font-medium">
-              Sleep is not one problem. It is a system.
-            </p>
-            <p className="mt-3">
-              Over 80 percent of people struggle with sleep. Most take 45 to 90 minutes to fall asleep. Many wake up multiple times per night.
-            </p>
-          </FadeIn>
+            <WordReveal text="Sleep is not one problem. It is a system." />
 
-          <Divider />
+            <Fade>
+              <p className="text-slate-300">
+                Over 80 percent of people struggle with sleep. Most take 45 to 90 minutes to fall asleep.
+              </p>
+            </Fade>
 
-          {/* SECTION 3 */}
-          <FadeIn>
-            <p>
-              People were stacking solutions. Fans, apps, supplements, alarms. None of it worked together.
-            </p>
-            <p className="mt-3 text-white">
-              That was the real problem.
-            </p>
-          </FadeIn>
+            <WordReveal text="We stopped building a product and started building a system." />
 
-          <Divider />
+            <Fade>
+              <p className="text-slate-300">
+                Lumora is designed around falling asleep, staying asleep, and waking naturally.
+              </p>
+            </Fade>
 
-          {/* SECTION 4 */}
-          <FadeIn>
-            <p className="text-white text-lg font-medium">
-              So we changed direction.
-            </p>
-            <p className="mt-3">
-              Instead of building a product, we started building a system.
-            </p>
-          </FadeIn>
+            <WordReveal text="It does not track sleep. It improves it." />
 
-          <Divider />
+            <Fade>
+              <p className="text-slate-300">
+                Over time, Lumora adapts. It learns your patterns and improves automatically.
+              </p>
+            </Fade>
 
-          {/* SYSTEM */}
-          <FadeIn>
-            <h2 className="text-xl font-semibold text-white">From product to system</h2>
-            <p className="mt-3">
-              Lumora is now a modular system designed around the full cycle of sleep. Falling asleep, staying asleep, and waking up.
-            </p>
-          </FadeIn>
+          </div>
 
-          <Divider />
+          {/* RIGHT VISUAL SYSTEM */}
+          <div className="flex items-center justify-center">
 
-          {/* TABLE */}
-          <FadeIn>
-            <h2 className="text-xl font-semibold text-white mb-4">What changed</h2>
+            <Fade>
+              <div className="relative w-[300px] h-[300px]">
 
-            <div className="overflow-hidden rounded-2xl border border-white/10">
-              <table className="w-full text-sm">
-                <thead className="bg-white/5">
-                  <tr>
-                    <th className="p-4 text-left">Before</th>
-                    <th className="p-4 text-left">After</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr className="border-t border-white/10">
-                    <td className="p-4">Smart sleep mask</td>
-                    <td className="p-4">Modular sleep system</td>
-                  </tr>
-                  <tr className="border-t border-white/10">
-                    <td className="p-4">All features in one device</td>
-                    <td className="p-4">Layered experience</td>
-                  </tr>
-                  <tr className="border-t border-white/10">
-                    <td className="p-4">Comfort focused</td>
-                    <td className="p-4">Performance + environment</td>
-                  </tr>
-                  <tr className="border-t border-white/10">
-                    <td className="p-4">One-time purchase</td>
-                    <td className="p-4">Expandable ecosystem</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </FadeIn>
+                {/* CIRCLE */}
+                <div className="absolute inset-0 rounded-full border border-white/10" />
 
-          <Divider />
+                {/* NODES */}
+                <div className="absolute top-0 left-1/2 -translate-x-1/2 text-center">
+                  <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center backdrop-blur">
+                    Sleep
+                  </div>
+                </div>
 
-          {/* AI */}
-          <FadeIn>
-            <h2 className="text-xl font-semibold text-white">Adaptive system</h2>
-            <p className="mt-3">
-              Lumora learns how you sleep and adjusts automatically.
-            </p>
-            <p className="mt-3">
-              Over time, it improves timing, temperature, and routines without effort.
-            </p>
-          </FadeIn>
+                <div className="absolute bottom-0 left-0 text-center">
+                  <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+                    Fall
+                  </div>
+                </div>
 
-          <Divider />
+                <div className="absolute bottom-0 right-0 text-center">
+                  <div className="w-20 h-20 bg-white/10 rounded-full flex items-center justify-center">
+                    Wake
+                  </div>
+                </div>
 
-          {/* FINAL */}
-          <FadeIn>
-            <p className="text-white text-lg font-medium">
-              We did not set out to build a better sleep mask.
-            </p>
-            <p className="text-white text-lg font-medium">
-              We set out to build a better way to sleep.
-            </p>
-          </FadeIn>
+                {/* LINES */}
+                <svg className="absolute inset-0 w-full h-full">
+                  <line x1="150" y1="40" x2="50" y2="250" stroke="white" strokeOpacity="0.2" />
+                  <line x1="150" y1="40" x2="250" y2="250" stroke="white" strokeOpacity="0.2" />
+                </svg>
+
+              </div>
+            </Fade>
+
+          </div>
 
         </div>
       </main>
