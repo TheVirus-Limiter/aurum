@@ -18,11 +18,10 @@ import {
   Wind,
   Zap,
 } from "lucide-react"
-import { AnimatePresence, motion, useReducedMotion } from "framer-motion"
 
 /* =====================================================================================
    LUMORA SLEEP — THE PIVOT
-   Premium production-style Next.js + TypeScript + Tailwind page
+   Framer-free version for Next.js + TypeScript + Tailwind
 ===================================================================================== */
 
 type SectionProps = {
@@ -72,20 +71,6 @@ type SystemNode = {
   y: number
 }
 
-const container = {
-  hidden: {},
-  show: {
-    transition: {
-      staggerChildren: 0.08,
-    },
-  },
-}
-
-const item = {
-  hidden: { opacity: 0, y: 18 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.7, ease: "easeOut" } },
-}
-
 /* =====================================================================================
    UTILITIES
 ===================================================================================== */
@@ -95,7 +80,7 @@ function cn(...classes: Array<string | false | null | undefined>) {
 }
 
 /* =====================================================================================
-   SCROLL PROGRESS + SUNRISE BACKGROUND
+   SCROLL PROGRESS + BACKGROUND
 ===================================================================================== */
 
 function useScrollProgress() {
@@ -192,24 +177,52 @@ function NightToSunriseBackground({ progress }: { progress: number }) {
 }
 
 /* =====================================================================================
-   ANIMATION HELPERS
+   FADE IN WITHOUT FRAMER
 ===================================================================================== */
 
 function FadeIn({ children, className, delay = 0, y = 22 }: FadeInProps) {
-  const reduceMotion = useReducedMotion()
+  const ref = useRef<HTMLDivElement | null>(null)
+  const [visible, setVisible] = useState(false)
+
+  useEffect(() => {
+    const node = ref.current
+    if (!node) return
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.15 }
+    )
+
+    observer.observe(node)
+    return () => observer.disconnect()
+  }, [])
 
   return (
-    <motion.div
-      className={className}
-      initial={{ opacity: 0, y: reduceMotion ? 0 : y }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, amount: 0.18 }}
-      transition={{ duration: 0.75, delay, ease: "easeOut" }}
+    <div
+      ref={ref}
+      className={cn(
+        "transition-all duration-700 ease-out will-change-transform",
+        visible ? "opacity-100 translate-y-0" : "opacity-0",
+        className
+      )}
+      style={{
+        transitionDelay: `${delay}s`,
+        transform: visible ? "translateY(0px)" : `translateY(${y}px)`,
+      }}
     >
       {children}
-    </motion.div>
+    </div>
   )
 }
+
+/* =====================================================================================
+   SECTION SHELL
+===================================================================================== */
 
 function SectionShell({
   id,
@@ -258,10 +271,6 @@ function SectionShell({
     </section>
   )
 }
-
-/* =====================================================================================
-   SHARED UI BLOCKS
-===================================================================================== */
 
 function GlassCard({
   children,
@@ -467,7 +476,7 @@ function HeroSection() {
                       </div>
 
                       <div className="relative mt-6 h-[22rem]">
-                        <div className="absolute left-1/2 top-[45%] z-20 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/90 shadow-[0_0_80px_rgba(255,255,255,0.04)]">
+                        <div className="absolute left-1/2 top-[45%] z-20 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/90 shadow-[0_0_80px_rgba(255,255,255,0.04)] animate-[lumoraPulse_4.5s_ease-in-out_infinite]">
                           <div className="flex h-full flex-col items-center justify-center text-center">
                             <p className="text-[10px] uppercase tracking-[0.2em] text-slate-400">
                               Core
@@ -501,7 +510,7 @@ function HeroSection() {
                           <div
                             key={node.label}
                             className={cn(
-                              "absolute z-10 rounded-[24px] border border-white/10 bg-white/5 px-4 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl",
+                              "absolute z-10 rounded-[24px] border border-white/10 bg-white/5 px-4 py-4 shadow-[0_18px_40px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/10",
                               node.cls
                             )}
                           >
@@ -542,7 +551,7 @@ function HeroSection() {
                           />
                         </svg>
 
-                        <div className="absolute bottom-4 left-1/2 w-[82%] -translate-x-1/2 rounded-[22px] border border-orange-300/20 bg-orange-300/8 px-5 py-4 shadow-[0_0_50px_rgba(251,146,60,0.12)]">
+                        <div className="absolute bottom-4 left-1/2 w-[82%] -translate-x-1/2 rounded-[22px] border border-orange-300/20 bg-orange-300/8 px-5 py-4 shadow-[0_0_50px_rgba(251,146,60,0.12)] animate-[lumoraSoftGlow_3.6s_ease-in-out_infinite]">
                           <div className="flex items-center gap-3">
                             <Cpu className="h-5 w-5 text-orange-200" />
                             <div>
@@ -674,29 +683,23 @@ function ProblemSection() {
 
               <div className="mt-8 space-y-4">
                 {points.map((point, index) => (
-                  <motion.div
-                    key={point.title}
-                    variants={item}
-                    initial="hidden"
-                    whileInView="show"
-                    viewport={{ once: true, amount: 0.18 }}
-                    className="rounded-[22px] border border-white/10 bg-white/5 p-5"
-                    transition={{ delay: index * 0.05 }}
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1 rounded-2xl border border-white/10 bg-white/5 p-3">
-                        {point.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-base font-medium text-white">
-                          {point.title}
-                        </h3>
-                        <p className="mt-2 text-sm leading-7 text-slate-400">
-                          {point.body}
-                        </p>
+                  <FadeIn key={point.title} delay={index * 0.05}>
+                    <div className="rounded-[22px] border border-white/10 bg-white/5 p-5">
+                      <div className="flex items-start gap-4">
+                        <div className="mt-1 rounded-2xl border border-white/10 bg-white/5 p-3">
+                          {point.icon}
+                        </div>
+                        <div>
+                          <h3 className="text-base font-medium text-white">
+                            {point.title}
+                          </h3>
+                          <p className="mt-2 text-sm leading-7 text-slate-400">
+                            {point.body}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </FadeIn>
                 ))}
               </div>
             </GlassCard>
@@ -705,15 +708,9 @@ function ProblemSection() {
 
         <div className="space-y-6">
           <FadeIn delay={0.05}>
-            <motion.div
-              variants={container}
-              initial="hidden"
-              whileInView="show"
-              viewport={{ once: true, amount: 0.16 }}
-              className="grid gap-4"
-            >
-              {stats.map((stat) => (
-                <motion.div key={stat.label} variants={item}>
+            <div className="grid gap-4">
+              {stats.map((stat, index) => (
+                <FadeIn key={stat.label} delay={index * 0.05}>
                   <GlassCard className="rounded-[28px] p-6">
                     <div className="flex items-start gap-4">
                       <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -735,9 +732,9 @@ function ProblemSection() {
                       </div>
                     </div>
                   </GlassCard>
-                </motion.div>
+                </FadeIn>
               ))}
-            </motion.div>
+            </div>
           </FadeIn>
 
           <FadeIn delay={0.08}>
@@ -1130,15 +1127,11 @@ function Line({
         strokeWidth="2"
         strokeDasharray="5 8"
       />
-      <motion.path
+      <path
         d={path}
         fill="none"
         stroke={active ? "rgba(255,214,170,0.85)" : "rgba(125,211,252,0.35)"}
         strokeWidth="2.5"
-        initial={{ pathLength: 0, opacity: 0.35 }}
-        whileInView={{ pathLength: 1, opacity: 1 }}
-        viewport={{ once: true, amount: 0.2 }}
-        transition={{ duration: 1.2, ease: "easeOut" }}
       />
     </>
   )
@@ -1156,11 +1149,9 @@ function SystemNodeCard({
   onMouseLeave: () => void
 }) {
   return (
-    <motion.div
-      className="group absolute z-20 w-[230px] -translate-x-1/2 -translate-y-1/2"
+    <div
+      className="group absolute z-20 w-[230px] -translate-x-1/2 -translate-y-1/2 transition-transform duration-300 hover:-translate-y-[calc(50%+4px)]"
       style={{ left: `${node.x}%`, top: `${node.y}%` }}
-      whileHover={{ y: -4, scale: 1.01 }}
-      transition={{ duration: 0.28, ease: "easeOut" }}
       onMouseEnter={onMouseEnter}
       onMouseLeave={onMouseLeave}
     >
@@ -1199,7 +1190,7 @@ function SystemNodeCard({
           )}
         />
       </div>
-    </motion.div>
+    </div>
   )
 }
 
@@ -1335,17 +1326,7 @@ function ModularSystemDiagramSection() {
               </svg>
 
               <div className="absolute left-[52%] top-[48%] z-20 w-[260px] -translate-x-1/2 -translate-y-1/2">
-                <motion.div
-                  className="relative rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/95 p-6 shadow-[0_0_100px_rgba(255,255,255,0.04)]"
-                  animate={{
-                    boxShadow: [
-                      "0 0 60px rgba(255,255,255,0.04)",
-                      "0 0 95px rgba(255,255,255,0.07)",
-                      "0 0 60px rgba(255,255,255,0.04)",
-                    ],
-                  }}
-                  transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut" }}
-                >
+                <div className="relative rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/95 p-6 shadow-[0_0_100px_rgba(255,255,255,0.04)] animate-[lumoraPulse_4.5s_ease-in-out_infinite]">
                   <div className="absolute inset-3 rounded-full border border-white/10" />
                   <div className="relative flex h-[170px] flex-col items-center justify-center text-center">
                     <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
@@ -1358,7 +1339,7 @@ function ModularSystemDiagramSection() {
                       One coordinated sleep experience across the entire night.
                     </p>
                   </div>
-                </motion.div>
+                </div>
               </div>
 
               {nodes.map((node) => (
@@ -1371,13 +1352,7 @@ function ModularSystemDiagramSection() {
                 />
               ))}
 
-              <motion.div
-                className="absolute bottom-7 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-[28px] border border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-6 py-5 shadow-[0_0_80px_rgba(251,146,60,0.10)]"
-                animate={{
-                  opacity: [0.85, 1, 0.85],
-                }}
-                transition={{ duration: 3.6, repeat: Infinity, ease: "easeInOut" }}
-              >
+              <div className="absolute bottom-7 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-[28px] border border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-6 py-5 shadow-[0_0_80px_rgba(251,146,60,0.10)] animate-[lumoraSoftGlow_3.6s_ease-in-out_infinite]">
                 <div className="flex items-start gap-4">
                   <div className="rounded-2xl border border-orange-300/25 bg-orange-300/10 p-3">
                     <Cpu className="h-5 w-5 text-orange-100" />
@@ -1393,7 +1368,7 @@ function ModularSystemDiagramSection() {
                     </p>
                   </div>
                 </div>
-              </motion.div>
+              </div>
             </div>
           </GlassCard>
         </FadeIn>
@@ -1464,15 +1439,11 @@ function BeforeAfterTableSection() {
                 What this means strategically
               </p>
               <div className="mt-5 space-y-4 text-sm leading-7 text-slate-400">
+                <p>The product becomes more expandable.</p>
+                <p>The system becomes easier to personalize.</p>
                 <p>
-                  The product becomes more expandable.
-                </p>
-                <p>
-                  The system becomes easier to personalize.
-                </p>
-                <p>
-                  The value proposition shifts from passive monitoring to
-                  active improvement.
+                  The value proposition shifts from passive monitoring to active
+                  improvement.
                 </p>
               </div>
             </GlassCard>
@@ -1536,7 +1507,7 @@ function BeforeAfterTableSection() {
 }
 
 /* =====================================================================================
-   AI / ADAPTIVE SECTION
+   ADAPTIVE
 ===================================================================================== */
 
 function AdaptiveSection() {
@@ -1578,7 +1549,7 @@ function AdaptiveSection() {
                 },
               ].map((card) => (
                 <GlassCard key={card.title} className="rounded-[28px] p-5">
-                  <div className="rounded-2xl border border-white/10 bg-white/5 p-3 w-fit">
+                  <div className="w-fit rounded-2xl border border-white/10 bg-white/5 p-3">
                     {card.icon}
                   </div>
                   <h3 className="mt-4 text-base font-medium text-white">
@@ -1741,7 +1712,7 @@ function WhyThisMattersSection() {
           <div className="grid gap-4 sm:grid-cols-2">
             {reasons.map((reason) => (
               <GlassCard key={reason.title} className="rounded-[28px] p-6">
-                <div className="rounded-2xl border border-white/10 bg-white/5 p-3 w-fit">
+                <div className="w-fit rounded-2xl border border-white/10 bg-white/5 p-3">
                   {reason.icon}
                 </div>
                 <h3 className="mt-4 text-lg font-medium text-white">
@@ -1837,25 +1808,13 @@ function FinalSection() {
               </p>
 
               <div className="mt-8 space-y-6">
-                <motion.h2
-                  className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.8, ease: "easeOut" }}
-                >
+                <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                   We are not building a sleep mask.
-                </motion.h2>
+                </h2>
 
-                <motion.h2
-                  className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl"
-                  initial={{ opacity: 0, y: 18 }}
-                  whileInView={{ opacity: 1, y: 0 }}
-                  viewport={{ once: true, amount: 0.2 }}
-                  transition={{ duration: 0.8, delay: 0.08, ease: "easeOut" }}
-                >
+                <h2 className="text-4xl font-semibold tracking-tight text-white sm:text-5xl lg:text-6xl">
                   We are building a new way to sleep.
-                </motion.h2>
+                </h2>
               </div>
 
               <p className="mx-auto mt-8 max-w-3xl text-lg leading-8 text-slate-300">
@@ -1907,37 +1866,28 @@ function FloatingSectionNav() {
       ref={wrapperRef}
       className="fixed bottom-5 right-5 z-50 hidden lg:block"
     >
-      <AnimatePresence initial={false}>
-        {open ? (
-          <motion.div
-            key="panel"
-            initial={{ opacity: 0, y: 16, scale: 0.96 }}
-            animate={{ opacity: 1, y: 0, scale: 1 }}
-            exit={{ opacity: 0, y: 16, scale: 0.96 }}
-            transition={{ duration: 0.22, ease: "easeOut" }}
-            className="mb-3 w-[260px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0b1019]/90 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl"
-          >
-            <div className="border-b border-white/10 px-5 py-4">
-              <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
-                Jump to section
-              </p>
-            </div>
-            <div className="p-3">
-              {items.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
-                  onClick={() => setOpen(false)}
-                >
-                  <span>{item.label}</span>
-                  <ChevronRight className="h-4 w-4 text-slate-500" />
-                </a>
-              ))}
-            </div>
-          </motion.div>
-        ) : null}
-      </AnimatePresence>
+      {open ? (
+        <div className="mb-3 w-[260px] overflow-hidden rounded-[24px] border border-white/10 bg-[#0b1019]/90 shadow-[0_24px_80px_rgba(0,0,0,0.45)] backdrop-blur-xl transition-all duration-200">
+          <div className="border-b border-white/10 px-5 py-4">
+            <p className="text-xs uppercase tracking-[0.2em] text-slate-400">
+              Jump to section
+            </p>
+          </div>
+          <div className="p-3">
+            {items.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className="flex items-center justify-between rounded-2xl px-3 py-3 text-sm text-slate-300 transition hover:bg-white/5 hover:text-white"
+                onClick={() => setOpen(false)}
+              >
+                <span>{item.label}</span>
+                <ChevronRight className="h-4 w-4 text-slate-500" />
+              </a>
+            ))}
+          </div>
+        </div>
+      ) : null}
 
       <button
         type="button"
@@ -1994,6 +1944,30 @@ export default function PivotPage() {
           }
           100% {
             transform: translate3d(0px, 0px, 0px);
+          }
+        }
+
+        @keyframes lumoraPulse {
+          0% {
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.04);
+          }
+          50% {
+            box-shadow: 0 0 95px rgba(255, 255, 255, 0.07);
+          }
+          100% {
+            box-shadow: 0 0 60px rgba(255, 255, 255, 0.04);
+          }
+        }
+
+        @keyframes lumoraSoftGlow {
+          0% {
+            opacity: 0.85;
+          }
+          50% {
+            opacity: 1;
+          }
+          100% {
+            opacity: 0.85;
           }
         }
 
