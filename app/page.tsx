@@ -238,15 +238,17 @@ function InteractiveMaskDiagram() {
           style={{ filter: "drop-shadow(0 24px 70px rgba(15, 23, 42, 0.7))" }}
         />
       </div>
-      <div className="mt-6">
-        <a
+      <a
           href="/explore"
           className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-200 text-sm tracking-wide transition-colors duration-300"
         >
-          View the interactive demo
+      <div className="mt-6">
+       
+          Learn more about the pivot
           <ArrowRight className="w-4 h-4 opacity-80" />
-        </a>
+       
       </div>
+         </a>
     </div>
   )
 }
@@ -368,14 +370,10 @@ export default function LumoraSiteV4() {
 
             <nav className="hidden lg:flex items-center gap-6 text-sm">
               <a
-                href="#story"
-                className="text-slate-300 hover:text-white transition-colors"
-                onClick={(e) => {
-                  e.preventDefault()
-                  document.getElementById("story")?.scrollIntoView({ behavior: "smooth", block: "start" })
-                }}
+                href="https://uselumora.co/explore"
+                className="text-slate-300 hover:text-white transition-colors
               >
-                Story
+                Pivot
               </a>
               <a
                 href="#system"
