@@ -468,8 +468,7 @@ function HeroSection() {
                   </div>
                 </div>
               </div>
-            </FadeIn>
-          </div>
+           
 
           <FadeIn delay={0.1}>
             <GlassCard className="rounded-[34px] p-0">
