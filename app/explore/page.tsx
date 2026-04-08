@@ -14,25 +14,23 @@ import {
   Sparkles,
   SunMedium,
   Thermometer,
-  Waves,
-  Wind,
   Zap,
   Briefcase,
   Volume2,
   BedDouble,
-  Package,
   Gem,
 } from "lucide-react"
 
 /* =====================================================================================
    LUMORA SLEEP — THE PIVOT
-   Refined version:
-   - shorter overall
-   - more specific product detail
-   - product ecosystem replaces skewed concept transition
-   - simplified pills
-   - logo only in header
-   - system map fixed and clearer
+   Updated:
+   - combined "Sleep is not one problem..." + problem section
+   - filled empty space under "Why this is better"
+   - real logo image
+   - fixed bullet alignment
+   - adaptive layer moved below the map so no overlap
+   - replaced dumb hero stat boxes with better ecosystem panel
+   - beautified ecosystem graphic
 ===================================================================================== */
 
 type SectionProps = {
@@ -285,7 +283,7 @@ function GlassCard({
       )}
     >
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(255,255,255,0.07),transparent_24%)]" />
-      {children}
+      <div className="relative">{children}</div>
     </div>
   )
 }
@@ -298,13 +296,11 @@ function DividerGlow() {
   )
 }
 
-function LogoMark() {
+function BulletRow({ text }: { text: string }) {
   return (
-    <div className="relative h-11 w-11 rounded-2xl border border-white/10 bg-gradient-to-br from-slate-800 to-slate-950 shadow-inner shadow-white/5">
-      <div className="absolute inset-[7px] rounded-[12px] bg-gradient-to-br from-white/12 to-white/5" />
-      <div className="absolute inset-0 flex items-center justify-center">
-        <div className="h-5 w-5 rounded-full border border-orange-200/30 bg-gradient-to-br from-orange-200/25 to-cyan-200/15 shadow-[0_0_24px_rgba(255,200,140,0.18)]" />
-      </div>
+    <div className="flex items-start gap-3">
+      <div className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-white/75" />
+      <p className="text-sm leading-7 text-slate-400">{text}</p>
     </div>
   )
 }
@@ -431,10 +427,14 @@ function HeroSection() {
 
           <div className="h-6 w-px bg-white/10" />
 
-          <LogoMark />
+          <img
+            src="https://thevirus-limiter.github.io/filestorage/aurumsleep.png"
+            alt="Lumora Sleep"
+            className="h-12 w-auto object-contain"
+          />
         </div>
 
-        <div className="grid min-h-[74vh] items-center gap-12 py-14 lg:grid-cols-[1.04fr_0.96fr] lg:py-20">
+        <div className="grid min-h-[74vh] items-center gap-12 py-14 lg:grid-cols-[1.02fr_0.98fr] lg:py-20">
           <div>
             <FadeIn>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-300/20 bg-orange-300/8 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-orange-100">
@@ -458,21 +458,86 @@ function HeroSection() {
             </FadeIn>
 
             <FadeIn delay={0.12}>
-              <div className="mt-8 grid gap-4 sm:grid-cols-3">
-                {[
-                  { label: "From", value: "Mask" },
-                  { label: "To", value: "System" },
-                  { label: "Goal", value: "Better Sleep" },
-                ].map((card) => (
-                  <GlassCard key={card.label} className="p-5">
-                    <p className="text-[11px] uppercase tracking-[0.2em] text-slate-400">
-                      {card.label}
+              <div className="mt-8 rounded-[32px] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
+                      The Lumora product ecosystem
                     </p>
-                    <p className="mt-2 text-2xl font-semibold text-white">
-                      {card.value}
+                    <p className="mt-2 text-lg font-medium text-white">
+                      One coordinated system across the full sleep cycle
                     </p>
-                  </GlassCard>
-                ))}
+                  </div>
+                  <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
+                    Modular
+                  </div>
+                </div>
+
+                <div className="mt-6 grid gap-4 sm:grid-cols-3">
+                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                        <Moon className="h-5 w-5 text-cyan-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-white">Fall Asleep</p>
+                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
+                          Start sleep well
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-slate-400">
+                      Essence and Sonus reduce sleep friction and create a calmer
+                      transition into rest.
+                    </p>
+                  </div>
+
+                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                        <Thermometer className="h-5 w-5 text-sky-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-white">Stay Asleep</p>
+                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
+                          Preserve stability
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-slate-400">
+                      Caelum supports thermal balance so sleep is less likely to
+                      break from overheating and discomfort.
+                    </p>
+                  </div>
+
+                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
+                        <SunMedium className="h-5 w-5 text-orange-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-medium text-white">Wake Naturally</p>
+                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
+                          End sleep gently
+                        </p>
+                      </div>
+                    </div>
+                    <p className="mt-4 text-sm leading-7 text-slate-400">
+                      Aurora completes the experience with a more elegant morning
+                      transition than a harsh alarm.
+                    </p>
+                  </div>
+                </div>
+
+                <div className="mt-5 rounded-[24px] border border-orange-300/20 bg-orange-300/8 px-5 py-4">
+                  <div className="flex items-start gap-3">
+                    <Cpu className="mt-0.5 h-5 w-5 shrink-0 text-orange-100" />
+                    <p className="text-sm leading-7 text-orange-100/85">
+                      Adaptive intelligence sits across the system, improving how
+                      Essence, Sonus, Caelum, and Aurora work together over time.
+                    </p>
+                  </div>
+                </div>
               </div>
             </FadeIn>
           </div>
@@ -481,38 +546,111 @@ function HeroSection() {
             <GlassCard className="rounded-[34px] p-0">
               <div className="border-b border-white/10 px-6 py-5">
                 <p className="text-xs uppercase tracking-[0.22em] text-slate-400">
-                  The how
+                  Product architecture
                 </p>
                 <p className="mt-1 text-lg font-medium text-white">
-                  The Lumora product ecosystem
+                  The system at a glance
                 </p>
               </div>
 
-              <div className="grid gap-4 p-5 sm:grid-cols-2">
-                {products.slice(0, 4).map((product) => (
-                  <div
-                    key={product.name}
-                    className="rounded-[24px] border border-white/10 bg-black/20 p-4 transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.06]"
+              <div className="p-6">
+                <div className="relative min-h-[520px] rounded-[30px] border border-white/10 bg-[radial-gradient(circle_at_50%_45%,rgba(96,165,250,0.10),transparent_22%),linear-gradient(180deg,rgba(255,255,255,0.04),rgba(255,255,255,0.02))] p-6">
+                  <div className="absolute left-1/2 top-1/2 h-[300px] w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+                  <div className="absolute left-1/2 top-1/2 h-[220px] w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+
+                  <svg
+                    className="absolute inset-0 h-full w-full"
+                    viewBox="0 0 100 100"
+                    preserveAspectRatio="none"
                   >
-                    <div className="flex items-start justify-between gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                        {product.icon}
-                      </div>
-                      <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                        {product.price}
-                      </div>
-                    </div>
-                    <p className="mt-4 text-base font-semibold text-white">
-                      {product.name}
+                    <path d="M50 48 C42 32, 28 22, 19 24" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="2 2" />
+                    <path d="M50 48 C59 32, 73 24, 82 26" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="2 2" />
+                    <path d="M50 52 C40 64, 28 74, 20 76" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="2 2" />
+                    <path d="M50 52 C60 64, 74 72, 83 73" fill="none" stroke="rgba(255,255,255,0.15)" strokeWidth="0.5" strokeDasharray="2 2" />
+                  </svg>
+
+                  <div className="absolute left-1/2 top-1/2 z-20 w-[220px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/95 p-6 text-center shadow-[0_0_100px_rgba(255,255,255,0.04)] animate-[lumoraPulse_4.5s_ease-in-out_infinite]">
+                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                      Foundation
                     </p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.16em] text-slate-400">
-                      {product.tag}
-                    </p>
+                    <h3 className="mt-2 text-3xl font-semibold text-white">Essence</h3>
                     <p className="mt-3 text-sm leading-6 text-slate-400">
-                      {product.phase}
+                      Darkness, comfort, structure, and the base layer of the
+                      system.
                     </p>
                   </div>
-                ))}
+
+                  <div className="absolute left-[18%] top-[18%] z-20 w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-[24px] border border-white/10 bg-white/[0.08] p-4 backdrop-blur-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                        <Volume2 className="h-5 w-5 text-violet-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">Sonus</p>
+                        <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                          Fall asleep
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[82%] top-[22%] z-20 w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-[24px] border border-white/10 bg-white/[0.08] p-4 backdrop-blur-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                        <Thermometer className="h-5 w-5 text-sky-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">Caelum</p>
+                        <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                          Stay asleep
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[20%] top-[80%] z-20 w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-[24px] border border-white/10 bg-white/[0.08] p-4 backdrop-blur-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                        <SunMedium className="h-5 w-5 text-orange-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">Aurora</p>
+                        <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                          Wake naturally
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="absolute left-[82%] top-[78%] z-20 w-[180px] -translate-x-1/2 -translate-y-1/2 rounded-[24px] border border-white/10 bg-white/[0.08] p-4 backdrop-blur-xl">
+                    <div className="flex items-center gap-3">
+                      <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                        <Briefcase className="h-5 w-5 text-slate-200" />
+                      </div>
+                      <div>
+                        <p className="text-sm font-semibold text-white">Voyage</p>
+                        <p className="text-[11px] uppercase tracking-[0.16em] text-slate-400">
+                          System carry
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-5 rounded-[24px] border border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-5 py-4 shadow-[0_0_80px_rgba(251,146,60,0.08)]">
+                  <div className="flex items-start gap-3">
+                    <Cpu className="mt-0.5 h-5 w-5 shrink-0 text-orange-100" />
+                    <div>
+                      <p className="text-sm font-semibold text-white">
+                        Adaptive Intelligence Layer
+                      </p>
+                      <p className="mt-1 text-sm leading-7 text-orange-100/80">
+                        Learns your patterns and improves timing, temperature,
+                        and routines across the Lumora system.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </GlassCard>
           </FadeIn>
@@ -523,26 +661,27 @@ function HeroSection() {
 }
 
 /* =====================================================================================
-   PROBLEM
+   COMBINED PROBLEM + REALIZATION
 ===================================================================================== */
 
-function ProblemSection() {
+function CoreProblemSection() {
   return (
     <SectionShell
       id="problem"
       eyebrow="The problem"
-      title="Sleep is not failing in one place."
-      subtitle="The pattern we kept hearing was consistent. More than 80% of people struggle with sleep in some way, and many report 45–90 minute sleep latency before they even get into real rest."
+      title="Sleep is not one problem. It is a system."
+      subtitle="Sleep is not failing in one place. More than 80% of people struggle with sleep in some way, and many report 45–90 minute sleep latency before they even get into real rest."
     >
-      <div className="grid gap-8 lg:grid-cols-[1fr_1fr]">
+      <div className="grid gap-8 lg:grid-cols-[1.02fr_0.98fr]">
         <div className="space-y-6">
           <FadeIn>
             <GlassCard className="rounded-[30px] p-7">
               <p className="text-lg leading-8 text-slate-300">
-                The issue was not a single failure. It was a stack of small
-                disruptions that compounded over the course of a night:
-                overstimulation before bed, overheating after sleep begins, and
-                harsh wake-ups in the morning.
+                What we kept hearing was consistent. The problem was not just
+                darkness. It was overstimulation before bed, overheating after
+                sleep begins, and harsh alarms in the morning. Each one seems
+                small on its own. Together, they shape the whole quality of
+                sleep.
               </p>
 
               <DividerGlow />
@@ -567,11 +706,15 @@ function ProblemSection() {
         </div>
 
         <div className="space-y-6">
-          <FadeIn delay={0.06}>
+          <FadeIn delay={0.05}>
             <GlassCard className="rounded-[30px] p-7">
               <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
-                The real behavior
+                The realization
               </p>
+              <p className="mt-4 text-lg leading-8 text-white">
+                People were stacking solutions. None of them worked together.
+              </p>
+
               <div className="mt-5 space-y-4">
                 {[
                   "A fan for cooling",
@@ -584,14 +727,16 @@ function ProblemSection() {
                     key={item}
                     className="flex items-start gap-3 rounded-2xl border border-white/10 bg-white/5 px-4 py-4"
                   >
-                    <div className="mt-1 h-2 w-2 rounded-full bg-white/70" />
+                    <div className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-white/75" />
                     <p className="text-sm leading-7 text-slate-300">{item}</p>
                   </div>
                 ))}
               </div>
+
               <p className="mt-5 text-sm leading-7 text-slate-400">
-                None of these solutions were built to work together. That
-                fragmentation was the real problem.
+                That fragmentation was the real problem. Sleep is a sequence:
+                falling asleep, staying asleep, and waking naturally. That is
+                what Lumora is now designed around.
               </p>
             </GlassCard>
           </FadeIn>
@@ -602,16 +747,16 @@ function ProblemSection() {
 }
 
 /* =====================================================================================
-   REALIZATION + SHIFT
+   SHIFT
 ===================================================================================== */
 
 function ShiftSection() {
   return (
     <SectionShell
       id="shift"
-      eyebrow="The realization"
-      title="Sleep is not one problem. It is a system."
-      subtitle="That changed the direction of Lumora. Instead of forcing everything into one device, we started designing around the actual phases of sleep."
+      eyebrow="The shift"
+      title="We stopped building one device and started building a coordinated system."
+      subtitle="The pivot is not abstract. It is a more specific architecture with clearer product roles across the full sleep cycle."
     >
       <div className="grid gap-10 lg:grid-cols-[1fr_1fr]">
         <div className="space-y-6">
@@ -627,10 +772,10 @@ function ShiftSection() {
 
           <FadeIn delay={0.05}>
             <p className="text-lg leading-8 text-slate-300">
-              The original all-in-one mask idea was elegant, but it was too
-              broad. Sleep is a sequence, not a single moment. Each phase has
-              different needs, and better outcomes come from coordinating those
-              needs instead of compressing them into one object.
+              The original all-in-one mask idea was elegant, but too broad.
+              Sleep is a sequence, not a single moment. Better outcomes come
+              from coordinating the right conditions at the right time, not from
+              stuffing every feature into one piece of hardware.
             </p>
           </FadeIn>
         </div>
@@ -642,12 +787,12 @@ function ShiftSection() {
             </p>
             <div className="mt-5 space-y-4">
               {[
-                "Essence becomes the foundation",
-                "Caelum handles temperature and overnight comfort",
-                "Sonus supports calming sound without earbuds",
-                "Aurora handles the morning transition",
-                "Voyage organizes the system",
-                "Max explores the premium flagship future of the platform",
+                "Essence becomes the nightly foundation",
+                "Sonus helps guide the fall-asleep phase",
+                "Caelum handles thermal balance through the night",
+                "Aurora completes the morning transition",
+                "Voyage organizes the ecosystem for travel",
+                "Max represents the premium future of the platform",
               ].map((line) => (
                 <div
                   key={line}
@@ -671,7 +816,7 @@ function ShiftSection() {
 function ProductCard({ product }: { product: Product }) {
   return (
     <div className="group relative rounded-[28px] border border-white/10 bg-white/[0.045] p-5 shadow-[0_16px_50px_rgba(0,0,0,0.28)] backdrop-blur-xl transition-all duration-300 hover:-translate-y-1 hover:border-white/20 hover:bg-white/[0.07]">
-      <div className={cn("absolute inset-0 bg-gradient-to-b opacity-70", product.accent)} />
+      <div className={cn("pointer-events-none absolute inset-0 bg-gradient-to-b opacity-70", product.accent)} />
       <div className="relative">
         <div className="flex items-start justify-between gap-3">
           <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
@@ -692,13 +837,7 @@ function ProductCard({ product }: { product: Product }) {
 
         <div className="mt-4 space-y-2">
           {product.bullets.map((bullet) => (
-            <div
-              key={bullet}
-              className="flex items-start gap-3 text-sm leading-6 text-slate-400"
-            >
-              <div className="mt-2 h-1.5 w-1.5 rounded-full bg-white/70" />
-              <span>{bullet}</span>
-            </div>
+            <BulletRow key={bullet} text={bullet} />
           ))}
         </div>
       </div>
@@ -710,9 +849,9 @@ function ProductSystemSection() {
   return (
     <SectionShell
       id="products"
-      eyebrow="The system"
+      eyebrow="Specific products, specific jobs"
       title="Specific products, specific jobs."
-      subtitle="The pivot is not abstract. Lumora now has clearer roles across the system, with each product supporting a specific phase or function."
+      subtitle="The pivot is only meaningful if the products are clearer. Lumora now has defined roles across the system instead of one device trying to do everything."
     >
       <div className="grid gap-10 lg:grid-cols-[0.9fr_1.1fr]">
         <div className="space-y-6">
@@ -744,6 +883,26 @@ function ProductSystemSection() {
                     {line}
                   </div>
                 ))}
+              </div>
+
+              <DividerGlow />
+
+              <div className="space-y-3">
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                  <p className="text-sm font-medium text-white">Better entry point</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-400">
+                    Users can start with Essence and build up, instead of being
+                    forced into a heavy all-in-one device from day one.
+                  </p>
+                </div>
+
+                <div className="rounded-2xl border border-white/10 bg-white/5 px-4 py-4">
+                  <p className="text-sm font-medium text-white">Better long-term model</p>
+                  <p className="mt-2 text-sm leading-7 text-slate-400">
+                    The ecosystem creates room for upgrades, add-ons, premium
+                    tiers, and future intelligence across the entire system.
+                  </p>
+                </div>
               </div>
             </GlassCard>
           </FadeIn>
@@ -800,7 +959,7 @@ function SystemMapSection() {
                     key={line}
                     className="flex items-start gap-3 rounded-2xl border border-white/10 bg-black/20 px-4 py-4"
                   >
-                    <div className="mt-1 h-2 w-2 rounded-full bg-white/70" />
+                    <div className="mt-[10px] h-1.5 w-1.5 shrink-0 rounded-full bg-white/75" />
                     <p className="text-sm leading-7 text-slate-300">{line}</p>
                   </div>
                 ))}
@@ -810,138 +969,141 @@ function SystemMapSection() {
         </div>
 
         <FadeIn delay={0.08}>
-          <GlassCard className="relative min-h-[700px] rounded-[36px] p-0">
-            <div className="border-b border-white/10 px-7 py-6">
-              <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
-                Lumora system map
-              </p>
-              <p className="mt-2 text-lg font-medium text-white">
-                Clear, connected, and product-specific
-              </p>
-            </div>
-
-            <div className="relative h-[620px] overflow-hidden p-6">
-              <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_42%,rgba(255,255,255,0.05),transparent_20%),radial-gradient(circle_at_50%_92%,rgba(251,146,60,0.07),transparent_22%)]" />
-
-              <div className="absolute left-1/2 top-[44%] h-[380px] w-[380px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
-              <div className="absolute left-1/2 top-[44%] h-[470px] w-[470px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
-
-              <svg
-                className="absolute inset-0 h-full w-full"
-                viewBox="0 0 100 100"
-                preserveAspectRatio="none"
-              >
-                <path d="M51 42 C41 28, 30 24, 22 24" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
-                <path d="M53 42 C65 30, 76 28, 84 30" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
-                <path d="M50 46 C46 58, 36 67, 29 75" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
-                <path d="M54 46 C62 58, 72 66, 79 72" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
-              </svg>
-
-              <div className="absolute left-1/2 top-[44%] z-20 w-[250px] -translate-x-1/2 -translate-y-1/2">
-                <div className="relative rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/95 p-6 shadow-[0_0_100px_rgba(255,255,255,0.04)] animate-[lumoraPulse_4.5s_ease-in-out_infinite]">
-                  <div className="absolute inset-3 rounded-full border border-white/10" />
-                  <div className="relative flex h-[160px] flex-col items-center justify-center text-center">
-                    <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
-                      Foundation
-                    </p>
-                    <h3 className="mt-2 text-2xl font-semibold text-white">
-                      Essence
-                    </h3>
-                    <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-400">
-                      Darkness, comfort, structure, and the base layer of the
-                      system.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div className="absolute left-[22%] top-[22%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                    <Volume2 className="h-5 w-5 text-violet-200" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Sonus</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
-                      Fall Asleep
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  Calming soundscapes and wind-down audio without earbuds.
+          <div className="space-y-5">
+            <GlassCard className="relative rounded-[36px] p-0">
+              <div className="border-b border-white/10 px-7 py-6">
+                <p className="text-sm uppercase tracking-[0.2em] text-slate-400">
+                  Lumora system map
+                </p>
+                <p className="mt-2 text-lg font-medium text-white">
+                  Clear, connected, and product-specific
                 </p>
               </div>
 
-              <div className="absolute left-[82%] top-[28%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                    <Thermometer className="h-5 w-5 text-sky-200" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Caelum</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
-                      Stay Asleep
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  PCM inserts that reduce overheating and improve overnight thermal balance.
-                </p>
-              </div>
+              <div className="relative h-[560px] overflow-hidden p-6">
+                <div className="absolute inset-0 bg-[radial-gradient(circle_at_55%_42%,rgba(255,255,255,0.05),transparent_20%),radial-gradient(circle_at_50%_92%,rgba(251,146,60,0.07),transparent_22%)]" />
 
-              <div className="absolute left-[28%] top-[74%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                    <SunMedium className="h-5 w-5 text-orange-200" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Aurora</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
-                      Wake Naturally
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  A dawn-inspired wake light for a gentler morning transition.
-                </p>
-              </div>
+                <div className="absolute left-1/2 top-[48%] h-[340px] w-[340px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+                <div className="absolute left-1/2 top-[48%] h-[430px] w-[430px] -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/5" />
 
-              <div className="absolute left-[80%] top-[70%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
-                    <Briefcase className="h-5 w-5 text-slate-200" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">Voyage</p>
-                    <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
-                      System Carry
-                    </p>
-                  </div>
-                </div>
-                <p className="mt-4 text-sm leading-7 text-slate-400">
-                  Protects, organizes, and transports the Lumora ecosystem.
-                </p>
-              </div>
+                <svg
+                  className="absolute inset-0 h-full w-full"
+                  viewBox="0 0 100 100"
+                  preserveAspectRatio="none"
+                >
+                  <path d="M51 45 C41 30, 30 25, 22 25" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
+                  <path d="M53 45 C65 32, 76 29, 84 31" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
+                  <path d="M50 49 C46 60, 36 69, 29 77" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
+                  <path d="M54 49 C62 60, 72 68, 79 73" fill="none" stroke="rgba(255,255,255,0.16)" strokeWidth="0.55" strokeDasharray="2 2" />
+                </svg>
 
-              <div className="absolute bottom-7 left-1/2 z-20 w-[88%] -translate-x-1/2 rounded-[28px] border border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-6 py-5 shadow-[0_0_80px_rgba(251,146,60,0.10)] animate-[lumoraSoftGlow_3.6s_ease-in-out_infinite]">
-                <div className="flex items-start gap-4">
-                  <div className="rounded-2xl border border-orange-300/25 bg-orange-300/10 p-3">
-                    <Cpu className="h-5 w-5 text-orange-100" />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-white">
-                      Adaptive Intelligence Layer
-                    </p>
-                    <p className="mt-1 text-sm leading-7 text-orange-100/80">
-                      Learns your sleep patterns and improves the system over
-                      time by adjusting timing, temperature, and routines across
-                      Essence, Caelum, Sonus, and Aurora.
-                    </p>
+                <div className="absolute left-1/2 top-[48%] z-20 w-[250px] -translate-x-1/2 -translate-y-1/2">
+                  <div className="relative rounded-full border border-white/15 bg-gradient-to-br from-slate-700/80 to-slate-950/95 p-6 shadow-[0_0_100px_rgba(255,255,255,0.04)] animate-[lumoraPulse_4.5s_ease-in-out_infinite]">
+                    <div className="absolute inset-3 rounded-full border border-white/10" />
+                    <div className="relative flex h-[160px] flex-col items-center justify-center text-center">
+                      <p className="text-[11px] uppercase tracking-[0.24em] text-slate-400">
+                        Foundation
+                      </p>
+                      <h3 className="mt-2 text-2xl font-semibold text-white">
+                        Essence
+                      </h3>
+                      <p className="mt-3 max-w-[12rem] text-sm leading-6 text-slate-400">
+                        Darkness, comfort, structure, and the base layer of the
+                        system.
+                      </p>
+                    </div>
                   </div>
                 </div>
+
+                <div className="absolute left-[22%] top-[22%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <Volume2 className="h-5 w-5 text-violet-200" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">Sonus</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
+                        Fall Asleep
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                    Calming soundscapes and wind-down audio without earbuds.
+                  </p>
+                </div>
+
+                <div className="absolute left-[82%] top-[28%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <Thermometer className="h-5 w-5 text-sky-200" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">Caelum</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
+                        Stay Asleep
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                    PCM inserts that reduce overheating and improve overnight
+                    thermal balance.
+                  </p>
+                </div>
+
+                <div className="absolute left-[28%] top-[76%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <SunMedium className="h-5 w-5 text-orange-200" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">Aurora</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
+                        Wake Naturally
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                    A dawn-inspired wake light for a gentler morning transition.
+                  </p>
+                </div>
+
+                <div className="absolute left-[80%] top-[72%] z-20 w-[210px] -translate-x-1/2 -translate-y-1/2 rounded-[26px] border border-white/10 bg-white/[0.08] p-5 backdrop-blur-xl transition-all duration-300 hover:-translate-y-[calc(50%+4px)] hover:border-white/20">
+                  <div className="flex items-start gap-4">
+                    <div className="rounded-2xl border border-white/10 bg-black/20 p-3">
+                      <Briefcase className="h-5 w-5 text-slate-200" />
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold text-white">Voyage</p>
+                      <p className="mt-1 text-xs uppercase tracking-[0.18em] text-slate-400">
+                        System Carry
+                      </p>
+                    </div>
+                  </div>
+                  <p className="mt-4 text-sm leading-7 text-slate-400">
+                    Protects, organizes, and transports the Lumora ecosystem.
+                  </p>
+                </div>
               </div>
-            </div>
-          </GlassCard>
+            </GlassCard>
+
+            <GlassCard className="rounded-[28px] border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-6 py-5 shadow-[0_0_80px_rgba(251,146,60,0.08)]">
+              <div className="flex items-start gap-4">
+                <div className="rounded-2xl border border-orange-300/25 bg-orange-300/10 p-3">
+                  <Cpu className="h-5 w-5 text-orange-100" />
+                </div>
+                <div>
+                  <p className="text-sm font-semibold text-white">
+                    Adaptive Intelligence Layer
+                  </p>
+                  <p className="mt-1 text-sm leading-7 text-orange-100/80">
+                    Learns your sleep patterns and improves the system over time
+                    by adjusting timing, temperature, and routines across
+                    Essence, Caelum, Sonus, and Aurora.
+                  </p>
+                </div>
+              </div>
+            </GlassCard>
+          </div>
         </FadeIn>
       </div>
     </SectionShell>
@@ -1295,7 +1457,7 @@ export default function PivotPage() {
 
       <main className="relative z-10">
         <HeroSection />
-        <ProblemSection />
+        <CoreProblemSection />
         <ShiftSection />
         <ProductSystemSection />
         <SystemMapSection />
@@ -1333,18 +1495,6 @@ export default function PivotPage() {
           }
           100% {
             box-shadow: 0 0 60px rgba(255, 255, 255, 0.04);
-          }
-        }
-
-        @keyframes lumoraSoftGlow {
-          0% {
-            opacity: 0.86;
-          }
-          50% {
-            opacity: 1;
-          }
-          100% {
-            opacity: 0.86;
           }
         }
 
