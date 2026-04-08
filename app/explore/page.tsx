@@ -439,7 +439,7 @@ function HeroSection() {
             <FadeIn>
               <div className="mb-6 inline-flex items-center gap-2 rounded-full border border-orange-300/20 bg-orange-300/8 px-4 py-2 text-[11px] font-medium uppercase tracking-[0.24em] text-orange-100">
                 <Sparkles className="h-3.5 w-3.5" />
-                The Pivot
+                Lumora V2
               </div>
             </FadeIn>
 
@@ -457,78 +457,7 @@ function HeroSection() {
               </p>
             </FadeIn>
 
-            <FadeIn delay={0.12}>
-              <div className="mt-8 rounded-[32px] border border-white/10 bg-gradient-to-br from-white/[0.07] to-white/[0.03] p-6 shadow-[0_20px_80px_rgba(0,0,0,0.34)] backdrop-blur-xl">
-                <div className="flex items-center justify-between gap-4 border-b border-white/10 pb-5">
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.24em] text-slate-400">
-                      The Lumora product ecosystem
-                    </p>
-                    <p className="mt-2 text-lg font-medium text-white">
-                      One coordinated system across the full sleep cycle
-                    </p>
-                  </div>
-                  <div className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-300">
-                    Modular
-                  </div>
-                </div>
-
-                <div className="mt-6 grid gap-4 sm:grid-cols-3">
-                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                        <Moon className="h-5 w-5 text-cyan-200" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-white">Fall Asleep</p>
-                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                          Start sleep well
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm leading-7 text-slate-400">
-                      Essence and Sonus reduce sleep friction and create a calmer
-                      transition into rest.
-                    </p>
-                  </div>
-
-                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                        <Thermometer className="h-5 w-5 text-sky-200" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-white">Stay Asleep</p>
-                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                          Preserve stability
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm leading-7 text-slate-400">
-                      Caelum supports thermal balance so sleep is less likely to
-                      break from overheating and discomfort.
-                    </p>
-                  </div>
-
-                  <div className="rounded-[24px] border border-white/10 bg-black/20 p-5">
-                    <div className="flex items-center gap-3">
-                      <div className="rounded-2xl border border-white/10 bg-white/5 p-3">
-                        <SunMedium className="h-5 w-5 text-orange-200" />
-                      </div>
-                      <div>
-                        <p className="text-sm font-medium text-white">Wake Naturally</p>
-                        <p className="text-xs uppercase tracking-[0.16em] text-slate-400">
-                          End sleep gently
-                        </p>
-                      </div>
-                    </div>
-                    <p className="mt-4 text-sm leading-7 text-slate-400">
-                      Aurora completes the experience with a more elegant morning
-                      transition than a harsh alarm.
-                    </p>
-                  </div>
-                </div>
-
+          
                 <div className="mt-5 rounded-[24px] border border-orange-300/20 bg-orange-300/8 px-5 py-4">
                   <div className="flex items-start gap-3">
                     <Cpu className="mt-0.5 h-5 w-5 shrink-0 text-orange-100" />
@@ -637,21 +566,7 @@ function HeroSection() {
                   </div>
                 </div>
 
-                <div className="mt-5 rounded-[24px] border border-orange-300/20 bg-gradient-to-r from-orange-300/10 via-orange-200/8 to-transparent px-5 py-4 shadow-[0_0_80px_rgba(251,146,60,0.08)]">
-                  <div className="flex items-start gap-3">
-                    <Cpu className="mt-0.5 h-5 w-5 shrink-0 text-orange-100" />
-                    <div>
-                      <p className="text-sm font-semibold text-white">
-                        Adaptive Intelligence Layer
-                      </p>
-                      <p className="mt-1 text-sm leading-7 text-orange-100/80">
-                        Learns your patterns and improves timing, temperature,
-                        and routines across the Lumora system.
-                      </p>
-                    </div>
-                  </div>
-                </div>
-              </div>
+                              </div>
             </GlassCard>
           </FadeIn>
         </div>
@@ -789,9 +704,7 @@ function ShiftSection() {
               {[
                 "Essence becomes the nightly foundation",
                 "Sonus helps guide the fall-asleep phase",
-                "Caelum handles thermal balance through the night",
                 "Aurora completes the morning transition",
-                "Voyage organizes the ecosystem for travel",
                 "Max represents the premium future of the platform",
               ].map((line) => (
                 <div
