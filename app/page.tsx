@@ -244,8 +244,7 @@ function InteractiveMaskDiagram() {
         >
       <div className="mt-6">
        
-          Learn more about our pivot
-          <ArrowRight className="w-4 h-4 opacity-80" />
+          Learn more about our pivot <ArrowRight className="w-4 h-4 opacity-80" />
        
       </div>
          </a>
