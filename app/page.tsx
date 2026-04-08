@@ -244,7 +244,7 @@ function InteractiveMaskDiagram() {
         >
       <div className="mt-6">
        
-          Learn more about the pivot
+          Learn more about our pivot
           <ArrowRight className="w-4 h-4 opacity-80" />
        
       </div>
@@ -371,7 +371,7 @@ export default function LumoraSiteV4() {
             <nav className="hidden lg:flex items-center gap-6 text-sm">
               <a
                 href="https://uselumora.co/explore"
-                className="text-slate-300 hover:text-white transition-colors
+                className="text-slate-300 hover:text-white transition-colors"
               >
                 Pivot
               </a>
