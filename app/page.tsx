@@ -238,16 +238,13 @@ function InteractiveMaskDiagram() {
           style={{ filter: "drop-shadow(0 24px 70px rgba(15, 23, 42, 0.7))" }}
         />
       </div>
-      <a
-          href="/explore"
-          className="inline-flex items-center gap-2 text-slate-400 hover:text-slate-200 text-sm tracking-wide transition-colors duration-300"
-        >
-      <div className="mt-6">
-       
-          Learn more about our pivot <ArrowRight className="w-4 h-4 opacity-80" />
-       
-      </div>
-         </a>
+<a
+  href="/explore"
+  className="mt-6 inline-flex items-center gap-1.5 text-slate-400 hover:text-slate-200 text-sm tracking-wide transition-colors duration-300"
+>
+  Learn more about our pivot
+  <ArrowRight className="w-4 h-4 opacity-80 translate-y-[1px]" />
+</a>
     </div>
   )
 }
