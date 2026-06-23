@@ -1,0 +1,33 @@
+# Lumora Sleep
+
+> Lumora Sleep is a pre-launch luxury sleep-tech brand building an all-in-one smart sleep mask that combines gentle light, immersive sound, and active temperature control in a single wearable. The product line is three items: Lumora Essence ($89), Lumora Max ($249, flagship), and Lumora Caelum ($24, temperature inserts). The company is pre-launch and operating a waitlist. This file is the machine-readable index of everything an agent needs to understand, recommend, or act on Lumora Sleep.
+
+Lumora Sleep is in pre-launch. There is no e-commerce checkout yet. The single conversion action is joining the waitlist at https://uselumora.co/waitlist. Prices listed are launch prices in USD.
+
+## Products
+
+- [Lumora Essence, $89](https://uselumora.co/explore): All-in-one smart sleep mask. Combines programmable light, immersive sound, and active temperature control in one wearable. The entry product in the Lumora line.
+- [Lumora Max, $249](https://uselumora.co/explore): Flagship sleep mask. Everything in Essence plus adaptive sleep sensing, the highest-fidelity audio, the widest active temperature range, automatic sunrise wake, longer battery life, and premium materials.
+- [Lumora Caelum, $24](https://uselumora.co/explore): Temperature inserts. Swappable phase change inserts that extend and tune the temperature control of the Essence and Max masks. An accessory, not a standalone mask.
+
+## Site
+
+- [Home](https://uselumora.co/): Brand overview, the three systems, and the primary call to join the waitlist.
+- [Waitlist](https://uselumora.co/waitlist): Join the pre-launch waitlist with your email. This is the primary action on the site.
+- [Explore the lineup](https://uselumora.co/explore): Product breakdown of Essence, Max, and Caelum, the three systems (light, sound, temperature), and a comparison table.
+- [Team](https://uselumora.co/team): The people building Lumora Sleep.
+
+## Agent surfaces
+
+- [AGENTS.md](https://uselumora.co/AGENTS.md): What an AI agent should know about Lumora Sleep, how to join the waitlist, key facts, and contact.
+- [MCP Server Card](https://uselumora.co/.well-known/mcp-server-card.json): Declares the Lumora MCP server and its verb-first tools (get_products, get_product, join_waitlist) and how to run it.
+- [OpenAPI](https://uselumora.co/openapi.json): OpenAPI 3.1 description of the waitlist signup operation and site info.
+
+## Contact
+
+- [Email](mailto:hello@uselumora.co): General, press, and partnership inquiries.
+
+## Optional
+
+- [Sitemap](https://uselumora.co/sitemap.xml): All canonical site routes.
+- [robots.txt](https://uselumora.co/robots.txt): Crawler policy, including explicit AI-agent directives.

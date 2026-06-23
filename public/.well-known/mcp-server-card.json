@@ -1,0 +1,35 @@
+{
+  "$schema": "https://agentsfirst.dev/schemas/mcp-server-card.v0.json",
+  "name": "lumora-sleep",
+  "version": "1.0.0",
+  "description": "MCP server for Lumora Sleep, a pre-launch luxury sleep-tech brand. Exposes verb-first tools to list products, fetch a single product, and join the pre-launch waitlist.",
+  "homepage": "https://uselumora.co",
+  "documentation": "https://uselumora.co/AGENTS.md",
+  "agents_md": "https://uselumora.co/AGENTS.md",
+  "llms_txt": "https://uselumora.co/llms.txt",
+  "openapi": "https://uselumora.co/openapi.json",
+  "license": "All rights reserved",
+  "author": { "name": "Lumora Sleep", "url": "https://uselumora.co" },
+  "contact": { "email": "hello@uselumora.co" },
+  "transport": "stdio",
+  "install": "npx -y @lumora/mcp-server",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/lumora-sleep/lumora-mcp-server"
+  },
+  "tools": [
+    {
+      "name": "get_products",
+      "description": "List all Lumora Sleep products (Essence $89, Max $249, Caelum $24) with prices and one-line descriptions."
+    },
+    {
+      "name": "get_product",
+      "description": "Get full details for a single Lumora product by id or name (essence | max | caelum)."
+    },
+    {
+      "name": "join_waitlist",
+      "description": "Join the Lumora Sleep pre-launch waitlist by submitting an email address and optional product interest."
+    }
+  ],
+  "capabilities": { "tools": { "listChanged": false } }
+}

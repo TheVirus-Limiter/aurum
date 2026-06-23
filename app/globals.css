@@ -1,0 +1,263 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* =====================================================================
+   LUMORA brand design tokens
+   Cinematic near-black with a single VIOLET accent (the mask rim light).
+   No colorful gradients. Depth comes from grain, light falloff and type.
+   ===================================================================== */
+@theme {
+  --color-base: #08070c;
+  --color-base-2: #0e0d15;
+  --color-base-3: #16141f;
+  --color-ink: #eceaf4;
+  --color-mist: #b8b3c7;
+  --color-faint: #837e96;
+  --color-iris: #8b7cff;
+  --color-iris-soft: #a99aff;
+  --color-iris-deep: #5b3fb0;
+
+  --font-display: var(--font-fraunces), ui-serif, Georgia, "Times New Roman", serif;
+  --font-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, sans-serif;
+
+  --ease-lux: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+/* shadcn token bridge (kept so the existing UI primitives still compile),
+   retuned to the violet dark palette. */
+:root {
+  --background: #08070c;
+  --foreground: #eceaf4;
+  --card: #0e0d15;
+  --card-foreground: #eceaf4;
+  --popover: #0e0d15;
+  --popover-foreground: #eceaf4;
+  --primary: #8b7cff;
+  --primary-foreground: #0a0913;
+  --secondary: #1a1726;
+  --secondary-foreground: #eceaf4;
+  --muted: #1a1726;
+  --muted-foreground: #b8b3c7;
+  --accent: #1a1726;
+  --accent-foreground: #eceaf4;
+  --destructive: #c0556a;
+  --destructive-foreground: #eceaf4;
+  --border: rgba(236, 234, 244, 0.12);
+  --input: rgba(236, 234, 244, 0.14);
+  --ring: #8b7cff;
+  --radius: 0.75rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --font-sans: var(--font-inter);
+  --font-serif: var(--font-fraunces);
+}
+
+@layer base {
+  * {
+    border-color: var(--border);
+  }
+
+  html {
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
+  }
+
+  body {
+    background-color: var(--color-base);
+    color: var(--color-ink);
+    overflow-x: hidden;
+    font-feature-settings: "kern", "liga", "calt";
+  }
+
+  ::selection {
+    background: rgba(139, 124, 255, 0.32);
+    color: #fff;
+  }
+
+  :focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 2px var(--color-base), 0 0 0 4px rgba(139, 124, 255, 0.8);
+    border-radius: 6px;
+  }
+
+  /* Fraunces: refined, low-wonk cut, optical sizing follows the rendered size */
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-variation-settings: "SOFT" 0, "WONK" 0;
+  }
+}
+
+@layer utilities {
+  .eyebrow {
+    font-family: var(--font-body);
+    text-transform: uppercase;
+    letter-spacing: 0.26em;
+    font-size: 0.6875rem;
+    font-weight: 500;
+    color: var(--color-iris-soft);
+  }
+
+  /* a thin violet hairline that fades at both ends */
+  .hairline {
+    height: 1px;
+    width: 100%;
+    background: linear-gradient(
+      to right,
+      transparent,
+      rgba(139, 124, 255, 0.55),
+      transparent
+    );
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* a soft violet glow for primary actions */
+  .glow-iris {
+    box-shadow: 0 0 0 1px rgba(139, 124, 255, 0.35),
+      0 10px 40px -8px rgba(139, 124, 255, 0.55);
+  }
+
+  /* gallery "plate" framing for product renders so mixed backgrounds
+     read as a consistent set */
+  .plate {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    background: radial-gradient(
+        120% 120% at 50% 0%,
+        rgba(139, 124, 255, 0.1),
+        transparent 55%
+      ),
+      #0b0a12;
+  }
+  .plate::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    box-shadow: inset 0 0 120px 24px rgba(6, 5, 10, 0.85);
+  }
+
+  .link-quiet {
+    position: relative;
+    transition: color 0.3s var(--ease-lux);
+  }
+  .link-quiet::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -2px;
+    height: 1px;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: right;
+    background: currentColor;
+    transition: transform 0.4s var(--ease-lux);
+  }
+  .link-quiet:hover::after {
+    transform: scaleX(1);
+    transform-origin: left;
+  }
+}
+
+/* ===================== motion ===================== */
+@keyframes lumora-drift {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+@keyframes lumora-breathe {
+  0%,
+  100% {
+    opacity: 0.35;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1.06);
+  }
+}
+@keyframes lumora-twinkle {
+  0%,
+  100% {
+    opacity: 0.15;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+@keyframes lumora-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+@keyframes lumora-scrollcue {
+  0% {
+    transform: translateY(0);
+    opacity: 0;
+  }
+  35% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+}
+
+.anim-drift {
+  animation: lumora-drift 7s var(--ease-lux) infinite;
+}
+.anim-breathe {
+  animation: lumora-breathe 7s ease-in-out infinite;
+}
+.anim-marquee {
+  animation: lumora-marquee 38s linear infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "openapi": "3.1.0",
+  "info": {
+    "title": "Lumora Sleep Public API",
+    "version": "1.0.0",
+    "summary": "Pre-launch waitlist signup for Lumora Sleep.",
+    "description": "Lumora Sleep is a pre-launch luxury sleep-tech brand. There is no commerce API. The only public operation is joining the waitlist, which posts an email to a third-party form service. Product and brand facts live at https://uselumora.co/llms.txt and https://uselumora.co/AGENTS.md.",
+    "contact": {
+      "name": "Lumora Sleep",
+      "email": "hello@uselumora.co",
+      "url": "https://uselumora.co"
+    },
+    "license": { "name": "All rights reserved" }
+  },
+  "servers": [
+    {
+      "url": "https://formspree.io/f/xdkogkpv",
+      "description": "Third-party form service that receives Lumora waitlist signups."
+    }
+  ],
+  "externalDocs": {
+    "description": "Agent brief (AGENTS.md)",
+    "url": "https://uselumora.co/AGENTS.md"
+  },
+  "paths": {
+    "/": {
+      "post": {
+        "operationId": "joinWaitlist",
+        "summary": "Join the Lumora Sleep pre-launch waitlist",
+        "description": "Submits an email address to the Lumora Sleep waitlist. This endpoint is hosted by a third-party form service, not by uselumora.co. The only required field is a valid email. There is no payment.",
+        "tags": ["waitlist"],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": { "$ref": "#/components/schemas/WaitlistSignup" },
+              "examples": {
+                "basic": { "value": { "email": "sleeper@example.com" } }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Signup accepted by the form service.",
+            "content": {
+              "application/json": {
+                "schema": { "$ref": "#/components/schemas/WaitlistResult" }
+              }
+            }
+          },
+          "400": { "description": "Missing or invalid email address." }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "WaitlistSignup": {
+        "type": "object",
+        "required": ["email"],
+        "properties": {
+          "email": {
+            "type": "string",
+            "format": "email",
+            "description": "Email address to add to the waitlist."
+          },
+          "describes_you": {
+            "type": "string",
+            "description": "Optional note about who the person is."
+          },
+          "product_interest": {
+            "type": "string",
+            "description": "Optional product the user is most interested in.",
+            "enum": ["Lumora Essence", "Lumora Max", "Lumora Caelum"]
+          }
+        }
+      },
+      "WaitlistResult": {
+        "type": "object",
+        "properties": {
+          "ok": { "type": "boolean" },
+          "message": { "type": "string" }
+        }
+      }
+    }
+  }
+}
