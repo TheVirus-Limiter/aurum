@@ -49,8 +49,13 @@ export default function WaitlistPage() {
           style={{ background: "radial-gradient(circle, rgba(139,124,255,0.16), transparent 62%)" }}
         />
         {/* live 3D mask, draggable, fills the right side on large screens */}
-        <div className="absolute right-[-2%] top-0 hidden h-full w-[48vw] lg:block">
-          <ProductViewer url="/models/LumoraMax.glb" fallback={SITE.heroImage} alt="Lumora sleep mask" />
+        <div className="absolute right-[2%] top-0 hidden h-full w-[44vw] lg:block">
+          <ProductViewer
+            url="/models/LumoraMax.glb"
+            fallback={SITE.heroImage}
+            alt="Lumora sleep mask"
+            distance={6}
+          />
         </div>
 
         {/* blend the hero into the next section so there is no hard seam */}

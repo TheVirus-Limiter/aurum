@@ -21,10 +21,12 @@ export default function ProductViewer({
   url,
   fallback,
   alt,
+  distance,
 }: {
   url: string
   fallback: string
   alt: string
+  distance?: number
 }) {
   const reduce = useReducedMotion()
   const fine = useFinePointer()
@@ -45,7 +47,7 @@ export default function ProductViewer({
 
   return (
     <div ref={ref} className="absolute inset-0">
-      {inView && <ProductCanvas url={url} />}
+      {inView && <ProductCanvas url={url} distance={distance} />}
       {inView && fine && (
         <span className="pointer-events-none absolute bottom-2.5 right-2.5 inline-flex items-center gap-1 rounded-full border border-ink/10 bg-base/60 px-2.5 py-1 text-[0.6rem] uppercase tracking-wider text-mist backdrop-blur-sm">
           <RotateCw className="h-3 w-3" />

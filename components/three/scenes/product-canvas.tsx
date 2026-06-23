@@ -6,13 +6,22 @@ import { Environment, Lightformer, OrbitControls, AdaptiveDpr } from "@react-thr
 import { FittedModel } from "@/components/three/fitted-model"
 import { useFinePointer } from "@/lib/use-fine-pointer"
 
-/** Compact, draggable product viewer for the collection cards. */
-export default function ProductCanvas({ url }: { url: string }) {
+/** Compact, draggable product viewer. `distance` pulls the camera back so the
+ *  wide mask frames cleanly in taller containers. */
+export default function ProductCanvas({
+  url,
+  distance = 3.4,
+  fit = 2.3,
+}: {
+  url: string
+  distance?: number
+  fit?: number
+}) {
   const fine = useFinePointer()
   return (
     <Canvas
       dpr={[1, 1.5]}
-      camera={{ position: [0, 0, 3.4], fov: 35 }}
+      camera={{ position: [0, 0, distance], fov: 35 }}
       gl={{ alpha: true, antialias: true, powerPreference: "high-performance" }}
       frameloop="always"
     >
@@ -25,7 +34,7 @@ export default function ProductCanvas({ url }: { url: string }) {
       </Environment>
 
       <Suspense fallback={null}>
-        <FittedModel url={url} target={2.3} />
+        <FittedModel url={url} target={fit} />
       </Suspense>
 
       <OrbitControls
