@@ -4,6 +4,7 @@ import SiteFooter from "@/components/site/site-footer"
 import WaitlistForm from "@/components/site/waitlist-form"
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal"
 import { Icon } from "@/components/site/icon"
+import ProductViewer from "@/components/site/product-viewer"
 import { whyJoin, faqs, SITE } from "@/lib/site-content"
 
 export const metadata: Metadata = {
@@ -29,15 +30,14 @@ export default function WaitlistPage() {
     <main className="relative">
       {/* slim, distraction-free header */}
       <header className="fixed inset-x-0 top-0 z-[90] border-b border-ink/10 bg-base/75 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-3.5 sm:px-8">
+        <div className="mx-auto flex max-w-6xl items-center justify-between px-5 py-2.5 sm:px-8">
           <a href="/" className="inline-flex items-center gap-2 text-sm text-mist hover:text-ink">
             <ArrowLeft className="h-4 w-4" />
             <span className="hidden sm:inline">Back to Lumora</span>
           </a>
           <a href="/">
-            <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-12 w-auto sm:h-14" />
+            <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-[4.5rem] w-auto sm:h-[5.25rem]" />
           </a>
-          <span className="w-24 text-right text-xs text-faint">By invitation</span>
         </div>
       </header>
 
@@ -48,15 +48,18 @@ export default function WaitlistPage() {
           className="pointer-events-none absolute right-[-10%] top-[10%] h-[42rem] w-[42rem] max-w-[80vw] rounded-full blur-3xl anim-breathe"
           style={{ background: "radial-gradient(circle, rgba(139,124,255,0.16), transparent 62%)" }}
         />
-        <img
+        {/* live 3D mask, draggable, fills the right side on large screens */}
+        <div className="absolute right-[-2%] top-0 hidden h-full w-[48vw] lg:block">
+          <ProductViewer url="/models/LumoraMax.glb" fallback={SITE.heroImage} alt="Lumora sleep mask" />
+        </div>
+
+        {/* blend the hero into the next section so there is no hard seam */}
+        <div
           aria-hidden
-          src={SITE.heroImage}
-          alt=""
-          className="pointer-events-none absolute right-[-4%] top-1/2 hidden w-[40vw] max-w-xl -translate-y-1/2 opacity-50 lg:block"
-          style={{ filter: "drop-shadow(0 30px 90px rgba(139,124,255,0.4))" }}
+          className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-40 bg-gradient-to-b from-transparent to-base-2"
         />
 
-        <div className="relative mx-auto w-full max-w-6xl">
+        <div className="relative z-20 mx-auto w-full max-w-6xl">
           <div className="max-w-xl">
             <Reveal>
               <p className="eyebrow mb-5">By invitation. For people who take rest seriously.</p>
@@ -88,7 +91,7 @@ export default function WaitlistPage() {
       </section>
 
       {/* why join */}
-      <section className="border-t border-ink/10 bg-base-2 px-5 py-24 sm:px-8 sm:py-32">
+      <section className="bg-base-2 px-5 py-24 sm:px-8 sm:py-32">
         <div className="mx-auto max-w-6xl">
           <Reveal className="max-w-2xl">
             <p className="eyebrow mb-4">Why join now</p>
