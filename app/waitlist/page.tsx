@@ -4,7 +4,7 @@ import SiteFooter from "@/components/site/site-footer"
 import WaitlistForm from "@/components/site/waitlist-form"
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal"
 import { Icon } from "@/components/site/icon"
-import ProductViewer from "@/components/site/product-viewer"
+import WaitlistModel from "@/components/site/waitlist-model"
 import { whyJoin, faqs, SITE } from "@/lib/site-content"
 
 export const metadata: Metadata = {
@@ -36,7 +36,7 @@ export default function WaitlistPage() {
             <span className="hidden sm:inline">Back to Lumora</span>
           </a>
           <a href="/">
-            <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-[4.5rem] w-auto sm:h-[5.25rem]" />
+            <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-[5.4rem] w-auto sm:h-[6.3rem]" />
           </a>
         </div>
       </header>
@@ -50,12 +50,7 @@ export default function WaitlistPage() {
         />
         {/* live 3D mask, draggable, fills the right side on large screens */}
         <div className="absolute right-[2%] top-0 hidden h-full w-[44vw] lg:block">
-          <ProductViewer
-            url="/models/LumoraMax.glb"
-            fallback={SITE.heroImage}
-            alt="Lumora sleep mask"
-            distance={6}
-          />
+          <WaitlistModel />
         </div>
 
         {/* blend the hero into the next section so there is no hard seam */}
