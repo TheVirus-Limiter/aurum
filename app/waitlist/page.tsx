@@ -42,7 +42,7 @@ export default function WaitlistPage() {
       </header>
 
       {/* hero with the form above the fold */}
-      <section className="relative flex min-h-screen items-center overflow-hidden px-5 pt-28 sm:px-8">
+      <section className="relative flex min-h-screen items-start overflow-hidden px-5 pb-20 pt-36 sm:px-8 sm:pt-40">
         <div
           aria-hidden
           className="pointer-events-none absolute right-[-10%] top-[10%] h-[42rem] w-[42rem] max-w-[80vw] rounded-full blur-3xl anim-breathe"
