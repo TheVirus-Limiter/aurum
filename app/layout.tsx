@@ -91,7 +91,10 @@ const orgJsonLd = {
       email: "hello@uselumora.co",
       description:
         "Lumora Sleep is a luxury sleep-tech brand building an all-in-one smart sleep mask that combines light, sound, and temperature control.",
-      sameAs: ["https://www.instagram.com/lumorasleep"],
+      sameAs: [
+        "https://www.instagram.com/lumorasleep",
+        "https://www.linkedin.com/company/lumorasleep",
+      ],
     },
     {
       "@type": "WebSite",

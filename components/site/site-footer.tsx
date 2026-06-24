@@ -1,4 +1,4 @@
-import { Instagram, Mail } from "lucide-react"
+import { Instagram, Linkedin, Mail } from "lucide-react"
 import { SITE } from "@/lib/site-content"
 
 export default function SiteFooter() {
@@ -26,6 +26,11 @@ export default function SiteFooter() {
               <li>
                 <a href="/explore" className="link-quiet hover:text-ink">
                   The lineup
+                </a>
+              </li>
+              <li>
+                <a href="/blog" className="link-quiet hover:text-ink">
+                  The journal
                 </a>
               </li>
               <li>
@@ -67,6 +72,17 @@ export default function SiteFooter() {
                 >
                   <Instagram className="h-4 w-4 text-faint transition-colors group-hover:text-iris" />
                   {SITE.instagramHandle}
+                </a>
+              </li>
+              <li>
+                <a
+                  href={SITE.linkedin}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group inline-flex items-center gap-3 hover:text-ink"
+                >
+                  <Linkedin className="h-4 w-4 text-faint transition-colors group-hover:text-iris" />
+                  LinkedIn
                 </a>
               </li>
             </ul>

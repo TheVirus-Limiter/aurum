@@ -73,6 +73,12 @@ export default function SiteHeader() {
                 {l.label}
               </button>
             ))}
+            <a
+              href="/blog"
+              className="link-quiet text-[0.8rem] font-medium tracking-wide text-mist hover:text-ink"
+            >
+              Journal
+            </a>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -129,10 +135,20 @@ export default function SiteHeader() {
                   {l.label}
                 </motion.button>
               ))}
+              <motion.a
+                href="/blog"
+                initial={{ opacity: 0, y: 16 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.08 + navLinks.length * 0.06, ease: [0.22, 1, 0.36, 1] }}
+                onClick={() => setMenuOpen(false)}
+                className="font-display text-left text-4xl font-light text-ink"
+              >
+                Journal
+              </motion.a>
               <motion.button
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.08 + navLinks.length * 0.06 }}
+                transition={{ delay: 0.08 + (navLinks.length + 1) * 0.06 }}
                 onClick={() => goTo("#waitlist")}
                 className="mt-6 w-full rounded-full bg-ink px-6 py-4 text-center text-sm font-semibold text-[#0a0913]"
               >

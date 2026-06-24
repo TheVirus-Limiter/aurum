@@ -10,6 +10,7 @@ export const SITE = {
   email: "hello@uselumora.co",
   instagram: "https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==",
   instagramHandle: "@lumorasleep",
+  linkedin: "https://www.linkedin.com/company/lumorasleep",
 
   // Waitlist delivery. Static-site friendly (no backend required).
   //  - "web3forms": free, 250 submissions/month. Paste a public access key

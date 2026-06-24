@@ -261,3 +261,80 @@
     scroll-behavior: auto !important;
   }
 }
+
+/* ===================== blog prose ===================== */
+.prose-lumora {
+  color: var(--color-mist);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+}
+.prose-lumora > * + * {
+  margin-top: 1.25rem;
+}
+.prose-lumora h2 {
+  font-family: var(--font-display);
+  font-weight: 300;
+  color: var(--color-ink);
+  font-size: clamp(1.6rem, 3vw, 2.1rem);
+  line-height: 1.2;
+  letter-spacing: -0.01em;
+  margin-top: 2.75rem;
+}
+.prose-lumora h3 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  color: var(--color-ink);
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+.prose-lumora h2:first-child,
+.prose-lumora h3:first-child {
+  margin-top: 0;
+}
+.prose-lumora a {
+  color: var(--color-iris-soft);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  text-decoration-color: rgba(169, 154, 255, 0.4);
+  transition: color 0.3s var(--ease-lux);
+}
+.prose-lumora a:hover {
+  color: #fff;
+}
+.prose-lumora strong {
+  color: var(--color-ink);
+  font-weight: 600;
+}
+.prose-lumora ul {
+  list-style: none;
+  padding-left: 0;
+}
+.prose-lumora ul li {
+  position: relative;
+  padding-left: 1.4rem;
+  margin-top: 0.6rem;
+}
+.prose-lumora ul li::before {
+  content: "";
+  position: absolute;
+  left: 0.15rem;
+  top: 0.72em;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 999px;
+  background: var(--color-iris);
+}
+.prose-lumora ol {
+  list-style: decimal;
+  padding-left: 1.3rem;
+}
+.prose-lumora ol li {
+  margin-top: 0.6rem;
+  padding-left: 0.3rem;
+}
+.prose-lumora blockquote {
+  border-left: 2px solid rgba(139, 124, 255, 0.5);
+  padding-left: 1.25rem;
+  color: var(--color-ink);
+  font-style: italic;
+}
