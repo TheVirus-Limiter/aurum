@@ -129,14 +129,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         <div className="mx-auto max-w-3xl">
           <a
             href="/blog"
-            className="inline-flex items-center gap-2 text-sm text-mist transition-colors hover:text-ink"
+            className="inline-flex w-fit items-center gap-2 text-sm text-mist transition-colors hover:text-ink"
           >
             <ArrowLeft className="h-4 w-4" />
             The Journal
           </a>
           <a
             href={`/blog/category/${slugifyCategory(post.category)}`}
-            className="eyebrow mt-8 inline-block transition-colors hover:text-ink"
+            className="eyebrow mt-9 block w-fit transition-colors hover:text-ink"
           >
             {post.category}
           </a>

@@ -6,6 +6,7 @@ import { Reveal } from "@/components/site/reveal"
 import {
   blogPosts,
   blogCategories,
+  categoryList,
   postsByCategory,
   slugifyCategory,
   type BlogPost,
@@ -58,11 +59,11 @@ export default function BlogIndex() {
       <PageHeader active="blog" />
 
       {/* hero */}
-      <section className="relative flex min-h-[52vh] items-center overflow-hidden px-5 pt-32 sm:px-8">
+      <section className="relative overflow-hidden px-5 pb-16 pt-36 sm:px-8 sm:pt-40">
         <div
           aria-hidden
-          className="pointer-events-none absolute right-[8%] top-[18%] h-[32rem] w-[32rem] max-w-[80vw] rounded-full blur-3xl anim-breathe"
-          style={{ background: "radial-gradient(circle, rgba(139,124,255,0.13), transparent 62%)" }}
+          className="pointer-events-none absolute right-[6%] top-[12%] h-[34rem] w-[34rem] max-w-[80vw] rounded-full blur-3xl anim-breathe"
+          style={{ background: "radial-gradient(circle, rgba(139,124,255,0.14), transparent 62%)" }}
         />
         <div className="mx-auto w-full max-w-7xl">
           <Reveal className="max-w-3xl">
@@ -75,11 +76,24 @@ export default function BlogIndex() {
               temperature, and the habits behind deep and consistent rest.
             </p>
           </Reveal>
+
+          {/* explore by topic */}
+          <Reveal delay={0.08} className="mt-10 flex flex-wrap gap-2.5">
+            {categoryList.map((c) => (
+              <a
+                key={c.slug}
+                href={`/blog/category/${c.slug}`}
+                className="rounded-full border border-ink/12 bg-base-2 px-4 py-2 text-sm text-mist transition-colors hover:border-iris/30 hover:text-ink"
+              >
+                {c.name}
+              </a>
+            ))}
+          </Reveal>
         </div>
       </section>
 
       {/* featured */}
-      <section className="border-t border-ink/10 bg-base-2 px-5 py-20 sm:px-8">
+      <section className="bg-base-2 px-5 py-20 sm:px-8">
         <div className="mx-auto max-w-7xl">
           <p className="eyebrow mb-8">Latest</p>
           <div className="grid gap-6 md:grid-cols-3">
