@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next"
-import { blogPosts } from "@/lib/blog"
+import { blogPosts, categoryList } from "@/lib/blog"
 
 const BASE = "https://uselumora.co"
 
@@ -14,6 +14,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/team/`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ]
 
+  const categories: MetadataRoute.Sitemap = categoryList.map((c) => ({
+    url: `${BASE}/blog/category/${c.slug}/`,
+    lastModified: now,
+    changeFrequency: "weekly",
+    priority: 0.65,
+  }))
+
   const posts: MetadataRoute.Sitemap = blogPosts.map((p) => ({
     url: `${BASE}/blog/${p.slug}/`,
     lastModified: p.date,
@@ -21,5 +28,5 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...posts]
+  return [...staticPages, ...categories, ...posts]
 }

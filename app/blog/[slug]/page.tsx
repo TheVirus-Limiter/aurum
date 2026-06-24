@@ -4,9 +4,49 @@ import { ArrowLeft, ArrowRight } from "lucide-react"
 import { marked } from "marked"
 import PageHeader from "@/components/site/page-header"
 import SiteFooter from "@/components/site/site-footer"
-import { getAllPosts, getPostBySlug, getRelated } from "@/lib/blog"
+import { getAllPosts, getPostBySlug, getRelated, slugifyCategory } from "@/lib/blog"
 
 marked.use({ gfm: true })
+
+const CATEGORY_PITCH: Record<string, { headline: string; body: string }> = {
+  "Sleep Masks": {
+    headline: "A sleep mask, reimagined.",
+    body: "Lumora builds light, sound, and temperature into one weightless mask. Founding members get first access and pricing we will not offer again.",
+  },
+  "Light and Circadian Rhythm": {
+    headline: "Wake with light, not shock.",
+    body: "Lumora's light system eases you down at night and lifts you out of sleep with a gradual dawn. Join the founding waitlist for first access.",
+  },
+  Temperature: {
+    headline: "Cool and stable, all night.",
+    body: "Lumora's active temperature control holds a calm climate against your skin from the moment you lie down. Join the founding waitlist.",
+  },
+  "Sound and the Mind": {
+    headline: "Sound that quiets the mind.",
+    body: "Lumora brings calming soundscapes into the mask itself, with no earbuds. Join the waitlist for first access and founding pricing.",
+  },
+  "Sleep and Performance": {
+    headline: "Recovery, engineered.",
+    body: "Lumora Max pairs adaptive sensing with light, sound, and temperature for people who treat sleep as training. Join the founding waitlist.",
+  },
+  "Sleep Science": {
+    headline: "Built around how sleep works.",
+    body: "Lumora brings light, sound, and temperature into one mask, designed around the real moments that shape rest. Join the founding waitlist.",
+  },
+  "Routines and Habits": {
+    headline: "Make the wind down effortless.",
+    body: "Lumora folds light, sound, and temperature into a single nightly ritual. Join the waitlist for first access and founding pricing.",
+  },
+  "Travel and Special Situations": {
+    headline: "Your rest, anywhere.",
+    body: "Lumora is a portable mask that blocks light, adds sound, and steadies temperature in any room. Join the founding waitlist.",
+  },
+}
+
+const DEFAULT_PITCH = {
+  headline: "Built for the deepest sleep of your life.",
+  body: "Lumora is a luxury sleep mask that brings light, sound, and temperature into one ritual. Founding members get first access and pricing we will not offer again.",
+}
 
 export function generateStaticParams() {
   return getAllPosts().map((p) => ({ slug: p.slug }))
@@ -55,6 +95,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
 
   const html = marked.parse(post.content) as string
   const related = getRelated(post.slug, 3)
+  const pitch = CATEGORY_PITCH[post.category] ?? DEFAULT_PITCH
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -93,7 +134,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
             <ArrowLeft className="h-4 w-4" />
             The Journal
           </a>
-          <p className="eyebrow mt-8">{post.category}</p>
+          <a
+            href={`/blog/category/${slugifyCategory(post.category)}`}
+            className="eyebrow mt-8 inline-block transition-colors hover:text-ink"
+          >
+            {post.category}
+          </a>
           <h1 className="font-display mt-4 text-[clamp(2.2rem,5.5vw,3.75rem)] font-light leading-[1.05] tracking-tight text-ink">
             {post.title}
           </h1>
@@ -137,20 +183,24 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               style={{ background: "radial-gradient(ellipse, rgba(139,124,255,0.16), transparent 60%)" }}
             />
             <div className="relative">
-              <h2 className="font-display text-2xl font-light text-ink sm:text-3xl">
-                Built for the deepest sleep of your life.
-              </h2>
-              <p className="mx-auto mt-3 max-w-md text-sm text-mist">
-                Lumora is a luxury sleep mask that brings light, sound, and temperature into one
-                ritual. Founding members get first access and pricing we will not offer again.
-              </p>
-              <a
-                href="/waitlist"
-                className="glow-iris mt-6 inline-flex items-center gap-2 rounded-full bg-iris px-7 py-3 text-sm font-semibold text-[#0a0913] transition-colors hover:bg-iris-soft"
-              >
-                Join the waitlist
-                <ArrowRight className="h-4 w-4" />
-              </a>
+              <p className="eyebrow mb-3">From Lumora</p>
+              <h2 className="font-display text-2xl font-light text-ink sm:text-3xl">{pitch.headline}</h2>
+              <p className="mx-auto mt-3 max-w-md text-sm text-mist">{pitch.body}</p>
+              <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
+                <a
+                  href="/waitlist"
+                  className="glow-iris inline-flex items-center gap-2 rounded-full bg-iris px-7 py-3 text-sm font-semibold text-[#0a0913] transition-colors hover:bg-iris-soft"
+                >
+                  Join the waitlist
+                  <ArrowRight className="h-4 w-4" />
+                </a>
+                <a
+                  href="/explore"
+                  className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3 text-sm font-medium text-ink transition-all hover:border-ink/40 hover:bg-ink/5"
+                >
+                  See the lineup
+                </a>
+              </div>
             </div>
           </div>
         </div>

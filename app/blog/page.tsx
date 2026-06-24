@@ -3,7 +3,13 @@ import { ArrowRight } from "lucide-react"
 import PageHeader from "@/components/site/page-header"
 import SiteFooter from "@/components/site/site-footer"
 import { Reveal } from "@/components/site/reveal"
-import { blogPosts, blogCategories, postsByCategory, type BlogPost } from "@/lib/blog"
+import {
+  blogPosts,
+  blogCategories,
+  postsByCategory,
+  slugifyCategory,
+  type BlogPost,
+} from "@/lib/blog"
 
 export const metadata: Metadata = {
   title: "The Journal",
@@ -93,9 +99,17 @@ export default function BlogIndex() {
           }`}
         >
           <div className="mx-auto max-w-7xl">
-            <h2 className="font-display text-[clamp(1.8rem,4vw,2.75rem)] font-light tracking-tight text-ink">
-              {category}
-            </h2>
+            <div className="flex items-end justify-between gap-4">
+              <h2 className="font-display text-[clamp(1.8rem,4vw,2.75rem)] font-light tracking-tight text-ink">
+                {category}
+              </h2>
+              <a
+                href={`/blog/category/${slugifyCategory(category)}`}
+                className="link-quiet shrink-0 text-sm text-mist hover:text-ink"
+              >
+                View all
+              </a>
+            </div>
             <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {postsByCategory(category).map((post) => (
                 <PostCard key={post.slug} post={post} />

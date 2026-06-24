@@ -60,6 +60,43 @@ export function postsByCategory(category: string) {
   return blogPosts.filter((p) => p.category === category)
 }
 
+export function slugifyCategory(name: string) {
+  return name
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-|-$/g, "")
+}
+
+export function getCategoryBySlug(slug: string) {
+  return blogCategories.find((c) => slugifyCategory(c) === slug)
+}
+
+export const categoryList = blogCategories.map((name) => ({
+  name,
+  slug: slugifyCategory(name),
+  count: postsByCategory(name).length,
+}))
+
+/** Short, search-friendly intros shown on each category landing page. */
+export const categoryIntros: Record<string, string> = {
+  "Sleep Science":
+    "How sleep actually works, from cycles and stages to the chemistry that makes you tired. Clear explanations of the science behind a good night, and what it means for your rest.",
+  "Sleep Masks":
+    "Everything about sleep masks, from materials and fit to light blocking and the smart features that make rest deeper. Practical guides for choosing and using one well.",
+  "Light and Circadian Rhythm":
+    "How light sets your body clock, and how to use morning light, dim evenings, and a gentle wake light to fall asleep and wake up on your terms.",
+  Temperature:
+    "Why your body cools down to fall asleep, and how to hold a calm, stable climate through the night so overheating never fragments your rest.",
+  "Sound and the Mind":
+    "How sound shapes sleep without waking you, how to quiet a busy mind, and what to play when silence is not enough.",
+  "Sleep and Performance":
+    "Sleep is recovery. How rest drives focus, reaction time, mood, and athletic performance, and how to protect it when life gets busy.",
+  "Routines and Habits":
+    "The small, repeatable habits that build deep and consistent sleep, from wind down rituals and caffeine timing to a bedroom that signals rest.",
+  "Travel and Special Situations":
+    "How to sleep well away from home, through jet lag, long flights, hotels, shift work, and the nights that do not go to plan.",
+}
+
 export function getRelated(slug: string, n = 3) {
   const post = getPostBySlug(slug)
   if (!post) return []
