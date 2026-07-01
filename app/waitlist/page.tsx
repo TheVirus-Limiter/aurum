@@ -16,6 +16,13 @@ export const metadata: Metadata = {
     url: "https://uselumora.co/waitlist",
     title: "Join the Lumora Sleep Waitlist",
     description: "First access and founding pricing on the all-in-one smart sleep mask.",
+    images: [{ url: "/og/og-waitlist.png", width: 1200, height: 630, alt: "Join the Lumora Sleep waitlist" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Join the Lumora Sleep Waitlist",
+    description: "First access and founding pricing on the all-in-one smart sleep mask.",
+    images: ["/og/og-waitlist.png"],
   },
 }
 

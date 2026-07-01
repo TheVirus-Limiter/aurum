@@ -21,6 +21,13 @@ export const metadata: Metadata = {
     url: "https://uselumora.co/blog",
     title: "The Lumora Journal",
     description: "Practical, well-researched writing on sleep, recovery, and rest.",
+    images: [{ url: "/og/og-blog.png", width: 1200, height: 630, alt: "The Lumora Journal" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "The Lumora Journal",
+    description: "Practical, well-researched writing on sleep, recovery, and rest.",
+    images: ["/og/og-blog.png"],
   },
 }
 

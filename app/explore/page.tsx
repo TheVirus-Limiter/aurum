@@ -15,6 +15,13 @@ export const metadata: Metadata = {
     url: "https://uselumora.co/explore",
     title: "Explore the Lumora Lineup",
     description: "Light, sound, and temperature in one sleep mask.",
+    images: [{ url: "/og/og-explore.png", width: 1200, height: 630, alt: "Explore the Lumora lineup" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Explore the Lumora Lineup",
+    description: "Light, sound, and temperature in one sleep mask.",
+    images: ["/og/og-explore.png"],
   },
 }
 

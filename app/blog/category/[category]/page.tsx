@@ -33,6 +33,15 @@ export async function generateMetadata({
       url: `https://uselumora.co/blog/category/${params.category}`,
       title: `${name} Articles from Lumora Sleep`,
       description: intro.slice(0, 158),
+      images: [
+        { url: `/og/og-cat-${params.category}.png`, width: 1200, height: 630, alt: `${name} articles from Lumora Sleep` },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: `${name} Articles from Lumora Sleep`,
+      description: intro.slice(0, 158),
+      images: [`/og/og-cat-${params.category}.png`],
     },
   }
 }

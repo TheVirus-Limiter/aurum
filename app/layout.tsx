@@ -52,10 +52,10 @@ export const metadata: Metadata = {
       "An all in one luxury sleep mask. Light, sound, and temperature in a single wearable.",
     images: [
       {
-        url: "/images/products/lumorahero.png",
+        url: "/og/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Lumora Essence sleep mask",
+        alt: "Lumora Sleep, an all in one luxury sleep mask",
       },
     ],
   },
@@ -64,7 +64,7 @@ export const metadata: Metadata = {
     title: "Lumora Sleep, Redefine Rest",
     description:
       "An all in one luxury sleep mask. Light, sound, and temperature in a single wearable.",
-    images: ["/images/products/lumorahero.png"],
+    images: ["/og/og-home.png"],
   },
   icons: {
     icon: [{ url: "/images/lumora-logo.png", type: "image/png" }],
