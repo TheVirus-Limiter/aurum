@@ -207,7 +207,7 @@ export default function ExplorePage() {
             will not offer again.
           </p>
           <a
-            href="/waitlist"
+            href="/waitlist/"
             className="glow-iris group mt-9 inline-flex items-center gap-2 rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
           >
             Join the waitlist

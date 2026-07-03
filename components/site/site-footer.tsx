@@ -24,22 +24,22 @@ export default function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href="/explore" className="link-quiet hover:text-ink">
+                <a href="/explore/" className="link-quiet hover:text-ink">
                   The lineup
                 </a>
               </li>
               <li>
-                <a href="/blog" className="link-quiet hover:text-ink">
+                <a href="/blog/" className="link-quiet hover:text-ink">
                   The journal
                 </a>
               </li>
               <li>
-                <a href="/waitlist" className="link-quiet hover:text-ink">
+                <a href="/waitlist/" className="link-quiet hover:text-ink">
                   Join the waitlist
                 </a>
               </li>
               <li>
-                <a href="/team" className="link-quiet hover:text-ink">
+                <a href="/team/" className="link-quiet hover:text-ink">
                   Our team
                 </a>
               </li>

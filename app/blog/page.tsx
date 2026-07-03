@@ -42,7 +42,7 @@ function fmtDate(d: string) {
 function PostCard({ post }: { post: BlogPost }) {
   return (
     <a
-      href={`/blog/${post.slug}`}
+      href={`/blog/${post.slug}/`}
       className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-base-2 p-7 transition-colors duration-500 hover:border-iris/30"
     >
       <span className="text-[0.7rem] uppercase tracking-[0.18em] text-iris">{post.category}</span>
@@ -89,7 +89,7 @@ export default function BlogIndex() {
             {categoryList.map((c) => (
               <a
                 key={c.slug}
-                href={`/blog/category/${c.slug}`}
+                href={`/blog/category/${c.slug}/`}
                 className="rounded-full border border-ink/12 bg-base-2 px-4 py-2 text-sm text-mist transition-colors hover:border-iris/30 hover:text-ink"
               >
                 {c.name}
@@ -125,7 +125,7 @@ export default function BlogIndex() {
                 {category}
               </h2>
               <a
-                href={`/blog/category/${slugifyCategory(category)}`}
+                href={`/blog/category/${slugifyCategory(category)}/`}
                 className="link-quiet shrink-0 text-sm text-mist hover:text-ink"
               >
                 View all
@@ -156,7 +156,7 @@ export default function BlogIndex() {
             first access and founding pricing.
           </p>
           <a
-            href="/waitlist"
+            href="/waitlist/"
             className="glow-iris group mt-9 inline-flex items-center gap-2 rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
           >
             Join the waitlist

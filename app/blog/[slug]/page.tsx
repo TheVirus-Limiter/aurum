@@ -94,7 +94,12 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
   const post = getPostBySlug(params.slug)
   if (!post) notFound()
 
-  const html = marked.parse(post.content) as string
+  // Normalize internal links from authored markdown to the trailing-slash form
+  // the site is served at (trailingSlash: true), so no link routes through a 301.
+  const html = (marked.parse(post.content) as string).replace(
+    /(href=")(\/(?:explore|waitlist|blog|team)(?:\/[a-z0-9-]+)*)\/?(#[^"]*)?"/gi,
+    (_m, pre, path, hash) => `${pre}${path}/${hash ?? ""}"`,
+  )
   const related = getRelated(post.slug, 3)
   const pitch = CATEGORY_PITCH[post.category] ?? DEFAULT_PITCH
 
@@ -129,14 +134,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
         {/* header */}
         <div className="mx-auto max-w-3xl">
           <a
-            href="/blog"
+            href="/blog/"
             className="inline-flex w-fit items-center gap-2 text-sm text-mist transition-colors hover:text-ink"
           >
             <ArrowLeft className="h-4 w-4" />
             The Journal
           </a>
           <a
-            href={`/blog/category/${slugifyCategory(post.category)}`}
+            href={`/blog/category/${slugifyCategory(post.category)}/`}
             className="eyebrow mt-9 block w-fit transition-colors hover:text-ink"
           >
             {post.category}
@@ -189,14 +194,14 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               <p className="mx-auto mt-3 max-w-md text-sm text-mist">{pitch.body}</p>
               <div className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row">
                 <a
-                  href="/waitlist"
+                  href="/waitlist/"
                   className="glow-iris inline-flex items-center gap-2 rounded-full bg-iris px-7 py-3 text-sm font-semibold text-[#0a0913] transition-colors hover:bg-iris-soft"
                 >
                   Join the waitlist
                   <ArrowRight className="h-4 w-4" />
                 </a>
                 <a
-                  href="/explore"
+                  href="/explore/"
                   className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3 text-sm font-medium text-ink transition-all hover:border-ink/40 hover:bg-ink/5"
                 >
                   See the lineup
@@ -216,7 +221,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
               {related.map((r) => (
                 <a
                   key={r.slug}
-                  href={`/blog/${r.slug}`}
+                  href={`/blog/${r.slug}/`}
                   className="group flex h-full flex-col rounded-3xl border border-ink/10 bg-base p-7 transition-colors duration-500 hover:border-iris/30"
                 >
                   <span className="text-[0.7rem] uppercase tracking-[0.18em] text-iris">{r.category}</span>

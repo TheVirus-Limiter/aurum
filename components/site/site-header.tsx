@@ -74,7 +74,7 @@ export default function SiteHeader() {
               </button>
             ))}
             <a
-              href="/blog"
+              href="/blog/"
               className="link-quiet text-[0.8rem] font-medium tracking-wide text-mist hover:text-ink"
             >
               Journal
@@ -136,7 +136,7 @@ export default function SiteHeader() {
                 </motion.button>
               ))}
               <motion.a
-                href="/blog"
+                href="/blog/"
                 initial={{ opacity: 0, y: 16 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.08 + navLinks.length * 0.06, ease: [0.22, 1, 0.36, 1] }}

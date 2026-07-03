@@ -8,6 +8,13 @@ import { founders, SITE } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "Our Team",
   description: "The founding team behind Lumora Sleep. Built with discipline, cared for like craft.",
+  alternates: { canonical: "/team" },
+  openGraph: {
+    url: "https://uselumora.co/team",
+    title: "The Lumora Sleep Team",
+    description: "The founding team behind Lumora Sleep.",
+    images: [{ url: "/og/og-home.png", width: 1200, height: 630, alt: "Lumora Sleep" }],
+  },
 }
 
 export default function TeamPage() {
@@ -156,13 +163,13 @@ export default function TeamPage() {
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
-              href="/waitlist"
+              href="/waitlist/"
               className="glow-iris rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
             >
               Join the waitlist
             </a>
             <a
-              href="/explore"
+              href="/explore/"
               className="group inline-flex items-center gap-2 rounded-full border border-ink/20 px-8 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:border-ink/40 hover:bg-ink/5"
             >
               Explore the lineup

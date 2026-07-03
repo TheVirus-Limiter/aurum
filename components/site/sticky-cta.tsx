@@ -41,7 +41,7 @@ export default function StickyCta() {
   const go = () => {
     const el = document.getElementById("waitlist")
     if (el) el.scrollIntoView({ behavior: reduce ? "auto" : "smooth" })
-    else window.location.href = "/waitlist"
+    else window.location.href = "/waitlist/"
   }
 
   if (joined) return null

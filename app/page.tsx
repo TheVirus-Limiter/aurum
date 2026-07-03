@@ -165,7 +165,7 @@ export default function Home() {
               ship.
             </p>
             <a
-              href="/team"
+              href="/team/"
               className="group mt-9 inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:border-ink/40 hover:bg-ink/5"
             >
               Meet the founders
@@ -176,7 +176,7 @@ export default function Home() {
           <Reveal delay={0.1}>
             <div className="grid grid-cols-2 gap-5">
               {founders.map((f) => (
-                <a key={f.name} href="/team" className="group overflow-hidden rounded-3xl border border-ink/10 bg-base-2">
+                <a key={f.name} href="/team/" className="group overflow-hidden rounded-3xl border border-ink/10 bg-base-2">
                   <div className="plate aspect-[4/5] w-full">
                     <img
                       src={f.image}

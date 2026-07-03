@@ -3,10 +3,10 @@ import { ArrowLeft } from "lucide-react"
 /** Simple header for sub pages. Links resolve back to the home sections. */
 export default function PageHeader({ active }: { active?: "team" | "explore" | "blog" }) {
   const links = [
-    { label: "The Lineup", href: "/explore", key: "explore" as const },
-    { label: "Journal", href: "/blog", key: "blog" as const },
-    { label: "Our Team", href: "/team", key: "team" as const },
-    { label: "Waitlist", href: "/waitlist" },
+    { label: "The Lineup", href: "/explore/", key: "explore" as const },
+    { label: "Journal", href: "/blog/", key: "blog" as const },
+    { label: "Our Team", href: "/team/", key: "team" as const },
+    { label: "Waitlist", href: "/waitlist/" },
   ]
 
   return (
