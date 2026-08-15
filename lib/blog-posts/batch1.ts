@@ -49,7 +49,7 @@ A single trip through all four stages takes roughly 90 minutes, and you repeat t
 
 When sleep is fragmented by noise, temperature swings, or light, you tend to get pulled toward the lighter stages and lose the depth that makes sleep feel worth it. If broken sleep is a regular pattern and daytime tiredness lingers, it is worth raising with a doctor rather than guessing.
 
-Protecting the conditions around your sleep is the part you can actually control. Steady darkness, calm sound, and a cool, stable temperature help your brain settle into each stage and stay there. That is the thinking behind [the Lumora system](/explore), which treats those three inputs as one connected environment rather than separate fixes.`,
+Protecting the conditions around your sleep is the part you can actually control, and so is where the night ends. [Lumora](/explore/) blocks light at the face so each stage has room to run, then reads movement and temperature so it can start your wake at a lighter moment instead of in the middle of the deepest one.`,
   },
   {
     slug: "what-happens-in-your-brain-during-rem-sleep",
@@ -101,7 +101,7 @@ Because REM concentrates in the morning hours, anything that fragments the end o
 
 Occasional odd dreams are nothing to worry about. But if you regularly act out dreams physically, or if nightmares are frequent and disruptive enough to affect your days, that is worth discussing with a doctor rather than dismissing.
 
-REM thrives in calm, stable conditions. A dark room, a steady temperature, and quiet that holds through the night give your brain the uninterrupted runway it needs to reach those long final dream periods. That is the kind of environment [the Lumora system](/explore) is built to create, so the most active part of your night is not the first thing to get cut.`,
+REM thrives in calm, stable conditions, and it clusters in the final hours of the night, which is exactly when most alarms go off. [Lumora](/explore/) holds true darkness through the night and looks for a lighter moment inside your wake window, so the most active part of your night is not the first thing to get cut.`,
   },
   {
     slug: "why-deep-sleep-matters-more-than-total-hours",
@@ -157,7 +157,7 @@ Deep sleep responds well to a calm, controlled environment. A few things help re
 - Reduce noise that can pull you back toward lighter stages
 - Stay consistent with your bedtime so your early cycles land at the same time each night
 
-Temperature is one of the most overlooked levers here. Your body needs to shed heat to drop into its deepest sleep, and a room that runs warm works against that. Designing the environment around steady darkness, calm sound, and overheating at the surface is exactly the problem [the Lumora system](/explore) was built to solve, so the most restorative part of your night gets the conditions it needs.`,
+Temperature is one of the most overlooked levers here. Your body needs to shed heat to drop into its deepest sleep, and a room that runs warm works against that. [Lumora](/explore/) uses a passive cooling insert to blunt that heat at the face, and it reads your night so it can avoid pulling you out of deep sleep when it is time to wake.`,
   },
   {
     slug: "sleep-cycles-explained-timing-your-night",
@@ -211,7 +211,7 @@ You cannot consciously control your cycles, but you can shape the conditions tha
 
 If you consistently wake unrefreshed despite a regular schedule and good conditions, it is worth checking in with a doctor, since fragmented cycles can have underlying causes worth ruling out.
 
-A protected, consistent environment is what lets your cycles do their work without interruption. That is the idea behind [the Lumora system](/explore), holding light, sound, and temperature steady across the whole night so each cycle has room to complete.`,
+A protected, consistent environment is what lets your cycles do their work without interruption. Where the night ends matters just as much. [Lumora](/explore/) reads movement and temperature from a sensor inside the mask, so it can begin your wake at a lighter moment in the window you set instead of cutting a cycle in half.`,
   },
   {
     slug: "the-science-of-sleep-debt-and-how-to-repay-it",
@@ -267,7 +267,7 @@ The cleanest fix is not building the debt at all. That means treating adequate s
 
 If you regularly feel you cannot get enough sleep no matter how much time you allow, or if exhaustion persists despite a reasonable schedule, that is a sensible thing to raise with a doctor.
 
-Quality matters as much as quantity when you are recovering, because fragmented sleep pays down debt slowly. An environment that holds darkness, quiet, and a steady, cool temperature helps each hour deliver its full value. That is what [the Lumora system](/explore) is designed to support, so the sleep you manage to get actually counts toward the balance.`,
+Quality matters as much as quantity when you are recovering, because fragmented sleep pays down debt slowly. [Lumora](/explore/) protects the darkness that keeps a night whole, and it aims to end that night at a lighter moment, so the sleep you manage to get actually counts toward the balance.`,
   },
   {
     slug: "how-much-sleep-do-you-really-need-by-age",
@@ -318,7 +318,7 @@ If you consistently need far more sleep than the range for your age, or you slee
 
 Time in bed is only useful if it turns into real sleep. As people age and sleep grows lighter, the conditions around sleep matter more, not less. Small disruptions that a teenager might sleep through can fragment an older adult's night.
 
-That is why protecting the environment becomes a bigger lever over time. Steady darkness, quiet, and a cool, stable temperature help each hour you spend in bed actually count. [The Lumora system](/explore) is built around holding those three conditions steady through the night, so whatever amount of sleep is right for you delivers what it should.`,
+That is why protecting the environment becomes a bigger lever over time. [Lumora](/explore/) holds true darkness through the night, then uses a sensor inside the mask to start your wake at a lighter point in the window you set, so whatever amount of sleep is right for you delivers what it should.`,
   },
   {
     slug: "what-sleep-latency-says-about-your-nights",
@@ -373,7 +373,7 @@ If you fall asleep too fast, the answer is usually more sleep overall, not bette
 
 Sleep latency is most useful as a trend, not a single data point. One restless night means little. A steady drift toward longer or much shorter times is the part worth paying attention to, because it reflects how well your sleep pressure, your schedule, and your surroundings are lining up.
 
-A calm, consistent environment does a lot to keep latency in that healthy middle. When the room is reliably dark, quiet, and cool, your brain reads it as a cue to let go, and falling asleep stops being a struggle. That steady set of conditions is what [the Lumora system](/explore) is designed to provide, night after night.`,
+A calm, consistent environment does a lot to keep latency in that healthy middle. [Lumora](/explore/) takes light out of the picture so your brain gets a clean cue to let go, and it handles the other end of the night too, waking you at a lighter moment rather than at a fixed time.`,
   },
   {
     slug: "why-you-wake-up-at-3am-and-how-to-stop",
@@ -428,7 +428,7 @@ Reducing 3 a.m. wakings is mostly about the hours before bed and the environment
 
 Occasional night waking is nothing to worry about. But if waking in the small hours is frequent, leaves you exhausted, and persists for weeks, it can be a form of insomnia worth discussing with a doctor, especially if loud snoring or gasping is involved.
 
-A stable overnight environment removes many of the small triggers that turn a normal awakening into a long one. When the room stays dark, quiet, and at a steady cool temperature all night, your brain has fewer reasons to fully wake. Holding those conditions steady from dusk to dawn is exactly what [the Lumora system](/explore) is built to do.`,
+A stable overnight environment removes many of the small triggers that turn a normal awakening into a long one. When the room stays dark, quiet, and at a steady cool temperature all night, your brain has fewer reasons to fully wake. Holding those conditions steady from dusk to dawn is exactly what [Lumora](/explore/) is built to do.`,
   },
   {
     slug: "sleep-pressure-and-adenosine-chemistry-of-feeling-tired",
@@ -483,7 +483,7 @@ You can use this chemistry to your advantage:
 
 If you feel relentlessly tired despite enough sleep and sensible caffeine habits, that is worth raising with a doctor, since persistent fatigue can have other causes.
 
-Sleep pressure gets you to the edge of sleep. A calm environment is what lets you fall over it cleanly and stay there long enough to clear the day's adenosine. When the room is dark, quiet, and cool, your high sleep pressure can do its job without interruption, which is the steady foundation [the Lumora system](/explore) is built to provide.`,
+Sleep pressure gets you to the edge of sleep. A dark, undisturbed night is what lets you fall over it cleanly and stay there long enough to clear the day's adenosine. [Lumora](/explore/) protects that stretch, and when it ends it looks for a lighter moment rather than cutting straight through the deepest part.`,
   },
   {
     slug: "sleep-inertia-why-waking-up-feels-so-hard",
@@ -539,7 +539,7 @@ The light point is worth emphasizing. Light is one of the strongest signals your
 
 If you wake feeling severely impaired most mornings despite enough sleep, or the grogginess is extreme and long lasting, that is worth mentioning to a doctor.
 
-Waking gently is partly about timing and partly about the cue you wake to. A soft, rising light that meets you at the lighter end of a cycle works with your biology instead of against it. That gentle wake experience, built around light rather than a blaring alarm, is one of the things [the Lumora system](/explore) is designed to deliver.`,
+Waking gently is partly about timing and partly about the cue you wake to. A soft, rising light that meets you at the lighter end of a cycle works with your biology instead of against it. That gentle wake experience, built around light rather than a blaring alarm, is one of the things [Lumora](/explore/) is designed to deliver.`,
   },
   {
     slug: "how-your-brain-consolidates-memory-while-you-sleep",
@@ -593,7 +593,7 @@ A short, well-timed nap can also help consolidation in some cases, but it is no 
 
 If memory problems feel significant or are getting worse, that is worth discussing with a doctor rather than blaming sleep alone.
 
-The brain can only do this filing work if it reaches and holds the stages where consolidation happens. Fragmented sleep, broken up by light, noise, or heat, keeps pulling you toward the surface and away from the deep and REM sleep your memory depends on. An environment that stays dark, quiet, and steadily cool gives those stages room to do their work, which is the foundation [the Lumora system](/explore) is built to protect.`,
+The brain can only do this filing work if it reaches and holds the stages where consolidation happens. Fragmented sleep, broken up by light, noise, or heat, keeps pulling you toward the surface. [Lumora](/explore/) blocks the light doing that pulling, and it times your wake to a lighter moment, so the deep and REM sleep your memory depends on is not cut short by an alarm.`,
   },
   {
     slug: "sleep-quality-vs-quantity-which-one-wins",
@@ -647,7 +647,7 @@ The encouraging part is that many of the same habits lift quality and make adequ
 
 If you consistently get enough hours and still wake unrefreshed, the issue is likely quality, and persistent poor quality despite good habits is worth raising with a doctor.
 
-The lever most people underuse is the environment. Quantity is largely a scheduling decision. Quality is heavily shaped by the conditions around you while you sleep. Steady darkness, calm sound, and a cool, stable temperature reduce the disruptions that quietly erode quality, helping the hours you commit to actually deliver. That is the problem [the Lumora system](/explore) was designed to solve.`,
+The lever most people underuse is the environment. Quantity is largely a scheduling decision. Quality is shaped by the conditions around you and by where the night ends. [Lumora](/explore/) works on both, holding darkness steady and waking you at a lighter moment, so the hours you commit to actually deliver.`,
   },
   {
     slug: "what-sleep-architecture-is-and-why-it-matters",
@@ -711,6 +711,6 @@ You cannot consciously direct your stages, but you can protect the conditions th
 - Keep the room dark, quiet, and at a steady cool temperature to reduce fragmentation
 - Limit alcohol and late caffeine, which distort the natural sequence
 
-A stable overnight environment is what allows the architecture to hold its shape from dusk to dawn. Holding light, sound, and temperature steady across the entire night, so each stage has room to do its job, is exactly what [the Lumora system](/explore) is built to support.`,
+A stable overnight environment is what allows the architecture to hold its shape from dusk to dawn. The last piece is where that architecture gets interrupted. [Lumora](/explore/) holds true darkness at your face and reads your night from inside the mask, so the wake it starts lands at a lighter moment rather than tearing through deep sleep.`,
   },
 ]

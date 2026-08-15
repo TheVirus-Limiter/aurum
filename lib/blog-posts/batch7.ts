@@ -50,7 +50,7 @@ If you miss a night, you have not broken anything. Just return to the sequence t
 
 A good routine is easier to keep when your surroundings cooperate. A cool, dark, quiet room makes the descent into sleep feel natural rather than forced. The harder part is the transition itself, the stretch where you are trying to quiet a busy mind and a body that has not yet cooled down.
 
-This is where the right tools help carry the routine rather than replace it. [The Lumora system](/explore) is built around that transition, using gentle fading light, immersive sound, and a passive cooling insert to mirror the slowing your routine is already trying to create. The habit sets the intention, and the environment makes it easier to follow through.
+This is where the right tools help carry the routine rather than replace it. [Lumora](/explore/) is built around that transition, closing out light at your face and using a passive cooling insert to blunt the heat that builds as you settle. The habit sets the intention, and the environment makes it easier to follow through.
 
 A wind down routine is one of the highest return changes you can make to your sleep, and it costs nothing but a little structure. Start with a fixed bedtime, a short sequence, and a reminder. Give it two weeks before you judge it. If you are dealing with a persistent sleep problem, a routine is a strong foundation, but it is also worth raising with a clinician.`,
   },
@@ -106,7 +106,7 @@ Consistency is simple in theory and hard in practice, so make it easy on yoursel
 - Use morning light, a walk or a bright window, to lock the rhythm in
 - Give it at least two weeks, since the clock adjusts gradually
 
-A predictable rhythm is also easier to keep when the start and end of your night feel distinct. A clear evening cue and a gentle, light based wake can both reinforce the schedule you are trying to hold. When the night ends the same way each morning, your body starts preparing for the day before the alarm, and the whole rhythm grows more stable. [The Lumora system](/explore) is built around that idea, using fading light at night and a gradual sunrise style wake to give your body clock something steady to lock onto.
+A predictable rhythm is also easier to keep when the start and end of your night feel distinct. A clear evening cue and a gentle, light based wake can both reinforce the schedule you are trying to hold. When the night ends the same way each morning, your body starts preparing for the day before the alarm, and the whole rhythm grows more stable. [Lumora](/explore/) is built around that idea, using fading light at night and a gradual sunrise style wake to give your body clock something steady to lock onto.
 
 You do not need a perfect schedule to benefit. You need a steady one. Pick a wake time you can defend most days, anchor your mornings with light, and let the rest of your rhythm settle into place behind it. Hold it for a couple of weeks before you decide whether it is working, since the clock rewards patience more than intensity.`,
   },
@@ -164,7 +164,7 @@ You do not have to give up caffeine to sleep well. You mostly have to front load
 - Swap late coffee for water, herbal tea, or decaf
 - Pay attention to how small changes shift your sleep over a week
 
-When your evenings are caffeine free, your natural sleep pressure can do its job, and the rest of your routine works better. A calm, dark, cool environment helps that pressure turn into sleep, which is the transition [the Lumora system](/explore) is designed to support.
+When your evenings are caffeine free, your natural sleep pressure can do its job, and the rest of your routine works better. A calm, dark, cool environment helps that pressure turn into sleep, which is the transition [Lumora](/explore/) is designed to support.
 
 If you suspect caffeine is seriously disrupting your sleep, or you rely on it to function, it is worth discussing with a clinician rather than guessing on your own.`,
   },
@@ -218,7 +218,7 @@ You do not have to give up alcohol entirely to sleep better. The main lever is t
 
 A few alcohol free nights each week is one of the clearest ways to see what your unimpaired sleep actually feels like. Many people are surprised by how much steadier their mornings become. The contrast tends to be most obvious in the second half of the night, the part alcohol disrupts most, where uninterrupted sleep leaves you genuinely rested rather than just rested enough to function.
 
-When the night is not being disrupted from the inside, the rest of your environment can do its work. A cool, dark, quiet room helps you reach and hold the deeper stages alcohol tends to steal, which is the kind of steady night [the Lumora system](/explore) is built to support. No amount of good environment fully cancels the internal disruption, which is why the timing and the amount remain the levers that matter most.
+When the night is not being disrupted from the inside, the rest of your environment can do its work. A cool, dark, quiet room helps you reach and hold the deeper stages alcohol tends to steal, which is the kind of steady night [Lumora](/explore/) is built to support. No amount of good environment fully cancels the internal disruption, which is why the timing and the amount remain the levers that matter most.
 
 If you find you rely on alcohol to fall asleep, that is worth taking seriously and raising with a clinician, since the underlying sleep problem usually needs a different fix.`,
   },
@@ -280,7 +280,7 @@ You do not need a rigid diet plan. A few steady habits cover most of the benefit
 - Cut caffeine in the afternoon and keep alcohol modest and early
 - Limit fluids in the last hour so you are not waking to use the bathroom
 
-Once you have eaten well, the rest of the night is about environment. A cool room helps your body shed the heat that digestion generates, which is part of what makes the transition to sleep feel easy. That cooling transition is one of the things [the Lumora system](/explore) is designed to support.
+Once you have eaten well, the rest of the night is about environment. A cool room helps your body shed the heat that digestion generates, which is part of what makes the transition to sleep feel easy. That cooling transition is one of the things [Lumora](/explore/) is designed to support.
 
 If you have ongoing digestive issues that disrupt your sleep, such as reflux at night, it is worth raising with a clinician, since dietary tweaks alone may not be the full answer.`,
   },
@@ -342,7 +342,7 @@ If you are not sleepy yet, it is better to stay with a calm activity than to lie
 
 A ritual sets the intention, and the room carries it across the line. The smoothest pre sleep routines pair a consistent sequence with surroundings that make sleep feel inevitable: low light, gentle sound, and a body that is cooling rather than holding heat.
 
-That final transition is exactly what [the Lumora system](/explore) is built around, fading light, immersive sound, and a passive cooling insert working together to mirror the descent your ritual is already guiding. The habit does the steering, and the environment does the landing.
+That final transition is exactly what [Lumora](/explore/) is built around, taking light out of the picture and using a passive cooling insert to keep heat at your face from rising as you drift. The habit does the steering, and the environment does the landing.
 
 Run the same thirty minutes most nights and it stops feeling like effort. It becomes the signal your body waits for. If sleep stays difficult despite a steady ritual, it is worth raising with a clinician to rule out an underlying cause.`,
   },
@@ -385,7 +385,7 @@ Light is the strongest tool you have for resetting your clock. Morning light tel
 - Open the curtains or step outside even for a few minutes
 - On dark mornings, a gradual light that builds before your alarm helps a great deal
 
-This is why a dark room and a jarring buzzer make early waking so hard. You are being ripped from sleep into blackness, which is the opposite of what your body expects. A wake that begins with gradually rising light works with your biology instead of against it. A sunrise style wake is one of the things [the Lumora system](/explore) is designed to provide.
+This is why a dark room and a jarring buzzer make early waking so hard. You are being ripped from sleep into blackness, which is the opposite of what your body expects. A wake that begins with gradually rising light works with your biology instead of against it. A sunrise style wake is one of the things [Lumora](/explore/) is designed to provide.
 
 ### Protect the bedtime, not just the alarm
 
@@ -460,7 +460,7 @@ You do not need a perfect schedule to get the sleep benefits of exercise. You ne
 - Keep evening movement gentle if you exercise late
 - Watch your own pattern and adjust the timing to fit it
 
-After a late workout, your body has extra heat to shed, which is one more reason the cooling phase of the night matters so much. The harder the session, the more heat you generate and the longer that cool down takes, so the buffer before bed is doing double duty. A cool, dark room helps your temperature finish its descent, the same transition [the Lumora system](/explore) is built to support.
+After a late workout, your body has extra heat to shed, which is one more reason the cooling phase of the night matters so much. The harder the session, the more heat you generate and the longer that cool down takes, so the buffer before bed is doing double duty. A cool, dark room helps your temperature finish its descent, the same transition [Lumora](/explore/) is built to support.
 
 Exercise is firmly on the side of better sleep, and the consistency of moving most days matters more than getting any single session perfectly timed. The main thing is to give an intense workout enough runway before bed and to notice how your own body responds. If you exercise regularly and still sleep poorly, it is worth raising with a clinician to look at other factors.`,
   },
@@ -516,7 +516,7 @@ Once your wake time is anchored, give yourself a few clean nights to let the rhy
 - Go easy on alcohol and late caffeine while you recover
 - Keep the bedroom cool, dark, and quiet to support deeper sleep
 
-A reset is mostly about removing the things that fragment sleep and letting your natural drive take over. After a rough week, your body usually has a backlog of sleep pressure ready to be spent, and the job is simply to stop getting in its way. A cool, dark, quiet room makes that easier, and a clear evening cue helps mark the boundary your week may have blurred. [The Lumora system](/explore) is built around that transition, which is exactly what a tired body needs when it is finding its rhythm again.
+A reset is mostly about removing the things that fragment sleep and letting your natural drive take over. After a rough week, your body usually has a backlog of sleep pressure ready to be spent, and the job is simply to stop getting in its way. A cool, dark, quiet room makes that easier, and a clear evening cue helps mark the boundary your week may have blurred. [Lumora](/explore/) is built around that transition, which is exactly what a tired body needs when it is finding its rhythm again.
 
 Give it three or four steady nights and most people are back to baseline. Be patient with the first night or two, since the rhythm rarely snaps back instantly, and trust that holding your wake time will carry you the rest of the way. If a rough week turns into rough weeks, and the disruption does not lift with a return to normal habits, that is worth raising with a clinician.`,
   },
@@ -575,7 +575,7 @@ Once the bedroom is reserved for sleep, the environment can reinforce the messag
 - Make it as dark as you can, with blackout curtains or a mask
 - Reduce noise, or use steady sound to cover disruptions
 
-When the room itself signals rest the moment you enter, the association does the heavy lifting for you. That sensory environment, low light, gentle sound, and a cool surface, is exactly what [the Lumora system](/explore) is designed to create, turning the space around you into a clear cue for sleep.
+When the room itself signals rest the moment you enter, the association does the heavy lifting for you. That sensory environment, low light, gentle sound, and a cool surface, is exactly what [Lumora](/explore/) is designed to create, turning the space around you into a clear cue for sleep.
 
 Reclaiming the bedroom as a sleep only space takes a little rearranging, but the payoff is a stronger, more automatic pull toward rest every night. If sleep stays difficult even after you have protected the space, it is worth raising with a clinician.`,
   },
@@ -634,7 +634,7 @@ The benefit comes from doing it regularly, not perfectly. Folded into a wind dow
 - Keep it brief, a few minutes is plenty
 - Make it part of your existing pre sleep sequence
 
-Writing on paper rather than a phone matters here, because the whole point is to disengage from screens as the night winds down. Once your mind is emptied onto the page, the rest of the transition is about your surroundings, low light, gentle sound, and a cool, calm room. That sensory shift is what [the Lumora system](/explore) is built to support, picking up where the writing leaves off.
+Writing on paper rather than a phone matters here, because the whole point is to disengage from screens as the night winds down. Once your mind is emptied onto the page, the rest of the transition is about your surroundings, low light, gentle sound, and a cool, calm room. That sensory shift is what [Lumora](/explore/) is built to support, picking up where the writing leaves off.
 
 A few minutes of writing is a small habit with an outsized effect on a busy mind. If anxiety keeps you awake night after night despite these tools, that is worth raising with a clinician, since persistent nighttime worry sometimes needs more support.`,
   },
@@ -693,7 +693,7 @@ The aim is to make reaching for the screen slightly harder and reaching for the 
 
 Once the screen is out of the picture, the evening has room for the things that actually move you toward sleep, lower light, calmer input, and a cooler, quieter space. Audio is a particularly good replacement, since it lets you rest your eyes and your attention at once.
 
-That is part of why [the Lumora system](/explore) leans on gentle sound and fading light rather than a screen, giving your mind something soothing to settle into as the room itself shifts toward sleep. The point is not just to take the screen away but to put something restful in its place.
+That is part of why [Lumora](/explore/) closes out light at your face rather than adding one more glowing thing to the room, giving your mind less to track as the night begins. The point is not just to take the screen away but to put something restful in its place.
 
 Screens are a habit, and habits are easiest to change by swapping rather than subtracting. Decide what fills the slot, make it easy to reach, and the screen loses its grip. If you find you cannot put the phone down at night despite wanting to, that pattern itself may be worth examining.`,
   },
@@ -752,7 +752,7 @@ You do not need all of these from day one. Pick one, make it stick, then add ano
 
 The magic is in the combination. A consistent wake time makes you tired at the right hour. Morning light sharpens that rhythm. An afternoon caffeine cutoff lets your sleep pressure build cleanly. A dim, screen free evening eases the transition. A cool, dark room helps you reach the deeper stages. Each habit makes the next one work better.
 
-That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [the Lumora system](/explore) focuses on the sensory environment, low light, gentle sound, and a passive cooling insert, the part of the stack that is hardest to control on your own.
+That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [Lumora](/explore/) focuses on the part of that stack you cannot fix by trying harder, holding true darkness at your face and using a passive cooling insert to keep heat from building there.
 
 Better sleep is not one decision. It is a series of small, repeatable choices that build on each other. Start with one, keep it until it is automatic, and add the next. If you have layered these habits and still sleep poorly, that is worth raising with a clinician, since a persistent problem sometimes has a cause that habits alone cannot reach.`,
   },

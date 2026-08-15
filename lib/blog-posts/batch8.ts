@@ -26,7 +26,7 @@ Light is the strongest lever you have over your body clock. Getting it at the ri
 
 The simple rule: after flying east, you generally want morning light and want to avoid bright light in the late evening. After flying west, the reverse helps, evening light and a darker morning at first. Step outside when you land. Daylight on your skin and in your eyes does more than any supplement.
 
-The flip side matters just as much. When it is finally night at your destination, you need real darkness to let melatonin rise. Hotel rooms rarely cooperate, with gaps in the curtains, hallway light under the door, and standby LEDs glowing. A mask that fully blocks light gives your body the dark signal the room will not, which is one reason a portable setup like [the Lumora system](/explore) earns its place in a travel bag.
+The flip side matters just as much. When it is finally night at your destination, you need real darkness to let melatonin rise. Hotel rooms rarely cooperate, with gaps in the curtains, hallway light under the door, and standby LEDs glowing. A mask that fully blocks light gives your body the dark signal the room will not, which is one reason a portable setup like [Lumora](/explore/) earns its place in a travel bag.
 
 ## Sleep and eat on the new schedule fast
 
@@ -79,7 +79,7 @@ Half of in flight sleep is decided at booking and in the gate area.
 
 The cabin gives you light and noise you did not ask for. Taking those two back is the biggest single improvement you can make.
 
-Light is the main signal telling your brain whether it is day or night, and a cabin sends mixed messages all flight long. Cabin lights flick on for service, screens glow a few rows up, and a raised window shade floods everything. Blocking light fully convinces your body it is night. A good mask that actually seals out light does more than any reclined seat. A travel ready option like [the Lumora system](/explore) also layers in gentle sound and steadier temperature, which are the other two things a cabin gets wrong.
+Light is the main signal telling your brain whether it is day or night, and a cabin sends mixed messages all flight long. Cabin lights flick on for service, screens glow a few rows up, and a raised window shade floods everything. Blocking light fully convinces your body it is night. A good mask that actually seals out light does more than any reclined seat. A travel ready option like [Lumora](/explore/) also carries a passive cooling insert, which helps with the stuffy warmth a cabin traps against your face.
 
 For noise, steady engine drone is easier to sleep through than sudden announcements and crying children. Soft, consistent sound that covers those spikes helps the cabin fade into the background.
 
@@ -148,7 +148,7 @@ A nap is only as good as the conditions around it. In daylight, with a busy envi
 - Set an alarm so you can let go without watching the clock.
 - Pick a cool, comfortable spot, since being too warm fragments even a short nap.
 
-This is exactly the situation a sleep mask is built for. It produces real darkness on demand in the middle of a bright afternoon, which is the single biggest barrier to falling asleep quickly during the day. A portable system like [the Lumora system](/explore) adds gentle sound and steady temperature on top, turning a noisy office or a sunlit room into something closer to a dark, quiet pocket.
+This is exactly the situation a sleep mask is built for. It produces real darkness on demand in the middle of a bright afternoon, which is the single biggest barrier to falling asleep quickly during the day. A portable option like [Lumora](/explore/) turns a sunlit office or a bright room into something closer to a dark pocket, and can bring you back up at the end of the window instead of letting a nap run long.
 
 ## The coffee nap trick
 
@@ -185,7 +185,7 @@ The hardest part of night work is sleeping during the day, when sunlight, noise,
 - Block noise. The world is loud during the day, and steady sound covers the spikes of traffic, deliveries, and voices.
 - Keep the room cool, since a warm daytime bedroom makes already fragile sleep worse.
 
-A sleep mask matters more here than almost anywhere, because daytime light is the single biggest enemy of shift worker sleep. Sealing it out completely lets melatonin do its work even with the sun up. A system like [the Lumora system](/explore) pairs that darkness with gentle sound and steadier temperature, which together turn a bright bedroom into something the body will accept as night.
+A sleep mask matters more here than almost anywhere, because daytime light is the single biggest enemy of shift worker sleep. Sealing it out completely lets melatonin do its work even with the sun up. Something like [Lumora](/explore/) pairs that darkness with a passive cooling insert, which together turn a bright bedroom into something the body will accept as night.
 
 ## Use light and dark on purpose
 
@@ -252,7 +252,7 @@ When you might only have ninety minutes before the next wake, time to sleep matt
 - Use steady sound to cover household noise, and to mask the small sounds that keep you on alert for the baby
 - Keep the room cool and comfortable so your body settles quickly
 
-A sleep mask is genuinely useful here, because it produces darkness on demand without needing to black out the whole house. For a parent grabbing a midday nap while a partner watches the baby, that instant dark is the difference between sleeping and lying there. A portable system like [the Lumora system](/explore) adds gentle sound that helps you let go faster, which is exactly what a short window needs.
+A sleep mask is genuinely useful here, because it produces darkness on demand without needing to black out the whole house. For a parent grabbing a midday nap while a partner watches the baby, that instant dark is the difference between sleeping and lying there. A portable option like [Lumora](/explore/) gets you into true darkness quickly, which is exactly what a short window needs.
 
 ## Share the load deliberately
 
@@ -308,7 +308,7 @@ Each of these is small on its own. Together they keep your already alert brain f
 
 The most powerful move is to stop depending on the room to provide good conditions and bring your own instead. A room you cannot control becomes far less of a problem when your sleep setup travels with you.
 
-This is where a portable approach pays off. A sleep mask that fully blocks light handles the curtain gaps, the under door glow, and the standby LEDs in one step, no matter how the room is built. Add steady sound and you cover the corridor traffic and the unfamiliar building noises that keep you on alert. A travel ready system like [the Lumora system](/explore) is built around exactly this, light, sound, and steadier temperature you carry with you, so the strange room matters less.
+This is where a portable approach pays off. A sleep mask that fully blocks light handles the curtain gaps, the under door glow, and the standby LEDs in one step, no matter how the room is built. Add steady sound and you cover the corridor traffic and the unfamiliar building noises that keep you on alert. A travel ready option like [Lumora](/explore/) is built around exactly this, darkness and a consistent wake you carry with you, so the strange room matters less.
 
 When your immediate environment is dark, quiet, and consistent night after night, the brain has fewer reasons to stay on guard, and the first night effect softens.
 
@@ -381,7 +381,7 @@ The challenge is that you are trying to sleep in the late afternoon or evening, 
 - Use steady sound to cover household and street noise
 - Keep it cool and comfortable so you settle quickly
 
-A sleep mask is the obvious tool, producing real darkness without blacking out the house, which is exactly what an evening nap needs. A system like [the Lumora system](/explore) layers gentle sound on top, helping you drop off in the short time you have. The faster you fall asleep, the more of your window becomes actual rest.
+A sleep mask is the obvious tool, producing real darkness without blacking out the house, which is exactly what an evening nap needs. Something like [Lumora](/explore/) blocks the light that keeps you alert, helping you drop off in the short time you have. The faster you fall asleep, the more of your window becomes actual rest.
 
 ## Fit it into the bigger plan
 
@@ -420,7 +420,7 @@ For very long trips crossing many zones, the direction of the light shift can fl
 
 Light gets the attention, but darkness is half the equation. When it is finally night at your destination, your body needs real darkness for melatonin to rise and signal sleep. A bright environment at the wrong time pushes your clock the wrong way and stalls the whole process.
 
-Travel makes darkness hard to find. Hotel curtains leave gaps, unfamiliar rooms glow with standby lights, and you cannot control the building. Carrying your own darkness solves this. A mask that fully blocks light gives your body the clear night signal the room will not, which is why a portable setup like [the Lumora system](/explore) helps the adjustment along, especially in the first few nights when your clock is still catching up.
+Travel makes darkness hard to find. Hotel curtains leave gaps, unfamiliar rooms glow with standby lights, and you cannot control the building. Carrying your own darkness solves this. A mask that fully blocks light gives your body the clear night signal the room will not, which is why a portable setup like [Lumora](/explore/) helps the adjustment along, especially in the first few nights when your clock is still catching up.
 
 ## Adopt local time immediately
 
@@ -462,7 +462,7 @@ The challenge is that constant travel attacks sleep from every angle, new time z
 
 The single most valuable thing a frequent traveler can do is make their sleep environment portable, so it is the same in a hotel in one city as in another. Consistency is what your brain craves, and consistency is exactly what travel destroys.
 
-The biggest variables hotel to hotel are light, noise, and temperature, and those are the ones you can carry solutions for. A travel ready setup like [the Lumora system](/explore) is built around this, light blocking, gentle sound, and steadier temperature in one portable form, so each strange room becomes more like the last. When the conditions right around you stay constant, the building around them matters far less.
+The biggest variables hotel to hotel are light, noise, and temperature, and those are the ones you can carry solutions for. A travel ready setup like [Lumora](/explore/) is built around this, light blocking and a consistent wake in one portable form, so each strange room becomes more like the last. When the conditions right around you stay constant, the building around them matters far less.
 
 Beyond the gear, carry the habits.
 
@@ -536,7 +536,7 @@ The goal is steady warmth through the night, not a hot start that fades into a c
 
 The outdoors does not respect your sleep schedule. The sun rises early and bright, and tents do little to keep it out, which is why so many campers wake at the first hint of dawn whether they are rested or not. Nighttime brings its own sounds, wind, wildlife, and other campers.
 
-A sleep mask is genuinely valuable here, because it holds back the early dawn light that would otherwise drag you awake hours before you are ready. For sound, steady audio can cover the unfamiliar rustles and distant noises that keep a city dweller on alert in the wild. A portable system like [the Lumora system](/explore) brings darkness and gentle sound into the tent, which are exactly the two things the outdoors gets wrong, letting you sleep past dawn and through the night noises.
+A sleep mask is genuinely valuable here, because it holds back the early dawn light that would otherwise drag you awake hours before you are ready. For sound, steady audio can cover the unfamiliar rustles and distant noises that keep a city dweller on alert in the wild. A portable option like [Lumora](/explore/) brings real darkness into the tent, which is exactly what the outdoors gets wrong, letting you sleep past a dawn that arrives long before your alarm.
 
 ## Handle the practical details
 
@@ -579,7 +579,7 @@ A head that stays supported is the difference between dozing for forty minutes a
 
 Transit environments are bright and loud in unpredictable ways. Stations slide past with flashing light, overhead lamps stay on, and announcements cut through at every stop.
 
-Blocking light helps your brain accept that it is time to rest, even mid afternoon on a busy train. A sleep mask handles the changing light of passing scenery and station stops in one move. For sound, the rhythm of a train or the hum of a bus is steady and easy to sleep through, but it is the announcements and sudden voices that wake you. Covering those with consistent sound smooths the journey. A portable setup like [the Lumora system](/explore) brings both darkness and gentle sound into a seat that offers neither, which is what makes upright rest possible.
+Blocking light helps your brain accept that it is time to rest, even mid afternoon on a busy train. A sleep mask handles the changing light of passing scenery and station stops in one move. For sound, the rhythm of a train or the hum of a bus is steady and easy to sleep through, but it is the announcements and sudden voices that wake you. Covering those with consistent sound smooths the journey. A portable setup like [Lumora](/explore/) brings real darkness to a seat that offers none, which is what makes upright rest possible.
 
 ## Time it and stay safe
 
@@ -632,7 +632,7 @@ If you crossed time zones, your internal clock is the bigger issue, and the leve
 - Eat meals at your normal home mealtimes to reinforce the local rhythm
 - Hold a consistent wake time, even after a short night, since a steady morning is the strongest reset signal
 
-The first few nights back, your body may still want to sleep and wake at the destination's hours. Protecting your darkness at the right local time helps melatonin rise on schedule, and a mask that fully blocks light gives that signal even when your bedroom is not perfectly dark. A setup like [the Lumora system](/explore) supports those first nights home, when the clock is still dragging behind and consistent darkness speeds the realignment.
+The first few nights back, your body may still want to sleep and wake at the destination's hours. Protecting your darkness at the right local time helps melatonin rise on schedule, and a mask that fully blocks light gives that signal even when your bedroom is not perfectly dark. A setup like [Lumora](/explore/) supports those first nights home, when the clock is still dragging behind and consistent darkness speeds the realignment.
 
 ## Avoid the moves that prolong it
 

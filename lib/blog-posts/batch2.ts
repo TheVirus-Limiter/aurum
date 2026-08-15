@@ -55,7 +55,7 @@ If you wear a mask consistently for a couple of weeks and notice nothing, light 
 
 Sleep masks improve sleep for the people who have a light problem, which is more people than realize it. The effect is modest and dependable rather than dramatic. The main variable is whether the mask seals out light without bothering your eyes, which comes down to shape, materials, and fit.
 
-That is the thinking behind [the Lumora system](/explore). It treats darkness as the baseline a mask should always deliver, then adds gentle light cues, sound, and temperature control on top of it. The mask part still does the quiet, reliable work of getting your eyes into true dark. Everything else builds from there.`,
+That is the thinking behind [Lumora](/explore/). It treats darkness as the baseline a mask should always deliver, then adds a sensor pod that reads your night and a gradual sunrise that wakes you at a lighter moment. The mask part still does the quiet, reliable work of getting your eyes into true dark. Everything else builds from there.`,
   },
   {
     slug: "how-to-choose-a-sleep-mask-that-fits-your-face",
@@ -115,7 +115,7 @@ Pay attention to three things during that test: whether light sneaks in anywhere
 
 A mask that does not fit will not get worn, no matter how nice it looks. That is why fit drives everything else.
 
-[The Lumora system](/explore) is built around a contoured shape designed to seal at the nose and arch over the eyes, with an adjustable strap meant to hold through a full night of movement. The goal is simple. A mask you can forget you are wearing, which is the only kind that helps.`,
+[Lumora](/explore/) is built around a contoured shape designed to seal at the nose and arch over the eyes, with an adjustable strap meant to hold through a full night of movement. It also decides when to wake you, with a gradual sunrise at a lighter moment. The goal is simple. A mask you can forget you are wearing, which is the only kind that helps.`,
   },
   {
     slug: "silk-vs-cotton-vs-foam-sleep-masks-compared",
@@ -198,7 +198,7 @@ Match the material to your priority:
 
 A useful way to combine strengths is a contoured shape for the seal paired with a soft cover fabric for comfort. That gives you the darkness of a molded mask without a harsh surface against your skin, and it sidesteps the usual tradeoff where you have to give up either the light blocking or the pleasant feel.
 
-[The Lumora system](/explore) takes that combined approach. It uses a contoured form to seal out light and keep fabric off the eyes, wrapped in soft materials chosen for comfort against the face. The aim is to stop forcing a tradeoff between darkness and a pleasant feel, since a good night needs both.`,
+[Lumora](/explore/) takes that combined approach. It uses a contoured form to seal out light and keep fabric off the eyes, wrapped in soft materials chosen for comfort against the face, with a removable sensor pod that handles the waking. The aim is to stop forcing a tradeoff between darkness and a pleasant feel, since a good night needs both.`,
   },
   {
     slug: "why-total-darkness-improves-sleep-quality",
@@ -253,7 +253,7 @@ If you have done all this and still sleep poorly, light may not be the whole sto
 
 Darkness is one of the few sleep variables that is both powerful and easy to control. It works through a clear biological pathway, the effect is reliable, and the fix is straightforward once you stop treating closed eyes as good enough.
 
-[The Lumora system](/explore) is built on that principle. The mask delivers true darkness at the eyes first, then layers gentle light cues, sound, and temperature on top. Darkness is the foundation everything else rests on, because without it the body never gets the clean signal that the night has arrived.`,
+[Lumora](/explore/) is built on that principle. The mask delivers true darkness at the eyes first, then uses a gradual sunrise to bring you out of it at a lighter moment. Darkness is the foundation everything else rests on, because without it the body never gets the clean signal that the night has arrived.`,
   },
   {
     slug: "how-light-leakage-quietly-ruins-a-sleep-mask",
@@ -314,7 +314,7 @@ The pattern is clear. Light leakage is usually a fit and shape problem, not bad 
 
 It is easy to judge a mask by how it feels in your hands or how it looks. The measure that matters is whether it keeps light off your eyes from the moment you fall asleep to the moment you wake. Comfort gets you to wear it. The seal is what makes it work.
 
-[The Lumora system](/explore) is designed around that seal, with a contoured shape meant to close the nose gap and edges where leaks usually start, and a strap built to hold through a full night. A mask should deliver real darkness, not the comfortable illusion of it.`,
+[Lumora](/explore/) is designed around that seal, with a contoured shape meant to close the nose gap and edges where leaks usually start, and a strap built to hold through a full night. The only light it is meant to let you see is the gradual sunrise it wakes you with. A mask should deliver real darkness, not the comfortable illusion of it.`,
   },
   {
     slug: "contoured-vs-flat-sleep-masks-which-is-better",
@@ -387,7 +387,7 @@ A short way to decide:
 
 For everyday use at home, where packability matters less and darkness and comfort matter more, a contoured mask is usually the better long term choice.
 
-[The Lumora system](/explore) uses a contoured design for exactly these reasons. The molded shape keeps fabric off the eyes, seals the nose and edges against light, and holds up for side sleepers. The idea is to give you true darkness and room to blink at the same time, without forcing you to pick one.`,
+[Lumora](/explore/) uses a contoured design for exactly these reasons. The molded shape keeps fabric off the eyes, seals the nose and edges against light, and holds up for side sleepers. The idea is to give you true darkness and room to blink at the same time, without forcing you to pick one.`,
   },
   {
     slug: "how-to-clean-and-care-for-a-silk-sleep-mask",
@@ -460,7 +460,7 @@ If you find you keep skipping the careful routine, that is useful information. I
 
 Silk rewards care but demands it, and that tradeoff is worth knowing before you buy. If handwashing and air drying sound like more effort than you want, a contoured mask with an easy care cover may suit your life better.
 
-That is one reason [the Lumora system](/explore) pairs a contoured, light sealing shape with materials chosen to be comfortable and practical to maintain. A mask should be easy to keep clean, because the version you actually keep clean is the one that stays pleasant to wear night after night.`,
+That is one reason [Lumora](/explore/) keeps its electronics in a small pod that lifts out of a pocket, so the fabric can be washed without working around anything delicate. A mask should be easy to keep clean, because the version you actually keep clean is the one that stays pleasant to wear night after night.`,
   },
   {
     slug: "sleep-masks-for-side-sleepers-what-to-look-for",
@@ -521,7 +521,7 @@ If it passes all of that, it will likely survive a real night.
 
 Side sleepers should prioritize a contoured shape that holds its form under pressure, a strap with no bulky back hardware, and a low profile that resists getting shoved around. Get those right and the mask stays comfortable and sealed no matter how much you turn.
 
-[The Lumora system](/explore) is built with side sleepers in mind, using a contoured form that keeps space over the eyes under pillow pressure and a strap designed to sit comfortably and stay put through the night. The point is a mask that works in the position most people actually sleep in.`,
+[Lumora](/explore/) is built with side sleepers in mind, using a contoured form that keeps space over the eyes under pillow pressure and a strap designed to sit comfortably and stay put through the night. The point is a mask that works in the position most people actually sleep in.`,
   },
   {
     slug: "can-a-sleep-mask-help-with-migraines-and-headaches",
@@ -566,7 +566,7 @@ A few honest boundaries:
 
 Think of a sleep mask as a practical tool for the light part of the problem. During an attack, it gives you portable darkness and a touch of calming pressure. Between attacks, by supporting better sleep, it may help reduce one common trigger. That is a useful and honest role, not a cure.
 
-[The Lumora system](/explore) is designed around complete darkness and a contoured shape that rests gently without pressing on the eyes, which is exactly what light sensitive people tend to need. For the light side of headaches and for the sleep that helps keep them at bay, a mask that truly seals out light is the part that matters.`,
+[Lumora](/explore/) is designed around complete darkness and a contoured shape that rests gently without pressing on the eyes, which is exactly what light sensitive people tend to need. For the light side of headaches and for the sleep that helps keep them at bay, a mask that truly seals out light is the part that matters.`,
   },
   {
     slug: "weighted-sleep-masks-and-the-calming-effect-of-pressure",
@@ -624,7 +624,7 @@ A weighted mask is a comfort and relaxation tool. It can help you feel calmer an
 
 Used for what it is, gentle pressure is a pleasant and effective way to signal to your body that the day is over.
 
-[The Lumora system](/explore) focuses on that same goal of helping the body settle, combining complete darkness with a contoured shape that rests gently against the face and keeps pressure off the eyes. Whether the calm comes from darkness or from a soft, grounding fit, the aim is the same. A mask that helps you let go and drift off.`,
+[Lumora](/explore/) focuses on that same goal of helping the body settle, combining complete darkness with a contoured shape that rests gently against the face and keeps pressure off the eyes. Whether the calm comes from darkness or from a soft, grounding fit, the aim is the same. A mask that helps you let go and drift off.`,
   },
   {
     slug: "how-a-sleep-mask-supports-your-circadian-rhythm",
@@ -677,7 +677,7 @@ If your rhythm feels badly out of sync no matter what you try, and it disrupts y
 
 A sleep mask supports your circadian rhythm by doing one precise thing. It controls light at the eyes, giving the brain a clean dark signal so the internal clock stays aligned with night. In a world that leaks light into every evening, that simple control is more valuable than it sounds.
 
-[The Lumora system](/explore) is built around that idea, delivering true darkness first and then using gentle light cues, sound, and temperature to work with your rhythm rather than against it. The goal is to help your internal clock stay in step with the day, one well signaled night at a time.`,
+[Lumora](/explore/) is built around that idea, delivering true darkness first and then ending the night with a gradual sunrise timed to a lighter moment, so your wake works with your rhythm rather than against it. The goal is to help your internal clock stay in step with the day, one well signaled night at a time.`,
   },
   {
     slug: "smart-sleep-masks-what-light-sound-and-temperature-add",
@@ -730,7 +730,7 @@ The honest caveat is that none of this replaces good habits. A smart mask cannot
 
 A smart sleep mask is most useful when it treats darkness as the foundation and adds light, sound, and temperature to handle the rest of what disrupts a night. Together they address falling asleep, staying asleep, and waking well, rather than just one slice of the problem.
 
-That is the whole idea behind [the Lumora system](/explore). It combines gentle light, immersive sound, and a passive cooling insert in a single mask, built on the darkness a good mask should always deliver. If a smart mask sounds like what your nights have been missing, you can [join the waitlist](/waitlist).`,
+That is the whole idea behind [Lumora](/explore/). It starts with the darkness a good mask should always deliver, adds a passive cooling insert to blunt heat at the face, and puts a small sensor pod inside the mask so it can wake you with a gradual sunrise at a lighter moment rather than at a fixed time. If a smart mask sounds like what your nights have been missing, you can [join the waitlist](/waitlist/).`,
   },
   {
     slug: "five-sleep-mask-myths-worth-ignoring",
@@ -781,6 +781,6 @@ If light is your limiting factor, a mask can make a clear difference. If somethi
 
 Put those five together and the honest picture is clear. A sleep mask is a focused tool. Closed eyes are not dark enough, masks belong at home and not just on planes, design and fit decide whether one works, comfort is achievable with the right shape, and a mask supports good sleep rather than replacing the habits behind it. Hold those five truths and you will use a mask far better than most people do.
 
-[The Lumora system](/explore) is built on exactly these points, with a contoured, well sealing shape designed for true darkness and all night comfort, then gentle light, sound, and temperature layered on top. A mask done right is quietly one of the most reliable upgrades to a night, no myths required.`,
+[Lumora](/explore/) is built on exactly these points, with a contoured, well sealing shape designed for true darkness and all night comfort, then a sensor pod and a gradual sunrise layered on top so the mask can also decide when to wake you. A mask done right is quietly one of the most reliable upgrades to a night, no myths required.`,
   },
 ]
