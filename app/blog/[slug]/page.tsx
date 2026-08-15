@@ -10,42 +10,42 @@ marked.use({ gfm: true })
 
 const CATEGORY_PITCH: Record<string, { headline: string; body: string }> = {
   "Sleep Masks": {
-    headline: "A sleep mask, reimagined.",
-    body: "Lumora builds light, sound, and temperature into one weightless mask. Founding members get first access and pricing we will not offer again.",
+    headline: "A sleep mask that acts.",
+    body: "Most masks just block light. Lumora reads your night and wakes you at a lighter moment, with a gradual sunrise built in. Get on the list for launch access.",
   },
   "Light and Circadian Rhythm": {
     headline: "Wake with light, not shock.",
-    body: "Lumora's light system eases you down at night and lifts you out of sleep with a gradual dawn. Join the founding waitlist for first access.",
+    body: "Instead of firing at a fixed time, Lumora looks for a lighter moment inside your window and brings you up with a gradual sunrise. Get on the list for launch access.",
   },
   Temperature: {
-    headline: "Cool and stable, all night.",
-    body: "Lumora's active temperature control holds a calm climate against your skin from the moment you lie down. Join the founding waitlist.",
+    headline: "Cooler, without the fight.",
+    body: "A passive cooling insert helps the mask resist the overheating that fragments sleep, while the sensor follows how your night is actually going. Get on the list for launch access.",
   },
   "Sound and the Mind": {
-    headline: "Sound that quiets the mind.",
-    body: "Lumora brings calming soundscapes into the mask itself, with no earbuds. Join the waitlist for first access and founding pricing.",
+    headline: "Quiet the night, then end it well.",
+    body: "Lumora blocks the light, and when morning comes it wakes you at a lighter moment instead of yanking you out of deep sleep. Get on the list for launch access.",
   },
   "Sleep and Performance": {
-    headline: "Recovery, engineered.",
-    body: "Lumora Max pairs adaptive sensing with light, sound, and temperature for people who treat sleep as training. Join the founding waitlist.",
+    headline: "The morning is the whole point.",
+    body: "Waking from the wrong moment can leave fog that follows you for hours. Lumora is built to find a better one. Get on the list for launch access.",
   },
   "Sleep Science": {
     headline: "Built around how sleep works.",
-    body: "Lumora brings light, sound, and temperature into one mask, designed around the real moments that shape rest. Join the founding waitlist.",
+    body: "Your alarm ignores where you are in your sleep. Lumora reads movement and temperature to find a lighter moment to wake you. Get on the list for launch access.",
   },
   "Routines and Habits": {
-    headline: "Make the wind down effortless.",
-    body: "Lumora folds light, sound, and temperature into a single nightly ritual. Join the waitlist for first access and founding pricing.",
+    headline: "One habit that does the work.",
+    body: "Put it on, set a window, and let the mask handle the rest of the night. Get on the list for launch access.",
   },
   "Travel and Special Situations": {
     headline: "Your rest, anywhere.",
-    body: "Lumora is a portable mask that blocks light, adds sound, and steadies temperature in any room. Join the founding waitlist.",
+    body: "A blackout mask that works in any room, and wakes you at a lighter moment instead of a fixed one. Get on the list for launch access.",
   },
 }
 
 const DEFAULT_PITCH = {
-  headline: "Built for the deepest sleep of your life.",
-  body: "Lumora is a luxury sleep mask that brings light, sound, and temperature into one ritual. Founding members get first access and pricing we will not offer again.",
+  headline: "Everything else tracks your sleep.",
+  body: "Lumora changes it. A sleep mask that learns your night and wakes you at the right moment, not the same moment. Get on the list for launch access.",
 }
 
 export function generateStaticParams() {
@@ -204,7 +204,7 @@ export default function ArticlePage({ params }: { params: { slug: string } }) {
                   href="/explore/"
                   className="inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3 text-sm font-medium text-ink transition-all hover:border-ink/40 hover:bg-ink/5"
                 >
-                  See the lineup
+                  See the mask
                 </a>
               </div>
             </div>

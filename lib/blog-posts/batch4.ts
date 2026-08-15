@@ -48,7 +48,7 @@ You can support the natural temperature drop with a few simple habits.
 - Choose breathable bedding that lets warmth move away from the body
 - Pay attention to your feet, since cold feet can actually delay the cooling the rest of the body needs
 
-The harder part is the middle of the night, when your own habits no longer help and the bedding around you decides whether heat stays trapped. That is the gap active temperature control is built to close. As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts work to keep the surface around your head and body steady, so the core can do what it naturally wants to do.
+The harder part is the middle of the night, when your own habits no longer help and the bedding around you decides whether heat stays trapped. That is the gap a passive cooling insert is built to close. [Lumora](/explore) uses a phase change insert, which works to keep the surface around your head and body steady, so the core can do what it naturally wants to do.
 
 Your body already knows how to cool itself for sleep. The goal is to stop getting in its way. If you have a medical condition that affects temperature regulation, it is worth raising with a clinician, since the fix may go beyond environment alone.`,
   },
@@ -102,7 +102,7 @@ Setting the room is the easy half. The harder problem is that a single thermosta
 
 Bedding traps heat unevenly, the area around your head warms up as the night goes on, and a room that felt right at bedtime can feel stuffy by 3 a.m. This is the gap between room temperature and sleep temperature.
 
-Active, localized temperature control closes that gap by working at the surface rather than the whole room. As one of the three systems in [the Lumora system](/explore), cooling and phase change inserts hold a steady climate close to you, independent of what the thermostat reads.
+Active, localized temperature control closes that gap by working at the surface rather than the whole room. [Lumora](/explore) uses a phase change insert, which holds a steady climate close to you, independent of what the thermostat reads.
 
 Start with a cool room. It is the single highest value change most people can make for deep sleep. Then refine from there, and remember that the goal is not a cold room for its own sake. It is a stable, heat shedding environment that lets your body settle and stay settled.`,
   },
@@ -154,9 +154,9 @@ The aim is to give heat a steady path away from your body for the whole night, n
 - Avoid heavy meals, alcohol, and intense exercise close to bedtime, since each raises heat production
 - Pay attention to the surface right against you, which is where heat actually builds
 
-That last point is where most setups fall short. A cool room helps, but the microclimate against your skin is what decides whether heat escapes or accumulates. Static bedding cannot adjust as the night changes. Active temperature control can.
+That last point is where most setups fall short. A cool room helps, but the microclimate against your skin is what decides whether heat escapes or accumulates. Static bedding cannot adjust as the night changes. A passive cooling insert can.
 
-As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts work to hold that surface steady through the night, so heat keeps moving away instead of building up around 3 a.m. The point is not to make you cold. It is to keep conditions from drifting warm while you sleep.
+[Lumora](/explore) uses a phase change insert, which works to hold that surface steady through the night, so heat keeps moving away instead of building up around 3 a.m. The point is not to make you cold. It is to keep conditions from drifting warm while you sleep.
 
 If you regularly overheat at night despite a cool room and light bedding, and especially if it comes with heavy sweating, it is worth a conversation with a clinician to rule out other causes.`,
   },
@@ -165,7 +165,7 @@ If you regularly overheat at night despite a cool room and light bedding, and es
     title: "Cooling Strategies for Hot Sleepers",
     category: "Temperature",
     excerpt: "If you run hot at night, a few targeted changes do far more than cranking the air conditioning. Here is a practical layered approach.",
-    metaDescription: "Practical cooling strategies for hot sleepers, from bedding and airflow to bedtime habits and active temperature control at the surface.",
+    metaDescription: "Practical cooling strategies for hot sleepers, from bedding and airflow to bedtime habits and passive cooling at the surface.",
     tags: ["hot sleepers", "cooling tips", "night sweats"],
     content: `Some people are simply warm sleepers. They wake with damp sheets, throw off the covers by midnight, and feel like no thermostat setting is ever quite right. If that is you, the good news is that running hot is highly manageable once you stop relying on a single fix and start thinking in layers.
 
@@ -210,7 +210,7 @@ None of these require much effort. They just shift the conditions in your favor 
 
 Habits and a cool room handle most of the problem, but they share a weakness. They are static. They cannot respond when the night warms up, when bedding traps heat, or when you simply produce more warmth than your surroundings can carry away. For hot sleepers, that mid night drift is exactly when things go wrong.
 
-This is where active, localized cooling earns its place. Instead of cooling a whole room and hoping, it works at the surface, holding a steady climate against you and pulling heat away as it builds. As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts are aimed at this problem directly, keeping the area around your head and body from heating up as the night goes on.
+This is where active, localized cooling earns its place. Instead of cooling a whole room and hoping, it works at the surface, holding a steady climate against you and pulling heat away as it builds. [Lumora](/explore) uses a phase change insert, which is aimed at this problem directly, keeping the area around your head and body from heating up as the night goes on.
 
 If you run hot, layer your approach. Fix the bedding, cool and ventilate the room, time your habits, and add active control at the surface for the heat that static fixes cannot catch. And if heavy sweating persists no matter what you change, mention it to a clinician, since persistent night sweats can have causes worth checking.`,
   },
@@ -262,7 +262,7 @@ The aim is a balance. A cool core, warm and open extremities. That combination i
 
 What is happening at your feet is a smaller version of what is happening across your whole body. Sleep depends on managing heat at the surface so the core can find and hold a lower temperature. Warm feet open the valves. A steady, cool surface around the rest of you lets the released heat actually go somewhere.
 
-That is the logic behind active temperature control. As one of the three systems in [the Lumora system](/explore), cooling and phase change inserts manage the surface climate so heat keeps moving away through the night, the same principle your feet demonstrate at sleep onset.
+That is the logic behind a passive cooling insert. [Lumora](/explore) uses a phase change insert, which manages the surface climate so heat keeps moving away through the night, the same principle your feet demonstrate at sleep onset.
 
 So if you struggle to fall asleep with cold feet, the fix is often as simple as warming them. It is not a trick. It is working with the way your body was built to cool itself down.`,
   },
@@ -304,9 +304,9 @@ The temperature at which a given PCM melts is set during manufacturing, which is
 
 It helps to be clear about the limits. PCM is a buffer, not a powered cooler. It absorbs a certain amount of heat, and once it has fully changed state, its buffering capacity for that cycle is used up until it resets. It evens out swings beautifully, but on its own it is finite.
 
-That is why the strongest approach pairs the two ideas. Active cooling provides ongoing, powered heat removal. Phase change inserts smooth out the moment to moment spikes and hold a steady surface. Together they cover both the steady drift and the sudden warm moments.
+That is why the strongest approach pairs the two ideas. Powered cooling provides ongoing heat removal, which is why bed level systems use it. Phase change inserts smooth out the moment to moment spikes and hold a steady surface, without a pump, a fan, or a battery.
 
-This pairing is built into [the Lumora system](/explore), where active cooling and phase change inserts are two halves of the same temperature system, one of the three the product combines. The active side carries heat away over time. The PCM side flattens the peaks. The surface against you stays in a narrower, calmer band.
+At the head, where warmth collects fastest, the passive side does most of the useful work. [Lumora](/explore) uses a phase change insert for exactly that reason. It flattens the peaks against your face rather than trying to air condition the whole bed, so the surface against you stays in a narrower, calmer band.
 
 The science is not exotic. It is the same physics as ice in a glass, tuned for the temperature your body wants and aimed at the surface where sleep is actually won or lost.`,
   },
@@ -352,7 +352,7 @@ This is also why the advice connects to warm feet at bedtime. Both work by openi
 
 A warm bath is a one time nudge. It opens the valves and triggers a single cooling plunge at the start of the night. The harder challenge is keeping that cool, settled state through the hours that follow, when bedding traps heat and the surface around you slowly warms.
 
-That is the continuation of the same idea. The bath gets your core to drop. Active temperature control keeps the surface around you cool enough that the core stays down. As one of the three systems in [the Lumora system](/explore), cooling and phase change inserts hold that steady climate through the night, extending the head start the bath gives you.
+That is the continuation of the same idea. The bath gets your core to drop. A passive cooling insert helps keep the surface around you cool enough that the core stays down. [Lumora](/explore) uses a phase change insert, which holds that steady climate through the night, extending the head start the bath gives you.
 
 So the next time a warm bath before bed sounds like the wrong move, remember it is not about the warmth. It is about the cool that follows.`,
   },
@@ -399,9 +399,9 @@ The aim is to keep moisture from lingering, so that even when a sweat happens, i
 
 The deeper fix is to stop the overheating that sets off the sweat. Sweating is a last resort. It is what the body does when it cannot release heat any other way. If heat keeps moving away from your skin steadily, your body is far less likely to reach the point of sweating at all.
 
-Static bedding cannot do this. It traps the heat you produce and offers no way to carry it off as it builds. That is where active temperature control changes the equation. By pulling heat away at the surface continuously, it keeps you below the threshold where sweating kicks in.
+Static bedding cannot do this. It traps the heat you produce and offers no way to carry it off as it builds. That is where a passive cooling layer changes the equation. By pulling heat away at the surface continuously, it keeps you below the threshold where sweating kicks in.
 
-As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts work to hold a steady surface climate, absorbing heat as it accumulates so the body has less reason to resort to sweating. For the area around your head, where heat builds quickly, that steady management can make a real difference.
+[Lumora](/explore) uses a phase change insert, which works to hold a steady surface climate, absorbing heat as it accumulates so the body has less reason to resort to sweating. For the area around your head, where heat builds quickly, that steady management can make a real difference.
 
 Night sweats are stubborn, but they respond to the right combination of cooler conditions, breathable materials, and steady heat removal. And again, if they persist or worsen, let a clinician take a look. The cause matters, and so does your sleep.`,
   },
@@ -457,11 +457,11 @@ That last point matters. Even the most breathable sheet cannot help if the surro
 
 Here is the honest limit. The best bedding is passive. It can let heat escape, but it cannot actively remove heat or respond when the night warms up. On a cool night with light bedding, that is usually enough. On a warm night, or for someone who simply runs hot, passive breathability can only do so much. Once the surrounding air cannot carry off heat fast enough, even great sheets leave you warm.
 
-That is the line between passive and active temperature control. Breathable bedding lets your body cool itself when conditions cooperate. Active cooling steps in when they do not, pulling heat away regardless of the room.
+That is the line between breathability and buffering. Breathable bedding lets your body cool itself when conditions cooperate. A phase change material does something different. It absorbs heat as it builds and releases it later, which blunts the warm moments instead of relying on the room to carry them off.
 
-As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts handle the heat that breathable bedding alone cannot, especially around the head where warmth accumulates. Think of breathable bedding as the foundation and active control as the part that keeps working when the foundation reaches its limit.
+[Lumora](/explore) uses a phase change insert for the heat that breathable bedding alone cannot handle, especially around the head where warmth accumulates. Think of breathable bedding as the foundation and the insert as the buffer that keeps the surface calm when the foundation reaches its limit.
 
-Start with materials that breathe. It is the highest value, lowest cost upgrade most people can make. Just know where the foundation ends and where active cooling has to take over.`,
+Start with materials that breathe. It is the highest value, lowest cost upgrade most people can make. Just know where the foundation ends and where passive cooling has to take over.`,
   },
   {
     slug: "temperature-and-rem-sleep-overnight-connection",
@@ -507,7 +507,7 @@ The takeaway is direct. During REM you cannot defend your own temperature, so th
 
 A cool room helps, but it is not enough on its own, because the room drifts warmer through the night while bedding traps heat near your skin. What protects REM is a surface climate that stays steady regardless, so the warmest, most REM rich hours do not become the hottest.
 
-That steady surface is the aim of active temperature control. As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts hold a consistent climate around your head and body, covering for the thermostat your body switches off during REM. The goal is to keep those hours from heating up, so your REM stays intact rather than getting cut short.
+That steady surface is the aim of a passive cooling insert. [Lumora](/explore) uses a phase change insert, which holds a consistent climate around your head and body, covering for the thermostat your body switches off during REM. The goal is to keep those hours from heating up, so your REM stays intact rather than getting cut short.
 
 You cannot control your temperature during REM. The smart move is to make sure your environment does not need you to.`,
   },
@@ -557,9 +557,9 @@ These steps will not stop the hormonal cause, but they lower how often you cross
 
 The core challenge of menopausal sleep is a thermostat that has become unpredictable, firing cooling responses when they are not needed. Static bedding cannot keep up. It traps heat and cannot respond to the sudden surges that define a hot flash.
 
-This is exactly the kind of problem active temperature control is suited to. By steadily removing heat at the surface and buffering sudden spikes, it can help keep you below the threshold that triggers a flash, and help you recover faster when one happens.
+This is exactly the kind of problem passive cooling is suited to. By steadily removing heat at the surface and buffering sudden spikes, it can help keep you below the threshold that triggers a flash, and help you recover faster when one happens.
 
-As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts work to hold a steady climate around your head and body and absorb heat as it surges, which is precisely the pattern that menopausal night sweats follow. For the area around your head, where heat and discomfort concentrate, that steady management can ease the cycle of waking hot and cold.
+[Lumora](/explore) uses a phase change insert, which works to hold a steady climate around your head and body and absorb heat as it surges, which is precisely the pattern that menopausal night sweats follow. For the area around your head, where heat and discomfort concentrate, that steady management can ease the cycle of waking hot and cold.
 
 Menopause makes temperature unpredictable, but your sleep environment does not have to follow. With cooler conditions, breathable materials, steady cooling, and a clinician's guidance on the wider picture, the nights can become far more manageable.`,
   },
@@ -605,7 +605,7 @@ This is why chasing a colder setting so often disappoints. You are adjusting the
 
 The better target is a steady surface climate. Not the coldest room, but a consistent temperature right where your body meets the bed, held through the whole night regardless of what the room does.
 
-That is the case for active temperature control over brute force cooling. Rather than blasting cold air into a room and hoping, it works at the surface to hold a steady, comfortable band, absorbing heat as it builds and keeping conditions from drifting. As one of the three systems in [the Lumora system](/explore), active cooling and phase change inserts are built around stability rather than extremes, keeping the climate around your head and body consistent from the moment you fall asleep until morning.
+That is the case for passive cooling over brute force cooling. Rather than blasting cold air into a room and hoping, it works at the surface to hold a steady, comfortable band, absorbing heat as it builds and keeping conditions from drifting. [Lumora](/explore) uses a phase change insert, which is built around stability rather than extremes, keeping the climate around your head and body consistent from the moment you fall asleep until morning.
 
 So before you drop the thermostat another few degrees, reconsider the goal. You are not trying to be cold. You are trying to be steady. A stable climate, held at the surface where it matters, beats a cold room every time.`,
   },

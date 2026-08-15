@@ -25,20 +25,20 @@ const SITE_URL = "https://uselumora.co"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lumora Sleep, Redefine Rest",
+    default: "Lumora Sleep, a sleep mask that acts",
     template: "%s, Lumora Sleep",
   },
   description:
-    "Lumora Sleep makes an all in one luxury sleep mask that brings gentle light, immersive sound, and active temperature control into a single wearable. Join the pre launch waitlist.",
+    "Everything else tracks your sleep. Lumora changes it. A sleep mask that learns your night and wakes you at a lighter moment, with a gradual sunrise built in. Launching on Kickstarter.",
   applicationName: "Lumora Sleep",
   keywords: [
     "Lumora",
     "Lumora Sleep",
-    "luxury sleep mask",
     "smart sleep mask",
-    "sleep mask with sound",
-    "temperature sleep mask",
+    "sunrise alarm mask",
+    "smart alarm sleep mask",
     "wake light mask",
+    "sleep mask alternative to sleep tracker",
     "sleep wellness",
   ],
   authors: [{ name: "Lumora Sleep" }],
@@ -47,23 +47,23 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Lumora Sleep",
-    title: "Lumora Sleep, Redefine Rest",
+    title: "Everything else tracks your sleep. Lumora changes it.",
     description:
-      "An all in one luxury sleep mask. Light, sound, and temperature in a single wearable.",
+      "A sleep mask that learns your night and wakes you at the right moment, not the same moment.",
     images: [
       {
         url: "/og/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Lumora Sleep, an all in one luxury sleep mask",
+        alt: "Lumora, a sleep mask that learns your night",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumora Sleep, Redefine Rest",
+    title: "Everything else tracks your sleep. Lumora changes it.",
     description:
-      "An all in one luxury sleep mask. Light, sound, and temperature in a single wearable.",
+      "A sleep mask that learns your night and wakes you at the right moment, not the same moment.",
     images: ["/og/og-home.png"],
   },
   icons: {
@@ -90,7 +90,7 @@ const orgJsonLd = {
       logo: "https://uselumora.co/images/lumora-logo.png",
       email: "hello@uselumora.co",
       description:
-        "Lumora Sleep is a luxury sleep-tech brand building an all-in-one smart sleep mask that combines light, sound, and temperature control.",
+        "Lumora Sleep is building a smart sleep mask that acts on your sleep instead of only reporting on it, using onboard sensing to wake you at a lighter moment with a gradual sunrise.",
       sameAs: [
         "https://www.instagram.com/lumorasleep",
         "https://www.linkedin.com/company/lumorasleep",

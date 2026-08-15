@@ -133,9 +133,10 @@ export default function WaitlistForm({
           <Check className="h-6 w-6" />
         </span>
         <p className="eyebrow mb-2">You are on the list</p>
-        <h3 className="font-display text-2xl font-light text-ink">Welcome to the inner circle.</h3>
+        <h3 className="font-display text-2xl font-light text-ink">See you on day one.</h3>
         <p className="mx-auto mt-3 max-w-sm text-sm text-mist">
-          Your founding place is reserved. Watch your inbox for first access and founding pricing.
+          You will hear from us the moment the Kickstarter goes live, with the lowest pricing we
+          offer. Nothing else in between.
         </p>
       </div>
     )

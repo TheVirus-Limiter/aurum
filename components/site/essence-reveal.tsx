@@ -11,7 +11,7 @@ import {
 } from "framer-motion"
 import { essenceCallouts, products } from "@/lib/site-content"
 
-const essence = products.find((p) => p.key === "essence")!
+const essence = products[0]
 
 const EssenceScene = dynamic(() => import("@/components/three/scenes/essence-scene"), {
   ssr: false,
@@ -57,7 +57,7 @@ export default function EssenceReveal() {
             style={{ filter: "drop-shadow(0 30px 80px rgba(139,124,255,0.3))" }}
           />
           <div>
-            <p className="eyebrow mb-4">The all in one mask</p>
+            <p className="eyebrow mb-4">The mask</p>
             <h2 className="font-display text-4xl font-light text-ink sm:text-5xl">{essence.name}</h2>
             <p className="mt-4 text-mist">{essence.description}</p>
             <ul className="mt-8 space-y-5">
@@ -90,9 +90,9 @@ export default function EssenceReveal() {
         />
 
         <div className="pointer-events-none absolute left-1/2 top-[6%] -translate-x-1/2 text-center">
-          <p className="eyebrow">The all in one mask</p>
+          <p className="eyebrow">The mask</p>
           <h2 className="font-display mt-2 text-[clamp(2rem,6vw,4.25rem)] font-light leading-none tracking-tight text-ink">
-            Lumora Essence
+            {essence.name}
           </h2>
         </div>
 

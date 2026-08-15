@@ -4,17 +4,17 @@ import { useEffect, useState } from "react"
 import ProductViewer from "@/components/site/product-viewer"
 import { SITE } from "@/lib/site-content"
 
-const MODELS = ["/models/LumoraEssence.glb", "/models/LumoraMax.glb"]
+const MODEL = "/models/LumoraEssence.glb"
 
 /**
- * Randomly shows the Essence or Max model on each visit. The pick happens after
- * mount (client only), so there is no hydration mismatch and no model swap.
+ * Shows the Lumora mask. Mounted client side only, so there is no hydration
+ * mismatch and the heavy model never blocks first paint.
  */
 export default function WaitlistModel() {
   const [url, setUrl] = useState<string | null>(null)
 
   useEffect(() => {
-    setUrl(MODELS[Math.floor(Math.random() * MODELS.length)])
+    setUrl(MODEL)
   }, [])
 
   if (!url) return null

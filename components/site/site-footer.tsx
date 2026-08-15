@@ -11,7 +11,8 @@ export default function SiteFooter() {
           <div>
             <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-16 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist">
-              An all in one luxury sleep mask. Light, sound, and temperature, in a single ritual.
+              Everything else tracks your sleep. Lumora changes it. A mask that learns your night
+              and wakes you at the right moment.
             </p>
           </div>
 
@@ -20,12 +21,12 @@ export default function SiteFooter() {
             <ul className="space-y-3 text-sm text-mist">
               <li>
                 <a href="/#system" className="link-quiet hover:text-ink">
-                  The system
+                  How it works
                 </a>
               </li>
               <li>
                 <a href="/explore/" className="link-quiet hover:text-ink">
-                  The lineup
+                  The mask
                 </a>
               </li>
               <li>
@@ -40,7 +41,7 @@ export default function SiteFooter() {
               </li>
               <li>
                 <a href="/team/" className="link-quiet hover:text-ink">
-                  Our team
+                  The founder
                 </a>
               </li>
               <li>

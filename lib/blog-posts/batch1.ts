@@ -157,7 +157,7 @@ Deep sleep responds well to a calm, controlled environment. A few things help re
 - Reduce noise that can pull you back toward lighter stages
 - Stay consistent with your bedtime so your early cycles land at the same time each night
 
-Temperature is one of the most overlooked levers here. Your body needs to shed heat to drop into its deepest sleep, and a room that runs warm works against that. Designing the environment around steady darkness, calm sound, and active temperature control is exactly the problem [the Lumora system](/explore) was built to solve, so the most restorative part of your night gets the conditions it needs.`,
+Temperature is one of the most overlooked levers here. Your body needs to shed heat to drop into its deepest sleep, and a room that runs warm works against that. Designing the environment around steady darkness, calm sound, and overheating at the surface is exactly the problem [the Lumora system](/explore) was built to solve, so the most restorative part of your night gets the conditions it needs.`,
   },
   {
     slug: "sleep-cycles-explained-timing-your-night",

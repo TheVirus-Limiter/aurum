@@ -6,13 +6,14 @@ import { Reveal } from "@/components/site/reveal"
 import { founders, SITE } from "@/lib/site-content"
 
 export const metadata: Metadata = {
-  title: "Our Team",
-  description: "The founding team behind Lumora Sleep. Built with discipline, cared for like craft.",
+  title: "The Founder",
+  description:
+    "Lumora is designed and built by one person, from the sensing and firmware to the mask itself.",
   alternates: { canonical: "/team" },
   openGraph: {
     url: "https://uselumora.co/team",
-    title: "The Lumora Sleep Team",
-    description: "The founding team behind Lumora Sleep.",
+    title: "The founder behind Lumora Sleep",
+    description: "Lumora is designed and built by one person, in the open.",
     images: [{ url: "/og/og-home.png", width: 1200, height: 630, alt: "Lumora Sleep" }],
   },
 }
@@ -31,13 +32,13 @@ export default function TeamPage() {
         />
         <div className="mx-auto w-full max-w-7xl">
           <Reveal className="max-w-3xl">
-            <p className="eyebrow mb-6">The founding team</p>
+            <p className="eyebrow mb-6">The founder</p>
             <h1 className="font-display text-[clamp(2.8rem,8vw,6rem)] font-light leading-[0.95] tracking-[-0.02em] text-ink">
               Built with <span className="italic text-iris-soft">discipline.</span>
             </h1>
             <p className="mt-7 max-w-xl text-lg leading-relaxed text-mist">
-              Lumora is shaped by iteration, craft, and service. Two builders who care about the
-              details you will never see. We build like engineers and care like humans.
+              Lumora is designed and built by one person, from the sensing and firmware to the mask
+              and this site. Built like an engineer, cared for like craft.
             </p>
           </Reveal>
         </div>
@@ -47,13 +48,13 @@ export default function TeamPage() {
       <section className="border-t border-ink/10 bg-base-2 px-5 py-24 sm:px-8 sm:py-32">
         <div className="mx-auto max-w-6xl">
           <Reveal>
-            <p className="eyebrow mb-4">Two builders. One standard.</p>
+            <p className="eyebrow mb-4">One builder. One standard.</p>
             <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] font-light tracking-tight text-ink">
               Make rest feel effortless.
             </h2>
           </Reveal>
 
-          <div className="mt-14 grid gap-6 md:grid-cols-2">
+          <div className="mx-auto mt-14 grid max-w-2xl gap-6">
             {founders.map((f, i) => (
               <Reveal key={f.name} delay={i * 0.1}>
                 <article className="group flex h-full flex-col overflow-hidden rounded-3xl border border-ink/10 bg-base transition-colors duration-500 hover:border-iris/30">
@@ -166,13 +167,13 @@ export default function TeamPage() {
               href="/waitlist/"
               className="glow-iris rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
             >
-              Join the waitlist
+              Get launch access
             </a>
             <a
               href="/explore/"
               className="group inline-flex items-center gap-2 rounded-full border border-ink/20 px-8 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:border-ink/40 hover:bg-ink/5"
             >
-              Explore the lineup
+              See the mask
               <ArrowRight className="h-4 w-4 transition-transform duration-300 group-hover:translate-x-1" />
             </a>
           </div>

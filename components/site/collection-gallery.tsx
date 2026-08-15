@@ -16,11 +16,6 @@ function ProductCard({ product }: { product: Product }) {
       }`}
     >
       <div className="plate relative aspect-[4/3] w-full rounded-2xl">
-        {product.flagship && (
-          <span className="absolute right-3 top-3 z-10 rounded-full bg-iris px-3 py-1 text-[10px] font-semibold uppercase tracking-wider text-[#0a0913]">
-            Flagship
-          </span>
-        )}
         {product.model ? (
           <ProductViewer url={product.model} fallback={product.image} alt={product.name} />
         ) : (
@@ -39,12 +34,13 @@ function ProductCard({ product }: { product: Product }) {
           <Icon name={product.icon} className="h-3.5 w-3.5 text-iris" />
           {product.tag}
         </span>
-        <span className="font-display text-lg text-ink">{product.price}</span>
+        <span className="font-display text-lg text-ink">from {product.price}</span>
       </div>
 
       <h3 className="font-display mt-3 text-2xl font-light text-ink">{product.name}</h3>
       <p className="mt-1 text-sm italic text-iris-soft/80">{product.tagline}</p>
       <p className="mt-4 text-sm leading-relaxed text-mist">{product.description}</p>
+      <p className="mt-3 text-xs text-faint">{product.priceNote}</p>
 
       <ul className="mt-5 space-y-2.5 border-t border-ink/10 pt-5">
         {product.features.map((f) => (
@@ -63,19 +59,19 @@ export default function CollectionGallery() {
     <section id="collection" className="px-5 py-28 sm:px-8 sm:py-36">
       <div className="mx-auto max-w-7xl">
         <Reveal className="max-w-2xl">
-          <p className="eyebrow mb-4">The lineup</p>
+          <p className="eyebrow mb-4">The product</p>
           <h2 className="font-display text-[clamp(2.2rem,5.5vw,4rem)] font-light leading-[1.02] tracking-tight text-ink">
             One mask.
             <br />
-            <span className="italic text-iris-soft">Three ways to own the night.</span>
+            <span className="italic text-iris-soft">Nothing to choose between.</span>
           </h2>
           <p className="mt-5 text-mist">
-            Start with Essence. Step up to Max for the full expression. Add Caelum when you want to
-            tune temperature even further. Each is complete on its own.
+            No tiers, no upsell, no version of this where the useful part costs extra. The
+            intelligence is the product.
           </p>
         </Reveal>
 
-        <Stagger className="mt-16 grid items-stretch gap-6 md:grid-cols-3">
+        <Stagger className="mx-auto mt-16 grid max-w-2xl items-stretch gap-6">
           {products.map((p) => (
             <StaggerItem key={p.key} className="h-full">
               <ProductCard product={p} />

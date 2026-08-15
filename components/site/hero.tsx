@@ -48,25 +48,25 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.p {...fade(0)} className="eyebrow mb-7">
-          The Lumora sleep system
+          A sleep mask that acts
         </motion.p>
 
         <motion.h1
           {...fade(0.08)}
-          className="font-display text-balance text-[clamp(3.4rem,12vw,9.5rem)] font-light leading-[0.88] tracking-[-0.02em] text-ink"
+          className="font-display text-balance text-[clamp(2.6rem,8vw,6.5rem)] font-light leading-[0.94] tracking-[-0.02em] text-ink"
           style={{ textShadow: "0 2px 40px rgba(8,7,12,0.6)" }}
         >
-          Redefine
+          Everything else tracks your sleep.
           <br />
-          <span className="italic text-iris-soft">Rest.</span>
+          <span className="italic text-iris-soft">Lumora changes it.</span>
         </motion.h1>
 
         <motion.p
           {...fade(0.16)}
           className="mt-8 max-w-xl text-balance text-[1.05rem] leading-relaxed text-ink/90 sm:text-lg"
         >
-          One mask that tunes light, sound, and temperature to your night. Falling
-          asleep. Staying asleep. Waking naturally.
+          A sleep mask that learns your night and wakes you at the right moment, not
+          the same moment.
         </motion.p>
 
         <motion.div {...fade(0.24)} className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
@@ -75,14 +75,14 @@ export default function Hero() {
               onClick={() => goTo("#waitlist")}
               className="glow-iris rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
             >
-              Join the waitlist
+              Get launch access
             </button>
           </Magnetic>
           <button
             onClick={() => goTo("#system")}
             className="rounded-full border border-ink/20 bg-base/30 px-8 py-3.5 text-sm font-medium text-ink backdrop-blur-sm transition-all duration-300 hover:border-ink/40 hover:bg-ink/5"
           >
-            Explore the system
+            See how it works
           </button>
         </motion.div>
 

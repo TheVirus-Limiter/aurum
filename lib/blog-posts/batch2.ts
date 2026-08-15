@@ -684,7 +684,7 @@ A sleep mask supports your circadian rhythm by doing one precise thing. It contr
     title: "Smart Sleep Masks: What Light, Sound, and Temperature Add",
     category: "Sleep Masks",
     excerpt: "A smart mask goes beyond blocking light. Here is what adding gentle light, sound, and temperature control actually contributes to sleep.",
-    metaDescription: "Smart sleep masks explained. See what gentle light cues, sound, and active temperature control add beyond darkness and how they work together for sleep.",
+    metaDescription: "Smart sleep masks explained. See what gentle light cues, sound, and a passive cooling insert adds beyond darkness and how they work together for sleep.",
     tags: ["sleep masks", "smart mask", "sleep technology"],
     content: `A traditional sleep mask does one thing. It blocks light. A smart sleep mask starts from that same foundation and adds active features on top, using light, sound, and temperature to work with your body rather than just shielding it. The question worth asking is whether those additions earn their place or just add complication.
 
@@ -711,7 +711,7 @@ The advantage of building sound into the mask is practical. No earbuds to fall o
 
 Temperature is the feature people overlook, and it may be the most physically grounded of the three. Your body temperature naturally drops as you fall asleep, and that drop is part of how sleep gets triggered. Being too warm is a common, quiet reason people struggle to drift off or wake during the night.
 
-Active temperature control around the eyes and face can support that natural cooling, helping the body do what it already wants to do as it heads into sleep. A gentle warmth at the right moment can also feel soothing during wind down. Because the face is sensitive to temperature, even modest control there can have an outsized effect on how comfortable you feel.
+A passive cooling insert around the eyes and face can support that natural cooling, helping the body do what it already wants to do as it heads into sleep. A gentle warmth at the right moment can also feel soothing during wind down. Because the face is sensitive to temperature, even modest control there can have an outsized effect on how comfortable you feel.
 
 ## Why the combination matters
 
@@ -730,7 +730,7 @@ The honest caveat is that none of this replaces good habits. A smart mask cannot
 
 A smart sleep mask is most useful when it treats darkness as the foundation and adds light, sound, and temperature to handle the rest of what disrupts a night. Together they address falling asleep, staying asleep, and waking well, rather than just one slice of the problem.
 
-That is the whole idea behind [the Lumora system](/explore). It combines gentle light, immersive sound, and active temperature control in a single mask, built on the darkness a good mask should always deliver. If a smart mask sounds like what your nights have been missing, you can [join the waitlist](/waitlist).`,
+That is the whole idea behind [the Lumora system](/explore). It combines gentle light, immersive sound, and a passive cooling insert in a single mask, built on the darkness a good mask should always deliver. If a smart mask sounds like what your nights have been missing, you can [join the waitlist](/waitlist).`,
   },
   {
     slug: "five-sleep-mask-myths-worth-ignoring",

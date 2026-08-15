@@ -180,28 +180,29 @@ async function run() {
     {
       file: "og-home.png",
       card: pageCard({
-        eyebrow: "Lumora Sleep",
-        title: "Redefine rest.",
-        subtitle: "An all in one luxury sleep mask. Gentle light, immersive sound, and active temperature in a single wearable.",
-        footRight: "Light · Sound · Temperature",
+        eyebrow: "A sleep mask that acts",
+        title: "Everything else tracks your sleep.",
+        subtitle: "Lumora changes it. A mask that learns your night and wakes you at the right moment, not the same moment.",
+        footRight: "Listens · Waits · Wakes you",
+        titleSize: 62,
       }),
     },
     {
       file: "og-explore.png",
       card: pageCard({
-        eyebrow: "The lineup",
-        title: "Explore the lineup.",
-        subtitle: "Lumora Essence, Max, and Caelum. One mask that brings light, sound, and temperature into a single ritual of rest.",
-        footRight: "Essence · Max · Caelum",
+        eyebrow: "The product",
+        title: "One mask. One job.",
+        subtitle: "It reads your night and wakes you at a lighter moment, with a gradual sunrise built into the mask.",
+        footRight: "Kickstarter from $129",
       }),
     },
     {
       file: "og-waitlist.png",
       card: pageCard({
-        eyebrow: "Founding waitlist",
-        title: "Join the waitlist.",
-        subtitle: "First access and founding pricing on the all in one smart sleep mask. Light, sound, and temperature in one wearable.",
-        footRight: "First access",
+        eyebrow: "Launching on Kickstarter",
+        title: "Be there on day one.",
+        subtitle: "The list hears first when the campaign goes live, with the lowest pricing we will offer.",
+        footRight: "From $129",
       }),
     },
     {

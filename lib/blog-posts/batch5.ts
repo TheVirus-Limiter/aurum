@@ -42,7 +42,7 @@ This is also why the timing of sound matters. Audio that fades or holds an even 
 
 If you want to use sound rather than fight it, a few habits help. Keep the level low, just enough to soften the room. Choose textures over songs. And let the sound run rather than scheduling it to cut off, so the environment stays consistent from the moment you close your eyes until morning.
 
-Sound is one of the three systems built into [the Lumora mask](/explore), alongside gentle light and active temperature control. The immersive soundscapes sit right at the ears, no earbuds required, so the steady backdrop travels with you into sleep instead of playing across the room and leaving gaps.
+[Lumora](/explore) blocks light at the face and wakes you with a gradual sunrise, and it is built to sit quietly against a soundscape you choose. The immersive soundscapes sit right at the ears, no earbuds required, so the steady backdrop travels with you into sleep instead of playing across the room and leaving gaps.
 
 You cannot stop your brain from listening. But you can give it something calm and unchanging to listen to, and that small shift is often the difference between a night that drains you and one that restores you.`,
   },
@@ -372,7 +372,7 @@ The appeal of earbuds was always privacy, and mask audio keeps that. Sound that 
 
 For a short listen before sleep, earbuds may be fine. The calculation changes when you want sound to run all night and you sleep on your side, which describes most people. There, the comfort and health trade-offs of in-ear use are harder to justify.
 
-This is part of the thinking behind [the Lumora system](/explore), where immersive soundscapes are built into the mask alongside gentle light and active temperature control. The sound travels with you into sleep, sitting close to the ear without going into it, so you can keep a steady soundscape through the whole night without the pressure, the falling out, or the sealed-canal worries that come with earbuds. Comfort and sound do not have to be a trade.`,
+This is part of the thinking behind [the Lumora system](/explore), where immersive soundscapes are built into the mask alongside gentle light and a passive cooling insert. The sound travels with you into sleep, sitting close to the ear without going into it, so you can keep a steady soundscape through the whole night without the pressure, the falling out, or the sealed-canal worries that come with earbuds. Comfort and sound do not have to be a trade.`,
   },
   {
     slug: "breathing-techniques-that-slow-a-busy-mind",

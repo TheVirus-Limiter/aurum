@@ -149,8 +149,8 @@ export default function CategoryPage({ params }: { params: { category: string } 
             Reading helps. The mask helps more.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-mist">
-            Lumora brings light, sound, and temperature into one ritual. Join the waitlist for first
-            access and founding pricing.
+            Lumora is a sleep mask that reads your night and wakes you at a lighter moment. Get on
+            the list for Kickstarter launch access.
           </p>
           <a
             href="/waitlist/"

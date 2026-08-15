@@ -50,7 +50,7 @@ If you miss a night, you have not broken anything. Just return to the sequence t
 
 A good routine is easier to keep when your surroundings cooperate. A cool, dark, quiet room makes the descent into sleep feel natural rather than forced. The harder part is the transition itself, the stretch where you are trying to quiet a busy mind and a body that has not yet cooled down.
 
-This is where the right tools help carry the routine rather than replace it. [The Lumora system](/explore) is built around that transition, using gentle fading light, immersive sound, and active temperature control to mirror the slowing your routine is already trying to create. The habit sets the intention, and the environment makes it easier to follow through.
+This is where the right tools help carry the routine rather than replace it. [The Lumora system](/explore) is built around that transition, using gentle fading light, immersive sound, and a passive cooling insert to mirror the slowing your routine is already trying to create. The habit sets the intention, and the environment makes it easier to follow through.
 
 A wind down routine is one of the highest return changes you can make to your sleep, and it costs nothing but a little structure. Start with a fixed bedtime, a short sequence, and a reminder. Give it two weeks before you judge it. If you are dealing with a persistent sleep problem, a routine is a strong foundation, but it is also worth raising with a clinician.`,
   },
@@ -342,7 +342,7 @@ If you are not sleepy yet, it is better to stay with a calm activity than to lie
 
 A ritual sets the intention, and the room carries it across the line. The smoothest pre sleep routines pair a consistent sequence with surroundings that make sleep feel inevitable: low light, gentle sound, and a body that is cooling rather than holding heat.
 
-That final transition is exactly what [the Lumora system](/explore) is built around, fading light, immersive sound, and active temperature control working together to mirror the descent your ritual is already guiding. The habit does the steering, and the environment does the landing.
+That final transition is exactly what [the Lumora system](/explore) is built around, fading light, immersive sound, and a passive cooling insert working together to mirror the descent your ritual is already guiding. The habit does the steering, and the environment does the landing.
 
 Run the same thirty minutes most nights and it stops feeling like effort. It becomes the signal your body waits for. If sleep stays difficult despite a steady ritual, it is worth raising with a clinician to rule out an underlying cause.`,
   },
@@ -752,7 +752,7 @@ You do not need all of these from day one. Pick one, make it stick, then add ano
 
 The magic is in the combination. A consistent wake time makes you tired at the right hour. Morning light sharpens that rhythm. An afternoon caffeine cutoff lets your sleep pressure build cleanly. A dim, screen free evening eases the transition. A cool, dark room helps you reach the deeper stages. Each habit makes the next one work better.
 
-That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [the Lumora system](/explore) focuses on the sensory environment, low light, gentle sound, and active temperature control, the part of the stack that is hardest to control on your own.
+That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [the Lumora system](/explore) focuses on the sensory environment, low light, gentle sound, and a passive cooling insert, the part of the stack that is hardest to control on your own.
 
 Better sleep is not one decision. It is a series of small, repeatable choices that build on each other. Start with one, keep it until it is automatic, and add the next. If you have layered these habits and still sleep poorly, that is worth raising with a clinician, since a persistent problem sometimes has a cause that habits alone cannot reach.`,
   },
