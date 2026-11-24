@@ -57,7 +57,7 @@ export default function StickyCta() {
           className="fixed inset-x-3 bottom-3 z-[70] sm:hidden"
         >
           <div className="flex items-center justify-between gap-3 rounded-full border border-iris/25 bg-base/85 px-4 py-2.5 backdrop-blur-xl">
-            <span className="text-sm text-mist">Kickstarter pricing from $129.</span>
+            <span className="text-sm text-mist">Planned launch pricing from $129.</span>
             <button
               onClick={go}
               className="inline-flex shrink-0 items-center gap-1.5 rounded-full bg-iris px-4 py-2 text-xs font-semibold text-[#0a0913]"

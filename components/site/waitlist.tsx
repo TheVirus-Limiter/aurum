@@ -15,15 +15,16 @@ export default function Waitlist() {
       />
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>
-          <p className="eyebrow mb-5">Launching on Kickstarter</p>
+          <p className="eyebrow mb-5">Launch updates</p>
           <h2 className="font-display text-balance text-[clamp(2.4rem,6vw,4.5rem)] font-light leading-[1.02] tracking-tight text-ink">
-            Be there on
+            Follow
             <br />
-            <span className="italic text-iris-soft">day one.</span>
+            <span className="italic text-iris-soft">the build.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-mist">
-            Lumora launches on Kickstarter. The list hears first, and day one backers get the lowest
-            price we will offer, from {SITE.kickstarterPrice} before retail {SITE.retailRange}.
+            Join for launch updates: short notes when a prototype test finishes, and an email when
+            the Kickstarter opens. {SITE.pricingLabel} starts at {SITE.kickstarterPrice} on
+            Kickstarter, with retail planned at {SITE.retailRange}.
           </p>
         </Reveal>
 

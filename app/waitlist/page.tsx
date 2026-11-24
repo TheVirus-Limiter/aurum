@@ -10,18 +10,18 @@ import { whyJoin, faqs, SITE } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "Join the Waitlist",
   description:
-    "Lumora is a sleep mask that learns your night and wakes you at a lighter moment, instead of just tracking you. Join the list for Kickstarter launch access, from $129.",
+    "Lumora is a sleep mask in development, designed to wake you during lighter sleep within a window you choose. Join for launch updates. Planned launch pricing from $129.",
   alternates: { canonical: "/waitlist" },
   openGraph: {
     url: "https://uselumora.co/waitlist",
     title: "Join the Lumora Sleep Waitlist",
-    description: "Hear first when the Kickstarter goes live, with the lowest pricing we offer.",
+    description: "Launch updates for a sleep mask in development. Planned launch pricing from $129.",
     images: [{ url: "/og/og-waitlist.png", width: 1200, height: 630, alt: "Join the Lumora Sleep waitlist" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Join the Lumora Sleep Waitlist",
-    description: "Hear first when the Kickstarter goes live, with the lowest pricing we offer.",
+    description: "Launch updates for a sleep mask in development. Planned launch pricing from $129.",
     images: ["/og/og-waitlist.png"],
   },
 }
@@ -69,14 +69,12 @@ export default function WaitlistPage() {
         <div className="relative z-20 mx-auto w-full max-w-6xl">
           <div className="max-w-xl">
             <Reveal>
-              <p className="eyebrow mb-5">Launching on Kickstarter</p>
+              <p className="eyebrow mb-5">{SITE.stage}</p>
               <h1 className="font-display text-[clamp(2.8rem,7vw,5.5rem)] font-light leading-[0.95] tracking-[-0.02em] text-ink">
-                Wake at the right moment, <span className="italic text-iris-soft">not the same one.</span>
+                Follow the build <span className="italic text-iris-soft">from the bench.</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-mist">
-                Lumora is a sleep mask that learns your night and acts on it, instead of handing you
-                a score in the morning. Get on the list and you will hear the moment the campaign
-                goes live.
+                {SITE.stageLine} {SITE.prototypeToday} {SITE.nextMilestone}
               </p>
             </Reveal>
 
@@ -86,9 +84,9 @@ export default function WaitlistPage() {
 
             <Reveal delay={0.16} className="mt-6">
               <p className="text-sm text-mist">
-                Day one backers get the lowest price we will offer, from{" "}
-                <span className="font-medium text-ink">{SITE.kickstarterPrice}</span>, before retail{" "}
-                {SITE.retailRange}. Joining is free and takes one field.
+                The waitlist is for launch updates. {SITE.pricingLabel} starts at{" "}
+                <span className="font-medium text-ink">{SITE.kickstarterPrice}</span> on Kickstarter, with
+                retail planned at {SITE.retailRange}. Joining is free and takes one field.
               </p>
             </Reveal>
           </div>
@@ -101,7 +99,7 @@ export default function WaitlistPage() {
           <Reveal className="max-w-2xl">
             <p className="eyebrow mb-4">Why join now</p>
             <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] font-light tracking-tight text-ink">
-              Early backers get the best of it.
+              What you get for signing up.
             </h2>
           </Reveal>
 
@@ -137,11 +135,11 @@ export default function WaitlistPage() {
               <div className="relative">
                 <p className="eyebrow mb-4">Before the campaign</p>
                 <h2 className="font-display text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.05] tracking-tight text-ink">
-                  Kickstarter rewards the people who show up first.
+                  Hear about it before it opens.
                 </h2>
                 <p className="mx-auto mt-5 max-w-xl text-mist">
-                  Early pricing on a campaign is limited by how many units are in that tier, not by a
-                  countdown. Being on the list is how you get there before it goes.
+                  Kickstarter campaigns usually put their lowest prices in limited early tiers. The
+                  waitlist is how you hear when the campaign opens.
                 </p>
                 <div className="mx-auto mt-9 max-w-md">
                   <WaitlistForm compact source="waitlist-founding" />

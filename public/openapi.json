@@ -4,13 +4,15 @@
     "title": "Lumora Sleep Public API",
     "version": "1.0.0",
     "summary": "Pre-launch waitlist signup for Lumora Sleep.",
-    "description": "Lumora Sleep is a pre-launch luxury sleep-tech brand. There is no commerce API. The only public operation is joining the waitlist, which posts an email to a third-party form service. Product and brand facts live at https://uselumora.co/llms.txt and https://uselumora.co/AGENTS.md.",
+    "description": "Lumora Sleep is developing a sleep mask that is not yet for sale. There is no commerce API. The only public operation is joining the waitlist, which posts an email to a third-party form service. Product and brand facts live at https://uselumora.co/llms.txt and https://uselumora.co/AGENTS.md.",
     "contact": {
       "name": "Lumora Sleep",
       "email": "hello@uselumora.co",
       "url": "https://uselumora.co"
     },
-    "license": { "name": "All rights reserved" }
+    "license": {
+      "name": "All rights reserved"
+    }
   },
   "servers": [
     {
@@ -26,16 +28,24 @@
     "/": {
       "post": {
         "operationId": "joinWaitlist",
-        "summary": "Join the Lumora Sleep pre-launch waitlist",
+        "summary": "Join the Lumora Sleep waitlist for launch updates",
         "description": "Submits an email address to the Lumora Sleep waitlist. This endpoint is hosted by a third-party form service, not by uselumora.co. The only required field is a valid email. There is no payment.",
-        "tags": ["waitlist"],
+        "tags": [
+          "waitlist"
+        ],
         "requestBody": {
           "required": true,
           "content": {
             "application/json": {
-              "schema": { "$ref": "#/components/schemas/WaitlistSignup" },
+              "schema": {
+                "$ref": "#/components/schemas/WaitlistSignup"
+              },
               "examples": {
-                "basic": { "value": { "email": "sleeper@example.com" } }
+                "basic": {
+                  "value": {
+                    "email": "sleeper@example.com"
+                  }
+                }
               }
             }
           }
@@ -45,11 +55,15 @@
             "description": "Signup accepted by the form service.",
             "content": {
               "application/json": {
-                "schema": { "$ref": "#/components/schemas/WaitlistResult" }
+                "schema": {
+                  "$ref": "#/components/schemas/WaitlistResult"
+                }
               }
             }
           },
-          "400": { "description": "Missing or invalid email address." }
+          "400": {
+            "description": "Missing or invalid email address."
+          }
         }
       }
     }
@@ -58,7 +72,9 @@
     "schemas": {
       "WaitlistSignup": {
         "type": "object",
-        "required": ["email"],
+        "required": [
+          "email"
+        ],
         "properties": {
           "email": {
             "type": "string",
@@ -67,20 +83,23 @@
           },
           "describes_you": {
             "type": "string",
-            "description": "Optional note about who the person is."
+            "description": "Optional answer to the segmentation question."
           },
-          "product_interest": {
+          "source": {
             "type": "string",
-            "description": "Optional product the user is most interested in.",
-            "enum": ["Lumora Essence", "Lumora Max", "Lumora Caelum"]
+            "description": "Optional page or section the signup came from."
           }
         }
       },
       "WaitlistResult": {
         "type": "object",
         "properties": {
-          "ok": { "type": "boolean" },
-          "message": { "type": "string" }
+          "ok": {
+            "type": "boolean"
+          },
+          "message": {
+            "type": "string"
+          }
         }
       }
     }

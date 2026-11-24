@@ -55,7 +55,7 @@ None of this means light is the answer to everything. It does mean that a few si
 
 If your sleep timing feels stuck no matter what you try, or if you wake unrefreshed for weeks, it is worth speaking with a doctor or a sleep specialist. Some patterns need more than light to shift.
 
-Working with light is the quiet foundation of good sleep, which is why we built it into [Lumora](/explore/) as a gentle wind-down light in the evening and a gradual wake light in the morning, so the right signal arrives at the right hour without you having to think about it.`
+Working with light is the quiet foundation of good sleep, which is why [Lumora](/explore/) is designed around it: true darkness through the night, and a planned gradual wake light in the morning from the warm LED on the prototype pod.`
   },
   {
     slug: "morning-light-why-it-sets-your-whole-day",
@@ -114,7 +114,7 @@ If you have tried morning light and felt nothing, it is usually one of these, no
 
 If you get plenty of morning light and still feel exhausted or cannot shift your schedule, a doctor or sleep specialist can help rule out other causes.
 
-For the mornings when the sun is not up yet, the gradual wake light in [Lumora](/explore/) brightens slowly to start the signal early, so your day begins on time even in the dark months.`
+For the mornings when the sun is not up yet, [Lumora](/explore/) is designed to supply that signal with a planned gradual wake light inside the mask, brightening slowly so your day can begin on time even in the dark months.`
   },
   {
     slug: "blue-light-at-night-what-it-does-to-your-sleep",
@@ -168,7 +168,7 @@ None of this requires turning the house into a cave. The aim is simply that the 
 
 If you sleep poorly for weeks despite a dark, dim evening, the cause may not be light at all, and a doctor or sleep specialist is the right next step.
 
-A steady evening fade is easier when it happens on its own, which is why [Lumora](/explore/) includes a wind-down light that dims warm and low as bedtime approaches, so the daytime signal switches off before your head hits the pillow.`
+A steady evening fade is easier when it happens on its own, so set your lamps to dim warm and low as bedtime approaches. [Lumora](/explore/) is designed for the other side of the night, keeping your eyes in true darkness and, as a planned feature, waking you with gradual light.`
   },
   {
     slug: "what-a-sunrise-alarm-does-that-a-normal-alarm-cannot",
@@ -226,7 +226,7 @@ It also helps to give yourself a week or two before judging it. The first mornin
 
 If you wake exhausted every day no matter how you do it, light is only part of the picture, and a sleep specialist can help find what else is going on.
 
-The gradual wake light in [Lumora](/explore/) is built around exactly this idea, brightening slowly to lift you toward the surface before the day officially begins, so the first minutes feel calm rather than jarring.`
+That is the idea behind the planned gradual wake light in [Lumora](/explore/): a warm light inside the mask designed to brighten slowly and lift you toward the surface, so the first minutes feel calm rather than jarring.`
   },
   {
     slug: "how-to-fix-a-delayed-sleep-schedule-with-light",
@@ -296,7 +296,7 @@ If after a week the early wake still feels brutal, resist the urge to sleep in t
 
 Most delayed schedules respond to steady light timing within a week or two. If yours does not budge at all despite consistent effort, or if late sleep is causing real problems in your life, talk to a doctor or sleep specialist. Some patterns benefit from added guidance.
 
-The two parts of this, a dim wind-down at night and a gradual wake light in the morning, are exactly the light signals in [Lumora](/explore/), which makes holding the routine easier on the nights and dark mornings when willpower runs thin.`
+The two parts of this are a dim wind-down at night and bright light in the morning. [Lumora](/explore/) is designed to help with the morning half through a planned gradual wake light, which matters most on the dark mornings when willpower runs thin.`
   },
   {
     slug: "why-dim-evenings-help-you-fall-asleep-faster",
@@ -354,7 +354,7 @@ A gradual fade matches how light behaved naturally after sunset, and it is far e
 
 If you keep a dark, dim evening for a couple of weeks and still lie awake a long time most nights, it is worth checking in with a doctor or sleep specialist, since persistent trouble falling asleep can have other causes.
 
-A reliable evening fade is the quiet half of good sleep, and the wind-down light in [Lumora](/explore/) dims warm and low as bedtime nears, so melatonin gets the darkness it has been waiting for.`
+A reliable evening fade is the quiet half of good sleep, so dim your lamps warm and low as bedtime nears. Once you are in bed, [Lumora](/explore/) is designed to keep your eyes in true darkness, so melatonin gets the dark it has been waiting for.`
   },
   {
     slug: "the-best-light-setup-for-a-calming-bedroom",
@@ -418,7 +418,7 @@ Each of these is small on its own, but together they turn a room lit for tidying
 
 If you have set the room up well and still sleep poorly for weeks, the cause may lie elsewhere, and a doctor or sleep specialist can help you look.
 
-The evening and morning phases here are the hardest to manage with ordinary lamps, which is why [Lumora](/explore/) combines a warm wind-down light at night with a gradual wake light at dawn, handling both ends of the day so your room supports sleep rather than working against it.`
+The evening and morning phases here are the hardest to manage with ordinary lamps. [Lumora](/explore/) is designed for the morning end, with a planned gradual wake light inside the mask, while warm, dim lamps still handle the evening.`
   },
   {
     slug: "melatonin-light-and-the-timing-of-sleep",
@@ -479,7 +479,7 @@ Holding these in mind keeps the focus where it belongs, on the timing and intens
 
 If your sleep timing feels broken no matter how carefully you manage light, or if you depend on supplements just to function, it is worth a conversation with a doctor or sleep specialist.
 
-Since your own melatonin responds to the light around you, [Lumora](/explore/) shapes that light at both ends of the day, dimming warm as you wind down and brightening gradually as you wake, so the hormone arrives and clears on the schedule you actually want.`
+Since your own melatonin responds to the light around you, the timing of light is the lever. [Lumora](/explore/) is designed to work on the morning side, with a planned wake light that brightens gradually, so the hormone can clear on the schedule you actually want.`
   },
   {
     slug: "how-seasonal-light-changes-affect-your-sleep",
@@ -544,7 +544,7 @@ Treating the clock change as a small, planned adjustment rather than an overnigh
 
 For some people the seasonal dip is more than an inconvenience and tips into low mood or significant sleep trouble. If that sounds familiar, especially in winter, it is worth talking to a doctor, since seasonal patterns of this kind respond well to proper support.
 
-Because the seasons take light away in winter and add it in summer, having control over your own light helps, which is why [Lumora](/explore/) provides a gradual wake light for dark mornings and a wind-down light to settle bright evenings, keeping your rhythm steady whatever the sky is doing.`
+Because the seasons take light away in winter and add it in summer, having control over your own light helps. [Lumora](/explore/) is designed with a planned gradual wake light for dark mornings, and blocks light at the face for bright summer evenings and early dawns.`
   },
   {
     slug: "how-shift-workers-can-manage-light-exposure",
@@ -602,7 +602,7 @@ The point is to decide deliberately rather than letting your sleep scatter rando
 
 Shift work carries real health considerations, and chronic exhaustion is not something to just push through. If you are struggling badly with sleep or alertness, talk to a doctor or sleep specialist about strategies suited to your specific pattern.
 
-Controlling light is central to surviving shift work, and the dark sleep window matters as much as the bright shift. The wind-down light and gradual wake light in [Lumora](/explore/) let you build your own dawn and dusk on a schedule that has nothing to do with the sun, which is exactly what an odd shift pattern demands.`
+Controlling light is central to surviving shift work, and the dark sleep window matters as much as the bright shift. The planned gradual wake light in [Lumora](/explore/) is meant to let you set your own dawn on a schedule that has nothing to do with the sun, which is exactly what an odd shift pattern demands.`
   },
   {
     slug: "screens-before-bed-practical-limits-that-actually-work",
@@ -662,7 +662,7 @@ This trial and error matters because the right limit is personal. Some people ar
 
 If you have dimmed your devices, set a cutoff, and still lie awake for a long time most nights, the cause may be stress, caffeine, an irregular schedule, or something medical. Persistent insomnia is worth raising with a doctor or sleep specialist rather than blaming the phone alone.
 
-The thread running through all of this is light intensity in the evening, and the easier you make the dim, the better you sleep. The wind-down light in [Lumora](/explore/) brings the room down warm and low as bedtime nears, so even on the nights a screen sneaks in, the rest of your environment is already telling your body it is night.`
+The thread running through all of this is light intensity in the evening, and the easier you make the dim, the better you sleep. Once you are in bed, [Lumora](/explore/) is designed to keep your eyes in true darkness, so even on the nights a screen sneaks in, the rest of the night is still telling your body it is night.`
   },
   {
     slug: "why-waking-to-gradual-light-feels-gentler",
@@ -721,7 +721,7 @@ So gradual light is best thought of as one supportive piece, not a cure for a wa
 
 If you wake exhausted every single day regardless of how you wake, light alone will not fix it, and a sleep specialist can help find the cause.
 
-This gentler waking is the whole idea behind the gradual wake light in [Lumora](/explore/), which brightens slowly to bring you toward the surface before the day begins, so the first moments feel like surfacing rather than a shock.`
+This gentler waking is the whole idea behind the planned gradual wake light in [Lumora](/explore/), designed to brighten slowly and bring you toward the surface before the day begins, so the first moments feel like surfacing rather than a shock.`
   },
   {
     slug: "light-therapy-basics-for-better-mornings",
@@ -784,6 +784,6 @@ Tie it to an existing anchor and it stops being a chore you have to remember. Wi
 
 And as with any sleep change, if poor mornings or poor sleep persist for weeks despite a good light routine, it is worth talking to a doctor or sleep specialist rather than pushing through.
 
-The everyday version of this is just getting bright light at the right time, and [Lumora](/explore/) brings a gradual wake light to the moment you rise, supplying that morning signal even on the dark days when the sun is not there to provide it. If you want to be first to try it, you can [join the waitlist](/waitlist/).`
+The everyday version of this is just getting bright light at the right time, and [Lumora](/explore/) is designed to bring a gradual wake light to the moment you rise, a planned feature meant to supply that morning signal on the dark days when the sun is not there. If you want to be first to try it, you can [join the waitlist](/waitlist/).`
   },
 ]

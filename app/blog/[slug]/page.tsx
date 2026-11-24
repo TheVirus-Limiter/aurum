@@ -11,41 +11,41 @@ marked.use({ gfm: true })
 const CATEGORY_PITCH: Record<string, { headline: string; body: string }> = {
   "Sleep Masks": {
     headline: "A sleep mask that acts.",
-    body: "Most masks just block light. Lumora reads your night and wakes you at a lighter moment, with a gradual sunrise built in. Get on the list for launch access.",
+    body: "Most masks just block light. Lumora is a mask in development, designed to wake you during lighter sleep with gradually brightening light. Join the waitlist for launch updates.",
   },
   "Light and Circadian Rhythm": {
     headline: "Wake with light, not shock.",
-    body: "Instead of firing at a fixed time, Lumora looks for a lighter moment inside your window and brings you up with a gradual sunrise. Get on the list for launch access.",
+    body: "Instead of firing at a fixed time, Lumora is being designed to look for a lighter moment inside your window and wake you with gradual light. Join the waitlist for launch updates.",
   },
   Temperature: {
     headline: "Cooler, without the fight.",
-    body: "A passive cooling insert helps the mask resist the overheating that fragments sleep, while the sensor follows how your night is actually going. Get on the list for launch access.",
+    body: "Lumora is a mask in development with a planned passive cooling insert, and a prototype pod that already senses temperature and motion. Join the waitlist for launch updates.",
   },
   "Sound and the Mind": {
     headline: "Quiet the night, then end it well.",
-    body: "Lumora blocks the light, and when morning comes it wakes you at a lighter moment instead of yanking you out of deep sleep. Get on the list for launch access.",
+    body: "Lumora is a mask in development, designed to wake you during lighter sleep instead of yanking you out of deep sleep. Join the waitlist for launch updates.",
   },
   "Sleep and Performance": {
     headline: "The morning is the whole point.",
-    body: "Waking from the wrong moment can leave fog that follows you for hours. Lumora is built to find a better one. Get on the list for launch access.",
+    body: "Waking from the wrong moment can leave fog that follows you for hours. Lumora is a mask in development, designed to find a better one. Join the waitlist for launch updates.",
   },
   "Sleep Science": {
     headline: "Built around how sleep works.",
-    body: "Your alarm ignores where you are in your sleep. Lumora reads movement and temperature to find a lighter moment to wake you. Get on the list for launch access.",
+    body: "Your alarm ignores where you are in your sleep. I am testing whether movement and temperature readings from a mask can pick a better moment. Join the waitlist for launch updates.",
   },
   "Routines and Habits": {
     headline: "One habit that does the work.",
-    body: "Put it on, set a window, and let the mask handle the rest of the night. Get on the list for launch access.",
+    body: "The goal: put it on, set a window, and let the mask choose when to wake you. It is in development now. Join the waitlist for launch updates.",
   },
   "Travel and Special Situations": {
     headline: "Your rest, anywhere.",
-    body: "A blackout mask that works in any room, and wakes you at a lighter moment instead of a fixed one. Get on the list for launch access.",
+    body: "A blackout mask in development, designed to wake you during lighter sleep instead of at a fixed time. Join the waitlist for launch updates.",
   },
 }
 
 const DEFAULT_PITCH = {
   headline: "Everything else tracks your sleep.",
-  body: "Lumora changes it. A sleep mask that learns your night and wakes you at the right moment, not the same moment. Get on the list for launch access.",
+  body: "I am building a sleep mask that aims to wake you during lighter sleep, within a window you choose. Join the waitlist for launch updates.",
 }
 
 export function generateStaticParams() {

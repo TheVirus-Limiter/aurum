@@ -2,17 +2,27 @@
  * Single source of truth for Lumora site copy and data.
  * House style: no em dashes, no en dashes. Use periods and commas.
  *
- * Positioning: every sleep product on the market tells you how badly you slept.
- * Lumora does something about it. The intelligence is the product, not an upsell.
+ * Status discipline: Lumora is in development. Describe only built hardware in
+ * the present tense. The wake window is a DESIGN GOAL until a test supports it.
+ * A render, a planned feature, or the waitlist is evidence of design or demand,
+ * never of performance. Every behavior below carries an explicit status.
  *
- * Claims discipline: general wellness language only. No diagnosing, treating,
- * sleep disorders, apnea, or clinical accuracy claims. Future tense for the
- * adaptive wake, because it ships at launch and is not shipping today.
+ * Claims: general wellness only. No diagnosing, treating, sleep disorders,
+ * apnea, or clinical accuracy. No active heating or cooling. No built-in sound.
  */
 
 export const SITE = {
   name: "Lumora Sleep",
-  tagline: "Everything else tracks your sleep. Lumora changes it.",
+  tagline: "Everything else tracks your sleep. Lumora is being built to act on it.",
+
+  // Development stage. Reused by the hero, FAQ, and product card so they agree.
+  stage: "In development",
+  stageLine:
+    "I'm building a sleep mask that aims to wake you during lighter sleep, within a window you choose.",
+  prototypeToday:
+    "Prototype today: a bench pod with a motion sensor, a temperature sensor, and a warm LED.",
+  nextMilestone:
+    "Next I'm testing whether movement and temperature readings can guide wake timing.",
   url: "https://uselumora.co",
   email: "hello@uselumora.co",
   instagram: "https://www.instagram.com/lumorasleep?igsh=MWpwcHQxYXE5Z2hnYg==",
@@ -40,10 +50,11 @@ export const SITE = {
   waitlistCount: 30,
   showWaitlistCount: false,
 
-  // Launch plan. Kickstarter first, retail after.
+  // Planned launch pricing. Nothing is for sale yet.
   kickstarterPrice: "$129",
   kickstarterRange: "$129 to $149",
   retailRange: "$179 to $199",
+  pricingLabel: "Planned launch pricing",
 
   tractionStudyUrl: "/downloads/LumoraCustomerDiscovery.pdf",
   heroImage: "/images/products/lumorahero.png",
@@ -61,6 +72,9 @@ export type IconKey =
   | "battery"
   | "sensor"
 
+/** Where each capability stands. Shown as a label wherever the claim appears. */
+export type Status = "Built" | "Next test" | "Planned" | "Design"
+
 export type Product = {
   key: "lumora"
   name: string
@@ -70,30 +84,31 @@ export type Product = {
   priceNote: string
   icon: IconKey
   description: string
-  features: string[]
+  features: { text: string; status: Status }[]
   image: string
   model?: string
   flagship?: boolean
 }
 
-/** One product. The intelligence is the headline, not a tier. */
+/** One product, in development. Price is planned launch pricing, not a live offer. */
 export const products: Product[] = [
   {
     key: "lumora",
     name: "Lumora",
-    tag: "The sleep mask that acts",
-    tagline: "It learns your night and wakes you at the right moment.",
+    tag: "In development",
+    tagline: "Designed to wake you during lighter sleep, within a window you choose.",
     price: SITE.kickstarterPrice,
-    priceNote: `Kickstarter pricing, from ${SITE.kickstarterPrice}. Retail ${SITE.retailRange} after launch.`,
+    priceNote: `${SITE.pricingLabel}: from ${SITE.kickstarterPrice} on Kickstarter, with retail planned at ${SITE.retailRange}. Not available to order yet.`,
     icon: "moon",
     description:
-      "A blackout mask with a small sensor pod inside it. Through the night it reads movement and temperature to understand where you are in your sleep, then wakes you at a lighter moment inside the window you choose, with a gradual warm sunrise instead of an alarm.",
+      "A blackout sleep mask with a small removable pod. The prototype pod has a motion sensor, a temperature sensor, and a warm LED. The design goal is to use those readings to wake you during lighter sleep, inside a window you set, with gradually brightening light instead of an alarm sound.",
     features: [
-      "Reads movement and temperature through the night",
-      "Wakes you at a lighter moment in your window",
-      "Gradual warm sunrise built into the mask",
-      "Passive cooling insert that resists overheating",
-      "Washable fabric, removable pod",
+      { text: "Motion and temperature sensors in the pod", status: "Built" },
+      { text: "Warm LED in the pod", status: "Built" },
+      { text: "Choosing a wake moment from those readings", status: "Next test" },
+      { text: "Gradual sunrise inside the mask", status: "Planned" },
+      { text: "Passive cooling insert", status: "Planned" },
+      { text: "Washable mask with a removable pod", status: "Design" },
     ],
     image: "/images/products/lumoraessence.png",
     model: "/models/LumoraEssence.glb",
@@ -104,10 +119,10 @@ export const problems: { title: string; icon: IconKey; body: string }[] = [
   {
     title: "Your alarm does not care",
     icon: "sun",
-    body: "It fires at 7:00 whether you are drifting near the surface or buried in your deepest sleep. Wake from the wrong place and the fog can follow you for hours.",
+    body: "It fires at 7:00 whether you are drifting near the surface or deep asleep. Wake from the wrong place and the fog can follow you for hours.",
   },
   {
-    title: "Trackers only report",
+    title: "Trackers mostly report",
     icon: "sensor",
     body: "A ring or a watch hands you a score in the morning and leaves the rest to you. Knowing you slept badly does not change the night you already had.",
   },
@@ -118,69 +133,74 @@ export const problems: { title: string; icon: IconKey; body: string }[] = [
   },
 ]
 
-/** How it works. This replaces the old three-pillar feature list. */
+/** How it works, as a development sequence. Status is shown on every step. */
 export const pillars: {
   index: string
   title: string
   tagline: string
   body: string
   icon: IconKey
+  status: Status
 }[] = [
   {
     index: "01",
-    title: "It listens",
-    tagline: "A sensor, not a survey.",
+    title: "Sense",
+    tagline: "Motion and temperature, from inside the mask.",
     icon: "sensor",
-    body: "A small sensor in the mask reads movement and temperature through the night to understand where you are in your sleep.",
+    status: "Built",
+    body: "The prototype pod has a motion sensor and a temperature sensor, the two signals the wake window is meant to rely on.",
   },
   {
     index: "02",
-    title: "It waits",
-    tagline: "The right moment, not the same moment.",
+    title: "Pick a moment",
+    tagline: "The design goal.",
     icon: "waves",
-    body: "Instead of firing at a fixed time, it finds a lighter moment inside the window you set.",
+    status: "Next test",
+    body: "Inside the window you set, the goal is to find a stretch where movement and temperature suggest lighter sleep. Whether those readings can guide wake timing is the next thing I'm testing.",
   },
   {
     index: "03",
-    title: "It wakes you there",
-    tagline: "You surface instead of getting yanked out.",
+    title: "Wake with light",
+    tagline: "Light instead of a siren.",
     icon: "sun",
-    body: "A gradual warm sunrise builds inside the mask, so you come up out of sleep rather than getting pulled out of it.",
+    status: "Planned",
+    body: "The pod already has a warm LED. The plan is for it to brighten gradually inside the mask, so you wake to light rather than an alarm sound.",
   },
 ]
 
-/** The architecture. Simple mask, smart removable pod. */
+/** The architecture. This is the design, not a shipped build. */
 export const architecture: { title: string; body: string; icon: IconKey }[] = [
   {
     title: "The mask stays simple",
-    body: "Washable fabric, a passive cooling insert, and a pocket. Nothing precious, nothing you have to baby.",
+    body: "The plan is washable fabric, a passive cooling insert, and a pocket for the pod. Nothing precious, nothing you have to baby.",
     icon: "moon",
   },
   {
-    title: "The pod holds the intelligence",
-    body: "All of the sensing lives in a small removable pod. Take it out before you wash the mask, and upgrade it later without replacing anything else.",
+    title: "The pod holds the electronics",
+    body: "All of the sensing lives in a small removable pod. The design lets you take it out before washing the mask, and upgrade it later without replacing anything else.",
     icon: "sensor",
   },
 ]
 
-/** Stops for the scroll-driven 3D tour. */
+/** Stops for the scroll-driven 3D tour. The model is a design render. */
 export const essenceCallouts: { label: string; text: string }[] = [
-  { label: "Lumora", text: "A blackout mask with a sensor pod inside it. Turn it. Look closer." },
-  { label: "It listens", text: "A small sensor reads movement and temperature to follow where you are in the night." },
-  { label: "It waits", text: "No fixed alarm time. It looks for a lighter moment inside the window you set." },
-  { label: "Sunrise wake", text: "A gradual warm light builds inside the mask, so you surface instead of being yanked out." },
-  { label: "Removable pod", text: "The intelligence lifts out. The mask goes in the wash, and the pod upgrades later." },
+  { label: "Lumora", text: "A design render of the mask in development. Turn it. Look closer." },
+  { label: "Sensing, built", text: "The prototype pod has a motion sensor and a temperature sensor." },
+  { label: "Wake window, next test", text: "The goal is a lighter moment inside the window you set. That is what I'm testing next." },
+  { label: "Sunrise wake, planned", text: "A warm light in the pod is meant to brighten gradually, so you wake to light." },
+  { label: "Removable pod, design", text: "The electronics are designed to lift out, so the mask can be washed and the pod upgraded." },
 ]
 
+/** From customer discovery interviews about people's sleep, not tests of the mask. */
 export const stats: { value: string; label: string; detail: string }[] = [
   {
     value: "83%",
     label: "reported sleep difficulty",
-    detail: "Across our interviews, the clear majority described sleep as a real and recurring problem.",
+    detail: "Across my interviews about people's sleep, the clear majority described it as a real and recurring problem.",
   },
   {
     value: "6 / 10",
-    label: "average sleep score",
+    label: "average self-rated sleep",
     detail: "People were not describing ideal rest. They were describing acceptable but frustrating nights.",
   },
 ]
@@ -189,32 +209,37 @@ export const faqs: { question: string; answer: string }[] = [
   {
     question: "What is Lumora?",
     answer:
-      "Lumora is a sleep mask that acts on your sleep instead of just reporting on it. A small sensor pod inside the mask reads movement and temperature through the night, and at launch it will use that to wake you at a lighter moment inside the window you choose, with a gradual warm sunrise built into the mask.",
+      "Lumora is a sleep mask I'm developing. The prototype pod has a motion sensor, a temperature sensor, and a warm LED. The design goal is to use movement and temperature to wake you during lighter sleep, inside a window you choose. That wake behavior has not been tested yet.",
+  },
+  {
+    question: "What works today?",
+    answer:
+      "The pod's sensors and warm LED are built on the bench. Next I'm testing whether movement and temperature readings can guide wake timing. Until a test supports it, the wake window is a design goal, not a feature.",
   },
   {
     question: "How is this different from Oura or a sleep tracker?",
     answer:
-      "A tracker measures and reports. It hands you a score in the morning and leaves you to figure out what to do with it. Lumora acts on what it measures. It uses the sensing to change how your night ends, by finding a lighter moment to wake you instead of firing at a fixed time. That is the entire difference.",
+      "A tracker measures your sleep and reports on it in the morning. Lumora is designed to use what it measures to choose when to wake you. Some smart alarm apps try something similar from a phone on the mattress. The idea I'm testing is whether a sensor in the mask, plus light instead of sound, can do it better.",
   },
   {
-    question: "How does the wake window work?",
+    question: "How would the wake window work?",
     answer:
-      "You set a window rather than a single time, for example between 6:30 and 7:00. Inside that window Lumora looks for a lighter moment to bring you up, and begins a gradual sunrise there. If it does not find one, it wakes you at the end of your window, so you are never late.",
+      "You would set a window, for example 6:30 to 7:00. The goal is for Lumora to pick a lighter moment inside it and start a gradual light there, and to wake you at the end of the window if it finds none. This is the design, and it has not been tested yet.",
   },
   {
-    question: "How does it stay cool?",
+    question: "How would it stay cool?",
     answer:
-      "With a passive cooling insert. The material absorbs and releases heat as conditions shift, which helps the mask resist overheating through the night. There is no powered heating or cooling in the mask.",
+      "The plan is a passive cooling insert, a phase change material that absorbs and releases heat. There is no powered heating or cooling in the design.",
   },
   {
     question: "Can I wash it?",
     answer:
-      "Yes. The sensor pod lifts out of its pocket, and the fabric mask goes in the wash. Keeping the intelligence in a removable pod is also what lets you upgrade the electronics later without replacing the mask.",
+      "That is the design. The pod lifts out of a pocket and the fabric mask goes in the wash, which is also what would let the electronics be upgraded later without replacing the mask.",
   },
   {
     question: "When can I get one?",
     answer:
-      "Lumora launches on Kickstarter, and the waitlist is how you hear first. Backers on day one get the lowest pricing we will offer, from $129, before retail pricing of $179 to $199.",
+      "Not yet. The plan is to launch on Kickstarter, with planned pricing from $129 and retail planned at $179 to $199. The waitlist is for launch updates: you hear when a test finishes and when the campaign opens.",
   },
 ]
 
@@ -241,25 +266,26 @@ export const navLinks: { label: string; href: string }[] = [
   { label: "FAQ", href: "#faq" },
 ]
 
+/** Why sign up: launch updates. Nothing here promises product or delivery. */
 export const whyJoin: { title: string; body: string; icon: IconKey }[] = [
   {
-    title: "Lowest pricing, day one",
-    body: `The waitlist hears first when the Kickstarter goes live, and day one backers get the lowest price we will offer, from ${SITE.kickstarterPrice}.`,
-    icon: "gem",
-  },
-  {
-    title: "First units off the line",
-    body: "Early backers receive their Lumora ahead of retail, while the first production run is still going out.",
+    title: "Launch updates",
+    body: "One email when the Kickstarter opens, so you hear about it before it fills up.",
     icon: "sparkles",
   },
   {
-    title: "Shape what ships",
-    body: "The list is small enough that your answers actually move decisions, from wake windows to fit and fabric.",
+    title: "Test results",
+    body: "Short notes when a prototype test finishes, including the ones that do not go well.",
     icon: "sensor",
   },
   {
-    title: "No spam, no noise",
-    body: "One email when the campaign launches, and occasional real progress from the build. Nothing else.",
+    title: "Planned launch pricing",
+    body: `Planned Kickstarter pricing starts at ${SITE.kickstarterPrice}, below the planned retail price of ${SITE.retailRange}.`,
+    icon: "gem",
+  },
+  {
+    title: "No noise",
+    body: "Updates only, and not many of them.",
     icon: "shield",
   },
 ]

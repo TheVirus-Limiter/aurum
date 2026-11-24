@@ -50,7 +50,7 @@ If you miss a night, you have not broken anything. Just return to the sequence t
 
 A good routine is easier to keep when your surroundings cooperate. A cool, dark, quiet room makes the descent into sleep feel natural rather than forced. The harder part is the transition itself, the stretch where you are trying to quiet a busy mind and a body that has not yet cooled down.
 
-This is where the right tools help carry the routine rather than replace it. [Lumora](/explore/) is built around that transition, closing out light at your face and using a passive cooling insert to blunt the heat that builds as you settle. The habit sets the intention, and the environment makes it easier to follow through.
+This is where the right tools help carry the routine rather than replace it. [Lumora](/explore/) is built around that transition, closing out light at your face and using a planned passive cooling insert to blunt the heat that builds as you settle. The habit sets the intention, and the environment makes it easier to follow through.
 
 A wind down routine is one of the highest return changes you can make to your sleep, and it costs nothing but a little structure. Start with a fixed bedtime, a short sequence, and a reminder. Give it two weeks before you judge it. If you are dealing with a persistent sleep problem, a routine is a strong foundation, but it is also worth raising with a clinician.`,
   },
@@ -106,7 +106,7 @@ Consistency is simple in theory and hard in practice, so make it easy on yoursel
 - Use morning light, a walk or a bright window, to lock the rhythm in
 - Give it at least two weeks, since the clock adjusts gradually
 
-A predictable rhythm is also easier to keep when the start and end of your night feel distinct. A clear evening cue and a gentle, light based wake can both reinforce the schedule you are trying to hold. When the night ends the same way each morning, your body starts preparing for the day before the alarm, and the whole rhythm grows more stable. [Lumora](/explore/) is built around that idea, using fading light at night and a gradual sunrise style wake to give your body clock something steady to lock onto.
+A predictable rhythm is also easier to keep when the start and end of your night feel distinct. A clear evening cue and a gentle, light based wake can both reinforce the schedule you are trying to hold. When the night ends the same way each morning, your body starts preparing for the day before the alarm, and the whole rhythm grows more stable. [Lumora](/explore/) is built around that idea, with true darkness at night and a planned gradual, sunrise style wake to give your body clock something steady to lock onto.
 
 You do not need a perfect schedule to benefit. You need a steady one. Pick a wake time you can defend most days, anchor your mornings with light, and let the rest of your rhythm settle into place behind it. Hold it for a couple of weeks before you decide whether it is working, since the clock rewards patience more than intensity.`,
   },
@@ -342,7 +342,7 @@ If you are not sleepy yet, it is better to stay with a calm activity than to lie
 
 A ritual sets the intention, and the room carries it across the line. The smoothest pre sleep routines pair a consistent sequence with surroundings that make sleep feel inevitable: low light, gentle sound, and a body that is cooling rather than holding heat.
 
-That final transition is exactly what [Lumora](/explore/) is built around, taking light out of the picture and using a passive cooling insert to keep heat at your face from rising as you drift. The habit does the steering, and the environment does the landing.
+That final transition is exactly what [Lumora](/explore/) is built around, taking light out of the picture and using a planned passive cooling insert to keep heat at your face from rising as you drift. The habit does the steering, and the environment does the landing.
 
 Run the same thirty minutes most nights and it stops feeling like effort. It becomes the signal your body waits for. If sleep stays difficult despite a steady ritual, it is worth raising with a clinician to rule out an underlying cause.`,
   },
@@ -575,7 +575,7 @@ Once the bedroom is reserved for sleep, the environment can reinforce the messag
 - Make it as dark as you can, with blackout curtains or a mask
 - Reduce noise, or use steady sound to cover disruptions
 
-When the room itself signals rest the moment you enter, the association does the heavy lifting for you. That sensory environment, low light, gentle sound, and a cool surface, is exactly what [Lumora](/explore/) is designed to create, turning the space around you into a clear cue for sleep.
+When the room itself signals rest the moment you enter, the association does the heavy lifting for you. That sensory environment, low light, a quiet room, and a cool surface, is what [Lumora](/explore/) is designed to support from the face, by keeping your eyes in true darkness and keeping heat from building with a planned passive cooling insert.
 
 Reclaiming the bedroom as a sleep only space takes a little rearranging, but the payoff is a stronger, more automatic pull toward rest every night. If sleep stays difficult even after you have protected the space, it is worth raising with a clinician.`,
   },
@@ -752,7 +752,7 @@ You do not need all of these from day one. Pick one, make it stick, then add ano
 
 The magic is in the combination. A consistent wake time makes you tired at the right hour. Morning light sharpens that rhythm. An afternoon caffeine cutoff lets your sleep pressure build cleanly. A dim, screen free evening eases the transition. A cool, dark room helps you reach the deeper stages. Each habit makes the next one work better.
 
-That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [Lumora](/explore/) focuses on the part of that stack you cannot fix by trying harder, holding true darkness at your face and using a passive cooling insert to keep heat from building there.
+That last piece, the environment, is where many people's efforts quietly fall apart. You can do everything right and still lose sleep to a room that is too warm, too bright, or too noisy. Getting the surroundings right lets all the other habits pay off, which is why [Lumora](/explore/) focuses on the part of that stack you cannot fix by trying harder, holding true darkness at your face and using a planned passive cooling insert to keep heat from building there.
 
 Better sleep is not one decision. It is a series of small, repeatable choices that build on each other. Start with one, keep it until it is automatic, and add the next. If you have layered these habits and still sleep poorly, that is worth raising with a clinician, since a persistent problem sometimes has a cause that habits alone cannot reach.`,
   },

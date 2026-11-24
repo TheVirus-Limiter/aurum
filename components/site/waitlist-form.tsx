@@ -133,10 +133,10 @@ export default function WaitlistForm({
           <Check className="h-6 w-6" />
         </span>
         <p className="eyebrow mb-2">You are on the list</p>
-        <h3 className="font-display text-2xl font-light text-ink">See you on day one.</h3>
+        <h3 className="font-display text-2xl font-light text-ink">Thanks for following along.</h3>
         <p className="mx-auto mt-3 max-w-sm text-sm text-mist">
-          You will hear from us the moment the Kickstarter goes live, with the lowest pricing we
-          offer. Nothing else in between.
+          You are on the list for launch updates. I will email when a prototype test finishes and
+          when the Kickstarter opens.
         </p>
       </div>
     )
@@ -189,10 +189,10 @@ export default function WaitlistForm({
           {status === "loading" ? (
             <>
               <Loader2 className="h-4 w-4 animate-spin" />
-              Reserving
+              Joining
             </>
           ) : (
-            "Reserve my place"
+            "Join the waitlist"
           )}
         </button>
       </div>

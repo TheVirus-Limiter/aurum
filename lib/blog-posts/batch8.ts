@@ -79,7 +79,7 @@ Half of in flight sleep is decided at booking and in the gate area.
 
 The cabin gives you light and noise you did not ask for. Taking those two back is the biggest single improvement you can make.
 
-Light is the main signal telling your brain whether it is day or night, and a cabin sends mixed messages all flight long. Cabin lights flick on for service, screens glow a few rows up, and a raised window shade floods everything. Blocking light fully convinces your body it is night. A good mask that actually seals out light does more than any reclined seat. A travel ready option like [Lumora](/explore/) also carries a passive cooling insert, which helps with the stuffy warmth a cabin traps against your face.
+Light is the main signal telling your brain whether it is day or night, and a cabin sends mixed messages all flight long. Cabin lights flick on for service, screens glow a few rows up, and a raised window shade floods everything. Blocking light fully convinces your body it is night. A good mask that actually seals out light does more than any reclined seat. A travel ready option like [Lumora](/explore/) is also designed to carry a passive cooling insert, which helps with the stuffy warmth a cabin traps against your face.
 
 For noise, steady engine drone is easier to sleep through than sudden announcements and crying children. Soft, consistent sound that covers those spikes helps the cabin fade into the background.
 
@@ -185,7 +185,7 @@ The hardest part of night work is sleeping during the day, when sunlight, noise,
 - Block noise. The world is loud during the day, and steady sound covers the spikes of traffic, deliveries, and voices.
 - Keep the room cool, since a warm daytime bedroom makes already fragile sleep worse.
 
-A sleep mask matters more here than almost anywhere, because daytime light is the single biggest enemy of shift worker sleep. Sealing it out completely lets melatonin do its work even with the sun up. Something like [Lumora](/explore/) pairs that darkness with a passive cooling insert, which together turn a bright bedroom into something the body will accept as night.
+A sleep mask matters more here than almost anywhere, because daytime light is the single biggest enemy of shift worker sleep. Sealing it out completely lets melatonin do its work even with the sun up. Something like [Lumora](/explore/) pairs that darkness with a planned passive cooling insert, which together turn a bright bedroom into something the body will accept as night.
 
 ## Use light and dark on purpose
 
@@ -308,7 +308,7 @@ Each of these is small on its own. Together they keep your already alert brain f
 
 The most powerful move is to stop depending on the room to provide good conditions and bring your own instead. A room you cannot control becomes far less of a problem when your sleep setup travels with you.
 
-This is where a portable approach pays off. A sleep mask that fully blocks light handles the curtain gaps, the under door glow, and the standby LEDs in one step, no matter how the room is built. Add steady sound and you cover the corridor traffic and the unfamiliar building noises that keep you on alert. A travel ready option like [Lumora](/explore/) is built around exactly this, darkness and a consistent wake you carry with you, so the strange room matters less.
+This is where a portable approach pays off. A sleep mask that fully blocks light handles the curtain gaps, the under door glow, and the standby LEDs in one step, no matter how the room is built. Add steady sound and you cover the corridor traffic and the unfamiliar building noises that keep you on alert. A travel ready option like [Lumora](/explore/) is built around exactly this, darkness and a planned, consistent wake you carry with you, so the strange room matters less.
 
 When your immediate environment is dark, quiet, and consistent night after night, the brain has fewer reasons to stay on guard, and the first night effect softens.
 
@@ -462,7 +462,7 @@ The challenge is that constant travel attacks sleep from every angle, new time z
 
 The single most valuable thing a frequent traveler can do is make their sleep environment portable, so it is the same in a hotel in one city as in another. Consistency is what your brain craves, and consistency is exactly what travel destroys.
 
-The biggest variables hotel to hotel are light, noise, and temperature, and those are the ones you can carry solutions for. A travel ready setup like [Lumora](/explore/) is built around this, light blocking and a consistent wake in one portable form, so each strange room becomes more like the last. When the conditions right around you stay constant, the building around them matters far less.
+The biggest variables hotel to hotel are light, noise, and temperature, and those are the ones you can carry solutions for. A travel ready setup like [Lumora](/explore/) is built around this, light blocking and a planned consistent wake in one portable form, so each strange room becomes more like the last. When the conditions right around you stay constant, the building around them matters far less.
 
 Beyond the gear, carry the habits.
 

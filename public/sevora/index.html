@@ -3,16 +3,16 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>SEVORA. Protect every harvest.</title>
-  <meta name="description" content="SEVORA is a low cost, offline AI sensor that predicts grain spoilage days early and texts a warning to any basic phone. No smartphone, no internet. About $49 a probe." />
+  <title>SEVORA. Can a $49 probe warn a farmer before grain spoils?</title>
+  <meta name="description" content="SEVORA is a grain storage probe in development. The first prototype measures temperature and humidity and sends the readings to a phone over Bluetooth. Next: testing whether CO2 readings reduce false alarms. Target price $49." />
   <meta name="theme-color" content="#f7f3ec" />
   <link rel="canonical" href="https://uselumora.co/sevora/" />
 
   <!-- Open Graph -->
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://uselumora.co/sevora/" />
-  <meta property="og:title" content="SEVORA. Protect every harvest." />
-  <meta property="og:description" content="A low cost, offline AI sensor that predicts grain spoilage days early and texts a warning to any basic phone." />
+  <meta property="og:title" content="SEVORA. Can a $49 probe warn a farmer before grain spoils?" />
+  <meta property="og:description" content="A grain storage probe in development. The first prototype measures temperature and humidity and sends readings to a phone over Bluetooth. Target price $49." />
   <meta property="og:image" content="https://uselumora.co/og/og-sevora.png" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
@@ -287,6 +287,20 @@
     .form-msg { position:relative; margin-top:16px; font-size:.92rem; color:#d8c6ad; min-height:1.2em; }
     .form-msg.ok { color:#a7d8b4; }
 
+    /* development status labels */
+    .status { display:inline-flex; align-items:center; font-family:'DM Mono', monospace; font-size:.68rem; letter-spacing:.06em; text-transform:uppercase; padding:.22rem .55rem; border-radius:999px; border:1px solid var(--line-strong); color:var(--soft); background:rgba(255,255,255,.5); white-space:nowrap; }
+    .status.built { color:#2f5c3b; border-color:rgba(63,125,79,.4); background:rgba(63,125,79,.1); }
+    .status.next { color:#6a4a15; border-color:rgba(176,122,30,.45); background:rgba(176,122,30,.1); }
+    .step .status { margin-bottom:10px; }
+    .price-list li { justify-content:space-between; }
+    .price-list .pl-text { display:flex; gap:12px; align-items:flex-start; }
+    .price-list .status { margin-left:10px; flex:0 0 auto; }
+    #pricing .price-list { max-width:440px; }
+    @media (max-width:520px){ #pricing .price-card { padding:32px 20px; } .price-list li { font-size:.95rem; } }
+    .illus-cap { margin-top:14px; text-align:center; font-family:'DM Mono', monospace; font-size:.78rem; color:var(--soft); }
+    .video-cap { margin:14px auto 0; max-width:640px; text-align:center; font-size:.9rem; color:var(--soft); }
+    .hero-status { margin-top:18px; display:flex; flex-wrap:wrap; gap:8px; }
+
     /* footer */
     footer { padding:56px 0 40px; border-top:1px solid var(--line); }
     .foot-grid { display:flex; flex-wrap:wrap; gap:24px; justify-content:space-between; align-items:flex-start; }
@@ -328,21 +342,26 @@
       <div class="wrap hero-grid">
         <div>
           <p class="eyebrow" data-reveal>From the founder of <a href="https://uselumora.co" target="_blank" rel="noopener">Lumora</a></p>
-          <h1 data-reveal style="--d:.05s">Know before it <span class="rust">rots.</span></h1>
+          <h1 data-reveal style="--d:.05s">Can a $49 probe warn a farmer before grain <span class="rust">spoils?</span></h1>
           <p class="lead" data-reveal style="--d:.12s; margin-top:26px">
-            SEVORA is a small sensor you push into a sack of stored grain. It reads the first signs of
-            spoilage and texts a warning to any phone, days before mold takes hold. No smartphone. No
-            internet. Just a message that says, dry your grain now.
+            My first prototype measures temperature and humidity in stored grain and sends the readings
+            to my phone. Next I want to test whether carbon dioxide readings could help distinguish an
+            early warning from a false alarm.
           </p>
+          <div class="hero-status" data-reveal style="--d:.15s">
+            <span class="status built">Built: temp, humidity, Bluetooth</span>
+            <span class="status next">Next experiment: CO<sub>2</sub></span>
+            <span class="status">Planned: SMS alert</span>
+          </div>
           <div class="hero-cta" data-reveal style="--d:.18s">
             <a href="#how" class="btn btn-primary">See how it works
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12l7 7 7-7"/></svg>
             </a>
             <a href="#video" class="btn btn-ghost">
               <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
-              Watch the film
+              Watch the overview
             </a>
-            <span class="price-chip">$49 per probe</span>
+            <span class="price-chip">Target price: $49</span>
           </div>
         </div>
 
@@ -362,16 +381,17 @@
     <section id="video" class="video-section">
       <div class="wrap">
         <div class="sec-head center" data-reveal>
-          <p class="eyebrow">Watch</p>
-          <h2>See SEVORA in the field.</h2>
-          <p>A short look at the probe, the prediction, and the text that reaches a farmer in time.</p>
+          <p class="eyebrow">Concept overview</p>
+          <h2>The idea behind SEVORA.</h2>
+          <p>A four minute overview of the problem and the system I am working toward.</p>
         </div>
         <div class="video-wrap" data-reveal>
-          <iframe src="https://www.youtube.com/embed/kTYhYaPLiko" title="SEVORA in action"
+          <iframe src="https://www.youtube.com/embed/kTYhYaPLiko" title="SEVORA concept overview"
             loading="lazy"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
         </div>
+        <p class="video-cap" data-reveal>Concept overview. It describes the planned system, including prediction and SMS alerts that are not built yet. Today the prototype measures temperature and humidity and sends readings over Bluetooth.</p>
       </div>
     </section>
 
@@ -415,8 +435,8 @@
     <section id="how">
       <div class="wrap">
         <div class="sec-head" data-reveal>
-          <p class="eyebrow">How it works</p>
-          <h2>Four quiet steps between your grain and a warning.</h2>
+          <p class="eyebrow">Where it stands</p>
+          <h2>What is built, what is next, and what is planned.</h2>
         </div>
 
         <div class="steps">
@@ -424,42 +444,46 @@
             <div class="step-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3v6"/><circle cx="12" cy="13" r="3.2"/><path d="M6.5 6.5A8 8 0 0 0 6 18M17.5 6.5A8 8 0 0 1 18 18"/></svg>
             </div>
+            <span class="status built">Built</span>
             <div class="step-n">01</div>
-            <h3>Sense</h3>
-            <p>It reads temperature, humidity, and the gases mold gives off as it starts to grow.</p>
+            <h3>Measure</h3>
+            <p>The first prototype measures temperature and humidity inside stored grain and sends the readings to my phone over Bluetooth.</p>
           </div>
           <div class="step" data-reveal style="--d:.08s">
             <div class="step-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="7" y="7" width="10" height="10" rx="2.5"/><path d="M10 4v3M14 4v3M10 17v3M14 17v3M4 10h3M4 14h3M17 10h3M17 14h3"/></svg>
             </div>
+            <span class="status next">Next experiment</span>
             <div class="step-n">02</div>
-            <h3>Think</h3>
-            <p>A small AI model runs on the probe itself and predicts spoilage before you can see or smell it. No internet needed.</p>
+            <h3>Compare</h3>
+            <p>Next I want to compare warnings with and without carbon dioxide readings, to see whether CO<sub>2</sub> helps separate an early warning from a false alarm.</p>
           </div>
           <div class="step" data-reveal style="--d:.16s">
             <div class="step-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6.5A2.5 2.5 0 0 1 6.5 4h11A2.5 2.5 0 0 1 20 6.5v7A2.5 2.5 0 0 1 17.5 16H9l-4 3v-3H6.5"/><path d="M9 9h6M9 12h4"/></svg>
             </div>
+            <span class="status">Planned</span>
             <div class="step-n">03</div>
-            <h3>Send</h3>
-            <p>When risk climbs, it sends a plain SMS over basic 2G to any phone, even a handset from ten years ago.</p>
+            <h3>Predict</h3>
+            <p>The plan is to turn readings into a spoilage risk on the probe itself, so local sensing and the decision do not depend on an internet connection.</p>
           </div>
           <div class="step" data-reveal style="--d:.24s">
             <div class="step-ico">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M5 5l2 2M17 17l2 2M19 5l-2 2M7 17l-2 2"/></svg>
             </div>
+            <span class="status">Planned</span>
             <div class="step-n">04</div>
-            <h3>Act</h3>
-            <p>You get the message in time to dry, move, or sell the grain, while it is still good.</p>
+            <h3>Alert</h3>
+            <p>The plan is a text alert to a farmer's basic phone, no smartphone or app needed. Unlike local sensing, a text alert will still need cellular coverage.</p>
           </div>
         </div>
 
         <div class="note-strong" data-reveal style="background:rgba(176,122,30,.09); border-color:rgba(176,122,30,.28); color:#6a4a15">
-          No internet. No smartphone. Months of battery on a single charge, and one probe for every sack.
+          Not measured yet: how far in advance a warning can come, battery life, and how much grain one probe can watch. Those numbers will go here once a test documents them.
         </div>
 
         <div class="alert-band" data-reveal>
-          <div class="phone" role="img" aria-label="A basic phone showing a text message from SEVORA that reads: grain alert, store 2 spoilage risk rising, dry your grain now, temperature 34 degrees Celsius, humidity high.">
+          <div class="phone-wrap"><div class="phone" role="img" aria-label="Illustration of a planned SMS alert on a basic phone, reading: grain alert, store 2 spoilage risk rising, dry your grain now, temperature 34 degrees Celsius, humidity high.">
             <div class="phone-top"><span class="brand">SEVORA</span></div>
             <div class="screen">
               <div class="screen-bar"><span>&#9603;&#9603;&#9603;&#9601;</span><span>SMS</span><span>84%</span></div>
@@ -472,12 +496,13 @@
             <div class="phone-nav"><span class="n-side"></span><span class="n-mid"></span><span class="n-side"></span></div>
             <div class="keypad"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>*</span><span>0</span><span>#</span></div>
           </div>
+          <p class="illus-cap">Example of a planned SMS alert</p></div>
           <div class="alert-copy">
-            <p class="eyebrow">The whole interface</p>
+            <p class="eyebrow">The planned alert <span class="status" style="margin-left:6px">Planned</span></p>
             <h2>One text. Nothing to learn.</h2>
-            <p class="lead">No app to open, no screen to charge, no account to set up. SEVORA speaks the
-              language every phone already knows, a plain text in words a farmer can act on the moment it
-              lands. This is the entire product, on whatever handset is already in their pocket.</p>
+            <p class="lead">The goal is an alert a farmer can act on the moment it lands: a plain text, no app,
+              no smartphone, no account. That step is not built yet. Today the readings go to my phone over
+              Bluetooth.</p>
           </div>
         </div>
       </div>
@@ -492,8 +517,8 @@
           <p>Companies like AgroLog, iGrain, and OPI build sensor cables that run inside commercial
              silos and bins. They are priced at the system level, often thousands to tens of thousands
              of dollars, and they assume a smartphone or computer and a paid cloud account to read the
-             data. None of that fits a farmer protecting a single sack. SEVORA was built for exactly
-             that farmer.</p>
+             data. None of that fits a farmer protecting a single sack. SEVORA is being designed for
+             exactly that farmer.</p>
         </div>
 
         <div class="grid-2 contrast">
@@ -507,12 +532,12 @@
             </ul>
           </div>
           <div class="card card-new" data-reveal style="--d:.1s">
-            <span class="tag" style="color:var(--gold)">Built for the sack</span>
+            <span class="tag" style="color:var(--gold)">Designed for the sack</span>
             <ul>
-              <li><span class="check" aria-hidden="true">✓</span> One probe you push in by hand, in seconds.</li>
-              <li><span class="check" aria-hidden="true">✓</span> A plain text to any phone, no app and no smartphone.</li>
-              <li><span class="check" aria-hidden="true">✓</span> About $49, and it runs fully offline.</li>
-              <li><span class="check" aria-hidden="true">✓</span> Made for the farmer these systems skipped.</li>
+              <li><span class="check" aria-hidden="true">✓</span> A single probe you push into a sack by hand. <span class="status">Design</span></li>
+              <li><span class="check" aria-hidden="true">✓</span> Readings over Bluetooth today, a plain text alert later. <span class="status built">Built</span> <span class="status">Planned</span></li>
+              <li><span class="check" aria-hidden="true">✓</span> Target price of $49, not yet tested with farmers. <span class="status">Target</span></li>
+              <li><span class="check" aria-hidden="true">✓</span> Local sensing that does not need internet. <span class="status built">Built</span></li>
             </ul>
           </div>
         </div>
@@ -524,21 +549,22 @@
       <div class="wrap">
         <div class="sec-head center" data-reveal>
           <p class="eyebrow">Pricing</p>
-          <h2>One probe. Forty nine dollars.</h2>
-          <p>Priced to be ordinary, not a luxury. Cheap enough to sit in every store room, not just the ones with a budget for tech.</p>
+          <h2>Target price: $49 per probe.</h2>
+          <p>This is the price I am designing toward, so it can sit in an ordinary store room. It has not yet been tested with farmers.</p>
         </div>
 
         <div class="price-card" data-reveal>
+          <div class="price-unit" style="margin:0 0 6px">Target price</div>
           <div class="price-big">$49</div>
-          <div class="price-unit">per probe</div>
+          <div class="price-unit">per probe, not yet tested with farmers</div>
           <ul class="price-list">
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> Works fully offline, no internet ever</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> Warns days before spoilage takes hold</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> Months of battery on a single charge</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> Sends to any basic phone over 2G</li>
-            <li><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> One probe for one sack or bin</li>
+            <li><span class="pl-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> <span>Temperature and humidity sensing</span></span><span class="status built">Built</span></li>
+            <li><span class="pl-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> <span>Readings to a phone over Bluetooth</span></span><span class="status built">Built</span></li>
+            <li><span class="pl-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> <span>CO<sub>2</sub> to reduce false alarms</span></span><span class="status next">Next</span></li>
+            <li><span class="pl-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> <span>Spoilage risk worked out on the probe</span></span><span class="status">Planned</span></li>
+            <li><span class="pl-text"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12l5 5 9-11"/></svg> <span>Text alert to a basic phone, with cellular coverage</span></span><span class="status">Planned</span></li>
           </ul>
-          <a href="#join" class="btn btn-primary" style="width:100%; justify-content:center">Join the waitlist</a>
+          <a href="#join" class="btn btn-primary" style="width:100%; justify-content:center">Get prototype updates</a>
         </div>
       </div>
     </section>
@@ -549,11 +575,11 @@
         <div class="band" data-reveal>
           <p class="eyebrow">Protect every harvest</p>
           <h2>A warning in time is a harvest saved.</h2>
-          <p style="max-width:44ch; margin:16px auto 0">Follow SEVORA as it reaches the farmers who need it first. Leave an email and we will keep you posted.</p>
+          <p style="max-width:44ch; margin:16px auto 0">Leave an email for prototype updates: what the CO<sub>2</sub> comparison shows, and what gets built next.</p>
           <form class="capture" id="capture" novalidate>
             <label for="email" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Email address</label>
             <input type="email" id="email" name="email" placeholder="you@email.com" autocomplete="email" required />
-            <button type="submit" class="btn btn-primary">Keep me posted</button>
+            <button type="submit" class="btn btn-primary">Get prototype updates</button>
           </form>
           <p class="form-msg" id="formMsg" role="status" aria-live="polite"></p>
         </div>
@@ -568,7 +594,7 @@
         <p>Built for smallholder grain farmers in Sub-Saharan Africa and South Asia. Designed and built
            by a 16 year old maker, the founder of
            <a class="link-gold" href="https://uselumora.co" target="_blank" rel="noopener">Lumora</a>,
-           starting with a working prototype.</p>
+           starting with a first prototype that measures temperature and humidity.</p>
       </div>
       <div class="foot-meta">
         <div>Protect every harvest.</div>
@@ -630,7 +656,7 @@
         headers:{ 'Content-Type':'text/plain;charset=utf-8' },
         body: JSON.stringify({ email: email, describes_you: '(Sevora)', source: 'sevora' })
       }).then(function(){
-        msg.className = 'form-msg ok'; msg.textContent = 'Thank you. You are on the SEVORA list.';
+        msg.className = 'form-msg ok'; msg.textContent = 'Thank you. You will get SEVORA prototype updates.';
         form.reset();
       }).catch(function(){
         msg.className = 'form-msg'; msg.textContent = 'Network error. Please try again.';

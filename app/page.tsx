@@ -14,6 +14,7 @@ import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal"
 
 const ModelPreloader = dynamic(() => import("@/components/site/model-preloader"), { ssr: false })
 import { Icon } from "@/components/site/icon"
+import { StatusBadge } from "@/components/site/status-badge"
 import { problems, pillars, architecture, stats, founders, SITE } from "@/lib/site-content"
 
 export default function Home() {
@@ -28,7 +29,7 @@ export default function Home() {
         <div className="anim-marquee flex w-max items-center gap-10 whitespace-nowrap text-sm uppercase tracking-[0.24em] text-faint">
           {Array.from({ length: 2 }).map((_, k) => (
             <span key={k} className="flex items-center gap-10">
-              {["It listens", "It waits", "It wakes you there", "Not a tracker", "A mask that acts"].map((w) => (
+              {["In development", "Motion sensing", "Temperature sensing", "Wake window, next test", "Built in the open"].map((w) => (
                 <span key={w} className="flex items-center gap-10">
                   {w}
                   <span className="h-1 w-1 rounded-full bg-iris" />
@@ -45,11 +46,11 @@ export default function Home() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">Why mornings feel like that</p>
             <h2 className="font-display text-balance text-[clamp(2.2rem,5.5vw,4rem)] font-light leading-[1.05] tracking-tight text-ink">
-              The whole industry measures the night. Nothing changes it.
+              Most sleep tech measures the night. Very little acts on it.
             </h2>
             <p className="mt-5 text-mist">
-              Rings, watches, and apps are very good at telling you how badly you slept. None of them
-              do anything about it while it is happening.
+              Rings, watches, and apps are good at telling you how you slept. Lumora is an attempt to
+              do something during the night instead.
             </p>
           </Reveal>
 
@@ -76,13 +77,13 @@ export default function Home() {
           <Reveal className="mx-auto max-w-3xl text-center">
             <p className="eyebrow mb-4">How it works</p>
             <h2 className="font-display text-balance text-[clamp(2.4rem,6vw,4.5rem)] font-light leading-[1.02] tracking-tight text-ink">
-              It reads your night.
+              Sense the night.
               <br />
-              <span className="italic text-iris-soft">Then it does something.</span>
+              <span className="italic text-iris-soft">Pick the moment.</span>
             </h2>
             <p className="mt-5 text-mist">
-              Your alarm fires at the same moment every day, no matter where you are in your sleep.
-              Lumora is built to find a better one.
+              Here is what exists today, what I am testing next, and what is still a plan. Each step is
+              labeled.
             </p>
           </Reveal>
 
@@ -92,7 +93,10 @@ export default function Home() {
                 <div className="flex h-full flex-col p-9">
                   <div className="flex items-center justify-between">
                     <span className="font-display text-5xl font-light text-ink/25">{pillar.index}</span>
-                    <Icon name={pillar.icon} className="h-6 w-6 text-iris" />
+                    <span className="flex items-center gap-3">
+                      <StatusBadge status={pillar.status} />
+                      <Icon name={pillar.icon} className="h-6 w-6 text-iris" />
+                    </span>
                   </div>
                   <h3 className="font-display mt-10 text-3xl font-light text-ink">{pillar.title}</h3>
                   <p className="mt-2 text-sm italic text-iris-soft/80">{pillar.tagline}</p>
@@ -105,13 +109,13 @@ export default function Home() {
           {/* ARCHITECTURE */}
           <div className="mx-auto mt-20 max-w-5xl">
             <Reveal className="mx-auto max-w-2xl text-center">
-              <p className="eyebrow mb-4">The architecture</p>
+              <p className="eyebrow mb-4">The architecture, by design</p>
               <h3 className="font-display text-[clamp(1.8rem,4vw,2.75rem)] font-light leading-[1.08] tracking-tight text-ink">
                 A simple mask. A smart pod.
               </h3>
               <p className="mt-5 text-mist">
-                The mask stays simple on purpose, so the part that has to survive a washing machine
-                is the part with nothing in it.
+                The design keeps the mask simple, so the part that has to survive a washing machine is
+                the part with nothing in it.
               </p>
             </Reveal>
 
@@ -148,8 +152,8 @@ export default function Home() {
               Sleep is not a niche issue. It is a daily performance problem.
             </h2>
             <p className="mt-5 text-mist">
-              Before refining the product, we talked to people directly. Students, athletes, and
-              professionals. The message was consistent.
+              Before building, I interviewed people about their sleep. Students, athletes, and
+              professionals. These were conversations about their nights, not tests of the mask.
             </p>
           </Reveal>
 
@@ -188,7 +192,7 @@ export default function Home() {
               <span className="italic text-iris-soft">In the open.</span>
             </h2>
             <p className="mt-5 max-w-lg text-mist">
-              Lumora is a working prototype becoming a product, designed and built by one person.
+              Lumora is a prototype becoming a product, designed and built by one person.
               The sensing, the firmware, the mask, and this site. If something is not ready yet, you
               will hear that here first.
             </p>

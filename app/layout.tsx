@@ -25,11 +25,11 @@ const SITE_URL = "https://uselumora.co"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lumora Sleep, a sleep mask that acts",
+    default: "Lumora Sleep, a sleep mask in development",
     template: "%s, Lumora Sleep",
   },
   description:
-    "Everything else tracks your sleep. Lumora changes it. A sleep mask that learns your night and wakes you at a lighter moment, with a gradual sunrise built in. Launching on Kickstarter.",
+    "I'm building a sleep mask that aims to wake you during lighter sleep, within a window you choose. Prototype in development. Join the waitlist for launch updates.",
   applicationName: "Lumora Sleep",
   keywords: [
     "Lumora",
@@ -47,23 +47,23 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Lumora Sleep",
-    title: "Everything else tracks your sleep. Lumora changes it.",
+    title: "Lumora, a sleep mask in development",
     description:
-      "A sleep mask that learns your night and wakes you at the right moment, not the same moment.",
+      "A sleep mask designed to wake you during lighter sleep, within a window you choose. Prototype in development.",
     images: [
       {
         url: "/og/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Lumora, a sleep mask that learns your night",
+        alt: "Lumora, a sleep mask in development",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Everything else tracks your sleep. Lumora changes it.",
+    title: "Lumora, a sleep mask in development",
     description:
-      "A sleep mask that learns your night and wakes you at the right moment, not the same moment.",
+      "A sleep mask designed to wake you during lighter sleep, within a window you choose. Prototype in development.",
     images: ["/og/og-home.png"],
   },
   icons: {
@@ -90,7 +90,7 @@ const orgJsonLd = {
       logo: "https://uselumora.co/images/lumora-logo.png",
       email: "hello@uselumora.co",
       description:
-        "Lumora Sleep is building a smart sleep mask that acts on your sleep instead of only reporting on it, using onboard sensing to wake you at a lighter moment with a gradual sunrise.",
+        "Lumora Sleep is developing a sleep mask designed to use motion and temperature sensing to wake the wearer during lighter sleep within a chosen window. The product is a prototype in development and is not for sale.",
       sameAs: [
         "https://www.instagram.com/lumorasleep",
         "https://www.linkedin.com/company/lumorasleep",

@@ -48,7 +48,7 @@ You do not need anything elaborate. You need consistency in the inputs that deci
 
 If you train seriously and still wake unrefreshed night after night, that is worth raising with a doctor rather than pushing through, since persistent poor sleep can point to something treatable.
 
-A stable overnight environment is what lets deep sleep hold long enough to do its job, and a badly timed alarm can undo the last of it. [Lumora](/explore/) holds true darkness through the night and wakes you at a lighter moment, so the recovery you earned in training is actually collected.`,
+A stable overnight environment is what lets deep sleep hold long enough to do its job, and a badly timed alarm can undo the last of it. [Lumora](/explore/) holds true darkness through the night and aims to wake you at a lighter moment, so the recovery you earned in training is actually collected.`,
   },
   {
     slug: "sleep-and-reaction-time-the-hidden-edge",
@@ -97,7 +97,7 @@ Caffeine is worth a note here. It can mask the feeling of tiredness, which makes
 
 If you sleep a full night and still feel your reactions are dull and your focus keeps slipping, that pattern is worth a conversation with a doctor, since some sleep disorders quietly degrade alertness even when time in bed looks fine.
 
-The split-second edge is built on the quality of the night before, and on how that night ends. [Lumora](/explore/) works on both, holding true darkness through the night and then waking you at a lighter moment inside your window, so you start the day sharp instead of climbing out of the fog a badly timed alarm leaves behind.`,
+The split-second edge is built on the quality of the night before, and on how that night ends. [Lumora](/explore/) works on both, holding true darkness through the night and then aiming to wake you at a lighter moment inside your window, so you start the day sharp instead of climbing out of the fog a badly timed alarm leaves behind.`,
   },
   {
     slug: "why-elite-athletes-treat-sleep-as-training",
@@ -147,7 +147,7 @@ You also do not need elite genetics to benefit. The mechanisms are the same for 
 
 If you protect the window and still wake unrested on a regular basis, that is a reason to see a doctor rather than simply trying harder, since the issue may be a treatable sleep problem rather than a habit.
 
-The athletes who take this seriously make the environment do the heavy lifting, so the night holds without effort. [Lumora](/explore/) keeps the light out and then ends the night at a lighter moment rather than a fixed one, turning sleep into the dependable part of the plan rather than the variable one.`,
+The athletes who take this seriously make the environment do the heavy lifting, so the night holds without effort. [Lumora](/explore/) keeps the light out and then aims to end the night at a lighter moment rather than a fixed one, turning sleep into the dependable part of the plan rather than the variable one.`,
   },
   {
     slug: "sleep-focus-and-deep-work-the-next-day",
@@ -193,7 +193,7 @@ For the day, do your hardest thinking in your sharpest window rather than saving
 
 If you sleep enough but your focus is reliably poor and foggy, it is worth raising with a doctor, since unrefreshing sleep can have a treatable cause.
 
-A steady, unbroken night is the foundation the whole day sits on, and where you wake inside it decides how the first hours feel. [Lumora](/explore/) is built for that moment, reading your night and starting a gradual sunrise at a lighter point rather than at whatever second the clock happens to hit.`,
+A steady, unbroken night is the foundation the whole day sits on, and where you wake inside it decides how the first hours feel. [Lumora](/explore/) is built for that moment, reading your night and aiming to start a gradual sunrise at a lighter point rather than at whatever second the clock happens to hit.`,
   },
   {
     slug: "how-one-bad-night-affects-your-decisions",
@@ -241,7 +241,7 @@ You cannot fully restore your judgment without sleep, but you can work around th
 
 If single bad nights are rare, this is just a matter of managing the occasional off day. If poor nights are the norm and your judgment feels consistently clouded, that pattern is worth discussing with a doctor.
 
-The cleanest protection is simply sleeping well more often, so tired-day judgment is the exception. [Lumora](/explore/) protects the dark, unbroken stretch and then wakes you at a lighter moment, which keeps more of your decisions on the rested side of the line.`,
+The cleanest protection is simply sleeping well more often, so tired-day judgment is the exception. [Lumora](/explore/) protects the dark, unbroken stretch and then aims to wake you at a lighter moment, which keeps more of your decisions on the rested side of the line.`,
   },
   {
     slug: "naps-for-performance-length-timing-and-limits",
@@ -288,7 +288,7 @@ It is also worth knowing that not everyone naps well, and that is fine. Some peo
 
 If you sleep a normal night and still feel an overwhelming need to nap most days, that is worth raising with a doctor, since excessive daytime sleepiness can signal an underlying sleep problem.
 
-A nap works best as a supplement to solid nights, not a rescue from broken ones. Keeping the night itself whole and ending it at a lighter moment is what [Lumora](/explore/) is built to do, so naps stay an occasional edge rather than a daily necessity.`,
+A nap works best as a supplement to solid nights, not a rescue from broken ones. Keeping the night itself whole and ending it at a lighter moment is what [Lumora](/explore/) is being designed to do, so naps stay an occasional edge rather than a daily necessity.`,
   },
   {
     slug: "sleep-and-muscle-growth-what-recovery-needs",
@@ -389,7 +389,7 @@ The remedy is not clever. It is enough complete sleep, consistently.
 
 If you sleep enough and still feel persistently foggy, forgetful, or wiped out, that is worth raising with a doctor, since some causes are treatable and worth catching.
 
-The brain does its repair and its cleaning in an unbroken night. [Lumora](/explore/) keeps that night dark and then ends it at a lighter moment instead of dragging you out of the deepest part, which is the same as protecting the organ doing all the work.`,
+The brain does its repair and its cleaning in an unbroken night. [Lumora](/explore/) keeps that night dark and then aims to end it at a lighter moment instead of dragging you out of the deepest part, which is the same as protecting the organ doing all the work.`,
   },
   {
     slug: "how-sleep-affects-mood-and-emotional-control",
@@ -438,7 +438,7 @@ The goal is not to never feel anything. It is to keep your emotional baseline st
 
 If low mood, anxiety, or irritability is persistent and weighing on your life, that goes beyond sleep advice and deserves a conversation with a doctor or mental health professional, since sleep is one piece of a larger picture.
 
-A steady night is the quiet foundation under a steady mood. REM clusters in the final hours, which is exactly where a fixed alarm tends to land. [Lumora](/explore/) keeps the night dark and looks for a lighter moment instead, which gives the next day a more even place to start from.`,
+A steady night is the quiet foundation under a steady mood. REM clusters in the final hours, which is exactly where a fixed alarm tends to land. [Lumora](/explore/) keeps the night dark and is designed to look for a lighter moment instead, which gives the next day a more even place to start from.`,
   },
   {
     slug: "sleep-and-immune-resilience",
@@ -486,7 +486,7 @@ The way to support your immune system through sleep is unglamorous and consisten
 
 If you sleep enough and still feel constantly run down or find you are getting sick unusually often, that is worth raising with a doctor, since persistent issues can have causes worth investigating.
 
-Steady, unbroken nights are part of how the body keeps its defenses funded. [Lumora](/explore/) holds the darkness that keeps sleep whole and wakes you at a lighter moment, which gives your immune system the overnight conditions it works best in.`,
+Steady, unbroken nights are part of how the body keeps its defenses funded. [Lumora](/explore/) holds the darkness that keeps sleep whole and aims to wake you at a lighter moment, which gives your immune system the overnight conditions it works best in.`,
   },
   {
     slug: "better-sleep-for-students-and-exam-performance",
@@ -533,7 +533,7 @@ The advice for students is the same as for anyone, with the exam stakes making i
 
 If you keep a reasonable schedule and still struggle to sleep through stress or wake unrested, that is worth raising with a doctor or campus health service, since anxiety and sleep problems often travel together and both can be helped.
 
-The night is where studying becomes knowledge, which means protecting it is protecting your results. [Lumora](/explore/) keeps the night dark and unbroken and wakes you at a lighter moment, so you are not starting an exam in the fog a mistimed alarm leaves behind.`,
+The night is where studying becomes knowledge, which means protecting it is protecting your results. [Lumora](/explore/) keeps the night dark and unbroken and aims to wake you at a lighter moment, so you are not starting an exam in the fog a mistimed alarm leaves behind.`,
   },
   {
     slug: "how-travel-and-jet-lag-undercut-performance",
@@ -580,7 +580,7 @@ Meals can help too. Eating on the destination's schedule, even before you feel h
 
 For very short trips, sometimes it makes more sense to stay on home time rather than fully adjusting and then having to switch back. If you travel often and find the disruption severe or persistent, it is worth raising with a doctor, who can suggest more targeted approaches.
 
-Wherever you land, the night still needs to hold together for your clock to reset cleanly. [Lumora](/explore/) travels with you, blocking light in an unfamiliar room and using a gradual sunrise to anchor your wake to the new schedule, so the adjustment happens as fast as your body will allow.`,
+Wherever you land, the night still needs to hold together for your clock to reset cleanly. [Lumora](/explore/) travels with you, blocking light in an unfamiliar room and is designed to use a planned gradual wake light to anchor your wake to the new schedule, so the adjustment happens as fast as your body will allow.`,
   },
   {
     slug: "building-a-recovery-routine-that-protects-sleep",
@@ -628,6 +628,6 @@ These are the parts you can actually control, and they are where a routine earns
 
 If you build a solid routine and still wake unrefreshed night after night, that is a reason to see a doctor rather than simply adding more recovery rituals, since the cause may be a treatable sleep problem.
 
-A recovery routine is ultimately about giving the night the conditions to do its work. [Lumora](/explore/) holds the darkness so the wind-down you did is not undone by the room, then finishes the job by waking you at a lighter moment, turning a good routine into the rest it was meant to produce.`,
+A recovery routine is ultimately about giving the night the conditions to do its work. [Lumora](/explore/) holds the darkness so the wind-down you did is not undone by the room, then finishes the job by aiming to wake you at a lighter moment, turning a good routine into the rest it was meant to produce.`,
   },
 ]

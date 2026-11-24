@@ -42,7 +42,7 @@ This is also why the timing of sound matters. Audio that fades or holds an even 
 
 If you want to use sound rather than fight it, a few habits help. Keep the level low, just enough to soften the room. Choose textures over songs. And let the sound run rather than scheduling it to cut off, so the environment stays consistent from the moment you close your eyes until morning.
 
-[Lumora](/explore/) handles the other half of that environment. It blocks light at the face and keeps the darkness constant, so whatever soundscape you choose is working against a night that is not also fighting light. When morning comes, it wakes you with a gradual sunrise at a lighter moment rather than a sound that rips you out of deep sleep.
+[Lumora](/explore/) handles the other half of that environment. It blocks light at the face and keeps the darkness constant, so whatever soundscape you choose is working against a night that is not also fighting light. When morning comes, it aims to wake you with a gradual sunrise at a lighter moment rather than a sound that rips you out of deep sleep.
 
 You cannot stop your brain from listening. But you can give it something calm and unchanging to listen to, and that small shift is often the difference between a night that drains you and one that restores you.`,
   },
@@ -93,7 +93,7 @@ A few pointers can speed this up:
 
 Keep the volume low in every case. The sound should soften the room, not fill it.
 
-Sound is only half of the environment. [Lumora](/explore/) takes care of the other half, holding the darkness steady at your face all night and then ending it with a gradual sunrise timed to a lighter moment. Whichever texture you prefer, the goal is the same. A steady backdrop your brain can stop paying attention to, so it can get on with the work of sleep.`,
+Sound is only half of the environment. [Lumora](/explore/) takes care of the other half, holding the darkness steady at your face all night and then aiming to end it with a gradual sunrise timed to a lighter moment. Whichever texture you prefer, the goal is the same. A steady backdrop your brain can stop paying attention to, so it can get on with the work of sleep.`,
   },
   {
     slug: "why-a-racing-mind-keeps-you-awake",
@@ -146,7 +146,7 @@ If a racing mind is a nightly pattern, building a consistent wind-down ritual he
 
 If the racing is tied to persistent anxiety or it keeps you up most nights for weeks, it is worth speaking with a doctor or therapist, since sleep and mental health are closely linked and treatable.
 
-This is part of why the environment matters as much as the effort. [Lumora](/explore/) takes light out of the equation completely, so a racing mind has one less thing to push against as it settles, and the morning arrives as a gradual sunrise instead of a jolt. You cannot order your mind to be silent. You can give it somewhere calm to land.`,
+This is part of why the environment matters as much as the effort. [Lumora](/explore/) takes light out of the equation completely, so a racing mind has one less thing to push against as it settles, and the morning is designed to arrive as gradual light instead of a jolt. You cannot order your mind to be silent. You can give it somewhere calm to land.`,
   },
   {
     slug: "the-case-for-soundscapes-over-silence",
@@ -190,7 +190,7 @@ Volume matters too. The aim is to soften the room, not to dominate it. If you ar
 
 If you have always assumed silence is best and still sleep poorly, a soundscape is an easy experiment. Give it several nights, since your brain needs a little time to stop treating the new background as something to evaluate. Keep it quiet, keep it steady, and let it run through the night rather than cutting off partway.
 
-Sound is one layer of the environment, and light is the other. [Lumora](/explore/) holds that second layer steady, blocking light at the face through the night and then lifting you out of it with a gradual sunrise at a lighter moment. A soundscape works best when the rest of the night is not fighting it.
+Sound is one layer of the environment, and light is the other. [Lumora](/explore/) holds that second layer steady, blocking light at the face through the night and, as a design goal, lifting you out of it with gradual light at a lighter moment. A soundscape works best when the rest of the night is not fighting it.
 
 Silence feels like the safe choice. For many sleepers, a calm and constant soundscape is the better one.`,
   },
@@ -284,7 +284,7 @@ A guided wind-down is not a one-night fix. The first few nights may feel like go
 
 The whole point is to stop trying so hard to fall asleep. A guided wind-down replaces the effort of forcing sleep with the ease of following a familiar path. Over time, the path becomes so well worn that your brain starts down it almost automatically.
 
-Sound is well suited to guiding this, and light is what tells the body the day is over. [Lumora](/explore/) handles that side, holding true darkness at your face while the routine runs and then reversing it in the morning with a gradual sunrise. The more often you walk the path, the shorter the walk becomes.`,
+Sound is well suited to guiding this, and light is what tells the body the day is over. [Lumora](/explore/) handles that side, holding true darkness at your face while the routine runs and then, as a planned feature, reversing it in the morning with gradual light. The more often you walk the path, the shorter the walk becomes.`,
   },
   {
     slug: "why-sudden-noises-wake-you-and-steady-ones-do-not",
@@ -329,7 +329,7 @@ This is also the core argument against chasing perfect silence. In a silent room
 
 If sudden noises wake you, the fix is not to hunt down and eliminate every possible sound, which is nearly impossible. The fix is to reduce contrast. A constant, gentle sound layer, kept low and even through the whole night, gives your brain a smooth backdrop and far fewer changes to flag.
 
-The same principle applies to light. [Lumora](/explore/) keeps the visual side of the night constant, blocking the light that would otherwise arrive as its own jolt, and when it is time to wake it ramps up gradually rather than all at once. Your brain will always listen for change. The kindest thing you can do is give it less change to find.`,
+The same principle applies to light. [Lumora](/explore/) keeps the visual side of the night constant, blocking the light that would otherwise arrive as its own jolt, and its planned wake light is meant to ramp up gradually rather than all at once. Your brain will always listen for change. The kindest thing you can do is give it less change to find.`,
   },
   {
     slug: "earbuds-vs-built-in-sleep-audio-comfort-and-risk",
@@ -372,7 +372,7 @@ The appeal of earbuds was always privacy, and mask audio keeps that. Sound that 
 
 For a short listen before sleep, earbuds may be fine. The calculation changes when you want sound to run all night and you sleep on your side, which describes most people. There, the comfort and health trade-offs of in-ear use are harder to justify.
 
-Whichever way you land on audio, the mask on your face should not add to the problem. [Lumora](/explore/) is built to be worn for a full night, with a contoured shape that keeps pressure off the eyes and a passive cooling insert to stop heat building where it rests. Comfort and sound do not have to be a trade.`,
+Whichever way you land on audio, the mask on your face should not add to the problem. [Lumora](/explore/) is built to be worn for a full night, with a contoured shape that keeps pressure off the eyes and a planned passive cooling insert to stop heat building where it rests. Comfort and sound do not have to be a trade.`,
   },
   {
     slug: "breathing-techniques-that-slow-a-busy-mind",
@@ -470,7 +470,7 @@ A reactive system may treat a new background sound as something to evaluate at f
 
 For a light sleeper, the most reliable improvements come from controlling the environment rather than fighting your own biology. Steady sound is a large part of that, and it pairs well with stable darkness and a cool, even temperature.
 
-Light deserves the same treatment as sound, which is the idea behind [Lumora](/explore/). It holds the darkness constant at your face, so the stray light that used to surface you has nothing to cut through, and it saves the one change that matters for morning, as a gradual sunrise at a lighter moment. You may always be a light sleeper. With less contrast to react to, that no longer has to mean a broken night.`,
+Light deserves the same treatment as sound, which is the idea behind [Lumora](/explore/). It holds the darkness constant at your face, so the stray light that used to surface you has nothing to cut through, and the plan is to save the one change that matters for morning, gradual light at a lighter moment. You may always be a light sleeper. With less contrast to react to, that no longer has to mean a broken night.`,
   },
   {
     slug: "the-link-between-stress-sound-and-sleep",
@@ -558,7 +558,7 @@ Some people swear by the same podcast every night, arguing that they know it so 
 
 If you want audio that genuinely helps, lean toward sound over content. Pick textures, not tracks. Keep the volume low, just enough to soften the room. And let it run evenly through the night rather than scheduling an abrupt stop.
 
-The same test applies to everything else in the room. [Lumora](/explore/) is designed to ask nothing of you either, blocking light without pressure on the eyes and ending the night with a gradual sunrise rather than a demand. Bedtime audio can absolutely help you sleep. It just has to be the kind that asks nothing of you in return.`,
+The same test applies to everything else in the room. [Lumora](/explore/) is designed to ask nothing of you either, blocking light without pressure on the eyes and, as a planned feature, ending the night with gradual light rather than a demand. Bedtime audio can absolutely help you sleep. It just has to be the kind that asks nothing of you in return.`,
   },
   {
     slug: "can-music-help-you-fall-asleep-faster",
@@ -608,6 +608,6 @@ It is worth knowing that for falling asleep, a featureless soundscape often outp
 
 So yes, music can help you fall asleep faster, as long as it is slow, soft, lyric-free, kept quiet, and not set to stop abruptly. For many people, the simplest approach is to use music as part of a wind-down and let steadier sound take over for the night.
 
-However you handle the audio, the end of the night deserves as much attention as the start. [Lumora](/explore/) reads your night from inside the mask and begins a gradual sunrise at a lighter moment, so the morning does not undo the care you put into falling asleep. Music can open the door to sleep. The trick is choosing the kind that does not insist on staying in the room.`,
+However you handle the audio, the end of the night deserves as much attention as the start. [Lumora](/explore/) is designed to read your night from inside the mask and begin a gradual sunrise at a lighter moment, so the morning does not undo the care you put into falling asleep. Music can open the door to sleep. The trick is choosing the kind that does not insist on staying in the room.`,
   },
 ]

@@ -152,8 +152,8 @@ export default function BlogIndex() {
             Better reading is one thing. Better nights are another.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-mist">
-            Lumora is a sleep mask that reads your night and wakes you at a lighter moment. Get on
-            the list for Kickstarter launch access.
+            Lumora is a sleep mask in development, designed to wake you during lighter sleep. Join
+            the waitlist for launch updates.
           </p>
           <a
             href="/waitlist/"

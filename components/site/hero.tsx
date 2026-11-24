@@ -48,7 +48,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.p {...fade(0)} className="eyebrow mb-7">
-          A sleep mask that acts
+          {SITE.stage}
         </motion.p>
 
         <motion.h1
@@ -58,24 +58,31 @@ export default function Hero() {
         >
           Everything else tracks your sleep.
           <br />
-          <span className="italic text-iris-soft">Lumora changes it.</span>
+          <span className="italic text-iris-soft">Lumora is meant to act on it.</span>
         </motion.h1>
 
         <motion.p
           {...fade(0.16)}
           className="mt-8 max-w-xl text-balance text-[1.05rem] leading-relaxed text-ink/90 sm:text-lg"
         >
-          A sleep mask that learns your night and wakes you at the right moment, not
-          the same moment.
+          {SITE.stageLine}
         </motion.p>
 
-        <motion.div {...fade(0.24)} className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+        <motion.div
+          {...fade(0.2)}
+          className="mt-6 max-w-xl space-y-1.5 text-balance text-sm leading-relaxed text-ink/80"
+        >
+          <p>{SITE.prototypeToday}</p>
+          <p>{SITE.nextMilestone}</p>
+        </motion.div>
+
+        <motion.div {...fade(0.24)} className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
           <Magnetic>
             <button
               onClick={() => goTo("#waitlist")}
               className="glow-iris rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
             >
-              Get launch access
+              Join the waitlist
             </button>
           </Magnetic>
           <button

@@ -2,34 +2,44 @@
   "$schema": "https://agentsfirst.dev/schemas/mcp-server-card.v0.json",
   "name": "lumora-sleep",
   "version": "1.0.0",
-  "description": "MCP server for Lumora Sleep, a pre-launch luxury sleep-tech brand. Exposes verb-first tools to list products, fetch a single product, and join the pre-launch waitlist.",
+  "description": "MCP server source for Lumora Sleep, a sleep mask in development. Exposes tools to get the product status and to join the waitlist for launch updates. Not published to npm; build it from the repository.",
   "homepage": "https://uselumora.co",
   "documentation": "https://uselumora.co/AGENTS.md",
   "agents_md": "https://uselumora.co/AGENTS.md",
   "llms_txt": "https://uselumora.co/llms.txt",
   "openapi": "https://uselumora.co/openapi.json",
   "license": "All rights reserved",
-  "author": { "name": "Lumora Sleep", "url": "https://uselumora.co" },
-  "contact": { "email": "hello@uselumora.co" },
+  "author": {
+    "name": "Lumora Sleep",
+    "url": "https://uselumora.co"
+  },
+  "contact": {
+    "email": "hello@uselumora.co"
+  },
   "transport": "stdio",
-  "install": "npx -y @lumora/mcp-server",
   "repository": {
     "type": "git",
-    "url": "https://github.com/lumora-sleep/lumora-mcp-server"
+    "url": "https://github.com/TheVirus-Limiter/aurum",
+    "directory": "mcp"
   },
   "tools": [
     {
       "name": "get_products",
-      "description": "List all Lumora Sleep products (Essence $89, Max $249, Caelum $24) with prices and one-line descriptions."
+      "description": "Return the single Lumora product, in development, with each capability labeled Built, Next test, Planned, or Design, and planned launch pricing."
     },
     {
       "name": "get_product",
-      "description": "Get full details for a single Lumora product by id or name (essence | max | caelum)."
+      "description": "Get the Lumora product by id (lumora)."
     },
     {
       "name": "join_waitlist",
-      "description": "Join the Lumora Sleep pre-launch waitlist by submitting an email address and optional product interest."
+      "description": "Join the Lumora Sleep waitlist for launch updates by submitting an email address."
     }
   ],
-  "capabilities": { "tools": { "listChanged": false } }
+  "capabilities": {
+    "tools": {
+      "listChanged": false
+    }
+  },
+  "build": "git clone https://github.com/TheVirus-Limiter/aurum && cd aurum/mcp && npm install && npm run build"
 }

@@ -159,15 +159,14 @@ export default function TeamPage() {
             Join the first release.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-mist">
-            Get launch timing, early access, and behind the scenes updates as we finalize the first
-            run.
+            Get launch updates, test results as they come in, and a note when the Kickstarter opens.
           </p>
           <div className="mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row">
             <a
               href="/waitlist/"
               className="glow-iris rounded-full bg-iris px-8 py-3.5 text-sm font-semibold text-[#0a0913] transition-colors duration-300 hover:bg-iris-soft"
             >
-              Get launch access
+              Join the waitlist
             </a>
             <a
               href="/explore/"
