@@ -1,8 +1,8 @@
 name: Deploy to GitHub Pages
 
+# Retired: the site now deploys to Cloudflare (wrangler.jsonc). Manual runs only.
 on:
-  push:
-    branches: [ main ]
+  workflow_dispatch:
 
 permissions:
   contents: read
