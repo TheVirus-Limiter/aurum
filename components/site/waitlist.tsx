@@ -15,16 +15,15 @@ export default function Waitlist() {
       />
       <div className="relative mx-auto max-w-2xl text-center">
         <Reveal>
-          <p className="eyebrow mb-5">Launch updates</p>
+          <p className="eyebrow mb-5">Coming to Kickstarter</p>
           <h2 className="font-display text-balance text-[clamp(2.4rem,6vw,4.5rem)] font-light leading-[1.02] tracking-tight text-ink">
             Follow
             <br />
             <span className="italic text-iris-soft">the build.</span>
           </h2>
           <p className="mx-auto mt-6 max-w-xl text-mist">
-            Join for launch updates: short notes when a prototype test finishes, and an email when
-            the Kickstarter opens. {SITE.pricingLabel} starts at {SITE.kickstarterPrice} on
-            Kickstarter, with retail planned at {SITE.retailRange}.
+            Join the waitlist and be first to know when the Kickstarter opens, with launch pricing
+            from {SITE.kickstarterPrice}.
           </p>
         </Reveal>
 

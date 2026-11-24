@@ -10,18 +10,18 @@ import { whyJoin, faqs, SITE } from "@/lib/site-content"
 export const metadata: Metadata = {
   title: "Join the Waitlist",
   description:
-    "Lumora is a sleep mask in development, designed to wake you during lighter sleep within a window you choose. Join for launch updates. Planned launch pricing from $129.",
+    "Lumora is a sleep mask designed to wake you in your lightest sleep, inside a window you choose. Join the waitlist for Kickstarter launch pricing from $129.",
   alternates: { canonical: "/waitlist" },
   openGraph: {
     url: "https://uselumora.co/waitlist",
     title: "Join the Lumora Sleep Waitlist",
-    description: "Launch updates for a sleep mask in development. Planned launch pricing from $129.",
+    description: "Be first to know when the Kickstarter opens. Launch pricing from $129.",
     images: [{ url: "/og/og-waitlist.png", width: 1200, height: 630, alt: "Join the Lumora Sleep waitlist" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Join the Lumora Sleep Waitlist",
-    description: "Launch updates for a sleep mask in development. Planned launch pricing from $129.",
+    description: "Be first to know when the Kickstarter opens. Launch pricing from $129.",
     images: ["/og/og-waitlist.png"],
   },
 }
@@ -69,12 +69,12 @@ export default function WaitlistPage() {
         <div className="relative z-20 mx-auto w-full max-w-6xl">
           <div className="max-w-xl">
             <Reveal>
-              <p className="eyebrow mb-5">{SITE.stage}</p>
+              <p className="eyebrow mb-5">Coming to Kickstarter</p>
               <h1 className="font-display text-[clamp(2.8rem,7vw,5.5rem)] font-light leading-[0.95] tracking-[-0.02em] text-ink">
-                Follow the build <span className="italic text-iris-soft">from the bench.</span>
+                Wake at the right moment, <span className="italic text-iris-soft">not the same one.</span>
               </h1>
               <p className="mt-6 max-w-lg text-lg leading-relaxed text-mist">
-                {SITE.stageLine} {SITE.prototypeToday} {SITE.nextMilestone}
+                {SITE.stageLine} Join the waitlist and be first to know when the Kickstarter opens.
               </p>
             </Reveal>
 
@@ -84,9 +84,9 @@ export default function WaitlistPage() {
 
             <Reveal delay={0.16} className="mt-6">
               <p className="text-sm text-mist">
-                The waitlist is for launch updates. {SITE.pricingLabel} starts at{" "}
-                <span className="font-medium text-ink">{SITE.kickstarterPrice}</span> on Kickstarter, with
-                retail planned at {SITE.retailRange}. Joining is free and takes one field.
+                Launch pricing from{" "}
+                <span className="font-medium text-ink">{SITE.kickstarterPrice}</span>, before retail{" "}
+                {SITE.retailRange}. Joining is free and takes one field.
               </p>
             </Reveal>
           </div>
@@ -99,7 +99,7 @@ export default function WaitlistPage() {
           <Reveal className="max-w-2xl">
             <p className="eyebrow mb-4">Why join now</p>
             <h2 className="font-display text-[clamp(2rem,4.5vw,3.25rem)] font-light tracking-tight text-ink">
-              What you get for signing up.
+              Early backers get the best of it.
             </h2>
           </Reveal>
 

@@ -25,11 +25,11 @@ const SITE_URL = "https://uselumora.co"
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: "Lumora Sleep, a sleep mask in development",
+    default: "Lumora Sleep, the sleep mask that acts",
     template: "%s, Lumora Sleep",
   },
   description:
-    "I'm building a sleep mask that aims to wake you during lighter sleep, within a window you choose. Prototype in development. Join the waitlist for launch updates.",
+    "Everything else tracks your sleep. Lumora is meant to act on it. A sleep mask designed to wake you in your lightest sleep, inside a window you choose.",
   applicationName: "Lumora Sleep",
   keywords: [
     "Lumora",
@@ -47,23 +47,23 @@ export const metadata: Metadata = {
     type: "website",
     url: SITE_URL,
     siteName: "Lumora Sleep",
-    title: "Lumora, a sleep mask in development",
+    title: "Everything else tracks your sleep. Lumora is meant to act on it.",
     description:
-      "A sleep mask designed to wake you during lighter sleep, within a window you choose. Prototype in development.",
+      "A sleep mask designed to wake you in your lightest sleep, inside a window you choose.",
     images: [
       {
         url: "/og/og-home.png",
         width: 1200,
         height: 630,
-        alt: "Lumora, a sleep mask in development",
+        alt: "Lumora, the sleep mask that acts",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumora, a sleep mask in development",
+    title: "Everything else tracks your sleep. Lumora is meant to act on it.",
     description:
-      "A sleep mask designed to wake you during lighter sleep, within a window you choose. Prototype in development.",
+      "A sleep mask designed to wake you in your lightest sleep, inside a window you choose.",
     images: ["/og/og-home.png"],
   },
   icons: {

@@ -142,21 +142,20 @@ function sevoraCard(): El {
       div({ flexDirection: "column" }, [
         div(
           { fontSize: 25, fontWeight: 700, letterSpacing: 5, color: "#b07a1e", marginBottom: 22 },
-          "IN DEVELOPMENT",
+          "PROTECT EVERY HARVEST",
         ),
-        div({ fontSize: 64, fontWeight: 700, letterSpacing: -1.5, lineHeight: 1.06, flexWrap: "wrap", maxWidth: 1040 }, [
-          div({ marginRight: 18 }, "Can a $49 probe warn a farmer"),
-          div({ marginRight: 18 }, "before grain"),
-          div({ color: "#9c3a16" }, "spoils?"),
+        div({ fontSize: 88, fontWeight: 700, letterSpacing: -2, lineHeight: 1.02 }, [
+          div({ marginRight: 24 }, "Know before it"),
+          div({ color: "#9c3a16" }, "rots."),
         ]),
         div(
           { fontSize: 30, fontWeight: 400, color: "#6f5c47", marginTop: 26, lineHeight: 1.32, maxWidth: 940 },
-          "First prototype: temperature and humidity readings sent to a phone over Bluetooth. Next experiment: CO2.",
+          "A low cost probe that lives inside stored grain and catches spoilage early. Built for smallholder farmers.",
         ),
       ]),
       div({ alignItems: "center", justifyContent: "space-between" }, [
         div({ fontSize: 26, fontWeight: 400, color: "#6f5c47" }, "uselumora.co/sevora"),
-        div({ fontSize: 26, fontWeight: 700, color: "#33241a" }, "Target price $49"),
+        div({ fontSize: 26, fontWeight: 700, color: "#33241a" }, "Targeting $49 per probe"),
       ]),
     ],
   )
@@ -181,29 +180,29 @@ async function run() {
     {
       file: "og-home.png",
       card: pageCard({
-        eyebrow: "In development",
+        eyebrow: "A sleep mask that acts",
         title: "Everything else tracks your sleep.",
-        subtitle: "I'm building a sleep mask that aims to wake you during lighter sleep, within a window you choose.",
-        footRight: "Prototype in progress",
+        subtitle: "Lumora is meant to act on it. A mask that wakes you in your lightest sleep, inside a window you choose.",
+        footRight: "Coming to Kickstarter",
         titleSize: 62,
       }),
     },
     {
       file: "og-explore.png",
       card: pageCard({
-        eyebrow: "The product, in development",
-        title: "Built, next, and planned.",
-        subtitle: "Sensors and a warm LED on the prototype pod today. Next test: whether they can guide wake timing.",
-        footRight: "Planned launch from $129",
+        eyebrow: "The product",
+        title: "One mask. One job.",
+        subtitle: "It listens to your night and wakes you with a slow, warm sunrise at the right moment.",
+        footRight: "Kickstarter from $129",
       }),
     },
     {
       file: "og-waitlist.png",
       card: pageCard({
-        eyebrow: "Launch updates",
-        title: "Follow the build.",
-        subtitle: "Test results as they come in, and a note when the Kickstarter opens.",
-        footRight: "Planned launch from $129",
+        eyebrow: "Coming to Kickstarter",
+        title: "Be first in line.",
+        subtitle: "Join the waitlist and hear the moment the campaign opens.",
+        footRight: "From $129",
       }),
     },
     {

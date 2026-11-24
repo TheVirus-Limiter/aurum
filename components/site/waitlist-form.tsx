@@ -135,8 +135,7 @@ export default function WaitlistForm({
         <p className="eyebrow mb-2">You are on the list</p>
         <h3 className="font-display text-2xl font-light text-ink">Thanks for following along.</h3>
         <p className="mx-auto mt-3 max-w-sm text-sm text-mist">
-          You are on the list for launch updates. I will email when a prototype test finishes and
-          when the Kickstarter opens.
+          You will hear from us the moment the Kickstarter opens.
         </p>
       </div>
     )

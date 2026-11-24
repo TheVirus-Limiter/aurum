@@ -11,8 +11,7 @@ export default function SiteFooter() {
           <div>
             <img src="/images/lumora-logo.png" alt="Lumora Sleep" className="h-16 w-auto" />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-mist">
-              A sleep mask in development, designed to wake you during lighter sleep within a window
-              you choose.
+              Everything else tracks your sleep. Lumora is meant to act on it.
             </p>
           </div>
 

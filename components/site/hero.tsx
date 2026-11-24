@@ -48,7 +48,7 @@ export default function Hero() {
 
       <div className="relative z-10 flex flex-col items-center">
         <motion.p {...fade(0)} className="eyebrow mb-7">
-          {SITE.stage}
+          A sleep mask that acts
         </motion.p>
 
         <motion.h1
@@ -68,15 +68,8 @@ export default function Hero() {
           {SITE.stageLine}
         </motion.p>
 
-        <motion.div
-          {...fade(0.2)}
-          className="mt-6 max-w-xl space-y-1.5 text-balance text-sm leading-relaxed text-ink/80"
-        >
-          <p>{SITE.prototypeToday}</p>
-          <p>{SITE.nextMilestone}</p>
-        </motion.div>
 
-        <motion.div {...fade(0.24)} className="mt-9 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
+        <motion.div {...fade(0.24)} className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:gap-4">
           <Magnetic>
             <button
               onClick={() => goTo("#waitlist")}

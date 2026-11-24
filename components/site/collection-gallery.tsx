@@ -5,7 +5,6 @@ import { products, type Product } from "@/lib/site-content"
 import { Icon } from "@/components/site/icon"
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal"
 import ProductViewer from "@/components/site/product-viewer"
-import { StatusBadge } from "@/components/site/status-badge"
 
 function ProductCard({ product }: { product: Product }) {
   return (
@@ -17,9 +16,6 @@ function ProductCard({ product }: { product: Product }) {
       }`}
     >
       <div className="plate relative aspect-[4/3] w-full rounded-2xl">
-        <span className="absolute bottom-3 left-3 z-10 rounded-full bg-base/70 px-2.5 py-1 text-[10px] uppercase tracking-[0.14em] text-mist backdrop-blur-sm">
-          Design render
-        </span>
         {product.model ? (
           <ProductViewer url={product.model} fallback={product.image} alt={product.name} />
         ) : (
@@ -39,8 +35,8 @@ function ProductCard({ product }: { product: Product }) {
           {product.tag}
         </span>
         <span className="text-right">
-          <span className="block text-[10px] uppercase tracking-[0.14em] text-faint">Planned launch price</span>
-          <span className="font-display text-lg text-ink">from {product.price}</span>
+          <span className="block text-[10px] uppercase tracking-[0.14em] text-faint">Kickstarter from</span>
+          <span className="font-display text-lg text-ink">{product.price}</span>
         </span>
       </div>
 
@@ -51,12 +47,9 @@ function ProductCard({ product }: { product: Product }) {
 
       <ul className="mt-5 space-y-2.5 border-t border-ink/10 pt-5">
         {product.features.map((f) => (
-          <li key={f.text} className="flex items-center justify-between gap-3 text-sm text-mist">
-            <span className="flex items-center gap-2.5">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-iris/70" />
-              {f.text}
-            </span>
-            <StatusBadge status={f.status} />
+          <li key={f.text} className="flex items-center gap-2.5 text-sm text-mist">
+            <CheckCircle2 className="h-4 w-4 shrink-0 text-iris/70" />
+            {f.text}
           </li>
         ))}
       </ul>
@@ -76,8 +69,7 @@ export default function CollectionGallery() {
             <span className="italic text-iris-soft">Nothing to choose between.</span>
           </h2>
           <p className="mt-5 text-mist">
-            One mask, no tiers. Here is exactly what exists today, what I am testing next, and what
-            is still a plan.
+            No tiers, no upsell. One mask, built around a single idea. Currently in prototype.
           </p>
         </Reveal>
 

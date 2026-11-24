@@ -4,24 +4,23 @@ import PageHeader from "@/components/site/page-header"
 import SiteFooter from "@/components/site/site-footer"
 import { Reveal, Stagger, StaggerItem } from "@/components/site/reveal"
 import { Icon } from "@/components/site/icon"
-import { StatusBadge } from "@/components/site/status-badge"
 import { products, pillars, architecture, SITE } from "@/lib/site-content"
 
 export const metadata: Metadata = {
   title: "The Mask",
   description:
-    "Lumora is a sleep mask in development, designed to wake you during lighter sleep within a window you choose. What is built, what is next, and planned launch pricing.",
+    "Lumora is a sleep mask designed to wake you in your lightest sleep, inside a window you choose. Launching on Kickstarter from $129.",
   alternates: { canonical: "/explore" },
   openGraph: {
     url: "https://uselumora.co/explore",
-    title: "Lumora, a sleep mask in development",
-    description: "What is built today, what I am testing next, and what is still planned.",
+    title: "Lumora, the sleep mask that acts",
+    description: "Wake in your lightest sleep, inside a window you choose.",
     images: [{ url: "/og/og-explore.png", width: 1200, height: 630, alt: "The Lumora sleep mask" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Lumora, a sleep mask in development",
-    description: "What is built today, what I am testing next, and what is still planned.",
+    title: "Lumora, the sleep mask that acts",
+    description: "Wake in your lightest sleep, inside a window you choose.",
     images: ["/og/og-explore.png"],
   },
 }
@@ -38,20 +37,18 @@ const productLd = {
   category: "Smart sleep mask",
 }
 
-/** What a typical tracker does versus what Lumora is being designed to do. */
+/** What a typical tracker does versus what Lumora is designed to do. */
 const matrix: { feature: string; tracker: string; lumora: string }[] = [
-  { feature: "Measures movement and temperature", tracker: "yes", lumora: "Built" },
+  { feature: "Measures movement and temperature", tracker: "yes", lumora: "yes" },
   { feature: "Morning sleep score", tracker: "yes", lumora: "no" },
-  { feature: "Chooses when to wake you", tracker: "Some apps", lumora: "Next test" },
-  { feature: "Wakes you with gradual light", tracker: "no", lumora: "Planned" },
-  { feature: "Blocks light", tracker: "no", lumora: "Planned" },
+  { feature: "Chooses when to wake you", tracker: "no", lumora: "yes" },
+  { feature: "Wakes you with gradual light", tracker: "no", lumora: "yes" },
+  { feature: "Blocks light", tracker: "no", lumora: "yes" },
 ]
 
 function Cell({ value }: { value: string }) {
   if (value === "yes") return <Check className="mx-auto h-4 w-4 text-iris" />
   if (value === "no") return <Minus className="mx-auto h-4 w-4 text-faint" />
-  if (value === "Built" || value === "Next test" || value === "Planned" || value === "Design")
-    return <StatusBadge status={value} className="mx-auto" />
   return <span className="text-sm text-mist">{value}</span>
 }
 
@@ -73,7 +70,7 @@ export default function ExplorePage() {
         />
         <div className="mx-auto w-full max-w-7xl">
           <Reveal className="max-w-4xl">
-            <p className="eyebrow mb-6">The product, in development</p>
+            <p className="eyebrow mb-6">The product</p>
             <h1 className="font-display text-[clamp(2.6rem,8vw,6rem)] font-light leading-[0.94] tracking-[-0.02em] text-ink">
               One mask.{" "}
               <span className="italic text-iris-soft">One job.</span>
@@ -81,7 +78,6 @@ export default function ExplorePage() {
             <p className="mt-8 max-w-2xl text-lg leading-relaxed text-mist">
               {product.description}
             </p>
-            <p className="mt-6 text-sm text-mist">{SITE.nextMilestone}</p>
             <p className="mt-2 text-sm text-faint">{product.priceNote}</p>
           </Reveal>
         </div>
@@ -93,7 +89,7 @@ export default function ExplorePage() {
           <Reveal className="max-w-2xl">
             <p className="eyebrow mb-4">How it works</p>
             <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light tracking-tight text-ink">
-              Built, next, and planned.
+              It listens, it waits, it wakes you there.
             </h2>
           </Reveal>
           <Stagger className="mt-14 grid gap-5 md:grid-cols-3">
@@ -102,10 +98,7 @@ export default function ExplorePage() {
                 <span className="grid h-12 w-12 place-items-center rounded-2xl border border-iris/20 bg-iris/10 text-iris">
                   <Icon name={p.icon} className="h-5 w-5" />
                 </span>
-                <div className="mt-6 flex items-center justify-between gap-3">
-                  <h3 className="font-display text-2xl font-light text-ink">{p.title}</h3>
-                  <StatusBadge status={p.status} />
-                </div>
+                <h3 className="font-display mt-6 text-2xl font-light text-ink">{p.title}</h3>
                 <p className="mt-1 text-sm italic text-iris-soft/80">{p.tagline}</p>
                 <p className="mt-4 text-sm leading-relaxed text-mist">{p.body}</p>
               </StaggerItem>
@@ -118,12 +111,12 @@ export default function ExplorePage() {
       <section className="px-5 py-24 sm:px-8 sm:py-32">
         <div className="mx-auto max-w-7xl">
           <Reveal className="max-w-2xl">
-            <p className="eyebrow mb-4">The architecture, by design</p>
+            <p className="eyebrow mb-4">The architecture</p>
             <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-light tracking-tight text-ink">
               A simple mask. A smart pod.
             </h2>
             <p className="mt-5 text-mist">
-              The design keeps the mask simple. All of the electronics live in a small removable pod,
+              The mask stays simple on purpose. All of the electronics live in a small removable pod,
               so the mask can be washed and the electronics upgraded later without replacing it.
             </p>
           </Reveal>
@@ -143,12 +136,9 @@ export default function ExplorePage() {
           <Reveal className="mt-12">
             <ul className="mx-auto grid max-w-3xl gap-3 sm:grid-cols-2">
               {product.features.map((f) => (
-                <li key={f.text} className="flex items-center justify-between gap-3 text-sm text-mist">
-                  <span className="flex items-center gap-2.5">
-                    <Check className="h-4 w-4 shrink-0 text-iris/70" />
-                    {f.text}
-                  </span>
-                  <StatusBadge status={f.status} />
+                <li key={f.text} className="flex items-center gap-2.5 text-sm text-mist">
+                  <Check className="h-4 w-4 shrink-0 text-iris/70" />
+                  {f.text}
                 </li>
               ))}
             </ul>
@@ -169,7 +159,7 @@ export default function ExplorePage() {
             <div className="grid grid-cols-3 border-b border-ink/10 bg-base px-4 py-4 text-center text-[0.7rem] uppercase tracking-[0.16em] text-faint sm:px-6">
               <span className="text-left">Feature</span>
               <span>Sleep tracker</span>
-              <span className="text-iris">Lumora today</span>
+              <span className="text-iris">Lumora</span>
             </div>
             {matrix.map((row) => (
               <div
@@ -197,8 +187,8 @@ export default function ExplorePage() {
             Follow the build.
           </h2>
           <p className="mx-auto mt-5 max-w-lg text-mist">
-            Join the waitlist for launch updates. {SITE.pricingLabel} starts at{" "}
-            {SITE.kickstarterPrice} on Kickstarter, with retail planned at {SITE.retailRange}.
+            Be first to know when the Kickstarter opens, with launch pricing from{" "}
+            {SITE.kickstarterPrice}.
           </p>
           <a
             href="/waitlist/"
