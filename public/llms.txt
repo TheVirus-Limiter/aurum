@@ -14,7 +14,7 @@ The single action on the site is joining the waitlist for launch updates at http
 - [The mask](https://uselumora.co/explore): Capabilities labeled Built, Next test, Planned, or Design, and planned launch pricing.
 - [Waitlist](https://uselumora.co/waitlist): Join for launch updates with an email address.
 - [The Journal](https://uselumora.co/blog): Over 100 articles on sleep science, sleep masks, light, temperature, recovery, and habits.
-- [Founder](https://uselumora.co/team): The person building Lumora.
+- [Founder](https://rehanraj.com): The person building Lumora.
 
 ## Agent surfaces
 

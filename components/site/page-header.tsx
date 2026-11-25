@@ -5,7 +5,7 @@ export default function PageHeader({ active }: { active?: "team" | "explore" | "
   const links = [
     { label: "The Mask", href: "/explore/", key: "explore" as const },
     { label: "Journal", href: "/blog/", key: "blog" as const },
-    { label: "Founder", href: "/team/", key: "team" as const },
+    { label: "Founder", href: "https://rehanraj.com", key: "team" as const },
     { label: "Waitlist", href: "/waitlist/" },
   ]
 

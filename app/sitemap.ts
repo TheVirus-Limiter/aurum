@@ -12,7 +12,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${BASE}/explore/`, lastModified: now, changeFrequency: "monthly", priority: 0.8 },
     { url: `${BASE}/blog/`, lastModified: now, changeFrequency: "weekly", priority: 0.7 },
     { url: `${BASE}/sevora/`, lastModified: now, changeFrequency: "monthly", priority: 0.6 },
-    { url: `${BASE}/team/`, lastModified: now, changeFrequency: "monthly", priority: 0.5 },
   ]
 
   const categories: MetadataRoute.Sitemap = categoryList.map((c) => ({

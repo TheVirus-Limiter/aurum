@@ -193,7 +193,7 @@ export default function Home() {
               will hear that here first.
             </p>
             <a
-              href="/team/"
+              href="https://rehanraj.com"
               className="group mt-9 inline-flex items-center gap-2 rounded-full border border-ink/20 px-7 py-3.5 text-sm font-medium text-ink transition-all duration-300 hover:border-ink/40 hover:bg-ink/5"
             >
               Meet the founder
@@ -206,7 +206,7 @@ export default function Home() {
               {founders.map((f) => (
                 <a
                   key={f.name}
-                  href="/team/"
+                  href="https://rehanraj.com"
                   className="group flex items-center gap-6 overflow-hidden rounded-3xl border border-ink/10 bg-base-2 p-5"
                 >
                   <div className="plate relative h-28 w-28 shrink-0 overflow-hidden rounded-2xl sm:h-36 sm:w-36">

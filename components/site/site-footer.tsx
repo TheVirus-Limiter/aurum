@@ -39,7 +39,7 @@ export default function SiteFooter() {
                 </a>
               </li>
               <li>
-                <a href="/team/" className="link-quiet hover:text-ink">
+                <a href="https://rehanraj.com" className="link-quiet hover:text-ink">
                   The founder
                 </a>
               </li>
